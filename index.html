@@ -25,9 +25,8 @@
       margin: 0 0 20px 0;
     }
 
-    h1 { font-size: 48px; }
+    h1 { font-size: 48px; line-height: 1.2; }
     h2 { font-size: 32px; }
-
     p {
       font-size: 18px;
       color: #666;
@@ -102,7 +101,7 @@
 
     /* HERO */
     .hero {
-      padding: 160px 20px 80px 20px;
+      padding: 140px 20px 100px 20px; /* slightly tighter for balance */
       color: #fff;
       background-image: url('hero-bg.jpg'); /* replace with your hero image */
       background-size: cover;
@@ -110,6 +109,11 @@
       background-repeat: no-repeat;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     /* gradient overlay */
@@ -120,21 +124,34 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.1)), 
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.1)),
                   linear-gradient(to top, rgba(204,0,0,0.9), rgba(204,0,0,0.3));
       z-index: 1;
     }
 
     /* Hero text and button above overlay */
     .hero h1,
-    .hero p {
+    .hero p,
+    .hero .btn {
       position: relative;
       z-index: 2;
+      max-width: 900px;
+      margin: 0 auto 20px;
     }
 
-    /* Hero subheader color */
+    /* Hero headline and subheader styling */
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
     .hero p {
+      font-size: 20px;
+      line-height: 1.5;
       color: #fff; /* white text for readability */
+      margin-bottom: 30px;
     }
 
     /* SERVICES */
@@ -244,6 +261,8 @@
       .portfolio-item { width: 90%; max-width: 300px; }
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 18px; margin-bottom: 20px; }
     }
   </style>
 </head>
@@ -264,8 +283,8 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Transform Your Business with Unmatched Print, Design & Marketing</h1>
-    <p>Premium results at affordable rates—services for every business, from startups to multi-chain locations.</p>
+    <h1>Next-Level Print, Design & Marketing</h1>
+    <p>Affordable, high-impact print, design & marketing for businesses that mean business.</p>
     <a href="#" class="btn">Start a Project</a>
   </section>
 
