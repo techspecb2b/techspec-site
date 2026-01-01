@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>TechSpec | Print, Design & Marketing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechSpec</title>
+  <meta name="description" content="Premium print, graphic design, and marketing services at affordable rates for businesses of all sizes.">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -29,9 +30,9 @@
 
     p {
       font-size: 18px;
+      color: #666;
       max-width: 700px;
       margin: 20px auto 40px;
-      color: #666;
     }
 
     a { text-decoration: none; }
@@ -42,8 +43,8 @@
       color: #fff;
       border-radius: 6px;
       font-size: 16px;
-      transition: background 0.3s ease;
       display: inline-block;
+      transition: background 0.3s ease;
     }
 
     .btn:hover { background-color: #CC0000; }
@@ -60,12 +61,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     header.nav.scrolled {
       background-color: #CC0000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     .nav-inner {
@@ -79,12 +80,8 @@
 
     .logo img {
       height: 50px;
-      transition: height 0.3s ease;
+      width: auto;
       display: block;
-    }
-
-    header.nav.scrolled .logo img {
-      height: 42px;
     }
 
     nav {
@@ -128,33 +125,33 @@
       position: relative;
       padding: 180px 20px 120px;
       background:
-        linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.2)),
+        linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.25)),
         url('hero.jpg') center/cover no-repeat;
       color: #fff;
     }
 
     .hero h1,
     .hero p {
+      color: #fff;
       position: relative;
       z-index: 2;
-      color: #fff;
     }
 
     /* SERVICES */
     .services {
       padding: 100px 20px;
-      background: #fff;
+      background-color: #ffffff;
     }
 
     .services-grid {
       display: flex;
-      gap: 30px;
       justify-content: center;
+      gap: 40px;
       flex-wrap: wrap;
     }
 
     .service-card {
-      background: #f7f7f7;
+      background-color: #f7f7f7;
       padding: 40px 20px;
       border-radius: 12px;
       max-width: 300px;
@@ -174,14 +171,14 @@
     /* PORTFOLIO */
     .portfolio {
       padding: 100px 20px;
-      background: #f7f7f7;
+      background-color: #f7f7f7;
     }
 
     .portfolio-grid {
       display: flex;
       gap: 30px;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .portfolio-item {
@@ -190,12 +187,7 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-      background: #ddd;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
+      cursor: pointer;
     }
 
     .portfolio-item img {
@@ -205,20 +197,87 @@
       display: block;
     }
 
-    /* CTA */
-    .cta {
+    /* LIGHTBOX */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox span {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 32px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      padding: 100px 20px;
+      background: #ffffff;
+    }
+
+    .testimonials-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .testimonial {
+      background: #f7f7f7;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 300px;
+      font-style: italic;
+      color: #444;
+    }
+
+    /* CONTACT */
+    .contact {
       padding: 100px 20px;
       background: #FF0000;
       color: #fff;
     }
 
-    .cta p {
+    .contact p {
       color: #f0f0f0;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    input, textarea {
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
     /* FOOTER */
     footer {
-      background: #111;
+      background-color: #111;
       color: #aaa;
       padding: 40px 20px;
       font-size: 14px;
@@ -233,11 +292,10 @@
       }
 
       nav {
-        position: static;
+        display: none;
         flex-direction: column;
         background: #CC0000;
         width: 100%;
-        display: none;
         margin-top: 10px;
       }
 
@@ -259,8 +317,8 @@
       }
 
       .portfolio-item img {
-        height: auto;
         aspect-ratio: 4 / 3;
+        height: auto;
       }
     }
   </style>
@@ -275,16 +333,14 @@
     </div>
 
     <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
 
     <nav id="navMenu">
-      <a href="#">Services</a>
-      <a href="#">Work</a>
-      <a href="#">Contact</a>
-      <a href="#" class="nav-btn">Get a Quote</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-btn">Get a Quote</a>
     </nav>
   </div>
 </header>
@@ -292,51 +348,75 @@
 <section class="hero">
   <h1>Next-Level Print, Design & Marketing</h1>
   <p>Affordable, high-impact print, design & marketing for businesses that mean business.</p>
-  <a href="#" class="btn">Start a Project</a>
+  <a href="#contact" class="btn">Start a Project</a>
 </section>
 
-<section class="services">
+<section id="services" class="services">
   <div class="container">
     <h2>Our Services</h2>
     <div class="services-grid">
       <div class="service-card">
         <h3>Branding & Graphic Design</h3>
-        <p>Logos, visual identity, and creative assets that make your brand stand out.</p>
+        <p>Custom logos, brand identity, and visual assets tailored to your vision.</p>
       </div>
       <div class="service-card">
         <h3>Advertising & Marketing</h3>
-        <p>High-performing campaigns designed to grow your business efficiently.</p>
+        <p>Facebook & Google Ads campaigns designed to grow your business.</p>
       </div>
       <div class="service-card">
-        <h3>Premium Print Products</h3>
-        <p>Business cards, signage, apparel, and custom print solutions that impress.</p>
+        <h3>Print & Visual Assets</h3>
+        <p>High-quality print materials from business cards to large-scale graphics.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="portfolio">
+<section id="work" class="portfolio">
   <div class="container">
     <h2>Check Out Some Of Our Prints</h2>
     <div class="portfolio-grid">
-      <div class="portfolio-item"><img src="portfolio1.png" alt=""></div>
-      <div class="portfolio-item"><img src="portfolio2.png" alt=""></div>
-      <div class="portfolio-item"><img src="portfolio3.png" alt=""></div>
-      <div class="portfolio-item"><img src="portfolio4.png" alt=""></div>
-      <div class="portfolio-item"><img src="portfolio5.png" alt=""></div>
+      <div class="portfolio-item"><img src="portfolio1.png" onclick="openLightbox(this)" alt="Print project 1"></div>
+      <div class="portfolio-item"><img src="portfolio2.png" onclick="openLightbox(this)" alt="Print project 2"></div>
+      <div class="portfolio-item"><img src="portfolio3.png" onclick="openLightbox(this)" alt="Print project 3"></div>
+      <div class="portfolio-item"><img src="portfolio4.png" onclick="openLightbox(this)" alt="Print project 4"></div>
+      <div class="portfolio-item"><img src="portfolio5.png" onclick="openLightbox(this)" alt="Print project 5"></div>
     </div>
   </div>
 </section>
 
-<section class="cta">
-  <h2>Ready to Bring Your Vision to Life?</h2>
-  <p>Let’s build something that works as hard as you do.</p>
-  <a href="#" class="btn">Request a Quote</a>
+<section class="testimonials">
+  <div class="container">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">“Amazing quality, fast turnaround, and great pricing.”</div>
+      <div class="testimonial">“They handled our marketing and print flawlessly.”</div>
+      <div class="testimonial">“Perfect partner for growing businesses.”</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Ready to Bring Your Vision to Life?</h2>
+    <p>Contact us today and let’s start creating designs and campaigns that truly stand out.</p>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Tell us about your project"></textarea>
+      <button class="btn">Send Message</button>
+    </form>
+  </div>
 </section>
 
 <footer>
   © 2026 TechSpec LLC. All rights reserved.
 </footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span>&times;</span>
+  <img id="lightboxImg">
+</div>
 
 <script>
   const nav = document.querySelector('header.nav');
@@ -347,6 +427,15 @@
 
   function toggleMenu() {
     document.getElementById('navMenu').classList.toggle('active');
+  }
+
+  function openLightbox(img) {
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
   }
 </script>
 
