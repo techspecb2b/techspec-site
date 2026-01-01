@@ -19,15 +19,14 @@
       text-align: center;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       margin: 0 0 20px 0;
     }
 
-    h1 {
-      font-size: 48px;
-    }
+    h1 { font-size: 48px; }
+    h2 { font-size: 32px; }
 
     p {
       font-size: 18px;
@@ -81,46 +80,22 @@
       padding: 0 20px;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 600;
-      color: #111;
-    }
+    .logo { font-size: 24px; font-weight: 600; color: #111; }
 
-    nav a {
-      margin-left: 30px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #111;
-    }
-
-    nav a:hover {
-      color: #8fd3c8;
-    }
+    nav a { margin-left: 30px; font-size: 14px; font-weight: 500; color: #111; }
+    nav a:hover { color: #8fd3c8; }
 
     /* HERO */
-    .hero {
-      padding: 160px 20px 80px 20px;
-    }
+    .hero { padding: 160px 20px 80px 20px; }
 
     /* SERVICES */
-    .services {
-      padding: 100px 20px;
-      background-color: #ffffff;
-    }
-
-    .services h2 {
-      font-size: 32px;
-      margin-bottom: 60px;
-    }
-
+    .services { padding: 100px 20px; background-color: #ffffff; }
     .services-grid {
       display: flex;
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
     }
-
     .service-card {
       background-color: #f7f7f7;
       padding: 40px 20px;
@@ -130,26 +105,38 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
 
-    .service-card:hover {
+    /* PORTFOLIO */
+    .portfolio {
+      padding: 100px 20px;
+      background-color: #f7f7f7;
+    }
+    .portfolio h2 { margin-bottom: 60px; }
+    .portfolio-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .portfolio-item {
+      background-color: #ddd;
+      height: 220px;
+      width: 300px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .portfolio-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
 
     /* MOBILE */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 34px;
-      }
-
-      .nav-inner {
-        flex-direction: column;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-top: 10px;
-      }
+      h1 { font-size: 34px; }
+      .nav-inner { flex-direction: column; }
+      nav a { margin-left: 0; margin-top: 10px; }
+      .service-card, .portfolio-item { width: 90%; max-width: 300px; }
     }
   </style>
 </head>
@@ -192,6 +179,20 @@
           <h3>Print & Visual Assets</h3>
           <p>High-quality print materials from business cards to large-scale graphics.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item"></div>
+        <div class="portfolio-item"></div>
+        <div class="portfolio-item"></div>
+        <div class="portfolio-item"></div>
+        <div class="portfolio-item"></div>
       </div>
     </div>
   </section>
