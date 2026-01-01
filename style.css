@@ -1,0 +1,196 @@
+/* ======================
+   VARIABLES (EDIT HERE)
+   ====================== */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --muted-text: #666666;
+  --accent-color: #b18c4b;
+  --light-bg: #f7f7f7;
+
+  --font-primary: 'Montserrat', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+/* ======================
+   BASE STYLES
+   ====================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background: var(--bg-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ======================
+   NAV
+   ====================== */
+
+.nav {
+  padding: 20px 0;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+/* ======================
+   HERO
+   ====================== */
+
+.hero {
+  padding: 120px 0;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  color: var(--muted-text);
+  margin-bottom: 30px;
+}
+
+/* ======================
+   BUTTONS
+   ====================== */
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--accent-color);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* ======================
+   SECTIONS
+   ====================== */
+
+.section {
+  padding: 100px 0;
+}
+
+.section.light {
+  background: var(--light-bg);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* ======================
+   SERVICES
+   ====================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card {
+  padding: 40px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* ======================
+   PORTFOLIO
+   ====================== */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.portfolio-item {
+  background: #ddd;
+  height: 220px;
+}
+
+/* ======================
+   CTA
+   ====================== */
+
+.cta {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* ======================
+   FOOTER
+   ====================== */
+
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted-text);
+}
+
+/* ======================
+   MOBILE
+   ====================== */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .services-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+}
