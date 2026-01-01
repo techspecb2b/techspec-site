@@ -96,11 +96,11 @@
       color: #f5f5f5;
     }
 
-    /* HERO (parallax + grain) */
+    /* HERO */
     .hero {
       position: relative;
-      min-height: 50vh; /* reduced height so next section shows */
-      padding: 80px 20px 60px; /* less vertical padding */
+      min-height: 50vh; /* keep it smaller so white section peeks through */
+      padding: 80px 20px 60px;
       background:
         linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.35)),
         url('hero-bg.jpg') center top / cover no-repeat;
@@ -138,11 +138,14 @@
       margin: 0 auto 30px;
     }
 
-    /* HERO BUTTON RESTORED: original working size */
+    /* HERO BUTTON FIXED: original size restored */
     .hero .btn {
-      padding: 12px 24px; /* proportional to hero */
+      padding: 14px 32px; /* same as bottom buttons */
       font-size: 16px;
       border-radius: 6px;
+      width: auto; /* do not stretch full width */
+      max-width: 250px; /* keeps it small on large screens */
+      margin: 0 auto;
     }
 
     /* SERVICES */
@@ -272,6 +275,7 @@
       }
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
+      .hero .btn { width: 80%; max-width: 250px; }
     }
   </style>
 </head>
@@ -294,11 +298,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Print. Design. Marketing That Delivers.</h1>
+    <h1>Premium Design & Marketing</h1>
     <p>
-      High-impact print, bold design, and results-driven marketing —
-      all delivered at affordable rates for startups, growing brands,
-      and multi-location businesses.
+      From hand-drawn concepts to high-performing ads, we create work that feels intentional, refined, and uniquely yours.
     </p>
     <a href="#" class="btn">Start a Project</a>
   </section>
@@ -314,11 +316,11 @@
         </div>
         <div class="service-card">
           <h3>Advertising & Marketing</h3>
-          <p>Targeted ad campaigns built to drive real results.</p>
+          <p>Facebook & Google Ads campaigns designed to grow your business.</p>
         </div>
         <div class="service-card">
           <h3>Print & Visual Assets</h3>
-          <p>Premium print products that make your brand impossible to ignore.</p>
+          <p>High-quality print materials from business cards to large-scale graphics.</p>
         </div>
       </div>
     </div>
@@ -363,7 +365,7 @@
   <section class="cta">
     <div class="container">
       <h2>Ready to Bring Your Vision to Life?</h2>
-      <p>Contact us today and let’s build something that stands out.</p>
+      <p>Contact us today and let's start creating designs and campaigns that truly stand out.</p>
       <a href="#" class="btn">Request a Quote</a>
     </div>
   </section>
@@ -375,7 +377,7 @@
     </div>
   </footer>
 
-  <!-- NAV SCROLL -->
+  <!-- NAV SCROLL SCRIPT -->
   <script>
     const nav = document.querySelector('header.nav');
     window.addEventListener('scroll', () => {
