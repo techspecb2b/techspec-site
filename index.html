@@ -5,48 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechSpec</title>
 
-  <!-- Google Fonts: Poppins + Inter -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ======================
-       GLOBAL STYLES
-    ====================== */
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f7f7f7;
       margin: 0;
       padding: 0;
-      color: #111111;
-      line-height: 1.6;
+      background-color: #f7f7f7;
+      color: #111;
     }
 
-    h1, h2, h3 {
+    h1 {
       font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      margin: 0 0 20px 0;
+      font-size: 48px;
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin: 20px auto 40px;
+      text-align: center;
     }
 
     a {
       text-decoration: none;
-      color: #111111;
+      color: #111;
     }
 
     a:hover {
       color: #8fd3c8;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
+    .btn {
+      padding: 14px 32px;
+      background-color: #8fd3c8;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 16px;
+      text-decoration: none;
     }
 
-    /* ======================
-       NAVIGATION
-    ====================== */
+    .btn:hover {
+      background-color: #55b3a6;
+    }
+
+    /* NAVIGATION */
     header.nav {
-      background-color: #ffffff;
+      background-color: #fff;
       padding: 20px 0;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       position: sticky;
@@ -64,6 +74,7 @@
     }
 
     .logo {
+      font-family: 'Poppins', sans-serif;
       font-size: 24px;
       font-weight: 600;
     }
@@ -74,56 +85,30 @@
       font-weight: 500;
     }
 
-    /* ======================
-       HERO
-    ====================== */
+    /* HERO SECTION */
     .hero {
-      background-color: #f7f7f7;
-      text-align: center;
       padding: 120px 20px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+      text-align: center;
     }
 
     .hero p {
-      font-size: 18px;
-      color: #666666;
       max-width: 600px;
       margin: 0 auto 30px;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: #8fd3c8;
-      color: #fff;
-      font-size: 16px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #55b3a6;
-    }
-
-    /* ======================
-       MOBILE
-    ====================== */
+    /* MOBILE */
     @media (max-width: 768px) {
-      .hero h1 {
+      h1 {
         font-size: 34px;
-      }
-
-      nav a {
-        margin-left: 15px;
-        font-size: 13px;
       }
 
       .nav-inner {
         flex-direction: column;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-top: 10px;
       }
     }
   </style>
@@ -145,12 +130,4 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <h1>Premium Design & Marketing</h1>
-      <p>From hand-drawn concepts to high-performing ads, we create work that feels intentional, refined, and uniquely yours.</p>
-      <a href="#" class="btn">Start a Project</a>
-    </div>
-  </section>
-
-</body>
-</html>
+    <h1>Premium
