@@ -281,8 +281,8 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Premium Design & Marketing</h1>
-    <p>We bring your brand to life with intentional, high-quality designs and campaigns that get results.</p>
+    <h1>Next-Level Print, Design & Marketing</h1>
+    <p>Affordable, high-impact print, design & marketing for businesses that mean business.</p>
     <a href="#" class="btn">Start a Project</a>
   </section>
 
@@ -349,8 +349,6 @@
     const ctaHeading = document.querySelector('.cta h2');
     const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); }); }, { threshold: 0.3 });
     testimonialCards.forEach(card => observer.observe(card));
-    observer.observe(ctaHeading);
   </script>
-
 </body>
 </html>
