@@ -35,7 +35,7 @@
       margin: 20px auto 40px;
     }
 
-    a { text-decoration: none; color: #fff; }
+    a { text-decoration: none; }
 
     .btn {
       padding: 14px 32px;
@@ -59,12 +59,17 @@
 
     /* NAVIGATION */
     header.nav {
-      background-color: #fff;
+      background-color: #FF0000;
       padding: 20px 0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
       z-index: 1000;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header.nav.scrolled {
+      background-color: #CC0000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     .nav-inner {
@@ -76,22 +81,41 @@
       padding: 0 20px;
     }
 
-    .logo { font-size: 24px; font-weight: 600; color: #111; }
+    .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+    }
 
-    nav a { margin-left: 30px; font-size: 14px; font-weight: 500; color: #111; }
-    nav a:hover { color: #FF0000; }
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    nav a:hover {
+      color: #f5f5f5;
+    }
 
     /* HERO */
-    .hero { padding: 160px 20px 80px 20px; }
+    .hero {
+      padding: 160px 20px 80px 20px;
+    }
 
     /* SERVICES */
-    .services { padding: 100px 20px; background-color: #ffffff; }
+    .services {
+      padding: 100px 20px;
+      background-color: #ffffff;
+    }
+
     .services-grid {
       display: flex;
       justify-content: center;
       gap: 40px;
       flex-wrap: wrap;
     }
+
     .service-card {
       background-color: #f7f7f7;
       padding: 40px 20px;
@@ -101,20 +125,29 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
 
     /* PORTFOLIO */
     .portfolio {
       padding: 100px 20px;
       background-color: #f7f7f7;
     }
-    .portfolio h2 { margin-bottom: 60px; }
+
+    .portfolio h2 {
+      margin-bottom: 60px;
+    }
+
     .portfolio-grid {
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .portfolio-item {
       width: 300px;
       height: 220px;
@@ -123,7 +156,12 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .portfolio-item:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+
     .portfolio-item img {
       width: 100%;
       height: 100%;
@@ -137,8 +175,17 @@
       background-color: #FF0000;
       color: #fff;
     }
-    .cta h2 { font-size: 36px; margin-bottom: 20px; }
-    .cta p { color: #f0f0f0; font-size: 20px; margin-bottom: 40px; }
+
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #f0f0f0;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
 
     /* FOOTER */
     footer {
@@ -147,14 +194,20 @@
       padding: 40px 20px;
       text-align: center;
     }
-    footer p { margin: 0; font-size: 14px; color: #aaa; }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #aaa;
+    }
 
     /* MOBILE */
     @media (max-width: 768px) {
       h1 { font-size: 34px; }
       .nav-inner { flex-direction: column; }
       nav a { margin-left: 0; margin-top: 10px; }
-      .service-card, .portfolio-item { width: 90%; max-width: 300px; }
+      .service-card,
+      .portfolio-item { width: 90%; max-width: 300px; }
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
     }
@@ -232,6 +285,19 @@
       <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- NAV SCROLL SCRIPT -->
+  <script>
+    const nav = document.querySelector('header.nav');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
 
 </body>
 </html>
