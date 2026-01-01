@@ -81,10 +81,8 @@
       padding: 0 20px;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 600;
-      color: #fff;
+    .logo img {
+      height: 40px;
     }
 
     nav a {
@@ -98,17 +96,13 @@
       color: #f5f5f5;
     }
 
-    /* HERO (PARALLAX + GRAIN) */
+    /* HERO (parallax + grain) */
     .hero {
       position: relative;
-      min-height: 80vh;
-      padding: 200px 20px 140px;
+      min-height: 60vh; /* reduced height */
+      padding: 120px 20px 80px; /* reasonable padding */
       background:
-        linear-gradient(
-          to top,
-          rgba(204,0,0,0.85),
-          rgba(204,0,0,0.35)
-        ),
+        linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.35)),
         url('hero-bg.jpg') center top / cover no-repeat;
       background-attachment: fixed;
       color: #fff;
@@ -118,7 +112,6 @@
       overflow: hidden;
     }
 
-    /* Grain overlay */
     .hero::after {
       content: "";
       position: absolute;
@@ -133,16 +126,22 @@
       z-index: 2;
     }
 
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
     .hero p {
       color: #ffffff;
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto 30px;
     }
 
     /* SERVICES */
     .services {
       padding: 100px 20px;
       background-color: #ffffff;
-      position: relative;
-      z-index: 1;
     }
 
     .services-grid {
@@ -162,11 +161,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service-card p {
-      color: #444;
-      font-size: 16px;
-    }
-
     .service-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.1);
@@ -176,8 +170,6 @@
     .portfolio {
       padding: 100px 20px;
       background-color: #f7f7f7;
-      position: relative;
-      z-index: 1;
     }
 
     .portfolio h2 {
@@ -212,6 +204,21 @@
       display: block;
     }
 
+    /* TESTIMONIALS */
+    .testimonials {
+      padding: 100px 20px;
+      background-color: #ffffff;
+    }
+
+    .testimonial-card {
+      max-width: 400px;
+      margin: 20px;
+      padding: 30px;
+      background-color: #f7f7f7;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
     /* CTA */
     .cta {
       padding: 100px 20px;
@@ -244,33 +251,18 @@
       color: #aaa;
     }
 
-    /* MOBILE FIXES */
+    /* MOBILE */
     @media (max-width: 768px) {
       h1 { font-size: 34px; }
-
-      .nav-inner {
-        flex-direction: column;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-top: 10px;
-      }
-
+      .nav-inner { flex-direction: column; }
+      nav a { margin-left: 0; margin-top: 10px; }
+      .service-card,
+      .portfolio-item,
+      .testimonial-card { width: 90%; max-width: 300px; }
       .hero {
         background-attachment: scroll;
-        padding: 160px 20px 120px;
+        padding: 120px 20px 80px;
       }
-
-      .portfolio-item {
-        height: auto;
-      }
-
-      .portfolio-item img {
-        height: auto;
-        aspect-ratio: 4 / 3;
-      }
-
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
     }
@@ -282,7 +274,9 @@
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="logo">TechSpec</div>
+      <div class="logo">
+        <img src="logo.png" alt="TechSpec Logo">
+      </div>
       <nav>
         <a href="#">Services</a>
         <a href="#">Work</a>
@@ -333,6 +327,27 @@
         <div class="portfolio-item"><img src="portfolio3.png" alt="Project 3"></div>
         <div class="portfolio-item"><img src="portfolio4.png" alt="Project 4"></div>
         <div class="portfolio-item"><img src="portfolio5.png" alt="Project 5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="services-grid">
+        <div class="testimonial-card">
+          <p>"Amazing results! Our branding has never looked better."</p>
+          <h3>- Client A</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"The print materials exceeded our expectations — high quality and fast."</p>
+          <h3>- Client B</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"Marketing campaigns that really deliver. Highly recommend."</p>
+          <h3>- Client C</h3>
+        </div>
       </div>
     </div>
   </section>
