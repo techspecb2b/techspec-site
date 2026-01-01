@@ -131,12 +131,43 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
 
+    /* CTA */
+    .cta {
+      padding: 100px 20px;
+      background-color: #8fd3c8;
+      color: #fff;
+    }
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .cta p {
+      color: #f0f0f0;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer p {
+      margin: 0;
+      font-size: 14px;
+      color: #aaa;
+    }
+
     /* MOBILE */
     @media (max-width: 768px) {
       h1 { font-size: 34px; }
       .nav-inner { flex-direction: column; }
       nav a { margin-left: 0; margin-top: 10px; }
       .service-card, .portfolio-item { width: 90%; max-width: 300px; }
+      .cta h2 { font-size: 28px; }
+      .cta p { font-size: 18px; }
     }
   </style>
 </head>
@@ -196,6 +227,22 @@
       </div>
     </div>
   </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Bring Your Vision to Life?</h2>
+      <p>Contact us today and let's start creating designs and campaigns that truly stand out.</p>
+      <a href="#" class="btn">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
