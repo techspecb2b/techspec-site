@@ -104,20 +104,10 @@
       overflow: hidden;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 1;
-    }
-
     .hero * { position: relative; z-index: 2; }
     .hero h1 { font-size: 48px; margin-bottom: 20px; }
     .hero p { color: #ffffff; font-size: 20px; max-width: 600px; margin: 0 auto 30px; }
 
-    /* HERO BUTTON FIXED */
     .hero .btn {
       padding: 14px 32px;
       font-size: 16px;
@@ -131,19 +121,6 @@
     .services {
       padding: 100px 20px;
       background-color: #ffffff;
-      position: relative;
-    }
-
-    .services::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      background: linear-gradient(to right, #f7f7f7 50%, #FF0000 50%);
-      transform: skewY(-3deg);
-      transform-origin: top left;
     }
 
     .services-grid {
@@ -180,19 +157,6 @@
     .portfolio {
       padding: 100px 20px;
       background-color: #f7f7f7;
-      position: relative;
-    }
-
-    .portfolio::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      background: linear-gradient(to right, #FF0000 50%, #f7f7f7 50%);
-      transform: skewY(-3deg);
-      transform-origin: top left;
     }
 
     .portfolio-grid {
@@ -263,19 +227,6 @@
       padding: 100px 20px;
       background-color: #FF0000;
       color: #fff;
-      position: relative;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      top: -40px;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      background: linear-gradient(to right, #f7f7f7 50%, #FF0000 50%);
-      transform: skewY(-3deg);
-      transform-origin: top left;
     }
 
     .cta h2 {
@@ -322,7 +273,7 @@
       <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
       <nav>
         <a href="#services">Services</a>
-        <a href="#portfolio">Work</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -331,7 +282,7 @@
   <!-- HERO -->
   <section class="hero">
     <h1>Premium Design & Marketing</h1>
-    <p>From hand-drawn concepts to high-performing ads, we create work that feels intentional, refined, and uniquely yours.</p>
+    <p>We bring your brand to life with intentional, high-quality designs and campaigns that get results.</p>
     <a href="#" class="btn">Start a Project</a>
   </section>
 
@@ -340,9 +291,9 @@
     <div class="container">
       <h2>Our Services</h2>
       <div class="services-grid">
-        <div class="service-card"><i class="fas fa-paint-brush"></i><h3>Branding & Graphic Design</h3><p>Custom logos, brand identity, and visual assets tailored to your vision.</p></div>
-        <div class="service-card"><i class="fas fa-bullhorn"></i><h3>Advertising & Marketing</h3><p>Facebook & Google Ads campaigns designed to grow your business.</p></div>
-        <div class="service-card"><i class="fas fa-print"></i><h3>Print & Visual Assets</h3><p>High-quality print materials from business cards to large-scale graphics.</p></div>
+        <div class="service-card"><i class="fas fa-paint-brush"></i><h3>Branding & Design</h3><p>Custom logos, brand identity, and visuals crafted for your business.</p></div>
+        <div class="service-card"><i class="fas fa-bullhorn"></i><h3>Advertising & Marketing</h3><p>Campaigns on Facebook, Google, and beyond that grow your audience.</p></div>
+        <div class="service-card"><i class="fas fa-print"></i><h3>Print & Visual Assets</h3><p>Business cards, posters, and other high-quality print materials.</p></div>
       </div>
     </div>
   </section>
@@ -350,7 +301,7 @@
   <!-- PORTFOLIO -->
   <section class="portfolio" id="portfolio">
     <div class="container">
-      <h2>Check Out Some Of Our Prints</h2>
+      <h2>Check Out Some of Our Work</h2>
       <div class="portfolio-grid">
         <div class="portfolio-item" data-title="Project 1"><img src="portfolio1.png" alt="Project 1"></div>
         <div class="portfolio-item" data-title="Project 2"><img src="portfolio2.png" alt="Project 2"></div>
@@ -377,7 +328,7 @@
   <section class="cta">
     <div class="container">
       <h2>Ready to Bring Your Vision to Life?</h2>
-      <p>Contact us today and let's start creating designs and campaigns that truly stand out.</p>
+      <p>Contact us today and let's create designs and campaigns that truly stand out.</p>
       <a href="#" class="btn">Request a Quote</a>
     </div>
   </section>
