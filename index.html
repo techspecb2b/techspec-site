@@ -8,153 +8,52 @@
   <!-- Google Fonts: Poppins + Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Internal CSS (all-in-one) -->
   <style>
-    /* COLORS + FONTS */
-    :root {
-      --bg-main: #ffffff;
-      --bg-secondary: #f7f7f7;
-      --text-main: #111111;
-      --text-muted: #666666;
-      --accent: #8fd3c8;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      color: var(--text-main);
-      background: var(--bg-main);
-      line-height: 1.6;
+      background-color: #f7f7f7;
       margin: 0;
       padding: 0;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #55b3a6;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* NAV */
-    .nav {
-      padding: 20px 0;
-      background: var(--bg-main);
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-size: 24px;
-      color: var(--text-main);
-    }
-
-    nav a {
-      margin-left: 30px;
-      font-size: 14px;
-    }
-
-    /* HERO */
-    .hero {
-      padding: 120px 0;
-      background: var(--bg-secondary);
+      color: #111111;
+      line-height: 1.6;
       text-align: center;
     }
 
-    .hero h1 {
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
       font-size: 48px;
+      margin-top: 80px;
       margin-bottom: 20px;
     }
 
-    .hero p {
+    p {
+      font-size: 18px;
+      color: #666666;
       max-width: 600px;
-      color: var(--text-muted);
       margin: 0 auto 30px;
     }
 
-    /* BUTTONS */
     .btn {
       display: inline-block;
       padding: 14px 32px;
-      background: var(--accent);
+      background: #8fd3c8;
       color: #fff;
-      font-size: 14px;
+      font-size: 16px;
       border-radius: 6px;
-      transition: background 0.3s ease;
+      text-decoration: none;
     }
 
     .btn:hover {
       background: #55b3a6;
     }
+  </style>
+</head>
+<body>
 
-    .btn.outline {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
+  <h1>Premium Design & Marketing</h1>
+  <p>From hand-drawn concepts to high-performing ads, we create work that feels intentional, refined, and uniquely yours.</p>
+  <a href="#" class="btn">Start a Project</a>
 
-    /* SECTIONS */
-    .section {
-      padding: 100px 0;
-      background: var(--bg-main);
-    }
-
-    .section.light {
-      background: var(--bg-secondary);
-    }
-
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      text-align: center;
-    }
-
-    .card {
-      padding: 40px;
-      border: 1px solid #ddd;
-      background: var(--bg-main);
-    }
-
-    /* PORTFOLIO */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .portfolio-item {
-      background: #ddd;
-      height: 220px;
-      border-radius: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .po
+</body>
+</html>
