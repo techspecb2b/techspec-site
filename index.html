@@ -15,13 +15,14 @@
       padding: 0;
       background-color: #f7f7f7;
       color: #111;
+      line-height: 1.6;
+      text-align: center;
     }
 
     h1 {
       font-family: 'Poppins', sans-serif;
       font-size: 48px;
       margin-top: 80px;
-      text-align: center;
     }
 
     p {
@@ -29,16 +30,11 @@
       color: #666;
       max-width: 600px;
       margin: 20px auto 40px;
-      text-align: center;
     }
 
     a {
       text-decoration: none;
-      color: #111;
-    }
-
-    a:hover {
-      color: #8fd3c8;
+      color: #fff;
     }
 
     .btn {
@@ -48,6 +44,7 @@
       border-radius: 6px;
       font-size: 16px;
       text-decoration: none;
+      display: inline-block;
     }
 
     .btn:hover {
@@ -77,23 +74,23 @@
       font-family: 'Poppins', sans-serif;
       font-size: 24px;
       font-weight: 600;
+      color: #111;
     }
 
     nav a {
       margin-left: 30px;
       font-size: 14px;
       font-weight: 500;
+      color: #111;
     }
 
-    /* HERO SECTION */
+    nav a:hover {
+      color: #8fd3c8;
+    }
+
+    /* HERO */
     .hero {
-      padding: 120px 20px;
-      text-align: center;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 30px;
+      padding: 160px 20px 80px 20px; /* extra top padding so hero isn't hidden behind nav */
     }
 
     /* MOBILE */
@@ -130,4 +127,10 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Premium
+    <h1>Premium Design & Marketing</h1>
+    <p>From hand-drawn concepts to high-performing ads, we create work that feels intentional, refined, and uniquely yours.</p>
+    <a href="#" class="btn">Start a Project</a>
+  </section>
+
+</body>
+</html>
