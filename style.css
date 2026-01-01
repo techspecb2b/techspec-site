@@ -1,6 +1,37 @@
 /* ======================
    VARIABLES (EDIT HERE)
    ====================== */
+/* ======================
+   FONT SETUP
+   ====================== */
+
+/* Body text */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #111111; /* you can change text color later */
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em; /* subtle polish for luxury feel */
+  margin-bottom: 1rem;
+}
+
+/* Links (optional) */
+a {
+  color: #111111;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8fd3c8; /* accent color placeholder, change as you like */
+}
+
+
 
 :root {
   --bg-color: #ffffff;
