@@ -35,7 +35,7 @@
       margin: 20px auto 40px;
     }
 
-    a { text-decoration: none; }
+    a { text-decoration: none; transition: all 0.3s ease; }
 
     .btn {
       padding: 14px 32px;
@@ -44,12 +44,10 @@
       border-radius: 6px;
       font-size: 16px;
       display: inline-block;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    .btn:hover {
-      background-color: #CC0000;
-    }
+    .btn:hover { background-color: #CC0000; transform: translateY(-2px); }
 
     .container {
       max-width: 1100px;
@@ -81,9 +79,7 @@
       padding: 0 20px;
     }
 
-    .logo img {
-      height: 40px;
-    }
+    .logo img { height: 40px; }
 
     nav a {
       margin-left: 30px;
@@ -92,18 +88,14 @@
       color: #fff;
     }
 
-    nav a:hover {
-      color: #f5f5f5;
-    }
+    nav a:hover { color: #f5f5f5; transform: translateY(-2px); }
 
     /* HERO */
     .hero {
       position: relative;
-      min-height: 50vh; /* keep it smaller so white section peeks through */
+      min-height: 50vh;
       padding: 80px 20px 60px;
-      background:
-        linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.35)),
-        url('hero-bg.jpg') center top / cover no-repeat;
+      background: linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.35)), url('hero-bg.jpg') center top / cover no-repeat;
       background-attachment: fixed;
       color: #fff;
       display: flex;
@@ -121,30 +113,17 @@
       z-index: 1;
     }
 
-    .hero * {
-      position: relative;
-      z-index: 2;
-    }
+    .hero * { position: relative; z-index: 2; }
+    .hero h1 { font-size: 48px; margin-bottom: 20px; }
+    .hero p { color: #ffffff; font-size: 20px; max-width: 600px; margin: 0 auto 30px; }
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      color: #ffffff;
-      font-size: 20px;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    /* HERO BUTTON FIXED: original size restored */
+    /* HERO BUTTON FIXED */
     .hero .btn {
-      padding: 14px 32px; /* same as bottom buttons */
+      padding: 14px 32px;
       font-size: 16px;
       border-radius: 6px;
-      width: auto; /* do not stretch full width */
-      max-width: 250px; /* keeps it small on large screens */
+      width: auto;
+      max-width: 250px;
       margin: 0 auto;
     }
 
@@ -168,22 +147,27 @@
       flex: 1 1 250px;
       max-width: 300px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
+      position: relative;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.15);
+      border-top: 4px solid #FF0000;
+    }
+
+    .service-card i {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #FF0000;
     }
 
     /* PORTFOLIO */
     .portfolio {
       padding: 100px 20px;
       background-color: #f7f7f7;
-    }
-
-    .portfolio h2 {
-      margin-bottom: 60px;
+      position: relative;
     }
 
     .portfolio-grid {
@@ -200,11 +184,7 @@
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      position: relative;
     }
 
     .portfolio-item img {
@@ -212,7 +192,26 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.3s ease;
     }
+
+    .portfolio-item::after {
+      content: attr(data-title);
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      opacity: 0;
+      transition: background 0.3s ease, opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover img { transform: scale(1.05); }
+    .portfolio-item:hover::after { opacity: 1; background: rgba(0,0,0,0.35); }
 
     /* TESTIMONIALS */
     .testimonials {
@@ -227,7 +226,12 @@
       background-color: #f7f7f7;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
+    .testimonial-card.show { opacity: 1; transform: translateY(0); }
 
     /* CTA */
     .cta {
@@ -239,13 +243,14 @@
     .cta h2 {
       font-size: 36px;
       margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
     }
 
-    .cta p {
-      color: #f0f0f0;
-      font-size: 20px;
-      margin-bottom: 40px;
-    }
+    .cta h2.show { opacity: 1; transform: translateY(0); }
+
+    .cta p { color: #f0f0f0; font-size: 20px; margin-bottom: 40px; }
 
     /* FOOTER */
     footer {
@@ -255,43 +260,32 @@
       text-align: center;
     }
 
-    footer p {
-      margin: 0;
-      font-size: 14px;
-      color: #aaa;
-    }
+    footer p { margin: 0; font-size: 14px; color: #aaa; }
 
     /* MOBILE */
     @media (max-width: 768px) {
       h1 { font-size: 34px; }
       .nav-inner { flex-direction: column; }
       nav a { margin-left: 0; margin-top: 10px; }
-      .service-card,
-      .portfolio-item,
-      .testimonial-card { width: 90%; max-width: 300px; }
-      .hero {
-        background-attachment: scroll;
-        padding: 80px 20px 60px;
-      }
+      .service-card, .portfolio-item, .testimonial-card { width: 90%; max-width: 300px; }
+      .hero { background-attachment: scroll; padding: 80px 20px 60px; }
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
       .hero .btn { width: 80%; max-width: 250px; }
     }
   </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="logo">
-        <img src="logo.png" alt="TechSpec Logo">
-      </div>
+      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
       <nav>
-        <a href="#">Services</a>
-        <a href="#">Work</a>
-        <a href="#">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Work</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -299,43 +293,32 @@
   <!-- HERO -->
   <section class="hero">
     <h1>Premium Design & Marketing</h1>
-    <p>
-      From hand-drawn concepts to high-performing ads, we create work that feels intentional, refined, and uniquely yours.
-    </p>
+    <p>From hand-drawn concepts to high-performing ads, we create work that feels intentional, refined, and uniquely yours.</p>
     <a href="#" class="btn">Start a Project</a>
   </section>
 
   <!-- SERVICES -->
-  <section class="services">
+  <section class="services" id="services">
     <div class="container">
       <h2>Our Services</h2>
       <div class="services-grid">
-        <div class="service-card">
-          <h3>Branding & Graphic Design</h3>
-          <p>Custom logos, brand identity, and visual assets tailored to your vision.</p>
-        </div>
-        <div class="service-card">
-          <h3>Advertising & Marketing</h3>
-          <p>Facebook & Google Ads campaigns designed to grow your business.</p>
-        </div>
-        <div class="service-card">
-          <h3>Print & Visual Assets</h3>
-          <p>High-quality print materials from business cards to large-scale graphics.</p>
-        </div>
+        <div class="service-card"><i class="fas fa-paint-brush"></i><h3>Branding & Graphic Design</h3><p>Custom logos, brand identity, and visual assets tailored to your vision.</p></div>
+        <div class="service-card"><i class="fas fa-bullhorn"></i><h3>Advertising & Marketing</h3><p>Facebook & Google Ads campaigns designed to grow your business.</p></div>
+        <div class="service-card"><i class="fas fa-print"></i><h3>Print & Visual Assets</h3><p>High-quality print materials from business cards to large-scale graphics.</p></div>
       </div>
     </div>
   </section>
 
   <!-- PORTFOLIO -->
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio">
     <div class="container">
       <h2>Check Out Some Of Our Prints</h2>
       <div class="portfolio-grid">
-        <div class="portfolio-item"><img src="portfolio1.png" alt="Project 1"></div>
-        <div class="portfolio-item"><img src="portfolio2.png" alt="Project 2"></div>
-        <div class="portfolio-item"><img src="portfolio3.png" alt="Project 3"></div>
-        <div class="portfolio-item"><img src="portfolio4.png" alt="Project 4"></div>
-        <div class="portfolio-item"><img src="portfolio5.png" alt="Project 5"></div>
+        <div class="portfolio-item" data-title="Project 1"><img src="portfolio1.png" alt="Project 1"></div>
+        <div class="portfolio-item" data-title="Project 2"><img src="portfolio2.png" alt="Project 2"></div>
+        <div class="portfolio-item" data-title="Project 3"><img src="portfolio3.png" alt="Project 3"></div>
+        <div class="portfolio-item" data-title="Project 4"><img src="portfolio4.png" alt="Project 4"></div>
+        <div class="portfolio-item" data-title="Project 5"><img src="portfolio5.png" alt="Project 5"></div>
       </div>
     </div>
   </section>
@@ -345,18 +328,9 @@
     <div class="container">
       <h2>What Our Clients Say</h2>
       <div class="services-grid">
-        <div class="testimonial-card">
-          <p>"Amazing results! Our branding has never looked better."</p>
-          <h3>- Client A</h3>
-        </div>
-        <div class="testimonial-card">
-          <p>"The print materials exceeded our expectations — high quality and fast."</p>
-          <h3>- Client B</h3>
-        </div>
-        <div class="testimonial-card">
-          <p>"Marketing campaigns that really deliver. Highly recommend."</p>
-          <h3>- Client C</h3>
-        </div>
+        <div class="testimonial-card"><p>"Amazing results! Our branding has never looked better."</p><h3>- Client A</h3></div>
+        <div class="testimonial-card"><p>"The print materials exceeded our expectations — high quality and fast."</p><h3>- Client B</h3></div>
+        <div class="testimonial-card"><p>"Marketing campaigns that really deliver. Highly recommend."</p><h3>- Client C</h3></div>
       </div>
     </div>
   </section>
@@ -380,9 +354,13 @@
   <!-- NAV SCROLL SCRIPT -->
   <script>
     const nav = document.querySelector('header.nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 10);
-    });
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
+
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const ctaHeading = document.querySelector('.cta h2');
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); }); }, { threshold: 0.3 });
+    testimonialCards.forEach(card => observer.observe(card));
+    observer.observe(ctaHeading);
   </script>
 
 </body>
