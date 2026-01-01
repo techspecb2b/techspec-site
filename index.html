@@ -99,8 +99,8 @@
     /* HERO (parallax + grain) */
     .hero {
       position: relative;
-      min-height: 60vh; /* reduced height */
-      padding: 120px 20px 80px; /* reasonable padding */
+      min-height: 50vh; /* reduced height so next section shows */
+      padding: 80px 20px 60px; /* less vertical padding */
       background:
         linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.35)),
         url('hero-bg.jpg') center top / cover no-repeat;
@@ -138,10 +138,11 @@
       margin: 0 auto 30px;
     }
 
-    /* HERO BUTTON FIX */
+    /* HERO BUTTON FIX: same size as bottom CTA button */
     .hero .btn {
-      padding: 12px 24px; /* smaller and proportional */
+      padding: 14px 32px;
       font-size: 16px;
+      border-radius: 6px;
     }
 
     /* SERVICES */
@@ -267,7 +268,7 @@
       .testimonial-card { width: 90%; max-width: 300px; }
       .hero {
         background-attachment: scroll;
-        padding: 120px 20px 80px;
+        padding: 80px 20px 60px;
       }
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
@@ -293,7 +294,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Print. Design. Marketing That Moves Business.</h1>
+    <h1>Print. Design. Marketing That Delivers.</h1>
     <p>
       High-impact print, bold design, and results-driven marketing —
       all delivered at affordable rates for startups, growing brands,
