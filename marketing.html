@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -392,6 +391,29 @@
       border-right: none;
     }
 
+    .pricing-footer {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .pricing-footer div {
+      padding: 25px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .pricing-footer div:last-child {
+      border-right: none;
+    }
+
+    .tier-price-bottom {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
     .check {
       color: #00C851;
       font-size: 24px;
@@ -532,12 +554,14 @@
       .nav-inner nav { display: none; }
 
       .pricing-header,
-      .pricing-row {
+      .pricing-row,
+      .pricing-footer {
         grid-template-columns: 1fr;
       }
 
       .pricing-header div:not(:first-child),
-      .pricing-row div:not(:first-child) {
+      .pricing-row div:not(:first-child),
+      .pricing-footer div:not(:first-child) {
         display: none;
       }
 
@@ -552,12 +576,14 @@
 
     @media (min-width: 769px) and (max-width: 1024px) {
       .pricing-header,
-      .pricing-row {
+      .pricing-row,
+      .pricing-footer {
         grid-template-columns: 2fr 1fr 1fr 1fr;
       }
 
       .pricing-header div:last-child,
-      .pricing-row div:last-child {
+      .pricing-row div:last-child,
+      .pricing-footer div:last-child {
         display: none;
       }
     }
@@ -648,81 +674,61 @@
           <div>Features</div>
           <div>
             <div class="tier-name">Starter</div>
-            <div class="tier-price">$149/mo</div>
           </div>
           <div>
             <div class="tier-name">Pro</div>
-            <div class="tier-price">$350/mo</div>
           </div>
           <div>
             <div class="tier-name">Elite</div>
-            <div class="tier-price">$525/mo</div>
           </div>
           <div>
             <div class="tier-name">Elite+</div>
-            <div class="tier-price">Contact</div>
           </div>
         </div>
 
         <!-- Rows -->
         <div class="pricing-row">
-          <div>Social Media Posts per Month</div>
-          <div>12</div>
-          <div>20</div>
-          <div>30</div>
-          <div>Unlimited</div>
+          <div>Number of Posts per Month</div>
+          <div>12+</div>
+          <div>12+</div>
+          <div>12+</div>
+          <div>Contact</div>
         </div>
 
         <div class="pricing-row">
           <div>Platforms Managed</div>
-          <div>2</div>
-          <div>3</div>
-          <div>5</div>
-          <div>All</div>
+          <div>1-3</div>
+          <div>1</div>
+          <div>2-3</div>
+          <div>Contact</div>
         </div>
 
         <div class="pricing-row">
-          <div>Facebook Ads Management</div>
-          <div><i class="fas fa-times cross"></i></div>
+          <div>Content Creation</div>
+          <div><i class="fas fa-check check"></i></div>
           <div><i class="fas fa-check check"></i></div>
           <div><i class="fas fa-check check"></i></div>
           <div><i class="fas fa-check check"></i></div>
         </div>
 
         <div class="pricing-row">
-          <div>Google Ads Management</div>
+          <div>Ad Accounts Managed</div>
+          <div>0</div>
+          <div>1</div>
+          <div>2+</div>
+          <div>Contact</div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Landing Page</div>
           <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-check check"></i></div>
           <div><i class="fas fa-check check"></i></div>
           <div><i class="fas fa-check check"></i></div>
         </div>
 
         <div class="pricing-row">
           <div>Email Marketing Campaigns</div>
-          <div>1/month</div>
-          <div>2/month</div>
-          <div>4/month</div>
-          <div>Unlimited</div>
-        </div>
-
-        <div class="pricing-row">
-          <div>Monthly Analytics Report</div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-        </div>
-
-        <div class="pricing-row">
-          <div>Content Creation</div>
-          <div>Basic</div>
-          <div>Advanced</div>
-          <div>Premium</div>
-          <div>Custom</div>
-        </div>
-
-        <div class="pricing-row">
-          <div>Dedicated Account Manager</div>
           <div><i class="fas fa-times cross"></i></div>
           <div><i class="fas fa-times cross"></i></div>
           <div><i class="fas fa-check check"></i></div>
@@ -730,15 +736,7 @@
         </div>
 
         <div class="pricing-row">
-          <div>Ad Spend Budget (Monthly)</div>
-          <div>$500+</div>
-          <div>$1,000+</div>
-          <div>$2,500+</div>
-          <div>$5,000+</div>
-        </div>
-
-        <div class="pricing-row">
-          <div>A/B Testing</div>
+          <div>Analytics Reports</div>
           <div><i class="fas fa-times cross"></i></div>
           <div><i class="fas fa-check check"></i></div>
           <div><i class="fas fa-check check"></i></div>
@@ -746,19 +744,36 @@
         </div>
 
         <div class="pricing-row">
-          <div>Custom Strategy Sessions</div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div>Quarterly</div>
-          <div>Monthly</div>
-          <div>Weekly</div>
+          <div>Discounts on Additional Work</div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
         </div>
 
         <div class="pricing-row">
-          <div>24/7 Support</div>
+          <div>Contract Required</div>
           <div><i class="fas fa-times cross"></i></div>
           <div><i class="fas fa-times cross"></i></div>
           <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-times cross"></i></div>
+        </div>
+
+        <!-- Pricing Footer -->
+        <div class="pricing-footer">
+          <div></div>
+          <div>
+            <div class="tier-price-bottom">$499/mo</div>
+          </div>
+          <div>
+            <div class="tier-price-bottom">$999/mo</div>
+          </div>
+          <div>
+            <div class="tier-price-bottom">$1,999/mo</div>
+          </div>
+          <div>
+            <div class="tier-price-bottom">Custom</div>
+          </div>
         </div>
       </div>
     </div>
