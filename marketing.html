@@ -42,40 +42,42 @@
     a { text-decoration: none; transition: all 0.3s ease; }
 
     .btn {
-      padding: 16px 40px;
-      background-color: #FF0000;
-      color: #fff;
-      border-radius: 6px;
+      padding: 18px 45px;
+      background: #fff;
+      color: #FF0000;
+      border-radius: 50px;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       display: inline-block;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      border: 3px solid #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .btn::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
     }
 
     .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .btn:hover { 
-      background-color: #CC0000; 
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+      left: 0;
     }
 
     .container {
@@ -204,46 +206,13 @@
     .hero {
       position: relative;
       padding: 120px 20px 100px;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      background: linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
+                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><style>.line{fill:none;stroke:%23000;stroke-width:2;opacity:0.15;}</style></defs><circle class="line" cx="200" cy="150" r="80"/><rect class="line" x="350" y="80" width="120" height="120" rx="10"/><polygon class="line" points="600,100 680,180 600,260 520,180"/><path class="line" d="M800,120 L880,120 L920,180 L880,240 L800,240 L760,180 Z"/><circle class="line" cx="150" cy="400" r="60"/><rect class="line" x="950" y="350" width="100" height="100" rx="50"/><line class="line" x1="100" y1="100" x2="250" y2="100"/><line class="line" x1="550" y1="400" x2="700" y2="400"/><polyline class="line" points="300,450 350,400 400,450 450,400"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: #fff;
       text-align: center;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
-        linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
-        linear-gradient(30deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
-        linear-gradient(150deg, rgba(255,255,255,0.03) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.03) 87.5%, rgba(255,255,255,0.03)),
-        linear-gradient(60deg, rgba(0,0,0,0.05) 25%, transparent 25.5%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05)),
-        linear-gradient(60deg, rgba(0,0,0,0.05) 25%, transparent 25.5%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05));
-      background-size: 80px 140px;
-      background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
-      opacity: 0.4;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: float 20s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-50px, 50px); }
     }
 
     .hero * { position: relative; z-index: 2; }
@@ -508,34 +477,14 @@
     /* CTA SECTION */
     .cta {
       padding: 100px 20px;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      background: linear-gradient(135deg, rgba(255,0,0,0.9) 0%, rgba(204,0,0,0.95) 100%),
+                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><style>.line{fill:none;stroke:%23000;stroke-width:2;opacity:0.12;}</style></defs><rect class="line" x="100" y="100" width="100" height="100" rx="10"/><circle class="line" cx="350" cy="150" r="70"/><polygon class="line" points="550,100 620,150 550,200 480,150"/><path class="line" d="M750,120 L820,140 L840,200 L750,220 L680,180 Z"/><rect class="line" x="950" y="120" width="80" height="80" rx="40"/><line class="line" x1="150" y1="280" x2="300" y2="280"/><polyline class="line" points="500,320 550,280 600,320"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: #fff;
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,0.03) 35px, rgba(255,255,255,0.03) 70px);
-      opacity: 0.5;
-    }
-
-    .cta::after {
-      content: '';
-      position: absolute;
-      bottom: -100px;
-      left: -100px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);
-      border-radius: 50%;
     }
 
     .cta * { position: relative; z-index: 2; }
