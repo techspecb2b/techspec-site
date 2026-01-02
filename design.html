@@ -400,7 +400,34 @@
       color: #666;
       font-size: 16px;
       line-height: 1.8;
-      margin: 0;
+      margin: 0 0 20px 0;
+    }
+
+    .capability-specs {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      border-left: 3px solid #FF0000;
+      margin-top: 15px;
+    }
+
+    .capability-specs strong {
+      color: #333;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .capability-specs ul {
+      margin: 5px 0 0 20px;
+      padding: 0;
+    }
+
+    .capability-specs li {
+      font-size: 14px;
+      color: #666;
+      margin: 5px 0;
+      line-height: 1.6;
     }
 
     /* LOGO SHOWCASE */
@@ -1220,9 +1247,27 @@
 
     // Capability modal functions
     function showCapabilityInfo(title, description) {
-      document.getElementById('modalTitle').textContent = title;
-      document.getElementById('modalDescription').textContent = description;
-      document.getElementById('capabilityModal').classList.add('show');
+      const modal = document.getElementById('capabilityModal');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      
+      modalTitle.textContent = title;
+      
+      // Create enhanced description with specs
+      modalDescription.innerHTML = `
+        <p>${description}</p>
+        <div class="capability-specs">
+          <strong>What's Included:</strong>
+          <ul>
+            <li>Unlimited revisions until you're satisfied</li>
+            <li>High-resolution files in multiple formats</li>
+            <li>Fast turnaround time</li>
+            <li>Professional design tailored to your brand</li>
+          </ul>
+        </div>
+      `;
+      
+      modal.classList.add('show');
       document.body.style.overflow = 'hidden';
     }
 
