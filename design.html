@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Services - TechSpec</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+    }
+
+    h1 { font-size: 52px; line-height: 1.2; }
+    h2 { font-size: 36px; }
+    h3 { font-size: 24px; }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .btn {
+      padding: 16px 40px;
+      background-color: #FF0000;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn:hover { 
+      background-color: #CC0000; 
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* GRAIN OVERLAY */
+    .grain-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+    }
+
+    /* NAVIGATION */
+    header.nav {
+      background-color: #FF0000;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header.nav.scrolled {
+      background-color: #CC0000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo img { height: 40px; }
+
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #f5f5f5; }
+
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #111;
+      transition: right 0.3s ease;
+      z-index: 999;
+      padding: 80px 20px 20px;
+    }
+
+    .side-menu.active { right: 0; }
+
+    .side-menu a {
+      display: block;
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .side-menu a:hover { color: #FF0000; }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 998;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 120px 20px 100px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.1); }
+    }
+
+    .hero * { position: relative; z-index: 2; }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero .tagline {
+      font-size: 28px;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #f0f0f0;
+      max-width: 900px;
+      margin: 0 auto 40px;
+    }
+
+    /* DESIGN CAPABILITIES */
+    .design-capabilities {
+      padding: 100px 20px;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .design-capabilities h2 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .capabilities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .capability-item {
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #f7f7f7 0%, #efefef 100%);
+      border-radius: 6px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      border-left: 3px solid #FF0000;
+      transition: all 0.3s ease;
+    }
+
+    .capability-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(255,0,0,0.15);
+      background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+    }
+
+    /* LOGO SHOWCASE */
+    .logo-showcase {
+      padding: 100px 20px;
+      background-color: #f7f7f7;
+      position: relative;
+    }
+
+    .logo-showcase h2 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .logo-showcase > p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-size: 20px;
+    }
+
+    .logo-grid {
+      position: relative;
+      max-width: 1100px;
+      height: 800px;
+      margin: 0 auto;
+    }
+
+    .logo-box {
+      position: absolute;
+      background: #fff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .logo-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,0,0,0.05) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .logo-box:hover {
+      transform: scale(1.15);
+      box-shadow: 0 15px 40px rgba(255,0,0,0.25);
+      z-index: 10;
+    }
+
+    .logo-box:hover::before {
+      opacity: 1;
+    }
+
+    .logo-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo-placeholder {
+      font-size: 36px;
+      color: #ddd;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Logo positioning - creative balanced layout */
+    .logo-box:nth-child(1) { width: 180px; height: 180px; top: 20px; left: 5%; }
+    .logo-box:nth-child(2) { width: 220px; height: 220px; top: 0; left: 25%; }
+    .logo-box:nth-child(3) { width: 160px; height: 160px; top: 50px; left: 50%; }
+    .logo-box:nth-child(4) { width: 200px; height: 200px; top: 10px; right: 8%; }
+    
+    .logo-box:nth-child(5) { width: 190px; height: 190px; top: 240px; left: 2%; }
+    .logo-box:nth-child(6) { width: 170px; height: 170px; top: 260px; left: 22%; }
+    .logo-box:nth-child(7) { width: 210px; height: 210px; top: 250px; left: 42%; }
+    .logo-box:nth-child(8) { width: 180px; height: 180px; top: 230px; right: 5%; }
+    
+    .logo-box:nth-child(9) { width: 200px; height: 200px; top: 490px; left: 8%; }
+    .logo-box:nth-child(10) { width: 160px; height: 160px; top: 510px; left: 30%; }
+    .logo-box:nth-child(11) { width: 190px; height: 190px; top: 480px; left: 50%; }
+    .logo-box:nth-child(12) { width: 220px; height: 220px; top: 500px; right: 3%; }
+
+    /* MOCKUP SECTION */
+    .mockup-section {
+      padding: 100px 20px;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .mockup-section h2 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .mockup-section > p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-size: 20px;
+    }
+
+    .mockup-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .mockup-image {
+      flex: 1;
+      min-width: 300px;
+      max-width: 450px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .mockup-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .mockup-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .mockup-arrow {
+      font-size: 60px;
+      color: #FF0000;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+    }
+
+    .mockup-placeholder {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    /* SOCIAL MEDIA ADS */
+    .social-ads-section {
+      padding: 100px 20px;
+      background-color: #f7f7f7;
+      position: relative;
+    }
+
+    .social-ads-content {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .social-ads-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .social-ads-text h2 {
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .social-ads-text p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .social-ads-images {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      position: relative;
+      height: 350px;
+    }
+
+    .social-ad-card {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .social-ad-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .social-ad-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .social-ad-card:nth-child(1) {
+      top: 20px;
+      left: 0;
+      transform: rotate(-6deg);
+      z-index: 1;
+    }
+
+    .social-ad-card:nth-child(2) {
+      top: 40px;
+      left: 50px;
+      transform: rotate(2deg);
+      z-index: 2;
+    }
+
+    .social-ad-card:nth-child(3) {
+      top: 60px;
+      left: 100px;
+      transform: rotate(-4deg);
+      z-index: 3;
+    }
+
+    .social-ad-card:hover {
+      transform: rotate(0deg) scale(1.08);
+      z-index: 10;
+      box-shadow: 0 20px 50px rgba(255,0,0,0.3);
+    }
+
+    /* CTA SECTION */
+    .cta {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    .cta * { position: relative; z-index: 2; }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #f0f0f0;
+      font-size: 20px;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .btn {
+      background: #fff;
+      color: #FF0000;
+      font-size: 20px;
+      padding: 18px 50px;
+    }
+
+    .cta .btn:hover {
+      background: #f0f0f0;
+      color: #CC0000;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p { margin: 0; font-size: 14px; color: #aaa; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 38px; }
+      .hero .tagline { font-size: 20px; }
+      .hero p { font-size: 18px; }
+      
+      .menu-toggle { display: block; }
+      .nav-inner nav { display: none; }
+
+      .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .capability-item {
+        font-size: 13px;
+        padding: 10px 12px;
+      }
+
+      .logo-grid {
+        height: 600px;
+      }
+
+      .logo-box:nth-child(1) { width: 120px; height: 120px; top: 10px; left: 5%; }
+      .logo-box:nth-child(2) { width: 140px; height: 140px; top: 0; left: 45%; }
+      .logo-box:nth-child(3) { width: 110px; height: 110px; top: 30px; right: 5%; }
+      
+      .logo-box:nth-child(4) { width: 130px; height: 130px; top: 160px; left: 2%; }
+      .logo-box:nth-child(5) { width: 120px; height: 120px; top: 170px; left: 38%; }
+      .logo-box:nth-child(6) { width: 110px; height: 110px; top: 150px; right: 8%; }
+      
+      .logo-box:nth-child(7) { width: 135px; height: 135px; top: 320px; left: 5%; }
+      .logo-box:nth-child(8) { width: 115px; height: 115px; top: 330px; left: 42%; }
+      .logo-box:nth-child(9) { width: 125px; height: 125px; top: 310px; right: 5%; }
+      
+      .logo-box:nth-child(10) { width: 120px; height: 120px; top: 480px; left: 8%; }
+      .logo-box:nth-child(11) { width: 130px; height: 130px; top: 470px; right: 35%; }
+      .logo-box:nth-child(12) { width: 110px; height: 110px; top: 490px; right: 5%; }
+
+      .mockup-arrow {
+        font-size: 40px;
+        transform: rotate(90deg);
+      }
+
+      .social-ads-content {
+        flex-direction: column-reverse;
+      }
+
+      .social-ads-images {
+        height: 320px;
+      }
+
+      .social-ad-card {
+        width: 200px;
+        height: 200px;
+      }
+
+      .social-ad-card:nth-child(1) {
+        left: 10px;
+        top: 30px;
+      }
+
+      .social-ad-card:nth-child(2) {
+        left: 50px;
+        top: 50px;
+      }
+
+      .social-ad-card:nth-child(3) {
+        left: 90px;
+        top: 70px;
+      }
+
+      .cta h2 { font-size: 32px; }
+      .cta p { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
+    <a href="print.html" onclick="toggleMenu()">Print</a>
+    <a href="design.html" onclick="toggleMenu()">Design</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Creative Design That Captivates</h1>
+      <p class="tagline">From Hand-Drawn Art to High-Class Branding</p>
+      <p>Everything done in-house from scratch. Whether you need a playful hand-drawn mascot or a sleek corporate logo, we craft custom designs for businesses of all types—at prices that work for everyone.</p>
+    </div>
+  </section>
+
+  <!-- DESIGN CAPABILITIES -->
+  <section class="design-capabilities">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>What We Design</h2>
+      
+      <div class="capabilities-grid">
+        <div class="capability-item">Logos</div>
+        <div class="capability-item">Branding Guides</div>
+        <div class="capability-item">Social Media Ads</div>
+        <div class="capability-item">Social Media Posts</div>
+        <div class="capability-item">Social Media Banners</div>
+        <div class="capability-item">Mascots</div>
+        <div class="capability-item">Custom/Hand Drawn Images</div>
+        <div class="capability-item">Window Signage</div>
+        <div class="capability-item">Door Signage</div>
+        <div class="capability-item">Banners</div>
+        <div class="capability-item">Vehicle Wraps</div>
+        <div class="capability-item">Websites</div>
+        <div class="capability-item">Business Cards</div>
+        <div class="capability-item">Brochures</div>
+        <div class="capability-item">Signs</div>
+        <div class="capability-item">Channel Letter Signs</div>
+        <div class="capability-item">Door Hangers</div>
+        <div class="capability-item">Shirts</div>
+        <div class="capability-item">Hoodies</div>
+        <div class="capability-item">Hats</div>
+        <div class="capability-item">Sports Uniforms</div>
+        <div class="capability-item">Canopies</div>
+        <div class="capability-item">Table Cloths</div>
+        <div class="capability-item">Packaging</div>
+        <div class="capability-item">Website Assets</div>
+        <div class="capability-item">And Way More...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO SHOWCASE -->
+  <section class="logo-showcase">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>Logo Design Portfolio</h2>
+      <p>From startup brands to established businesses, we create memorable logos that stand the test of time.</p>
+      
+      <div class="logo-grid">
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+        <div class="logo-box">
+          <i class="fas fa-image logo-placeholder"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOCKUP TO REALITY -->
+  <section class="mockup-section">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>From Concept to Reality</h2>
+      <p>We don't just design—we bring your vision to life. See how our storefront designs transform from digital mockup to stunning real-world installation.</p>
+      
+      <div class="mockup-container">
+        <div class="mockup-image">
+          <div class="mockup-placeholder">Digital Mockup</div>
+        </div>
+        
+        <div class="mockup-arrow">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        
+        <div class="mockup-image">
+          <div class="mockup-placeholder">Final Installation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL MEDIA ADS -->
+  <section class="social-ads-section">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <div class="social-ads-content">
+        <div class="social-ads-text">
+          <h2>Social Media Ads That Convert</h2>
+          <p>Eye-catching ad designs that stop the scroll and drive engagement. We create thumb-stopping visuals optimized for Facebook, Instagram, and all major platforms.</p>
+          <p>From product launches to seasonal promotions, our ads combine compelling visuals with strategic messaging to maximize your ROI.</p>
+          <p><strong>Professional designs. Proven results. Affordable rates.</strong></p>
+        </div>
+        
+        <div class="social-ads-images">
+          <div class="social-ad-card">
+            <div class="social-ad-placeholder">Ad Example 1</div>
+          </div>
+          <div class="social-ad-card">
+            <div class="social-ad-placeholder">Ad Example 2</div>
+          </div>
+          <div class="social-ad-card">
+            <div class="social-ad-placeholder">Ad Example 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Bring Your Vision to Life?</h2>
+      <p>Every project is unique, and so is our pricing. While we offer competitive standard rates, we'd love to hear the details of your project to provide an accurate quote. Let's create something amazing together.</p>
+      <a href="contact.html" class="btn">Get Your Custom Quote</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    // Navigation scroll effect
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+  </script>
+</body>
+</html>
