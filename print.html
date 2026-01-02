@@ -467,11 +467,89 @@
       font-size: 16px;
       color: #333;
       transition: all 0.2s ease;
+      cursor: pointer;
+      position: relative;
+      padding-right: 40px;
+    }
+
+    .product-item::after {
+      content: '+';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #FF0000;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .product-item.expanded::after {
+      content: '−';
+      transform: translateY(-50%) rotate(180deg);
     }
 
     .product-item:hover {
       transform: translateX(5px);
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff5f5;
+    }
+
+    .product-details {
+      display: none;
+      padding: 15px;
+      background: #f9f9f9;
+      border-left: 3px solid #FF0000;
+      margin-top: 10px;
+      border-radius: 6px;
+      animation: slideDown 0.3s ease;
+    }
+
+    .product-details.show {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
+    }
+
+    .product-details h4 {
+      color: #FF0000;
+      margin: 0 0 10px 0;
+      font-size: 16px;
+    }
+
+    .product-details p {
+      color: #666;
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .product-specs {
+      background: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    .product-specs strong {
+      color: #333;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .product-specs ul {
+      margin: 5px 0 0 20px;
+      padding: 0;
+    }
+
+    .product-specs li {
+      font-size: 13px;
+      color: #666;
+      margin: 3px 0;
     }
 
     .close-list {
@@ -1047,14 +1125,37 @@
       // Add active class to clicked card
       element.classList.add('active');
       
-      // Create product list HTML
-      const productsHTML = data.products.map(product => 
-        `<div class="product-item">${product}</div>`
-      ).join('');
+      // Create product list HTML with expandable details
+      const productsHTML = data.products.map((product, index) => {
+        const productId = `product-${category}-${index}`;
+        return `
+          <div class="product-item-wrapper">
+            <div class="product-item" onclick="toggleProductDetails('${productId}')">
+              ${product}
+            </div>
+            <div class="product-details" id="${productId}">
+              <h4>${product}</h4>
+              <p>Custom ${product.toLowerCase()} with your design. Perfect for your business needs.</p>
+              <div class="product-specs">
+                <strong>Available Options:</strong>
+                <ul>
+                  <li>Multiple sizes and materials</li>
+                  <li>Full color printing</li>
+                  <li>Fast turnaround available</li>
+                  <li>Bulk discounts on large orders</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
       
       modalContent.innerHTML = `
         <h3>${data.title}</h3>
         <p>${data.description}</p>
+        <p style="font-size: 14px; color: #999; margin-bottom: 20px; font-style: italic;">
+          <i class="fas fa-hand-pointer" style="color: #FF0000;"></i> Click any product for details
+        </p>
         <div class="product-columns">
           ${productsHTML}
         </div>
@@ -1063,6 +1164,23 @@
       modal.classList.add('show');
       document.body.style.overflow = 'hidden';
       currentCategory = category;
+    }
+
+    function toggleProductDetails(productId) {
+      const details = document.getElementById(productId);
+      const item = details.previousElementSibling;
+      
+      // Close all other details first
+      document.querySelectorAll('.product-details').forEach(d => {
+        if (d.id !== productId) {
+          d.classList.remove('show');
+          d.previousElementSibling.classList.remove('expanded');
+        }
+      });
+      
+      // Toggle current item
+      details.classList.toggle('show');
+      item.classList.toggle('expanded');
     }
 
     function closeModal(event) {
