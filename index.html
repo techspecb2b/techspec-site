@@ -768,6 +768,10 @@
           <div class="portfolio-item"><img src="portfolio6.png" alt="Project 6"></div>
           <div class="portfolio-item"><img src="portfolio7.png" alt="Project 7"></div>
           <div class="portfolio-item"><img src="portfolio8.png" alt="Project 8"></div>
+          <div class="portfolio-item"><img src="portfolio9.png" alt="Project 9"></div>
+          <div class="portfolio-item"><img src="portfolio10.png" alt="Project 10"></div>
+          <div class="portfolio-item"><img src="portfolio11.png" alt="Project 11"></div>
+          <div class="portfolio-item"><img src="portfolio12.png" alt="Project 12"></div>
         </div>
         <button class="carousel-btn next" onclick="moveCarousel(1)">
           <i class="fas fa-chevron-right"></i>
@@ -893,7 +897,15 @@
     const carousel = document.getElementById('carousel');
     const items = document.querySelectorAll('.portfolio-item');
     const totalItems = items.length;
-    const itemsToShow = 3;
+    let itemWidth = 430; // 400px width + 30px gap (desktop)
+    let itemsToShow = 2; // Show 2 full items at a time (desktop)
+    
+    // Adjust for mobile
+    if(window.innerWidth <= 768) {
+      itemWidth = 330; // 300px width + 30px gap
+      itemsToShow = 1; // Show 1 item at a time on mobile
+    }
+    
     const maxIndex = Math.max(0, totalItems - itemsToShow);
 
     // Create dots
@@ -907,7 +919,7 @@
     }
 
     function updateCarousel() {
-      const offset = currentIndex * -340;
+      const offset = currentIndex * -itemWidth;
       carousel.style.transform = `translateX(${offset}px)`;
       
       // Update dots
