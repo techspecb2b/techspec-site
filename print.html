@@ -1040,6 +1040,10 @@
           <div class="gallery-item"><img src="portfolio6.png" alt="Print Sample 6"></div>
           <div class="gallery-item"><img src="portfolio7.png" alt="Print Sample 7"></div>
           <div class="gallery-item"><img src="portfolio8.png" alt="Print Sample 8"></div>
+          <div class="gallery-item"><img src="portfolio9.png" alt="Print Sample 9"></div>
+          <div class="gallery-item"><img src="portfolio10.png" alt="Print Sample 10"></div>
+          <div class="gallery-item"><img src="portfolio11.png" alt="Print Sample 11"></div>
+          <div class="gallery-item"><img src="portfolio12.png" alt="Print Sample 12"></div>
         </div>
         <button class="carousel-btn next" onclick="moveGallery(1)">
           <i class="fas fa-chevron-right"></i>
@@ -1272,7 +1276,15 @@
     const galleryCarousel = document.getElementById('galleryCarousel');
     const galleryItems = document.querySelectorAll('.gallery-item');
     const totalGalleryItems = galleryItems.length;
-    const itemsToShow = 3;
+    let itemWidth = 430; // 400px width + 30px gap (desktop)
+    let itemsToShow = 2; // Show 2 full items at a time (desktop)
+    
+    // Adjust for mobile
+    if(window.innerWidth <= 768) {
+      itemWidth = 330; // 300px width + 30px gap
+      itemsToShow = 1; // Show 1 item at a time on mobile
+    }
+    
     const maxGalleryIndex = Math.max(0, totalGalleryItems - itemsToShow);
 
     // Create dots
@@ -1286,7 +1298,7 @@
     }
 
     function updateGallery() {
-      const offset = currentGalleryIndex * -370;
+      const offset = currentGalleryIndex * -itemWidth;
       galleryCarousel.style.transform = `translateX(${offset}px)`;
       
       // Update dots
