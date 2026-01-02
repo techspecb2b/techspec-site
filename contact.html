@@ -691,6 +691,32 @@
 
   <!-- SCRIPTS -->
   <script>
+    // Check if redirected back with success parameter
+    window.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('success') === 'true') {
+        // Hide form
+        document.getElementById('contactForm').style.display = 'none';
+        
+        // Show success message
+        const successMessage = document.getElementById('successMessage');
+        successMessage.classList.add('show');
+        
+        // Show secondary message after 1 second
+        setTimeout(() => {
+          document.getElementById('secondaryMessage').classList.add('show');
+        }, 1000);
+        
+        // Show restart button after 2 seconds
+        setTimeout(() => {
+          document.getElementById('restartBtn').classList.add('show');
+        }, 2000);
+        
+        // Clean up URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    });
+
     // Mobile menu toggle
     function toggleMenu() {
       const sideMenu = document.getElementById('sideMenu');
@@ -767,12 +793,16 @@
       }
     });
 
-    // Form submission handler
+    // Form submission handler - Let form submit naturally to Formingo
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
     const secondaryMessage = document.getElementById('secondaryMessage');
     const restartBtn = document.getElementById('restartBtn');
 
+    // Note: We're commenting out the intercept for now to let Formingo handle it naturally
+    // Once we confirm it's working, we can add custom success handling
+    
+    /*
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
@@ -813,6 +843,7 @@
         alert('There was an error submitting the form. Please try again or email brandon@techspec.biz directly.');
       });
     });
+    */
 
     // Reset form function
     function resetForm() {
