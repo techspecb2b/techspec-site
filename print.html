@@ -215,17 +215,30 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: pulse 15s ease-in-out infinite;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.6;
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(10%, 10%) scale(1.1); }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: rotate 30s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .hero * { position: relative; z-index: 2; }
@@ -300,6 +313,11 @@
       margin-bottom: 60px;
     }
 
+    .category-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
     .category-card {
       background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
       padding: 40px 30px;
@@ -348,17 +366,25 @@
 
     /* PRODUCT LIST */
     .product-list-container {
-      max-width: 1000px;
-      margin: 60px auto 0;
-      padding: 50px;
-      background: #f7f7f7;
-      border-radius: 12px;
+      max-width: none;
+      margin: 20px 0 0;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
       display: none;
+      grid-column: 1;
     }
 
     .product-list-container.show {
       display: block;
-      animation: fadeIn 0.5s ease;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .product-list-inner {
+      background: #f7f7f7;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     @keyframes fadeIn {
@@ -534,12 +560,27 @@
     .cta::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: pulse 15s ease-in-out infinite;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      opacity: 0.5;
+    }
+
+    .cta::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -150px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+      border-radius: 50%;
+      transform: translateY(-50%);
     }
 
     .cta * { position: relative; z-index: 2; }
@@ -605,7 +646,6 @@
 
     .footer-logo img {
       height: 50px;
-      filter: brightness(0) invert(1);
     }
 
     .footer-social {
@@ -732,45 +772,60 @@
       <h2>What Can We Print?</h2>
       
       <div class="categories-grid">
-        <div class="category-card" onclick="showProducts('business')">
-          <i class="fas fa-id-card"></i>
-          <h3>Business Cards</h3>
-          <p>Premium cards in every style & finish</p>
+        <div class="category-wrapper">
+          <div class="category-card" onclick="showProducts('business', this)">
+            <i class="fas fa-id-card"></i>
+            <h3>Business Cards</h3>
+            <p>Premium cards in every style & finish</p>
+          </div>
+          <div class="product-list-container" id="list-business"></div>
         </div>
         
-        <div class="category-card" onclick="showProducts('marketing')">
-          <i class="fas fa-bullhorn"></i>
-          <h3>Marketing Materials</h3>
-          <p>Flyers, brochures, door hangers & more</p>
+        <div class="category-wrapper">
+          <div class="category-card" onclick="showProducts('marketing', this)">
+            <i class="fas fa-bullhorn"></i>
+            <h3>Marketing Materials</h3>
+            <p>Flyers, brochures, door hangers & more</p>
+          </div>
+          <div class="product-list-container" id="list-marketing"></div>
         </div>
         
-        <div class="category-card" onclick="showProducts('signs')">
-          <i class="fas fa-rectangle-ad"></i>
-          <h3>Signs & Banners</h3>
-          <p>Indoor & outdoor signage solutions</p>
+        <div class="category-wrapper">
+          <div class="category-card" onclick="showProducts('signs', this)">
+            <i class="fas fa-rectangle-ad"></i>
+            <h3>Signs & Banners</h3>
+            <p>Indoor & outdoor signage solutions</p>
+          </div>
+          <div class="product-list-container" id="list-signs"></div>
         </div>
         
-        <div class="category-card" onclick="showProducts('apparel')">
-          <i class="fas fa-tshirt"></i>
-          <h3>Apparel & Merch</h3>
-          <p>T-shirts, hats, bags & promotional items</p>
+        <div class="category-wrapper">
+          <div class="category-card" onclick="showProducts('apparel', this)">
+            <i class="fas fa-tshirt"></i>
+            <h3>Apparel & Merch</h3>
+            <p>T-shirts, hats, bags & promotional items</p>
+          </div>
+          <div class="product-list-container" id="list-apparel"></div>
         </div>
         
-        <div class="category-card" onclick="showProducts('stickers')">
-          <i class="fas fa-sticker-mule"></i>
-          <h3>Stickers & Labels</h3>
-          <p>Custom stickers, decals & product labels</p>
+        <div class="category-wrapper">
+          <div class="category-card" onclick="showProducts('stickers', this)">
+            <i class="fas fa-sticker-mule"></i>
+            <h3>Stickers & Labels</h3>
+            <p>Custom stickers, decals & product labels</p>
+          </div>
+          <div class="product-list-container" id="list-stickers"></div>
         </div>
         
-        <div class="category-card" onclick="showProducts('specialty')">
-          <i class="fas fa-star"></i>
-          <h3>Specialty Items</h3>
-          <p>Magnets, packaging, calendars & more</p>
+        <div class="category-wrapper">
+          <div class="category-card" onclick="showProducts('specialty', this)">
+            <i class="fas fa-star"></i>
+            <h3>Specialty Items</h3>
+            <p>Magnets, packaging, calendars & more</p>
+          </div>
+          <div class="product-list-container" id="list-specialty"></div>
         </div>
       </div>
-
-      <!-- PRODUCT LISTS -->
-      <div id="productLists"></div>
     </div>
   </section>
 
@@ -918,9 +973,17 @@
     // Show products function
     let currentCategory = null;
 
-    function showProducts(category) {
-      const container = document.getElementById('productLists');
+    function showProducts(category, element) {
+      const container = document.getElementById(`list-${category}`);
       const data = productData[category];
+      
+      // Close all other dropdowns
+      document.querySelectorAll('.product-list-container').forEach(list => {
+        if(list.id !== `list-${category}`) {
+          list.classList.remove('show');
+          list.innerHTML = '';
+        }
+      });
       
       // Remove active class from all cards
       document.querySelectorAll('.category-card').forEach(card => {
@@ -929,13 +992,14 @@
       
       // If same category clicked, close it
       if (currentCategory === category) {
+        container.classList.remove('show');
         container.innerHTML = '';
         currentCategory = null;
         return;
       }
       
       // Add active class to clicked card
-      event.target.closest('.category-card').classList.add('active');
+      element.classList.add('active');
       
       // Create product list HTML
       const productsHTML = data.products.map(product => 
@@ -943,7 +1007,7 @@
       ).join('');
       
       container.innerHTML = `
-        <div class="product-list-container show">
+        <div class="product-list-inner">
           <div class="product-list-header">
             <h3>${data.title}</h3>
             <p>All products available with custom design and fast turnaround</p>
@@ -952,19 +1016,24 @@
             ${productsHTML}
           </div>
           <div class="close-list">
-            <button onclick="closeProductList()">Close</button>
+            <button onclick="closeProductList('${category}')">Close</button>
           </div>
         </div>
       `;
       
+      container.classList.add('show');
       currentCategory = category;
       
-      // Scroll to product list
-      container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      // Scroll to product list smoothly
+      setTimeout(() => {
+        container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
     }
 
-    function closeProductList() {
-      document.getElementById('productLists').innerHTML = '';
+    function closeProductList(category) {
+      const container = document.getElementById(`list-${category}`);
+      container.classList.remove('show');
+      container.innerHTML = '';
       document.querySelectorAll('.category-card').forEach(card => {
         card.classList.remove('active');
       });
