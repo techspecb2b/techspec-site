@@ -747,15 +747,18 @@
       designAndPrintFields.classList.remove('show');
       commonPrintFields.classList.remove('show');
 
-      // Clear required attributes
+      // Remove ALL required attributes from dynamic fields
       document.getElementById('marketingPlatform').removeAttribute('required');
       document.getElementById('storeLocation').removeAttribute('required');
       document.getElementById('businessType').removeAttribute('required');
       document.getElementById('printService').removeAttribute('required');
       document.getElementById('printType').removeAttribute('required');
       document.getElementById('designRequest').removeAttribute('required');
+      if (document.getElementById('fileUpload')) {
+        document.getElementById('fileUpload').removeAttribute('required');
+      }
 
-      // Show relevant fields
+      // Show relevant fields and add required attributes
       if (this.value === 'marketing') {
         marketingFields.classList.add('show');
         document.getElementById('marketingPlatform').setAttribute('required', 'required');
@@ -790,19 +793,24 @@
       }
     });
 
-    // Form submission with Pageclip
+    // Form elements
     const contactForm = document.getElementById('contactForm');
-    const formContainer = document.getElementById('formContainer');
     const successMessage = document.getElementById('successMessage');
     const secondaryMessage = document.getElementById('secondaryMessage');
     const restartBtn = document.getElementById('restartBtn');
 
-    // Pageclip sends a custom event on successful submission
-    window.addEventListener('load', function() {
-      Pageclip.form(contactForm, {
-        onSubmit: function(event) { },
-        onResponse: function(error, response) {
-          if (!error) {
+    // Wait for Pageclip to be ready and listen for its response
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.Pageclip) {
+        contactForm.addEventListener('pageclip:submit', function() {
+          console.log('Pageclip is submitting...');
+        });
+
+        contactForm.addEventListener('pageclip:response', function(event) {
+          console.log('Pageclip response received:', event);
+          
+          // Check if submission was successful
+          if (event && event.data && event.data.ok) {
             // Hide form
             contactForm.style.display = 'none';
             
@@ -818,9 +826,11 @@
             setTimeout(() => {
               restartBtn.classList.add('show');
             }, 2000);
+          } else {
+            console.error('Submission failed:', event);
           }
-        }
-      });
+        });
+      }
     });
 
     // Reset form function
