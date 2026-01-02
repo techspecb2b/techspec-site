@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Services Terms - TechSpec</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #111;
+    }
+
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { font-size: 28px; margin-top: 50px; margin-bottom: 20px; color: #FF0000; }
+    h3 { font-size: 20px; margin-top: 30px; margin-bottom: 15px; }
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .btn {
+      padding: 18px 45px;
+      background: #fff;
+      color: #FF0000;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 700;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* NAVIGATION */
+    header.nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    header.nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    nav a {
+      color: #333;
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF0000;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* MOBILE MENU */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: #fff;
+      z-index: 1000;
+      padding: 80px 30px 30px;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 15px 0;
+      color: #333;
+      font-weight: 500;
+      font-size: 18px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .side-menu a:hover {
+      color: #FF0000;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav { display: none; }
+      .nav-inner { padding: 15px 20px; }
+    }
+
+    /* TOS CONTENT */
+    .tos-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .tos-hero h1 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .tos-hero p {
+      font-size: 18px;
+      color: #f0f0f0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tos-content {
+      padding: 80px 20px;
+      background: #fff;
+    }
+
+    .tos-content p {
+      margin-bottom: 20px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .tos-content ul {
+      margin: 15px 0 25px 20px;
+      color: #555;
+    }
+
+    .tos-content li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: #999;
+      margin-bottom: 40px;
+    }
+
+    .friendly-note {
+      background: #fff5f5;
+      border-left: 4px solid #FF0000;
+      padding: 20px 25px;
+      margin: 30px 0;
+      border-radius: 8px;
+    }
+
+    .friendly-note p {
+      color: #666;
+      margin: 0;
+    }
+
+    .contact-cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f7f7f7;
+    }
+
+    .contact-cta h2 {
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .contact-cta p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+      color: #fff;
+      padding: 60px 20px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #FF0000, #CC0000, #FF0000);
+    }
+
+    footer .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+      height: 50px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FF0000;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: #FF0000;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer p { 
+      margin: 0; 
+      font-size: 14px; 
+      color: #999; 
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 24px; }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="TechSpec Logo"></a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
+    <a href="print.html" onclick="toggleMenu()">Print</a>
+    <a href="design.html" onclick="toggleMenu()">Design</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="tos-hero">
+    <div class="container">
+      <h1>Marketing Services Terms of Service</h1>
+      <p>Clear, straightforward terms for our social media marketing services</p>
+    </div>
+  </section>
+
+  <!-- TOS CONTENT -->
+  <section class="tos-content">
+    <div class="container">
+      <p class="last-updated"><strong>Last Updated:</strong> January 1, 2026</p>
+
+      <div class="friendly-note">
+        <p><strong>👋 Quick Note:</strong> These are our official terms. We've organized them to be easy to read, but all provisions are legally binding. Questions? Just ask!</p>
+      </div>
+
+      <h2>1. Service Terms & Billing</h2>
+      <p>Our marketing services operate on a flexible, month-to-month basis:</p>
+      <ul>
+        <li><strong>No Long-Term Contracts:</strong> Services are provided month-to-month with no minimum commitment</li>
+        <li><strong>Billing Date:</strong> Fees are due on the agreed invoice date each month</li>
+        <li><strong>Valid Payment Method Required:</strong> You authorize TechSpec LLC to charge a valid debit or credit card on file</li>
+        <li>No surprises—we'll always communicate any changes to your package</li>
+      </ul>
+
+      <h2>2. Payment Terms & Late Fees</h2>
+      <p>To keep services running smoothly:</p>
+      <ul>
+        <li>Payment is due on your agreed billing date</li>
+        <li><strong>48-Hour Grace Period:</strong> A $40 late fee applies if payment is not received within 48 hours of the due date</li>
+        <li><strong>72-Hour Service Suspension:</strong> Services will be suspended if payment is not received within 72 hours total (48 hours + additional 24 hours)</li>
+        <li>We'll always send reminders before any late fees or suspensions occur</li>
+      </ul>
+
+      <h2>3. Cancellation Policy</h2>
+      <p>We want you to stay because you love our work, but if you need to cancel:</p>
+      <ul>
+        <li><strong>48 Hours Notice Required:</strong> Written notice must be provided at least 48 hours before your next billing date</li>
+        <li><strong>Late Notice:</strong> If notice is not provided within this timeframe, you are obligated to pay for the subsequent billing period in full</li>
+        <li>Notice must be in writing (email is fine)</li>
+        <li>We'll provide a smooth handoff and help transition your accounts</li>
+      </ul>
+
+      <h2>4. Account Access & Exit Process</h2>
+      <p>Important for account management:</p>
+      <ul>
+        <li><strong>Do Not Remove Access:</strong> You may not revoke, restrict, or remove TechSpec LLC's access to any advertising account prior to providing notice of termination</li>
+        <li><strong>Wind-Down Period:</strong> We must be given reasonable time to properly remove ads, pause campaigns, and exit accounts</li>
+        <li><strong>Material Breach:</strong> Premature removal of access constitutes a material breach of these terms</li>
+        <li>This protects both of us—sudden access removal can cause billing issues or campaign problems</li>
+      </ul>
+
+      <h2>5. Ad Performance & Platform Approval</h2>
+      <p>Setting realistic expectations:</p>
+      <ul>
+        <li><strong>No Guarantees:</strong> TechSpec LLC does not guarantee advertising performance, specific results, or ROI</li>
+        <li><strong>Platform Discretion:</strong> Advertising platforms (Facebook, Instagram, Google, etc.) retain sole discretion over ad approvals, restrictions, and account actions</li>
+        <li><strong>No Control Over Platforms:</strong> We cannot guarantee uninterrupted ad delivery if platforms experience issues or policy changes</li>
+        <li>We'll always work hard to optimize your campaigns, but platform algorithms and policies are beyond our control</li>
+      </ul>
+
+      <h2>6. Ad Spend Responsibility</h2>
+      <p>Clear separation of services and ad costs:</p>
+      <ul>
+        <li><strong>Client Pays Platforms Directly:</strong> You are solely responsible for funding advertising platforms (Meta, Google, etc.)</li>
+        <li><strong>We Don't Handle Ad Spend:</strong> TechSpec LLC does not collect, manage, or process ad spend on your behalf</li>
+        <li>Our monthly fee covers strategy, management, and optimization—not the actual advertising budget</li>
+        <li>You'll receive invoices directly from Meta, Google, or other platforms for ad costs</li>
+      </ul>
+
+      <h2>7. Proprietary Information & Confidentiality</h2>
+      <p>Protecting our work and your information:</p>
+      <ul>
+        <li><strong>Our Intellectual Property:</strong> All advertising strategies, campaign structures, data analysis, methodologies, and insights developed by TechSpec LLC are proprietary and confidential</li>
+        <li><strong>No Unauthorized Use:</strong> You may not use, disclose, replicate, or share our proprietary methods with third parties</li>
+        <li><strong>Legal Protection:</strong> Unauthorized use or disclosure is subject to legal action</li>
+        <li>Your business information and campaign data remain confidential and are never shared</li>
+      </ul>
+
+      <h2>8. Limitation of Liability</h2>
+      <p>Our maximum liability to you:</p>
+      <ul>
+        <li><strong>Limited to Fees Paid:</strong> To the fullest extent permitted by law, TechSpec LLC's total liability shall be limited to fees paid during the three (3) months preceding any claim</li>
+        <li><strong>No Indirect Damages:</strong> We are not liable for indirect, incidental, consequential, or special damages</li>
+        <li><strong>No Business Loss Claims:</strong> This includes (but is not limited to) lost profits, lost revenue, lost data, or business interruption</li>
+      </ul>
+
+      <h2>9. Client Indemnification</h2>
+      <p>Your responsibilities:</p>
+      <ul>
+        <li><strong>Hold Harmless Agreement:</strong> You agree to indemnify and hold harmless TechSpec LLC from any claims arising from:
+          <ul style="margin-top: 10px;">
+            <li>Your business operations or products/services</li>
+            <li>Advertising content you provide or approve</li>
+            <li>Regulatory violations or legal issues related to your business</li>
+            <li>Third-party claims related to your campaigns</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>10. Changes to Terms</h2>
+      <p>How we handle updates:</p>
+      <ul>
+        <li>We may update these terms as needed for legal or operational reasons</li>
+        <li>You'll be notified of any material changes</li>
+        <li>Continued use of services after notification constitutes acceptance</li>
+      </ul>
+
+      <h2>11. Governing Law</h2>
+      <p>Legal jurisdiction:</p>
+      <ul>
+        <li>These Terms are governed by the laws of the state where TechSpec LLC is registered</li>
+        <li>Any disputes shall be resolved in the appropriate courts of that jurisdiction</li>
+      </ul>
+
+      <h2>12. Entire Agreement</h2>
+      <p>Complete understanding:</p>
+      <ul>
+        <li>These Terms constitute the entire agreement between you and TechSpec LLC</li>
+        <li>Any prior agreements, verbal or written, are superseded by these Terms</li>
+        <li>Modifications must be made in writing and signed by both parties</li>
+      </ul>
+
+      <div class="friendly-note" style="margin-top: 50px;">
+        <p><strong>⚖️ Legal but Friendly:</strong> By engaging TechSpec LLC for marketing services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. We're always happy to answer questions or clarify anything that's unclear. Let's build something great together!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Let's talk about how we can help grow your brand</p>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo.png" alt="TechSpec Logo">
+        </div>
+        <div class="footer-links">
+          <a href="tosmarketing.html">Marketing Terms</a>
+          <a href="tosprint.html">Print Terms</a>
+          <a href="tosdesign.html">Design Terms</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/techspecb2b" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+  </script>
+
+</body>
+</html>
