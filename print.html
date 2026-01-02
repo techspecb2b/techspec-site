@@ -962,6 +962,7 @@
     const productData = {
       business: {
         title: 'Business Cards',
+        description: 'Premium cards in every style & finish. Make a lasting first impression with professional business cards.',
         products: [
           'Standard Business Cards', 'Gloss Business Cards', 'Matte Business Cards',
           'Circle Business Cards', 'Rounded Corner Cards', 'Silk Laminated Cards',
@@ -972,6 +973,7 @@
       },
       marketing: {
         title: 'Marketing Materials',
+        description: 'Flyers, brochures, door hangers & more. Eye-catching materials that get your message across.',
         products: [
           'Flyers', 'Postcards', 'Door Hangers', 'Brochures', 'Bookmarks',
           'Tent Cards', 'Table Tents', 'Rack Cards', 'Hang Tags',
@@ -981,6 +983,7 @@
       },
       signs: {
         title: 'Signs & Banners',
+        description: 'Indoor & outdoor signage solutions. From banners to yard signs, get noticed with quality signage.',
         products: [
           'Vinyl Banners', 'Mesh Banners', 'Pull Up Banners', 'Retractable Banners',
           'Canopy Tents', 'Backdrop Stands', 'Backdrops', 'Table Covers',
@@ -992,6 +995,7 @@
       },
       apparel: {
         title: 'Apparel & Merch',
+        description: 'T-shirts, hats, bags & promotional items. Build your brand with quality branded merchandise.',
         products: [
           'T-Shirts', 'Polo Shirts', 'Hoodies', 'Hats & Caps',
           'Mugs', 'Custom Drinkware', 'Water Bottles', 'Tumblers',
@@ -1002,6 +1006,7 @@
       },
       stickers: {
         title: 'Stickers & Labels',
+        description: 'Custom stickers, decals & product labels. Durable, weather-resistant, and fully customizable.',
         products: [
           'Die-Cut Stickers', 'Roll Stickers', 'Sheet Stickers',
           'Bumper Stickers', 'Window Stickers', 'Floor Decals',
@@ -1012,6 +1017,7 @@
       },
       specialty: {
         title: 'Specialty Items',
+        description: 'Magnets, packaging, calendars & more. Unique products for every promotional need.',
         products: [
           'Wall Calendars', 'Desk Calendars', 'Home & Office Wall Art',
           'Canvas Prints', 'Acrylic Prints', 'Metal Prints', 'Framed Prints',
@@ -1045,7 +1051,7 @@
       
       modalContent.innerHTML = `
         <h3>${data.title}</h3>
-        <p>All products available with custom design and fast turnaround</p>
+        <p>${data.description}</p>
         <div class="product-columns">
           ${productsHTML}
         </div>
