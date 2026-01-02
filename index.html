@@ -43,39 +43,42 @@
     a { text-decoration: none; transition: all 0.3s ease; }
 
     .btn {
-      padding: 14px 32px;
-      background-color: #FF0000;
-      color: #fff;
-      border-radius: 6px;
-      font-size: 16px;
+      padding: 18px 45px;
+      background: #fff;
+      color: #FF0000;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 700;
       display: inline-block;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      border: 3px solid #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .btn::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
     }
 
     .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .btn:hover { 
-      background-color: #CC0000; 
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+      left: 0;
     }
 
     .container {
@@ -502,26 +505,13 @@
     /* CTA */
     .cta {
       padding: 100px 20px;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      background: linear-gradient(135deg, rgba(255,0,0,0.9) 0%, rgba(204,0,0,0.95) 100%),
+                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><style>.line{fill:none;stroke:%23000;stroke-width:2;opacity:0.12;}</style></defs><rect class="line" x="100" y="100" width="100" height="100" rx="10"/><circle class="line" cx="350" cy="150" r="70"/><polygon class="line" points="550,100 620,150 550,200 480,150"/><path class="line" d="M750,120 L820,140 L840,200 L750,220 L680,180 Z"/><rect class="line" x="950" y="120" width="80" height="80" rx="40"/><line class="line" x1="150" y1="280" x2="300" y2="280"/><polyline class="line" points="500,320 550,280 600,320"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: #fff;
       position: relative;
       overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: pulse 15s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(10%, 10%) scale(1.1); }
     }
 
     .cta h2 {
@@ -610,11 +600,10 @@
         <i class="fas fa-bars"></i>
       </button>
       <nav>
-        <a href="#services">Services</a>
+        <a href="index.html">Home</a>
         <a href="marketing.html">Marketing</a>
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="contact.html">Contact</a>
       </nav>
     </div>
@@ -623,11 +612,10 @@
   <!-- MOBILE SIDE MENU -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu">
-    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
     <a href="print.html" onclick="toggleMenu()">Print</a>
     <a href="design.html" onclick="toggleMenu()">Design</a>
-    <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
     <a href="contact.html" onclick="toggleMenu()">Contact</a>
   </div>
 
