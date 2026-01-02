@@ -1,1 +1,834 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing Services - TechSpec</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+    }
+
+    h1 { font-size: 52px; line-height: 1.2; }
+    h2 { font-size: 36px; }
+    h3 { font-size: 24px; }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .btn {
+      padding: 16px 40px;
+      background-color: #FF0000;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn:hover { 
+      background-color: #CC0000; 
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* GRAIN OVERLAY */
+    .grain-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+    }
+
+    /* NAVIGATION */
+    header.nav {
+      background-color: #FF0000;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header.nav.scrolled {
+      background-color: #CC0000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo img { height: 40px; }
+
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #f5f5f5; }
+
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #111;
+      transition: right 0.3s ease;
+      z-index: 999;
+      padding: 80px 20px 20px;
+    }
+
+    .side-menu.active { right: 0; }
+
+    .side-menu a {
+      display: block;
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .side-menu a:hover { color: #FF0000; }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 998;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 120px 20px 100px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.1); }
+    }
+
+    .hero * { position: relative; z-index: 2; }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero .tagline {
+      font-size: 28px;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #f0f0f0;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    /* SERVICES OVERVIEW */
+    .services-overview {
+      padding: 100px 20px;
+      background-color: #ffffff;
+      position: relative;
+      text-align: center;
+    }
+
+    .services-overview h2 {
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .services-overview > p {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      font-size: 20px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .service-item {
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-item i {
+      font-size: 56px;
+      color: #FF0000;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .service-item h3 {
+      color: #111;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .service-item p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    /* PRICING TIERS */
+    .pricing-section {
+      padding: 100px 20px;
+      background-color: #f7f7f7;
+      position: relative;
+    }
+
+    .pricing-section h2 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .pricing-table {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    .pricing-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .pricing-header div {
+      padding: 25px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .pricing-header div:first-child {
+      text-align: left;
+      font-size: 18px;
+    }
+
+    .pricing-header div:last-child {
+      border-right: none;
+    }
+
+    .tier-name {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .tier-price {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s ease;
+    }
+
+    .pricing-row:hover {
+      background-color: #f9f9f9;
+    }
+
+    .pricing-row div {
+      padding: 20px;
+      text-align: center;
+      border-right: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pricing-row div:first-child {
+      text-align: left;
+      justify-content: flex-start;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .pricing-row div:last-child {
+      border-right: none;
+    }
+
+    .check {
+      color: #00C851;
+      font-size: 24px;
+    }
+
+    .cross {
+      color: #ff4444;
+      font-size: 20px;
+      opacity: 0.3;
+    }
+
+    /* WHY CHOOSE US */
+    .why-choose-us {
+      padding: 100px 20px;
+      background-color: #ffffff;
+      position: relative;
+      text-align: center;
+    }
+
+    .why-choose-us h2 {
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255,0,0,0.15);
+    }
+
+    .stat-number {
+      font-size: 56px;
+      font-weight: 800;
+      color: #FF0000;
+      margin-bottom: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 18px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .experience-text {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 20px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .experience-text strong {
+      color: #FF0000;
+      font-weight: 600;
+    }
+
+    /* CTA SECTION */
+    .cta {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    .cta * { position: relative; z-index: 2; }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #f0f0f0;
+      font-size: 22px;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .btn {
+      background: #fff;
+      color: #FF0000;
+      font-size: 20px;
+      padding: 18px 50px;
+    }
+
+    .cta .btn:hover {
+      background: #f0f0f0;
+      color: #CC0000;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p { margin: 0; font-size: 14px; color: #aaa; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 38px; }
+      .hero .tagline { font-size: 20px; }
+      .hero p { font-size: 18px; }
+      
+      .menu-toggle { display: block; }
+      .nav-inner nav { display: none; }
+
+      .pricing-header,
+      .pricing-row {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-header div:not(:first-child),
+      .pricing-row div:not(:first-child) {
+        display: none;
+      }
+
+      .tier-name {
+        font-size: 16px;
+      }
+
+      .stat-number { font-size: 42px; }
+      .cta h2 { font-size: 32px; }
+      .cta p { font-size: 18px; }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .pricing-header,
+      .pricing-row {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+      }
+
+      .pricing-header div:last-child,
+      .pricing-row div:last-child {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
+    <a href="print.html" onclick="toggleMenu()">Print</a>
+    <a href="design.html" onclick="toggleMenu()">Design</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Transform Your Digital Presence</h1>
+      <p class="tagline">Maximum Impact. Proven Results. Real Growth.</p>
+      <p>Smart investment, exceptional returns. We deliver marketing strategies that drive real growth—turning every dollar into measurable success for your business.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="services-overview">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>What We Offer</h2>
+      <p>From social media management to paid advertising, we provide comprehensive marketing solutions tailored to your business goals.</p>
+      
+      <div class="services-grid">
+        <div class="service-item">
+          <i class="fab fa-facebook"></i>
+          <h3>Social Media Marketing</h3>
+          <p>Engaging content, consistent posting, and community management across all major platforms.</p>
+        </div>
+        
+        <div class="service-item">
+          <i class="fas fa-ad"></i>
+          <h3>Paid Advertising</h3>
+          <p>High-converting Facebook and Google Ads campaigns that maximize your ROI.</p>
+        </div>
+        
+        <div class="service-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email Marketing</h3>
+          <p>Targeted email campaigns that nurture leads and drive sales.</p>
+        </div>
+        
+        <div class="service-item">
+          <i class="fas fa-chart-line"></i>
+          <h3>Analytics & Optimization</h3>
+          <p>Data-driven insights to continuously improve your marketing performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TIERS -->
+  <section class="pricing-section">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>Marketing Packages</h2>
+      
+      <div class="pricing-table">
+        <!-- Header -->
+        <div class="pricing-header">
+          <div>Features</div>
+          <div>
+            <div class="tier-name">Starter</div>
+            <div class="tier-price">$149/mo</div>
+          </div>
+          <div>
+            <div class="tier-name">Pro</div>
+            <div class="tier-price">$350/mo</div>
+          </div>
+          <div>
+            <div class="tier-name">Elite</div>
+            <div class="tier-price">$525/mo</div>
+          </div>
+          <div>
+            <div class="tier-name">Email+</div>
+            <div class="tier-price">Contact</div>
+          </div>
+        </div>
+
+        <!-- Rows -->
+        <div class="pricing-row">
+          <div>Social Media Posts per Month</div>
+          <div>12</div>
+          <div>20</div>
+          <div>30</div>
+          <div>Unlimited</div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Platforms Managed</div>
+          <div>2</div>
+          <div>3</div>
+          <div>5</div>
+          <div>All</div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Facebook Ads Management</div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Google Ads Management</div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Email Marketing Campaigns</div>
+          <div>1/month</div>
+          <div>2/month</div>
+          <div>4/month</div>
+          <div>Unlimited</div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Monthly Analytics Report</div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Content Creation</div>
+          <div>Basic</div>
+          <div>Advanced</div>
+          <div>Premium</div>
+          <div>Custom</div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Dedicated Account Manager</div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Ad Spend Budget (Monthly)</div>
+          <div>$500+</div>
+          <div>$1,000+</div>
+          <div>$2,500+</div>
+          <div>$5,000+</div>
+        </div>
+
+        <div class="pricing-row">
+          <div>A/B Testing</div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+        </div>
+
+        <div class="pricing-row">
+          <div>Custom Strategy Sessions</div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div>Quarterly</div>
+          <div>Monthly</div>
+          <div>Weekly</div>
+        </div>
+
+        <div class="pricing-row">
+          <div>24/7 Support</div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-times cross"></i></div>
+          <div><i class="fas fa-check check"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="why-choose-us">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>Results You Can Expect</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">3-5x</div>
+          <div class="stat-label">Average ROI</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">40%</div>
+          <div class="stat-label">Increase in Leads</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">2.8x</div>
+          <div class="stat-label">Revenue Growth</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-number">65%</div>
+          <div class="stat-label">Engagement Boost</div>
+        </div>
+      </div>
+
+      <p class="experience-text">
+        We've worked with <strong>hundreds of businesses around the globe</strong>, with a specialized focus on the <strong>wireless and electronic repair industry</strong>. Our founder, <strong>Brandon Talbert</strong>, owned and operated electronics repair shops for years before launching TechSpec, giving us unparalleled insight into your market, customers, and what actually drives results. That industry expertise, combined with our expanding knowledge across diverse sectors, means we deliver strategies that work for businesses of all types—from local repair shops to national brands.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Grow Your Business?</h2>
+      <p>Let's create a marketing strategy that delivers real results. Get started with a free consultation today.</p>
+      <a href="contact.html" class="btn">Get Your Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    // Navigation scroll effect
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+  </script>
+</body>
+</html>
