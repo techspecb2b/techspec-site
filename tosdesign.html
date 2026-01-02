@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Services Terms - TechSpec</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #111;
+    }
+
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { font-size: 28px; margin-top: 50px; margin-bottom: 20px; color: #FF0000; }
+    h3 { font-size: 20px; margin-top: 30px; margin-bottom: 15px; }
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .btn {
+      padding: 18px 45px;
+      background: #fff;
+      color: #FF0000;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 700;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* NAVIGATION */
+    header.nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    header.nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    nav a {
+      color: #333;
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF0000;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* MOBILE MENU */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: #fff;
+      z-index: 1000;
+      padding: 80px 30px 30px;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 15px 0;
+      color: #333;
+      font-weight: 500;
+      font-size: 18px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .side-menu a:hover {
+      color: #FF0000;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav { display: none; }
+      .nav-inner { padding: 15px 20px; }
+    }
+
+    /* TOS CONTENT */
+    .tos-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .tos-hero h1 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .tos-hero p {
+      font-size: 18px;
+      color: #f0f0f0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tos-content {
+      padding: 80px 20px;
+      background: #fff;
+    }
+
+    .tos-content p {
+      margin-bottom: 20px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .tos-content ul {
+      margin: 15px 0 25px 20px;
+      color: #555;
+    }
+
+    .tos-content li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: #999;
+      margin-bottom: 40px;
+    }
+
+    .friendly-note {
+      background: #fff5f5;
+      border-left: 4px solid #FF0000;
+      padding: 20px 25px;
+      margin: 30px 0;
+      border-radius: 8px;
+    }
+
+    .friendly-note p {
+      color: #666;
+      margin: 0;
+    }
+
+    .contact-cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f7f7f7;
+    }
+
+    .contact-cta h2 {
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .contact-cta p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+      color: #fff;
+      padding: 60px 20px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #FF0000, #CC0000, #FF0000);
+    }
+
+    footer .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+      height: 50px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FF0000;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: #FF0000;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer p { 
+      margin: 0; 
+      font-size: 14px; 
+      color: #999; 
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 24px; }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="TechSpec Logo"></a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
+    <a href="print.html" onclick="toggleMenu()">Print</a>
+    <a href="design.html" onclick="toggleMenu()">Design</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="tos-hero">
+    <div class="container">
+      <h1>Design Services Terms of Service</h1>
+      <p>Clear, straightforward terms for our creative design services</p>
+    </div>
+  </section>
+
+  <!-- TOS CONTENT -->
+  <section class="tos-content">
+    <div class="container">
+      <p class="last-updated"><strong>Last Updated:</strong> January 1, 2026</p>
+
+      <div class="friendly-note">
+        <p><strong>👋 Quick Note:</strong> These are our official design service terms. We've organized them clearly, but all provisions are legally binding. Questions? Just ask!</p>
+      </div>
+
+      <h2>1. Deposit & Payment Terms</h2>
+      <p>Before we start creating your design:</p>
+      <ul>
+        <li><strong>50% Non-Refundable Deposit Required:</strong> A deposit equal to fifty percent (50%) of the total project cost is required prior to commencement of any graphic design services</li>
+        <li><strong>No Work Without Deposit:</strong> No design work shall begin until the deposit is received</li>
+        <li><strong>Deposit is Non-Refundable:</strong> Once work begins, the deposit cannot be refunded</li>
+        <li>Accepted payment methods: Credit cards, debit cards, ACH, or check</li>
+      </ul>
+
+      <h2>2. Final Payment & File Release</h2>
+      <p>Completing your project:</p>
+      <ul>
+        <li><strong>Balance Due Upon Approval:</strong> The remaining 50% balance is due immediately upon your approval of the final design</li>
+        <li><strong>Approval Methods:</strong> Approval may be communicated verbally, electronically, or in writing</li>
+        <li><strong>24-Hour Payment Window:</strong> All outstanding balances must be paid within twenty-four (24) hours of approval</li>
+        <li><strong>Files Held Until Payment:</strong> TechSpec LLC shall retain all design files, source files, and deliverables until payment is made in full</li>
+        <li><strong>No Early Release:</strong> No files shall be released prior to full payment under any circumstances</li>
+      </ul>
+
+      <h2>3. Revisions Policy</h2>
+      <p>Making changes to your design:</p>
+      <ul>
+        <li><strong>Unlimited Revisions (Within Scope):</strong> Unlimited revisions are included, but are limited to reasonable modifications within the scope of the originally requested and approved design concept</li>
+        <li><strong>Material Changes:</strong> Requests constituting a material change in direction or an entirely new design concept may result in additional fees</li>
+        <li><strong>New Direction = New Fees:</strong> If you want to go in a completely different direction, this is considered a new project</li>
+        <li><strong>Sole Discretion:</strong> Whether changes constitute a new direction is determined solely by TechSpec LLC</li>
+        <li>We want you to love the design—revisions within the original concept are always welcome!</li>
+      </ul>
+
+      <h2>4. Intellectual Property & Ownership</h2>
+      <p>Who owns what:</p>
+      <ul>
+        <li><strong>TechSpec Retains Ownership Until Payment:</strong> All designs remain the intellectual property of TechSpec LLC until full payment is received</li>
+        <li><strong>Limited License Upon Payment:</strong> Upon full payment, you are granted a limited, non-transferable license to use the design for its intended purpose</li>
+        <li><strong>Your Use Only:</strong> The license is for your business use as originally discussed</li>
+        <li>Once paid in full, you own the design and can use it freely for your business</li>
+      </ul>
+
+      <h2>5. Prohibited Uses & Resale</h2>
+      <p>What you cannot do with the design:</p>
+      <ul>
+        <li><strong>No Resale or Redistribution:</strong> Resale, redistribution, sublicensing, or commercial reuse for resale purposes is strictly prohibited</li>
+        <li><strong>Resale License Available:</strong> If you need to resell or redistribute the design (for example, on merchandise you're selling), a separate resale license must be purchased</li>
+        <li><strong>Examples of Prohibited Use Without License:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Printing the design on products you sell</li>
+            <li>Selling the design files to others</li>
+            <li>Using the design as part of a product you market</li>
+            <li>Allowing others to use or modify the design</li>
+          </ul>
+        </li>
+        <li>Contact us if you need a resale license—we're happy to discuss options</li>
+      </ul>
+
+      <h2>6. Enforcement & Legal Action</h2>
+      <p>Protection of our work:</p>
+      <ul>
+        <li><strong>Infringement = Legal Action:</strong> Unauthorized resale, redistribution, or misuse of TechSpec LLC designs constitutes infringement</li>
+        <li><strong>Consequences:</strong> Violations shall result in:
+          <ul style="margin-top: 10px;">
+            <li>Immediate legal action</li>
+            <li>Recovery of damages</li>
+            <li>Recovery of all associated legal fees and costs</li>
+          </ul>
+        </li>
+        <li><strong>Full Extent of the Law:</strong> We will pursue enforcement to the fullest extent permitted by law</li>
+      </ul>
+
+      <h2>7. Design Process & Timeline</h2>
+      <p>What to expect:</p>
+      <ul>
+        <li>Initial concepts typically delivered within 5-7 business days of deposit</li>
+        <li>Revision turnaround: 2-3 business days per round</li>
+        <li>Timelines may vary based on project complexity</li>
+        <li>Rush services available for additional fee</li>
+        <li>Your timely feedback helps keep the project on schedule</li>
+      </ul>
+
+      <h2>8. Client Responsibilities</h2>
+      <p>What we need from you:</p>
+      <ul>
+        <li>Clear project brief and design requirements</li>
+        <li>Any existing brand materials (logos, colors, fonts)</li>
+        <li>Timely feedback on concepts and revisions</li>
+        <li>High-resolution images or content if applicable</li>
+        <li>Final approval before we close the project</li>
+      </ul>
+
+      <h2>9. File Formats & Delivery</h2>
+      <p>What you'll receive upon full payment:</p>
+      <ul>
+        <li><strong>Source Files:</strong> Original editable files (AI, PSD, or similar)</li>
+        <li><strong>Print Files:</strong> High-resolution PDFs or print-ready formats</li>
+        <li><strong>Web Files:</strong> PNG, JPG, or SVG optimized for digital use</li>
+        <li>Specific formats can be discussed based on your needs</li>
+      </ul>
+
+      <h2>10. Limitation of Liability</h2>
+      <p>Our maximum liability:</p>
+      <ul>
+        <li>TechSpec LLC's total liability is limited to the amount paid for the specific design project</li>
+        <li>We are not liable for indirect, consequential, or special damages</li>
+        <li>This includes lost profits, business interruption, or other commercial losses</li>
+      </ul>
+
+      <h2>11. Acceptance of Terms</h2>
+      <p>How these terms become binding:</p>
+      <ul>
+        <li><strong>Engagement = Acceptance:</strong> Engagement of TechSpec LLC for design services constitutes acceptance of the full Graphic Design Terms of Service</li>
+        <li>Paying the deposit confirms you have read and agreed to these terms</li>
+        <li>All projects are governed by these terms unless a separate written agreement is signed</li>
+      </ul>
+
+      <h2>12. Portfolio Use</h2>
+      <p>Showcasing our work:</p>
+      <ul>
+        <li>We may display completed design work in our portfolio or marketing materials</li>
+        <li>If you prefer your project not be showcased, please let us know in writing</li>
+        <li>We respect your confidentiality when requested</li>
+      </ul>
+
+      <div class="friendly-note" style="margin-top: 50px;">
+        <p><strong>⚖️ Let's Create Something Amazing:</strong> By engaging TechSpec LLC for design services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. We're committed to creating designs you'll love—let's get started!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Let's talk about how we can help grow your brand</p>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo.png" alt="TechSpec Logo">
+        </div>
+        <div class="footer-links">
+          <a href="tosmarketing.html">Marketing Terms</a>
+          <a href="tosprint.html">Print Terms</a>
+          <a href="tosdesign.html">Design Terms</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/techspecb2b" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+  </script>
+
+</body>
+</html>
