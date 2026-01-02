@@ -162,10 +162,69 @@
     nav a:hover::after { width: 100%; }
     nav a:hover { color: #f5f5f5; transform: translateY(-2px); }
 
-    /* HERO */
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #111;
+      transition: right 0.3s ease;
+      z-index: 999;
+      padding: 80px 20px 20px;
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .side-menu a:hover {
+      color: #FF0000;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 998;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* HERO - Almost full height but showing white below */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 70vh;
       padding: 80px 20px 60px;
       background: linear-gradient(to top, rgba(204,0,0,0.85), rgba(204,0,0,0.35)), url('hero-bg.jpg') center top / cover no-repeat;
       background-attachment: fixed;
@@ -276,7 +335,7 @@
       font-size: 16px;
     }
 
-    /* PORTFOLIO CAROUSEL */
+    /* PORTFOLIO CAROUSEL - Removed red overlay */
     .portfolio {
       padding: 100px 20px;
       background-color: #f7f7f7;
@@ -316,20 +375,7 @@
       transition: transform 0.4s ease;
     }
 
-    .portfolio-item::after {
-      content: attr(data-title);
-      position: absolute;
-      inset: 0;
-      background: rgba(255,0,0,0);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 18px;
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
+    /* Removed the ::after overlay */
 
     .portfolio-item:hover {
       transform: scale(1.05);
@@ -337,10 +383,6 @@
     }
 
     .portfolio-item:hover img { transform: scale(1.1); }
-    .portfolio-item:hover::after { 
-      opacity: 1; 
-      background: rgba(255,0,0,0.8);
-    }
 
     .carousel-btn {
       position: absolute;
@@ -531,10 +573,19 @@
     /* MOBILE */
     @media (max-width: 768px) {
       h1 { font-size: 34px; }
-      .nav-inner { flex-direction: column; }
-      nav a { margin-left: 0; margin-top: 10px; }
+      
+      /* Show mobile menu toggle */
+      .menu-toggle {
+        display: block;
+      }
+
+      /* Hide desktop navigation */
+      .nav-inner nav {
+        display: none;
+      }
+
       .service-card, .portfolio-item, .testimonial-card { width: 90%; max-width: 300px; }
-      .hero { background-attachment: scroll; padding: 80px 20px 60px; }
+      .hero { background-attachment: scroll; padding: 80px 20px 60px; min-height: 60vh; }
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
       .hero .btn { width: 80%; max-width: 250px; }
@@ -555,6 +606,9 @@
   <header class="nav">
     <div class="nav-inner">
       <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
@@ -562,6 +616,14 @@
       </nav>
     </div>
   </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -619,14 +681,14 @@
           <i class="fas fa-chevron-left"></i>
         </button>
         <div class="portfolio-carousel" id="carousel">
-          <div class="portfolio-item" data-title="Project 1"><img src="portfolio1.png" alt="Project 1"></div>
-          <div class="portfolio-item" data-title="Project 2"><img src="portfolio2.png" alt="Project 2"></div>
-          <div class="portfolio-item" data-title="Project 3"><img src="portfolio3.png" alt="Project 3"></div>
-          <div class="portfolio-item" data-title="Project 4"><img src="portfolio4.png" alt="Project 4"></div>
-          <div class="portfolio-item" data-title="Project 5"><img src="portfolio5.png" alt="Project 5"></div>
-          <div class="portfolio-item" data-title="Project 6"><img src="portfolio6.png" alt="Project 6"></div>
-          <div class="portfolio-item" data-title="Project 7"><img src="portfolio7.png" alt="Project 7"></div>
-          <div class="portfolio-item" data-title="Project 8"><img src="portfolio8.png" alt="Project 8"></div>
+          <div class="portfolio-item"><img src="portfolio1.png" alt="Project 1"></div>
+          <div class="portfolio-item"><img src="portfolio2.png" alt="Project 2"></div>
+          <div class="portfolio-item"><img src="portfolio3.png" alt="Project 3"></div>
+          <div class="portfolio-item"><img src="portfolio4.png" alt="Project 4"></div>
+          <div class="portfolio-item"><img src="portfolio5.png" alt="Project 5"></div>
+          <div class="portfolio-item"><img src="portfolio6.png" alt="Project 6"></div>
+          <div class="portfolio-item"><img src="portfolio7.png" alt="Project 7"></div>
+          <div class="portfolio-item"><img src="portfolio8.png" alt="Project 8"></div>
         </div>
         <button class="carousel-btn next" onclick="moveCarousel(1)">
           <i class="fas fa-chevron-right"></i>
@@ -711,6 +773,14 @@
 
   <!-- SCRIPTS -->
   <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
     // Navigation scroll effect
     const nav = document.querySelector('header.nav');
     window.addEventListener('scroll', () => { 
