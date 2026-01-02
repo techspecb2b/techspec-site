@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - TechSpec</title>
 
-  <!-- Pageclip -->
-  <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
@@ -557,7 +554,7 @@
     <div class="container">
       <div class="form-container" id="formContainer">
         <h2>Start Your Project</h2>
-        <form id="contactForm" action="https://send.pageclip.co/cirIZDXD1KreEGVgkdAVHCoi0GEG3aNN/Contact-Form" class="pageclip-form" method="post">
+        <form id="contactForm" action="https://www.formingo.co/submit/6924f315-7011-4bef-98c0-4011a9d40cb8" method="POST">
           <!-- Basic Fields -->
           <div class="form-group">
             <label>Name <span class="required">*</span></label>
@@ -627,16 +624,11 @@
             <!-- Print Only Sub-fields -->
             <div id="printOnlyFields" class="dynamic-fields">
               <div class="form-group">
-                <label>Upload Your File <span class="required">*</span></label>
+                <label>Upload Your File</label>
                 <div class="file-upload-container">
-                  <label for="fileUpload" class="file-upload-label">
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <span>Choose File or Email to brandon@techspec.biz</span>
-                  </label>
-                  <input type="file" id="fileUpload" name="printFile" accept=".pdf,.png,.jpg,.jpeg,.ai,.psd">
-                  <div class="file-name" id="fileName"></div>
+                  <p class="note-text bold">Please email your file to brandon@techspec.biz</p>
+                  <p class="note-text">We'll follow up with you via email to receive your files.</p>
                 </div>
-                <p class="note-text">If you prefer, you can email your file directly to <strong>brandon@techspec.biz</strong></p>
               </div>
             </div>
 
@@ -676,9 +668,7 @@
             </div>
           </div>
 
-          <button type="submit" class="btn submit-btn pageclip-form__submit">
-            <span>Send Request</span>
-          </button>
+          <button type="submit" class="btn submit-btn">Send Request</button>
         </form>
 
         <!-- SUCCESS MESSAGE -->
@@ -700,7 +690,6 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   <script>
     // Mobile menu toggle
     function toggleMenu() {
@@ -714,18 +703,6 @@
     const nav = document.querySelector('header.nav');
     window.addEventListener('scroll', () => { 
       nav.classList.toggle('scrolled', window.scrollY > 10); 
-    });
-
-    // File upload display
-    document.getElementById('fileUpload')?.addEventListener('change', function(e) {
-      const fileName = e.target.files[0]?.name || '';
-      const fileNameDisplay = document.getElementById('fileName');
-      if (fileName) {
-        fileNameDisplay.textContent = 'Selected: ' + fileName;
-        fileNameDisplay.style.color = '#FF0000';
-      } else {
-        fileNameDisplay.textContent = '';
-      }
     });
 
     // Dynamic form fields based on service type
@@ -754,9 +731,6 @@
       document.getElementById('printService').removeAttribute('required');
       document.getElementById('printType').removeAttribute('required');
       document.getElementById('designRequest').removeAttribute('required');
-      if (document.getElementById('fileUpload')) {
-        document.getElementById('fileUpload').removeAttribute('required');
-      }
 
       // Show relevant fields and add required attributes
       if (this.value === 'marketing') {
@@ -793,44 +767,51 @@
       }
     });
 
-    // Form elements
+    // Form submission handler
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
     const secondaryMessage = document.getElementById('secondaryMessage');
     const restartBtn = document.getElementById('restartBtn');
 
-    // Wait for Pageclip to be ready and listen for its response
-    document.addEventListener('DOMContentLoaded', function() {
-      if (window.Pageclip) {
-        contactForm.addEventListener('pageclip:submit', function() {
-          console.log('Pageclip is submitting...');
-        });
-
-        contactForm.addEventListener('pageclip:response', function(event) {
-          console.log('Pageclip response received:', event);
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      
+      // Submit to Formingo
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Hide form
+          contactForm.style.display = 'none';
           
-          // Check if submission was successful
-          if (event && event.data && event.data.ok) {
-            // Hide form
-            contactForm.style.display = 'none';
-            
-            // Show success message
-            successMessage.classList.add('show');
-            
-            // Show secondary message after 1 second
-            setTimeout(() => {
-              secondaryMessage.classList.add('show');
-            }, 1000);
-            
-            // Show restart button after 2 seconds
-            setTimeout(() => {
-              restartBtn.classList.add('show');
-            }, 2000);
-          } else {
-            console.error('Submission failed:', event);
-          }
-        });
-      }
+          // Show success message
+          successMessage.classList.add('show');
+          
+          // Show secondary message after 1 second
+          setTimeout(() => {
+            secondaryMessage.classList.add('show');
+          }, 1000);
+          
+          // Show restart button after 2 seconds
+          setTimeout(() => {
+            restartBtn.classList.add('show');
+          }, 2000);
+        } else {
+          alert('There was an error submitting the form. Please try again or email brandon@techspec.biz directly.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting the form. Please try again or email brandon@techspec.biz directly.');
+      });
     });
 
     // Reset form function
@@ -848,9 +829,6 @@
       printOnlyFields.classList.remove('show');
       designAndPrintFields.classList.remove('show');
       commonPrintFields.classList.remove('show');
-      
-      // Clear file name display
-      document.getElementById('fileName').textContent = '';
       
       // Scroll to top of form
       formContainer.scrollIntoView({ behavior: 'smooth' });
