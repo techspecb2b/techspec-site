@@ -42,42 +42,43 @@
     a { text-decoration: none; transition: all 0.3s ease; }
 
     .btn {
-      padding: 16px 40px;
-      background-color: #FF0000;
-      color: #fff;
-      border-radius: 6px;
+      padding: 18px 45px;
+      background: #fff;
+      color: #FF0000;
+      border-radius: 50px;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       display: inline-block;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      border: none;
+      border: 3px solid #fff;
       cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .btn::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
     }
 
     .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .btn:hover { 
-      background-color: #CC0000; 
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+      left: 0;
     }
 
     .container {
@@ -206,43 +207,13 @@
     .hero {
       position: relative;
       padding: 120px 20px 100px;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      background: linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
+                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><style>.line{fill:none;stroke:%23000;stroke-width:2;opacity:0.15;}</style></defs><rect class="line" x="150" y="100" width="110" height="110" rx="8"/><circle class="line" cx="400" cy="180" r="75"/><polygon class="line" points="600,120 670,180 600,240 530,180"/><path class="line" d="M850,140 L920,160 L940,220 L850,240 L780,200 Z"/><circle class="line" cx="200" cy="450" r="65"/><rect class="line" x="500" y="400" width="90" height="90" rx="45"/><line class="line" x1="800" y1="450" x2="950" y2="450"/><polyline class="line" points="350,500 400,450 450,500"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: #fff;
       text-align: center;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(30deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0) 60%),
-        linear-gradient(90deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0) 60%),
-        linear-gradient(150deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0) 60%);
-      background-size: 100px 173px, 100px 173px, 100px 173px;
-      background-position: 0 0, 50px 86.5px, 0 0;
-      opacity: 0.5;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -100px;
-      right: -100px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 60%);
-      border-radius: 50%;
-      animation: pulse 8s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
     }
 
     .hero * { position: relative; z-index: 2; }
@@ -329,79 +300,69 @@
       opacity: 0.05;
     }
 
-    /* CAPABILITY MODAL */
-    .capability-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
+    .capability-item {
+      cursor: pointer;
+    }
+
+    /* CAPABILITY DROPDOWN */
+    .capability-dropdown {
       width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      margin: 30px auto 0;
+      max-width: 1000px;
+      display: none;
     }
 
-    .capability-modal.show {
-      display: flex;
-      animation: fadeIn 0.3s ease;
+    .capability-dropdown.show {
+      display: block;
+      animation: slideDown 0.3s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
     }
 
-    .modal-content {
-      background: #fff;
+    .capability-dropdown-inner {
+      background: #f7f7f7;
       padding: 40px;
       border-radius: 12px;
-      max-width: 600px;
-      width: 100%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       position: relative;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      animation: slideUp 0.3s ease;
     }
 
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: #999;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .modal-close:hover {
-      color: #FF0000;
-    }
-
-    .modal-content h3 {
+    .capability-dropdown-inner h3 {
       color: #FF0000;
       margin-bottom: 20px;
-      font-size: 28px;
+      font-size: 24px;
     }
 
-    .modal-content p {
+    .capability-dropdown-inner p {
       color: #666;
       font-size: 16px;
       line-height: 1.8;
-      margin: 0;
+      margin: 0 0 20px;
+    }
+
+    .close-capability {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .close-capability button {
+      padding: 12px 30px;
+      background: #FF0000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .close-capability button:hover {
+      background: #CC0000;
+      transform: translateY(-2px);
     }
 
     /* LOGO SHOWCASE */
@@ -751,36 +712,14 @@
     /* CTA SECTION */
     .cta {
       padding: 100px 20px;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      background: linear-gradient(135deg, rgba(255,0,0,0.9) 0%, rgba(204,0,0,0.95) 100%),
+                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><style>.line{fill:none;stroke:%23000;stroke-width:2;opacity:0.12;}</style></defs><rect class="line" x="100" y="100" width="100" height="100" rx="10"/><circle class="line" cx="350" cy="150" r="70"/><polygon class="line" points="550,100 620,150 550,200 480,150"/><path class="line" d="M750,120 L820,140 L840,200 L750,220 L680,180 Z"/><rect class="line" x="950" y="120" width="80" height="80" rx="40"/><line class="line" x1="150" y1="280" x2="300" y2="280"/><polyline class="line" points="500,320 550,280 600,320"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: #fff;
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
-      opacity: 0.6;
-    }
-
-    .cta::after {
-      content: '';
-      position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-      border-radius: 50%;
     }
 
     .cta * { position: relative; z-index: 2; }
@@ -1033,6 +972,9 @@
       </div>
       
       <p style="text-align: center; margin-top: 30px; font-size: 18px; color: #999; font-style: italic;">...and way more</p>
+      
+      <!-- Capability dropdown will be inserted here -->
+      <div id="capabilityDropdown" class="capability-dropdown"></div>
     </div>
   </section>
 
@@ -1168,15 +1110,6 @@
     </div>
   </footer>
 
-  <!-- CAPABILITY MODAL -->
-  <div class="capability-modal" id="capabilityModal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDescription"></p>
-    </div>
-  </div>
-
   <!-- SCRIPTS -->
   <script>
     // Mobile menu toggle
@@ -1193,27 +1126,40 @@
       nav.classList.toggle('scrolled', window.scrollY > 10); 
     });
 
-    // Capability modal functions
+    // Capability dropdown functions
+    let currentCapability = null;
+
     function showCapabilityInfo(title, description) {
-      document.getElementById('modalTitle').textContent = title;
-      document.getElementById('modalDescription').textContent = description;
-      document.getElementById('capabilityModal').classList.add('show');
-      document.body.style.overflow = 'hidden';
+      const dropdown = document.getElementById('capabilityDropdown');
+      
+      // If same capability clicked, close it
+      if (currentCapability === title) {
+        dropdown.classList.remove('show');
+        dropdown.innerHTML = '';
+        currentCapability = null;
+        return;
+      }
+      
+      dropdown.innerHTML = `
+        <div class="capability-dropdown-inner">
+          <h3>${title}</h3>
+          <p>${description}</p>
+          <div class="close-capability">
+            <button onclick="closeCapabilityDropdown()">Close</button>
+          </div>
+        </div>
+      `;
+      
+      dropdown.classList.add('show');
+      currentCapability = title;
     }
 
-    function closeModal(event) {
-      if (!event || event.target.classList.contains('capability-modal') || event.target.classList.contains('modal-close')) {
-        document.getElementById('capabilityModal').classList.remove('show');
-        document.body.style.overflow = 'auto';
-      }
+    function closeCapabilityDropdown() {
+      const dropdown = document.getElementById('capabilityDropdown');
+      dropdown.classList.remove('show');
+      dropdown.innerHTML = '';
+      currentCapability = null;
     }
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    });
   </script>
 </body>
 </html>
