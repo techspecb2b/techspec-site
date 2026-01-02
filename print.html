@@ -364,28 +364,82 @@
       margin: 0;
     }
 
-    /* PRODUCT LIST */
-    .product-dropdown {
-      width: 100%;
-      margin: 30px 0 0;
+    /* PRODUCT MODAL */
+    .product-modal {
       display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
     }
 
-    .product-dropdown.show {
-      display: block;
-      animation: slideDown 0.3s ease;
+    .product-modal.show {
+      display: flex;
+      animation: fadeIn 0.3s ease;
     }
 
-    @keyframes slideDown {
-      from { opacity: 0; max-height: 0; }
-      to { opacity: 1; max-height: 2000px; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    .product-list-inner {
-      background: #f7f7f7;
+    .product-modal-content {
+      background: #fff;
       padding: 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #999;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .modal-close:hover {
+      color: #FF0000;
+    }
+
+    .product-modal-content h3 {
+      color: #FF0000;
+      margin-bottom: 10px;
+      font-size: 28px;
+      padding-right: 40px;
+    }
+
+    .product-modal-content > p {
+      color: #666;
+      margin-bottom: 30px;
     }
 
     .product-list-header {
@@ -811,11 +865,16 @@
           <p>Magnets, packaging, calendars & more</p>
         </div>
       </div>
-
-      <!-- Product dropdown will be inserted here -->
-      <div id="productDropdown" class="product-dropdown"></div>
     </div>
   </section>
+
+  <!-- PRODUCT MODAL -->
+  <div class="product-modal" id="productModal" onclick="closeModal(event)">
+    <div class="product-modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="modalProductContent"></div>
+    </div>
+  </div>
 
   <!-- GALLERY CAROUSEL -->
   <section class="gallery-section">
@@ -967,21 +1026,14 @@
     let currentCategory = null;
 
     function showProducts(category, element) {
-      const dropdown = document.getElementById('productDropdown');
+      const modal = document.getElementById('productModal');
+      const modalContent = document.getElementById('modalProductContent');
       const data = productData[category];
       
       // Remove active class from all cards
       document.querySelectorAll('.category-card').forEach(card => {
         card.classList.remove('active');
       });
-      
-      // If same category clicked, close it
-      if (currentCategory === category) {
-        dropdown.classList.remove('show');
-        dropdown.innerHTML = '';
-        currentCategory = null;
-        return;
-      }
       
       // Add active class to clicked card
       element.classList.add('active');
@@ -991,34 +1043,37 @@
         `<div class="product-item">${product}</div>`
       ).join('');
       
-      dropdown.innerHTML = `
-        <div class="product-list-inner">
-          <div class="product-list-header">
-            <h3>${data.title}</h3>
-            <p>All products available with custom design and fast turnaround</p>
-          </div>
-          <div class="product-columns">
-            ${productsHTML}
-          </div>
-          <div class="close-list">
-            <button onclick="closeProductList()">Close</button>
-          </div>
+      modalContent.innerHTML = `
+        <h3>${data.title}</h3>
+        <p>All products available with custom design and fast turnaround</p>
+        <div class="product-columns">
+          ${productsHTML}
         </div>
       `;
       
-      dropdown.classList.add('show');
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
       currentCategory = category;
     }
 
-    function closeProductList() {
-      const dropdown = document.getElementById('productDropdown');
-      dropdown.classList.remove('show');
-      dropdown.innerHTML = '';
-      document.querySelectorAll('.category-card').forEach(card => {
-        card.classList.remove('active');
-      });
-      currentCategory = null;
+    function closeModal(event) {
+      if (!event || event.target.classList.contains('product-modal') || event.target.classList.contains('modal-close')) {
+        const modal = document.getElementById('productModal');
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+        document.querySelectorAll('.category-card').forEach(card => {
+          card.classList.remove('active');
+        });
+        currentCategory = null;
+      }
     }
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal({});
+      }
+    });
 
     // Gallery Carousel
     let currentGalleryIndex = 0;
