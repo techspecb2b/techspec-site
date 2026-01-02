@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - TechSpec</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin: 0 0 20px 0;
+    }
+
+    h1 { font-size: 48px; }
+    h2 { font-size: 32px; }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin: 20px auto 40px;
+    }
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .btn {
+      padding: 14px 32px;
+      background-color: #FF0000;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 16px;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn:hover { 
+      background-color: #CC0000; 
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* GRAIN OVERLAY */
+    .grain-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+    }
+
+    /* NAVIGATION */
+    header.nav {
+      background-color: #FF0000;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header.nav.scrolled {
+      background-color: #CC0000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo img { height: 40px; }
+
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #f5f5f5; }
+
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #111;
+      transition: right 0.3s ease;
+      z-index: 999;
+      padding: 80px 20px 20px;
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .side-menu a:hover {
+      color: #FF0000;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 998;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* HERO HEADER */
+    .hero-header {
+      position: relative;
+      padding: 100px 20px 80px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.1); }
+    }
+
+    .hero-header * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-header h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-header p {
+      font-size: 20px;
+      color: #f0f0f0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero-header .icon-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-icon {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-icon:hover {
+      transform: translateY(-10px);
+    }
+
+    .hero-icon i {
+      font-size: 48px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .hero-icon span {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* FORM SECTION */
+    .form-section {
+      padding: 80px 20px;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #FF0000;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #111;
+      font-size: 14px;
+    }
+
+    .form-group label .required {
+      color: #FF0000;
+      margin-left: 3px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      background-color: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #FF0000;
+      box-shadow: 0 0 0 3px rgba(255,0,0,0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .dynamic-fields {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .dynamic-fields.show {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .file-upload-container {
+      position: relative;
+    }
+
+    .file-upload-label {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #f0f0f0;
+      border: 2px dashed #ddd;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      width: 100%;
+    }
+
+    .file-upload-label:hover {
+      background-color: #e0e0e0;
+      border-color: #FF0000;
+    }
+
+    .file-upload-label i {
+      margin-right: 10px;
+      color: #FF0000;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-name {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+    }
+
+    .note-text {
+      font-size: 14px;
+      color: #666;
+      margin-top: 8px;
+      font-weight: 500;
+    }
+
+    .note-text.bold {
+      font-weight: 700;
+      color: #FF0000;
+      margin-top: 12px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+
+    /* SUCCESS MESSAGE */
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .success-message.show {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .success-message h2 {
+      color: #FF0000;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .success-message p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .success-message .secondary-message {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .success-message .secondary-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .success-message .restart-btn {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.5s ease;
+      margin-top: 20px;
+    }
+
+    .success-message .restart-btn.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p { margin: 0; font-size: 14px; color: #aaa; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero-header h1 { font-size: 34px; }
+      .hero-header p { font-size: 16px; }
+      .form-container { padding: 30px 20px; }
+      .hero-icon { flex: 1 1 100px; }
+      
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-inner nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="index.html#services" onclick="toggleMenu()">Services</a>
+    <a href="index.html#portfolio" onclick="toggleMenu()">Portfolio</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO HEADER -->
+  <section class="hero-header">
+    <div class="container">
+      <h1>Let's Bring Your Vision to Life</h1>
+      <p>Ready to take your business to the next level? Fill out the form below and our team will get back to you within 24 hours with a custom solution tailored to your needs.</p>
+      <div class="icon-row">
+        <div class="hero-icon">
+          <i class="fas fa-rocket"></i>
+          <span>Fast Turnaround</span>
+        </div>
+        <div class="hero-icon">
+          <i class="fas fa-handshake"></i>
+          <span>Personal Service</span>
+        </div>
+        <div class="hero-icon">
+          <i class="fas fa-award"></i>
+          <span>Quality Guaranteed</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <div class="form-container" id="formContainer">
+        <h2>Start Your Project</h2>
+        <form id="contactForm">
+          <!-- Basic Fields -->
+          <div class="form-group">
+            <label>Name <span class="required">*</span></label>
+            <input type="text" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label>Service Type <span class="required">*</span></label>
+            <select name="serviceType" id="serviceType" required>
+              <option value="">Select a service...</option>
+              <option value="marketing">Marketing</option>
+              <option value="print">Print</option>
+              <option value="design">Design Only</option>
+            </select>
+          </div>
+
+          <!-- MARKETING FIELDS -->
+          <div id="marketingFields" class="dynamic-fields">
+            <div class="form-group">
+              <label>Marketing Platform <span class="required">*</span></label>
+              <select name="marketingPlatform" id="marketingPlatform">
+                <option value="">Select platform...</option>
+                <option value="google">Google</option>
+                <option value="facebook">Facebook</option>
+                <option value="both">Both</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Store Location <span class="required">*</span></label>
+              <input type="text" name="storeLocation" id="storeLocation">
+            </div>
+
+            <div class="form-group">
+              <label>Business Type <span class="required">*</span></label>
+              <input type="text" name="businessType" id="businessType">
+            </div>
+
+            <div class="form-group">
+              <label>Additional Comments</label>
+              <textarea name="marketingComments"></textarea>
+            </div>
+          </div>
+
+          <!-- PRINT FIELDS -->
+          <div id="printFields" class="dynamic-fields">
+            <div class="form-group">
+              <label>Print Service <span class="required">*</span></label>
+              <select name="printService" id="printService">
+                <option value="">Select option...</option>
+                <option value="printOnly">Print Only</option>
+                <option value="designAndPrint">Design and Print</option>
+              </select>
+            </div>
+
+            <!-- Print Only Sub-fields -->
+            <div id="printOnlyFields" class="dynamic-fields">
+              <div class="form-group">
+                <label>Upload Your File <span class="required">*</span></label>
+                <div class="file-upload-container">
+                  <label for="fileUpload" class="file-upload-label">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <span>Choose File or Email to brandon@techspec.biz</span>
+                  </label>
+                  <input type="file" id="fileUpload" name="printFile" accept=".pdf,.png,.jpg,.jpeg,.ai,.psd">
+                  <div class="file-name" id="fileName"></div>
+                </div>
+                <p class="note-text">If you prefer, you can email your file directly to <strong>brandon@techspec.biz</strong></p>
+              </div>
+            </div>
+
+            <!-- Design and Print Sub-fields -->
+            <div id="designAndPrintFields" class="dynamic-fields">
+              <div class="form-group">
+                <label>Design Request <span class="required">*</span></label>
+                <textarea name="designRequest" id="designRequest"></textarea>
+                <p class="note-text bold">Please email your logo to brandon@techspec.biz</p>
+              </div>
+            </div>
+
+            <!-- Common Print Fields -->
+            <div id="commonPrintFields" class="dynamic-fields">
+              <div class="form-group">
+                <label>Print Type <span class="required">*</span></label>
+                <input type="text" name="printType" id="printType" placeholder="e.g., Business Cards, Flyers, Posters">
+              </div>
+
+              <div class="form-group">
+                <label>Additional Comments/Requests</label>
+                <textarea name="printComments"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- DESIGN ONLY FIELDS -->
+          <div id="designFields" class="dynamic-fields">
+            <div class="form-group">
+              <label>Design Type</label>
+              <textarea name="designType" placeholder="Please describe the type of design work you need..."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Additional Comments/Requests</label>
+              <textarea name="designComments"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn submit-btn">Send Request</button>
+        </form>
+
+        <!-- SUCCESS MESSAGE -->
+        <div class="success-message" id="successMessage">
+          <h2><i class="fas fa-check-circle"></i> Thanks for your request!</h2>
+          <p>We will get back to you within 24 hours! If this is urgent, please contact us on our <a href="https://facebook.com/techspecb2b" target="_blank" style="color: #FF0000; font-weight: 600;">Facebook</a>.</p>
+          <p class="secondary-message" id="secondaryMessage">Have another project? Start another request now!</p>
+          <button class="btn restart-btn" id="restartBtn" onclick="resetForm()">Start Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    // Navigation scroll effect
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+
+    // File upload display
+    document.getElementById('fileUpload')?.addEventListener('change', function(e) {
+      const fileName = e.target.files[0]?.name || '';
+      const fileNameDisplay = document.getElementById('fileName');
+      if (fileName) {
+        fileNameDisplay.textContent = 'Selected: ' + fileName;
+        fileNameDisplay.style.color = '#FF0000';
+      } else {
+        fileNameDisplay.textContent = '';
+      }
+    });
+
+    // Dynamic form fields based on service type
+    const serviceType = document.getElementById('serviceType');
+    const marketingFields = document.getElementById('marketingFields');
+    const printFields = document.getElementById('printFields');
+    const designFields = document.getElementById('designFields');
+    const printService = document.getElementById('printService');
+    const printOnlyFields = document.getElementById('printOnlyFields');
+    const designAndPrintFields = document.getElementById('designAndPrintFields');
+    const commonPrintFields = document.getElementById('commonPrintFields');
+
+    serviceType.addEventListener('change', function() {
+      // Hide all dynamic fields first
+      marketingFields.classList.remove('show');
+      printFields.classList.remove('show');
+      designFields.classList.remove('show');
+      printOnlyFields.classList.remove('show');
+      designAndPrintFields.classList.remove('show');
+      commonPrintFields.classList.remove('show');
+
+      // Clear required attributes
+      document.getElementById('marketingPlatform').removeAttribute('required');
+      document.getElementById('storeLocation').removeAttribute('required');
+      document.getElementById('businessType').removeAttribute('required');
+      document.getElementById('printService').removeAttribute('required');
+      document.getElementById('printType').removeAttribute('required');
+      document.getElementById('designRequest').removeAttribute('required');
+
+      // Show relevant fields
+      if (this.value === 'marketing') {
+        marketingFields.classList.add('show');
+        document.getElementById('marketingPlatform').setAttribute('required', 'required');
+        document.getElementById('storeLocation').setAttribute('required', 'required');
+        document.getElementById('businessType').setAttribute('required', 'required');
+      } else if (this.value === 'print') {
+        printFields.classList.add('show');
+        document.getElementById('printService').setAttribute('required', 'required');
+      } else if (this.value === 'design') {
+        designFields.classList.add('show');
+      }
+    });
+
+    // Print service sub-options
+    printService.addEventListener('change', function() {
+      printOnlyFields.classList.remove('show');
+      designAndPrintFields.classList.remove('show');
+      commonPrintFields.classList.remove('show');
+      
+      document.getElementById('designRequest').removeAttribute('required');
+      document.getElementById('printType').removeAttribute('required');
+
+      if (this.value === 'printOnly') {
+        printOnlyFields.classList.add('show');
+        commonPrintFields.classList.add('show');
+        document.getElementById('printType').setAttribute('required', 'required');
+      } else if (this.value === 'designAndPrint') {
+        designAndPrintFields.classList.add('show');
+        commonPrintFields.classList.add('show');
+        document.getElementById('designRequest').setAttribute('required', 'required');
+        document.getElementById('printType').setAttribute('required', 'required');
+      }
+    });
+
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    const formContainer = document.getElementById('formContainer');
+    const successMessage = document.getElementById('successMessage');
+    const secondaryMessage = document.getElementById('secondaryMessage');
+    const restartBtn = document.getElementById('restartBtn');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Hide form
+      contactForm.style.display = 'none';
+      
+      // Show success message
+      successMessage.classList.add('show');
+      
+      // Show secondary message after 1 second
+      setTimeout(() => {
+        secondaryMessage.classList.add('show');
+      }, 1000);
+      
+      // Show restart button after 2 seconds
+      setTimeout(() => {
+        restartBtn.classList.add('show');
+      }, 2000);
+
+      // Here you would normally send the form data to your server
+      // For now, we'll just log it
+      const formData = new FormData(contactForm);
+      console.log('Form submitted with data:', Object.fromEntries(formData));
+    });
+
+    // Reset form function
+    function resetForm() {
+      contactForm.reset();
+      contactForm.style.display = 'block';
+      successMessage.classList.remove('show');
+      secondaryMessage.classList.remove('show');
+      restartBtn.classList.remove('show');
+      
+      // Hide all dynamic fields
+      marketingFields.classList.remove('show');
+      printFields.classList.remove('show');
+      designFields.classList.remove('show');
+      printOnlyFields.classList.remove('show');
+      designAndPrintFields.classList.remove('show');
+      commonPrintFields.classList.remove('show');
+      
+      // Clear file name display
+      document.getElementById('fileName').textContent = '';
+      
+      // Scroll to top of form
+      formContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
