@@ -671,14 +671,14 @@
       <div class="categories-grid">
         <div class="category-card" onclick="showProducts('business')">
           <i class="fas fa-id-card"></i>
-          <h3>Business Cards & Stationery</h3>
-          <p>Professional cards, letterhead, and more</p>
+          <h3>Business Cards</h3>
+          <p>Premium cards in every style & finish</p>
         </div>
         
         <div class="category-card" onclick="showProducts('marketing')">
           <i class="fas fa-bullhorn"></i>
           <h3>Marketing Materials</h3>
-          <p>Flyers, brochures, postcards & more</p>
+          <p>Flyers, brochures, door hangers & more</p>
         </div>
         
         <div class="category-card" onclick="showProducts('signs')">
@@ -689,20 +689,20 @@
         
         <div class="category-card" onclick="showProducts('apparel')">
           <i class="fas fa-tshirt"></i>
-          <h3>Apparel & Promotional</h3>
-          <p>T-shirts, hats, bags & branded merch</p>
+          <h3>Apparel & Merch</h3>
+          <p>T-shirts, hats, bags & promotional items</p>
         </div>
         
-        <div class="category-card" onclick="showProducts('packaging')">
-          <i class="fas fa-box"></i>
-          <h3>Packaging & Labels</h3>
-          <p>Custom packaging and product labels</p>
+        <div class="category-card" onclick="showProducts('stickers')">
+          <i class="fas fa-sticker-mule"></i>
+          <h3>Stickers & Labels</h3>
+          <p>Custom stickers, decals & product labels</p>
         </div>
         
-        <div class="category-card" onclick="showProducts('events')">
-          <i class="fas fa-calendar-check"></i>
-          <h3>Events & Trade Shows</h3>
-          <p>Booths, displays, and event materials</p>
+        <div class="category-card" onclick="showProducts('specialty')">
+          <i class="fas fa-star"></i>
+          <h3>Specialty Items</h3>
+          <p>Magnets, packaging, calendars & more</p>
         </div>
       </div>
 
@@ -770,65 +770,66 @@
       nav.classList.toggle('scrolled', window.scrollY > 10); 
     });
 
-    // Product categories data
+    // Product categories data (based on Splitfire Graphics)
     const productData = {
       business: {
-        title: 'Business Cards & Stationery',
+        title: 'Business Cards',
         products: [
-          'Business Cards', 'Letterhead', 'Envelopes', 'Notepads', 'Thank You Cards',
-          'Greeting Cards', 'Appointment Cards', 'Loyalty Cards', 'Gift Cards',
-          'Bookmarks', 'Calendars', 'Planners', 'Stamps', 'Custom Checks',
-          'Invoice Forms', 'Receipt Books', 'Presentation Folders', 'File Folders'
+          'Standard Business Cards', 'Gloss Business Cards', 'Matte Business Cards',
+          'Circle Business Cards', 'Rounded Corner Cards', 'Silk Laminated Cards',
+          'Spot UV Business Cards', 'Foil Business Cards', 'Plastic Business Cards',
+          'Metal Business Cards', 'Aluminum Business Cards', 'Letterhead',
+          'Envelopes', 'Business Stationery', 'NCR Forms', 'Custom Folders'
         ]
       },
       marketing: {
         title: 'Marketing Materials',
         products: [
-          'Flyers', 'Brochures', 'Postcards', 'Rack Cards', 'Door Hangers',
-          'Hang Tags', 'Posters', 'Table Tents', 'Menus', 'Catalogs',
-          'Booklets', 'Magazines', 'Newsletters', 'Coupons', 'Gift Certificates',
-          'Invitations', 'Announcements', 'Programs', 'Tickets', 'Wristbands'
+          'Flyers', 'Postcards', 'Door Hangers', 'Brochures', 'Bookmarks',
+          'Tent Cards', 'Table Tents', 'Rack Cards', 'Hang Tags',
+          'Menus', 'Catalogs', 'Presentation Folders', 'Greeting Cards',
+          'Invitations', 'Announcements'
         ]
       },
       signs: {
         title: 'Signs & Banners',
         products: [
-          'Vinyl Banners', 'Retractable Banners', 'Step & Repeat Banners', 'Mesh Banners',
-          'Fabric Banners', 'Yard Signs', 'A-Frame Signs', 'Foam Board Signs',
-          'Metal Signs', 'Aluminum Signs', 'Coroplast Signs', 'Acrylic Signs',
-          'Magnetic Signs', 'Window Clings', 'Wall Decals', 'Floor Graphics',
-          'Sidewalk Signs', 'Real Estate Signs', 'Political Signs', 'Wayfinding Signs'
+          'Vinyl Banners', 'Mesh Banners', 'Pull Up Banners', 'Retractable Banners',
+          'Canopy Tents', 'Backdrop Stands', 'Backdrops', 'Table Covers',
+          'Yard Signs', 'Double Sided Yard Signs', 'Real Estate Signs',
+          'Real Estate Sign Posts', 'For Sale Sign Posts', 'A-Frame Signs',
+          'Advertising Flags', 'Feather Flags', 'Teardrop Flags',
+          'Signs & Displays', 'Trade Show Booths', 'Window Clings', 'Posters'
         ]
       },
       apparel: {
-        title: 'Apparel & Promotional Items',
+        title: 'Apparel & Merch',
         products: [
-          'T-Shirts', 'Polo Shirts', 'Hoodies', 'Jackets', 'Hats & Caps',
-          'Beanies', 'Tote Bags', 'Backpacks', 'Drawstring Bags', 'Mugs',
-          'Water Bottles', 'Tumblers', 'Pens', 'Notebooks', 'USB Drives',
-          'Keychains', 'Lanyards', 'Phone Cases', 'PopSockets', 'Magnets',
-          'Buttons & Badges', 'Stickers', 'Decals', 'Koozies', 'Stadium Cups'
+          'T-Shirts', 'Polo Shirts', 'Hoodies', 'Hats & Caps',
+          'Mugs', 'Custom Drinkware', 'Water Bottles', 'Tumblers',
+          'Tote Bags', 'Backpacks', 'Promotional Products',
+          'Fridge Magnets', 'Car Magnets', 'Business Card Magnets',
+          'Keychains', 'Pens', 'Promotional Giveaways'
         ]
       },
-      packaging: {
-        title: 'Packaging & Labels',
+      stickers: {
+        title: 'Stickers & Labels',
         products: [
-          'Product Labels', 'Roll Labels', 'Die-Cut Labels', 'Food Labels',
-          'Bottle Labels', 'Jar Labels', 'Shipping Labels', 'Barcode Labels',
-          'Custom Boxes', 'Mailer Boxes', 'Product Boxes', 'Gift Boxes',
-          'Corrugated Boxes', 'Retail Packaging', 'Hang Tags', 'Sleeve Packaging',
-          'Bag Tags', 'Sticker Sheets', 'Window Stickers', 'Bumper Stickers'
+          'Die-Cut Stickers', 'Roll Stickers', 'Sheet Stickers',
+          'Bumper Stickers', 'Window Stickers', 'Floor Decals',
+          'Wall Decals', 'Vinyl Decals', 'Product Labels',
+          'Bottle Labels', 'Shipping Labels', 'Custom Labels',
+          'Kiss-Cut Stickers', 'Weatherproof Stickers'
         ]
       },
-      events: {
-        title: 'Events & Trade Show Materials',
+      specialty: {
+        title: 'Specialty Items',
         products: [
-          'Pop-Up Displays', 'Trade Show Booths', 'Backdrop Stands', 'Table Covers',
-          'Table Runners', 'Tablecloths', 'Booth Graphics', 'Banner Stands',
-          'Literature Racks', 'Brochure Holders', 'Display Boards', 'Easel Stands',
-          'Feather Flags', 'Teardrop Flags', 'Event Tickets', 'Name Tags',
-          'Badge Holders', 'Lanyards', 'Event Programs', 'Event Invitations',
-          'Raffle Tickets', 'Wristbands', 'Event Posters', 'Photo Booth Backdrops'
+          'Wall Calendars', 'Desk Calendars', 'Home & Office Wall Art',
+          'Canvas Prints', 'Acrylic Prints', 'Metal Prints', 'Framed Prints',
+          'Supply Boxes', 'Packaging Materials', 'Custom Boxes',
+          'Event Essentials Package', 'Hardware', 'Stamps', 'Address Stamps',
+          'Self-Inking Stamps', 'Custom Checks', 'Awards & Plaques'
         ]
       }
     };
