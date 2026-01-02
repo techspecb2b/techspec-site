@@ -42,42 +42,43 @@
     a { text-decoration: none; transition: all 0.3s ease; }
 
     .btn {
-      padding: 16px 40px;
-      background-color: #FF0000;
-      color: #fff;
-      border-radius: 6px;
+      padding: 18px 45px;
+      background: #fff;
+      color: #FF0000;
+      border-radius: 50px;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 700;
       display: inline-block;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      border: none;
+      border: 3px solid #fff;
       cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
 
     .btn::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
     }
 
     .btn:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    .btn:hover { 
-      background-color: #CC0000; 
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+      left: 0;
     }
 
     .container {
@@ -206,39 +207,13 @@
     .hero {
       position: relative;
       padding: 120px 20px 100px;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      background: linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
+                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><style>.line{fill:none;stroke:%23000;stroke-width:2;opacity:0.15;}</style></defs><rect class="line" x="150" y="100" width="110" height="110" rx="8"/><circle class="line" cx="400" cy="180" r="75"/><polygon class="line" points="600,120 670,180 600,240 530,180"/><path class="line" d="M850,140 L920,160 L940,220 L850,240 L780,200 Z"/><circle class="line" cx="200" cy="450" r="65"/><rect class="line" x="500" y="400" width="90" height="90" rx="45"/><line class="line" x1="800" y1="450" x2="950" y2="450"/><polyline class="line" points="350,500 400,450 450,500"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: #fff;
       text-align: center;
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 20px 20px;
-      opacity: 0.6;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: -20%;
-      left: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: rotate 30s linear infinite;
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
     }
 
     .hero * { position: relative; z-index: 2; }
@@ -308,14 +283,20 @@
 
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
-      margin-bottom: 60px;
     }
 
-    .category-wrapper {
-      display: flex;
-      flex-direction: column;
+    @media (max-width: 968px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .category-card {
@@ -365,31 +346,27 @@
     }
 
     /* PRODUCT LIST */
-    .product-list-container {
-      max-width: none;
-      margin: 20px 0 0;
-      padding: 0;
-      background: transparent;
-      border-radius: 0;
+    .product-dropdown {
+      width: 100%;
+      margin: 30px 0 0;
       display: none;
-      grid-column: 1;
     }
 
-    .product-list-container.show {
+    .product-dropdown.show {
       display: block;
-      animation: fadeIn 0.4s ease;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 2000px; }
     }
 
     .product-list-inner {
       background: #f7f7f7;
-      padding: 30px;
+      padding: 40px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     .product-list-header {
@@ -550,37 +527,14 @@
     /* CTA SECTION */
     .cta {
       padding: 100px 20px;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      background: linear-gradient(135deg, rgba(255,0,0,0.9) 0%, rgba(204,0,0,0.95) 100%),
+                  url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><style>.line{fill:none;stroke:%23000;stroke-width:2;opacity:0.12;}</style></defs><rect class="line" x="100" y="100" width="100" height="100" rx="10"/><circle class="line" cx="350" cy="150" r="70"/><polygon class="line" points="550,100 620,150 550,200 480,150"/><path class="line" d="M750,120 L820,140 L840,200 L750,220 L680,180 Z"/><rect class="line" x="950" y="120" width="80" height="80" rx="40"/><line class="line" x1="150" y1="280" x2="300" y2="280"/><polyline class="line" points="500,320 550,280 600,320"/></svg>');
+      background-size: cover;
+      background-position: center;
       color: #fff;
       text-align: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 50px 50px;
-      opacity: 0.5;
-    }
-
-    .cta::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -150px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
-      border-radius: 50%;
-      transform: translateY(-50%);
     }
 
     .cta * { position: relative; z-index: 2; }
@@ -771,61 +725,46 @@
     <div class="container">
       <h2>What Can We Print?</h2>
       
-      <div class="categories-grid">
-        <div class="category-wrapper">
-          <div class="category-card" onclick="showProducts('business', this)">
-            <i class="fas fa-id-card"></i>
-            <h3>Business Cards</h3>
-            <p>Premium cards in every style & finish</p>
-          </div>
-          <div class="product-list-container" id="list-business"></div>
+      <div class="categories-grid" id="categoriesGrid">
+        <div class="category-card" data-category="business" onclick="showProducts('business', this)">
+          <i class="fas fa-id-card"></i>
+          <h3>Business Cards</h3>
+          <p>Premium cards in every style & finish</p>
         </div>
         
-        <div class="category-wrapper">
-          <div class="category-card" onclick="showProducts('marketing', this)">
-            <i class="fas fa-bullhorn"></i>
-            <h3>Marketing Materials</h3>
-            <p>Flyers, brochures, door hangers & more</p>
-          </div>
-          <div class="product-list-container" id="list-marketing"></div>
+        <div class="category-card" data-category="marketing" onclick="showProducts('marketing', this)">
+          <i class="fas fa-bullhorn"></i>
+          <h3>Marketing Materials</h3>
+          <p>Flyers, brochures, door hangers & more</p>
         </div>
         
-        <div class="category-wrapper">
-          <div class="category-card" onclick="showProducts('signs', this)">
-            <i class="fas fa-rectangle-ad"></i>
-            <h3>Signs & Banners</h3>
-            <p>Indoor & outdoor signage solutions</p>
-          </div>
-          <div class="product-list-container" id="list-signs"></div>
+        <div class="category-card" data-category="signs" onclick="showProducts('signs', this)">
+          <i class="fas fa-rectangle-ad"></i>
+          <h3>Signs & Banners</h3>
+          <p>Indoor & outdoor signage solutions</p>
         </div>
         
-        <div class="category-wrapper">
-          <div class="category-card" onclick="showProducts('apparel', this)">
-            <i class="fas fa-tshirt"></i>
-            <h3>Apparel & Merch</h3>
-            <p>T-shirts, hats, bags & promotional items</p>
-          </div>
-          <div class="product-list-container" id="list-apparel"></div>
+        <div class="category-card" data-category="apparel" onclick="showProducts('apparel', this)">
+          <i class="fas fa-tshirt"></i>
+          <h3>Apparel & Merch</h3>
+          <p>T-shirts, hats, bags & promotional items</p>
         </div>
         
-        <div class="category-wrapper">
-          <div class="category-card" onclick="showProducts('stickers', this)">
-            <i class="fas fa-sticker-mule"></i>
-            <h3>Stickers & Labels</h3>
-            <p>Custom stickers, decals & product labels</p>
-          </div>
-          <div class="product-list-container" id="list-stickers"></div>
+        <div class="category-card" data-category="stickers" onclick="showProducts('stickers', this)">
+          <i class="fas fa-sticker-mule"></i>
+          <h3>Stickers & Labels</h3>
+          <p>Custom stickers, decals & product labels</p>
         </div>
         
-        <div class="category-wrapper">
-          <div class="category-card" onclick="showProducts('specialty', this)">
-            <i class="fas fa-star"></i>
-            <h3>Specialty Items</h3>
-            <p>Magnets, packaging, calendars & more</p>
-          </div>
-          <div class="product-list-container" id="list-specialty"></div>
+        <div class="category-card" data-category="specialty" onclick="showProducts('specialty', this)">
+          <i class="fas fa-star"></i>
+          <h3>Specialty Items</h3>
+          <p>Magnets, packaging, calendars & more</p>
         </div>
       </div>
+
+      <!-- Product dropdown will be inserted here -->
+      <div id="productDropdown" class="product-dropdown"></div>
     </div>
   </section>
 
@@ -974,16 +913,8 @@
     let currentCategory = null;
 
     function showProducts(category, element) {
-      const container = document.getElementById(`list-${category}`);
+      const dropdown = document.getElementById('productDropdown');
       const data = productData[category];
-      
-      // Close all other dropdowns
-      document.querySelectorAll('.product-list-container').forEach(list => {
-        if(list.id !== `list-${category}`) {
-          list.classList.remove('show');
-          list.innerHTML = '';
-        }
-      });
       
       // Remove active class from all cards
       document.querySelectorAll('.category-card').forEach(card => {
@@ -992,8 +923,8 @@
       
       // If same category clicked, close it
       if (currentCategory === category) {
-        container.classList.remove('show');
-        container.innerHTML = '';
+        dropdown.classList.remove('show');
+        dropdown.innerHTML = '';
         currentCategory = null;
         return;
       }
@@ -1006,7 +937,7 @@
         `<div class="product-item">${product}</div>`
       ).join('');
       
-      container.innerHTML = `
+      dropdown.innerHTML = `
         <div class="product-list-inner">
           <div class="product-list-header">
             <h3>${data.title}</h3>
@@ -1016,24 +947,19 @@
             ${productsHTML}
           </div>
           <div class="close-list">
-            <button onclick="closeProductList('${category}')">Close</button>
+            <button onclick="closeProductList()">Close</button>
           </div>
         </div>
       `;
       
-      container.classList.add('show');
+      dropdown.classList.add('show');
       currentCategory = category;
-      
-      // Scroll to product list smoothly
-      setTimeout(() => {
-        container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 100);
     }
 
-    function closeProductList(category) {
-      const container = document.getElementById(`list-${category}`);
-      container.classList.remove('show');
-      container.innerHTML = '';
+    function closeProductList() {
+      const dropdown = document.getElementById('productDropdown');
+      dropdown.classList.remove('show');
+      dropdown.innerHTML = '';
       document.querySelectorAll('.category-card').forEach(card => {
         card.classList.remove('active');
       });
