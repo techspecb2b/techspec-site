@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - TechSpec</title>
 
+  <!-- Pageclip -->
+  <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
@@ -554,7 +557,7 @@
     <div class="container">
       <div class="form-container" id="formContainer">
         <h2>Start Your Project</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://send.pageclip.co/cirIZDXD1KreEGVgkdAVHCoi0GEG3aNN/Contact-Form" class="pageclip-form" method="post">
           <!-- Basic Fields -->
           <div class="form-group">
             <label>Name <span class="required">*</span></label>
@@ -673,7 +676,9 @@
             </div>
           </div>
 
-          <button type="submit" class="btn submit-btn">Send Request</button>
+          <button type="submit" class="btn submit-btn pageclip-form__submit">
+            <span>Send Request</span>
+          </button>
         </form>
 
         <!-- SUCCESS MESSAGE -->
@@ -695,6 +700,7 @@
   </footer>
 
   <!-- SCRIPTS -->
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
   <script>
     // Mobile menu toggle
     function toggleMenu() {
@@ -784,36 +790,37 @@
       }
     });
 
-    // Form submission
+    // Form submission with Pageclip
     const contactForm = document.getElementById('contactForm');
     const formContainer = document.getElementById('formContainer');
     const successMessage = document.getElementById('successMessage');
     const secondaryMessage = document.getElementById('secondaryMessage');
     const restartBtn = document.getElementById('restartBtn');
 
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Hide form
-      contactForm.style.display = 'none';
-      
-      // Show success message
-      successMessage.classList.add('show');
-      
-      // Show secondary message after 1 second
-      setTimeout(() => {
-        secondaryMessage.classList.add('show');
-      }, 1000);
-      
-      // Show restart button after 2 seconds
-      setTimeout(() => {
-        restartBtn.classList.add('show');
-      }, 2000);
-
-      // Here you would normally send the form data to your server
-      // For now, we'll just log it
-      const formData = new FormData(contactForm);
-      console.log('Form submitted with data:', Object.fromEntries(formData));
+    // Pageclip sends a custom event on successful submission
+    window.addEventListener('load', function() {
+      Pageclip.form(contactForm, {
+        onSubmit: function(event) { },
+        onResponse: function(error, response) {
+          if (!error) {
+            // Hide form
+            contactForm.style.display = 'none';
+            
+            // Show success message
+            successMessage.classList.add('show');
+            
+            // Show secondary message after 1 second
+            setTimeout(() => {
+              secondaryMessage.classList.add('show');
+            }, 1000);
+            
+            // Show restart button after 2 seconds
+            setTimeout(() => {
+              restartBtn.classList.add('show');
+            }, 2000);
+          }
+        }
+      });
     });
 
     // Reset form function
