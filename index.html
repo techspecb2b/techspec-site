@@ -7,8 +7,12 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
@@ -17,6 +21,7 @@
       color: #111;
       line-height: 1.6;
       text-align: center;
+      overflow-x: hidden;
     }
 
     h1, h2, h3 {
@@ -44,15 +49,69 @@
       border-radius: 6px;
       font-size: 16px;
       display: inline-block;
-      transition: background 0.3s ease, transform 0.2s ease;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    .btn:hover { background-color: #CC0000; transform: translateY(-2px); }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn:hover { 
+      background-color: #CC0000; 
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+    }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* SECTION DIVIDERS */
+    .divider {
+      height: 80px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .divider svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+    }
+
+    /* GRAIN OVERLAY */
+    .grain-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
     }
 
     /* NAVIGATION */
@@ -86,8 +145,21 @@
       font-size: 14px;
       font-weight: 500;
       color: #fff;
+      position: relative;
     }
 
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
     nav a:hover { color: #f5f5f5; transform: translateY(-2px); }
 
     /* HERO */
@@ -102,6 +174,18 @@
       flex-direction: column;
       justify-content: center;
       overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+      pointer-events: none;
+      z-index: 1;
     }
 
     .hero * { position: relative; z-index: 2; }
@@ -121,6 +205,7 @@
     .services {
       padding: 100px 20px;
       background-color: #ffffff;
+      position: relative;
     }
 
     .services-grid {
@@ -131,49 +216,96 @@
     }
 
     .service-card {
-      background-color: #f7f7f7;
+      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
       padding: 40px 20px;
       border-radius: 12px;
       flex: 1 1 250px;
       max-width: 300px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
+      border-top: 3px solid transparent;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      padding: 3px;
+      background: linear-gradient(135deg, #FF0000, #CC0000);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.15);
-      border-top: 4px solid #FF0000;
+      transform: translateY(-15px) scale(1.05) rotate(1deg);
+      box-shadow: 0 20px 40px rgba(255,0,0,0.2);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
     }
 
     .service-card i {
-      font-size: 36px;
-      margin-bottom: 15px;
+      font-size: 48px;
+      margin-bottom: 20px;
       color: #FF0000;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
-    /* PORTFOLIO */
+    .service-card:hover i {
+      transform: scale(1.2) rotate(5deg);
+      color: #CC0000;
+    }
+
+    .service-card h3 {
+      color: #111;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    /* PORTFOLIO CAROUSEL */
     .portfolio {
       padding: 100px 20px;
       background-color: #f7f7f7;
+      position: relative;
+      overflow: hidden;
     }
 
-    .portfolio-grid {
+    .portfolio-carousel-wrapper {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .portfolio-carousel {
       display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
+      transition: transform 0.5s ease;
+      gap: 20px;
     }
 
     .portfolio-item {
-      width: 300px;
-      height: 220px;
+      min-width: 320px;
+      height: 240px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
       position: relative;
+      flex-shrink: 0;
     }
 
     .portfolio-item img {
@@ -181,14 +313,14 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
     }
 
     .portfolio-item::after {
       content: attr(data-title);
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0);
+      background: rgba(255,0,0,0);
       color: #fff;
       display: flex;
       align-items: center;
@@ -196,37 +328,158 @@
       font-weight: 600;
       font-size: 18px;
       opacity: 0;
-      transition: background 0.3s ease, opacity 0.3s ease;
+      transition: all 0.3s ease;
     }
 
-    .portfolio-item:hover img { transform: scale(1.05); }
-    .portfolio-item:hover::after { opacity: 1; background: rgba(0,0,0,0.35); }
+    .portfolio-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .portfolio-item:hover img { transform: scale(1.1); }
+    .portfolio-item:hover::after { 
+      opacity: 1; 
+      background: rgba(255,0,0,0.8);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,0,0,0.9);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .carousel-btn:hover {
+      background: #CC0000;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: #FF0000;
+      width: 30px;
+      border-radius: 6px;
+    }
 
     /* TESTIMONIALS */
     .testimonials {
       padding: 100px 20px;
       background-color: #ffffff;
+      position: relative;
+    }
+
+    .testimonials-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
     }
 
     .testimonial-card {
       max-width: 400px;
       margin: 20px;
-      padding: 30px;
-      background-color: #f7f7f7;
+      padding: 40px 30px;
+      background: linear-gradient(135deg, rgba(255,0,0,0.05) 0%, rgba(255,255,255,1) 100%);
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateX(-100px);
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
     }
 
-    .testimonial-card.show { opacity: 1; transform: translateY(0); }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 120px;
+      color: rgba(255,0,0,0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+
+    .testimonial-card:nth-child(even) {
+      transform: translateX(100px);
+    }
+
+    .testimonial-card.show { 
+      opacity: 1; 
+      transform: translateX(0);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #333;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-stars {
+      color: #FFD700;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card h3 {
+      color: #FF0000;
+      font-size: 16px;
+      font-weight: 600;
+    }
 
     /* CTA */
     .cta {
       padding: 100px 20px;
-      background-color: #FF0000;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
       color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.1); }
     }
 
     .cta h2 {
@@ -234,12 +487,36 @@
       margin-bottom: 20px;
       opacity: 0;
       transform: translateY(30px);
-      transition: all 0.6s ease;
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 2;
     }
 
-    .cta h2.show { opacity: 1; transform: translateY(0); }
+    .cta h2.show { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
 
-    .cta p { color: #f0f0f0; font-size: 20px; margin-bottom: 40px; }
+    .cta p { 
+      color: #f0f0f0; 
+      font-size: 20px; 
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta .btn {
+      background: #fff;
+      color: #FF0000;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta .btn:hover {
+      background: #f0f0f0;
+      color: #CC0000;
+    }
 
     /* FOOTER */
     footer {
@@ -261,9 +538,16 @@
       .cta h2 { font-size: 28px; }
       .cta p { font-size: 18px; }
       .hero .btn { width: 80%; max-width: 250px; }
+      .carousel-btn { width: 40px; height: 40px; font-size: 16px; }
+      .portfolio-item { min-width: 280px; height: 200px; }
+      .testimonial-card {
+        transform: translateY(30px);
+      }
+      .testimonial-card:nth-child(even) {
+        transform: translateY(30px);
+      }
     }
   </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -286,43 +570,128 @@
     <a href="#" class="btn">Start a Project</a>
   </section>
 
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,0 L1200,80 L1200,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
   <!-- SERVICES -->
   <section class="services" id="services">
+    <div class="grain-overlay"></div>
     <div class="container">
       <h2>Our Services</h2>
       <div class="services-grid">
-        <div class="service-card"><i class="fas fa-paint-brush"></i><h3>Branding & Design</h3><p>Custom logos, brand identity, and visuals crafted for your business.</p></div>
-        <div class="service-card"><i class="fas fa-bullhorn"></i><h3>Advertising & Marketing</h3><p>Campaigns on Facebook, Google, and beyond that grow your audience.</p></div>
-        <div class="service-card"><i class="fas fa-print"></i><h3>Print & Visual Assets</h3><p>Business cards, posters, and other high-quality print materials.</p></div>
+        <div class="service-card">
+          <i class="fas fa-palette"></i>
+          <h3>Branding & Design</h3>
+          <p>Custom logos, brand identity, and visuals crafted for your business.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-bullhorn"></i>
+          <h3>Advertising & Marketing</h3>
+          <p>Campaigns on Facebook, Google, and beyond that grow your audience.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-print"></i>
+          <h3>Print & Visual Assets</h3>
+          <p>Business cards, posters, and other high-quality print materials.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,80 L1200,0 L1200,80 L0,80 Z" fill="#f7f7f7"/>
+    </svg>
+  </div>
 
   <!-- PORTFOLIO -->
   <section class="portfolio" id="portfolio">
+    <div class="grain-overlay"></div>
     <div class="container">
       <h2>Check Out Some of Our Work</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item" data-title="Project 1"><img src="portfolio1.png" alt="Project 1"></div>
-        <div class="portfolio-item" data-title="Project 2"><img src="portfolio2.png" alt="Project 2"></div>
-        <div class="portfolio-item" data-title="Project 3"><img src="portfolio3.png" alt="Project 3"></div>
-        <div class="portfolio-item" data-title="Project 4"><img src="portfolio4.png" alt="Project 4"></div>
-        <div class="portfolio-item" data-title="Project 5"><img src="portfolio5.png" alt="Project 5"></div>
+      <div class="portfolio-carousel-wrapper">
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="portfolio-carousel" id="carousel">
+          <div class="portfolio-item" data-title="Project 1"><img src="https://via.placeholder.com/320x240/FF0000/FFFFFF?text=Project+1" alt="Project 1"></div>
+          <div class="portfolio-item" data-title="Project 2"><img src="https://via.placeholder.com/320x240/CC0000/FFFFFF?text=Project+2" alt="Project 2"></div>
+          <div class="portfolio-item" data-title="Project 3"><img src="https://via.placeholder.com/320x240/FF0000/FFFFFF?text=Project+3" alt="Project 3"></div>
+          <div class="portfolio-item" data-title="Project 4"><img src="https://via.placeholder.com/320x240/CC0000/FFFFFF?text=Project+4" alt="Project 4"></div>
+          <div class="portfolio-item" data-title="Project 5"><img src="https://via.placeholder.com/320x240/FF0000/FFFFFF?text=Project+5" alt="Project 5"></div>
+          <div class="portfolio-item" data-title="Project 6"><img src="https://via.placeholder.com/320x240/CC0000/FFFFFF?text=Project+6" alt="Project 6"></div>
+          <div class="portfolio-item" data-title="Project 7"><img src="https://via.placeholder.com/320x240/FF0000/FFFFFF?text=Project+7" alt="Project 7"></div>
+          <div class="portfolio-item" data-title="Project 8"><img src="https://via.placeholder.com/320x240/CC0000/FFFFFF?text=Project+8" alt="Project 8"></div>
+        </div>
+        <button class="carousel-btn next" onclick="moveCarousel(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="carousel-dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,0 L1200,80 L1200,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Amazing results! Our branding has never looked better. The team really understood our vision."</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>— Sarah Johnson, CEO</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"The print materials exceeded our expectations — high quality, fast turnaround, and affordable pricing."</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>— Michael Chen, Marketing Director</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"Marketing campaigns that really deliver. Our ROI increased by 300% in just three months!"</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>— Emily Rodriguez, Founder</h3>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>What Our Clients Say</h2>
-      <div class="services-grid">
-        <div class="testimonial-card"><p>"Amazing results! Our branding has never looked better."</p><h3>- Client A</h3></div>
-        <div class="testimonial-card"><p>"The print materials exceeded our expectations — high quality and fast."</p><h3>- Client B</h3></div>
-        <div class="testimonial-card"><p>"Marketing campaigns that really deliver. Highly recommend."</p><h3>- Client C</h3></div>
-      </div>
-    </div>
-  </section>
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,80 L1200,0 L1200,80 L0,80 Z" fill="#FF0000"/>
+    </svg>
+  </div>
 
   <!-- CTA -->
   <section class="cta">
@@ -340,15 +709,75 @@
     </div>
   </footer>
 
-  <!-- NAV SCROLL SCRIPT -->
+  <!-- SCRIPTS -->
   <script>
+    // Navigation scroll effect
     const nav = document.querySelector('header.nav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); });
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
 
+    // Testimonial cards animation
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     const ctaHeading = document.querySelector('.cta h2');
-    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('show'); }); }, { threshold: 0.3 });
+    
+    const observer = new IntersectionObserver(entries => { 
+      entries.forEach(entry => { 
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show'); 
+        }
+      }); 
+    }, { threshold: 0.2 });
+    
     testimonialCards.forEach(card => observer.observe(card));
+    observer.observe(ctaHeading);
+
+    // Portfolio Carousel
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const items = document.querySelectorAll('.portfolio-item');
+    const totalItems = items.length;
+    const itemsToShow = 3;
+    const maxIndex = Math.max(0, totalItems - itemsToShow);
+
+    // Create dots
+    const dotsContainer = document.getElementById('dots');
+    for(let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      if(i === 0) dot.classList.add('active');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      const offset = currentIndex * -340;
+      carousel.style.transform = `translateX(${offset}px)`;
+      
+      // Update dots
+      document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function moveCarousel(direction) {
+      currentIndex += direction;
+      if(currentIndex < 0) currentIndex = 0;
+      if(currentIndex > maxIndex) currentIndex = maxIndex;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    // Auto-play carousel
+    setInterval(() => {
+      currentIndex++;
+      if(currentIndex > maxIndex) currentIndex = 0;
+      updateCarousel();
+    }, 4000);
   </script>
 </body>
 </html>
