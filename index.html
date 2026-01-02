@@ -176,14 +176,6 @@
       overflow: hidden;
     }
 
-    /* Layer A: reduce hero height but keep layout intact.
-       This makes the hero shorter on larger screens so you can see more white beneath it. */
-    @media (min-width: 768px) {
-      .hero {
-        min-height: 85vh; /* reduce from 100vh to reveal more of the white section beneath */
-      }
-    }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -324,13 +316,11 @@
       transition: transform 0.4s ease;
     }
 
-    /* Layer B: Remove the red overlay on portfolio items.
-       We keep the image hover scale but do not show the red overlay on hover. */
     .portfolio-item::after {
       content: attr(data-title);
       position: absolute;
       inset: 0;
-      background: rgba(255,0,0,0); /* neutral, no red overlay */
+      background: rgba(255,0,0,0);
       color: #fff;
       display: flex;
       align-items: center;
@@ -346,10 +336,10 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.2);
     }
 
-    /* Removed red overlay on hover: keep image transform, but do not show red overlay */
     .portfolio-item:hover img { transform: scale(1.1); }
     .portfolio-item:hover::after { 
-      opacity: 0; /* ensure overlay stays hidden on hover */
+      opacity: 1; 
+      background: rgba(255,0,0,0.8);
     }
 
     .carousel-btn {
@@ -434,133 +424,360 @@
       left: 20px;
       font-size: 120px;
       color: rgba(255,0,0,0.1);
-      font-family: "Poppins", sans-serif;
-      font-weight: 700;
+      font-family: Georgia, serif;
+      line-height: 1;
     }
 
-    /* ... rest of the existing content remains the same ... */
-    /* If you pasted the rest of your original file here, ensure to include any closing tags below */
+    .testimonial-card:nth-child(even) {
+      transform: translateX(100px);
+    }
 
+    .testimonial-card.show { 
+      opacity: 1; 
+      transform: translateX(0);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      color: #333;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-stars {
+      color: #FFD700;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card h3 {
+      color: #FF0000;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.1); }
+    }
+
+    .cta h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2.show { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+
+    .cta p { 
+      color: #f0f0f0; 
+      font-size: 20px; 
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta .btn {
+      background: #fff;
+      color: #FF0000;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta .btn:hover {
+      background: #f0f0f0;
+      color: #CC0000;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p { margin: 0; font-size: 14px; color: #aaa; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      h1 { font-size: 34px; }
+      .nav-inner { flex-direction: column; }
+      nav a { margin-left: 0; margin-top: 10px; }
+      .service-card, .portfolio-item, .testimonial-card { width: 90%; max-width: 300px; }
+      .hero { background-attachment: scroll; padding: 80px 20px 60px; }
+      .cta h2 { font-size: 28px; }
+      .cta p { font-size: 18px; }
+      .hero .btn { width: 80%; max-width: 250px; }
+      .carousel-btn { width: 40px; height: 40px; font-size: 16px; }
+      .portfolio-item { min-width: 280px; height: 200px; }
+      .testimonial-card {
+        transform: translateY(30px);
+      }
+      .testimonial-card:nth-child(even) {
+        transform: translateY(30px);
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <header class="nav">
-    <div class="nav-inner container">
-      <div class="logo"><img src="logo.png" alt="TechSpec"></div>
-      <nav aria-label="Main">
-        <a href="#home">Home</a>
+    <div class="nav-inner">
+      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <nav>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <h1>TechSpec — Modern solutions for ambitious teams</h1>
-      <p>Your product, faster. We craft scalable web experiences with a comfort-first approach.</p>
-      <div>
-        <a href="#portfolio" class="btn">View Portfolio</a>
-      </div>
-    </div>
-    <div class="grain-overlay" aria-hidden="true"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Next-Level Print, Design & Marketing</h1>
+    <p>Affordable, high-impact print, design & marketing for businesses that mean business.</p>
+    <a href="#" class="btn">Start a Project</a>
   </section>
 
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,0 L1200,80 L1200,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- SERVICES -->
   <section class="services" id="services">
+    <div class="grain-overlay"></div>
     <div class="container">
-      <h2>Services</h2>
+      <h2>Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
-          <i class="fas fa-code"></i>
-          <h3>Frontend Development</h3>
-          <p>Responsive, accessible UIs built with performance in mind.</p>
+          <i class="fas fa-palette"></i>
+          <h3>Branding & Design</h3>
+          <p>Custom logos, brand identity, and visuals crafted for your business.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-server"></i>
-          <h3>Backend Architecture</h3>
-          <p>Robust APIs, scalable data models, and clean code.</p>
+          <i class="fas fa-bullhorn"></i>
+          <h3>Advertising & Marketing</h3>
+          <p>Campaigns on Facebook, Google, and beyond that grow your audience.</p>
         </div>
         <div class="service-card">
-          <i class="fas fa-chart-line"></i>
-          <h3>Performance & SEO</h3>
-          <p>Optimized experiences that rank and load swiftly.</p>
+          <i class="fas fa-print"></i>
+          <h3>Print & Visual Assets</h3>
+          <p>Business cards, posters, and other high-quality print materials.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,80 L1200,0 L1200,80 L0,80 Z" fill="#f7f7f7"/>
+    </svg>
+  </div>
+
+  <!-- PORTFOLIO -->
   <section class="portfolio" id="portfolio">
+    <div class="grain-overlay"></div>
     <div class="container">
-      <h2>Portfolio</h2>
-      <div class="portfolio-carousel-wrapper" aria-label="Portfolio">
-        <div class="portfolio-carousel" id="portfolioCarousel">
-          <div class="portfolio-item" data-title="Project A">
-            <img src="https://images.unsplash.com/photo-1504711466465-3744f2f25f25?q=80&w=800&auto=format&fit=crop" alt="Project A">
-          </div>
-          <div class="portfolio-item" data-title="Project B">
-            <img src="https://images.unsplash.com/photo-1495551180711-7a1a8b23a43f?q=80&w=800&auto=format&fit=crop" alt="Project B">
-          </div>
-          <div class="portfolio-item" data-title="Project C">
-            <img src="https://images.unsplash.com/photo-1523417574478-4e3e1b10b2bf?q=80&w=800&auto=format&fit=crop" alt="Project C">
-          </div>
+      <h2>Check Out Some of Our Work</h2>
+      <div class="portfolio-carousel-wrapper">
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="portfolio-carousel" id="carousel">
+          <div class="portfolio-item" data-title="Project 1"><img src="portfolio1.png" alt="Project 1"></div>
+          <div class="portfolio-item" data-title="Project 2"><img src="portfolio2.png" alt="Project 2"></div>
+          <div class="portfolio-item" data-title="Project 3"><img src="portfolio3.png" alt="Project 3"></div>
+          <div class="portfolio-item" data-title="Project 4"><img src="portfolio4.png" alt="Project 4"></div>
+          <div class="portfolio-item" data-title="Project 5"><img src="portfolio5.png" alt="Project 5"></div>
+          <div class="portfolio-item" data-title="Project 6"><img src="portfolio6.png" alt="Project 6"></div>
+          <div class="portfolio-item" data-title="Project 7"><img src="portfolio7.png" alt="Project 7"></div>
+          <div class="portfolio-item" data-title="Project 8"><img src="portfolio8.png" alt="Project 8"></div>
         </div>
-        <button class="carousel-btn prev" aria-label="Previous portfolio" id="prevBtn">&lt;</button>
-        <button class="carousel-btn next" aria-label="Next portfolio" id="nextBtn">&gt;</button>
+        <button class="carousel-btn next" onclick="moveCarousel(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
-      <div class="carousel-dots" id="dots" role="navigation" aria-label="Portfolio carousel dots">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
+      <div class="carousel-dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,0 L1200,80 L1200,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Amazing results! Our branding has never looked better. The team really understood our vision."</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>— Sarah Johnson, CEO</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"The print materials exceeded our expectations — high quality, fast turnaround, and affordable pricing."</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>— Michael Chen, Marketing Director</h3>
+        </div>
+        <div class="testimonial-card">
+          <p>"Marketing campaigns that really deliver. Our ROI increased by 300% in just three months!"</p>
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>— Emily Rodriguez, Founder</h3>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="testimonials" id="testimonials">
-    <div class="container testimonials-grid">
-      <div class="testimonial-card">
-        <p>“TechSpec helped us cut our release cycle in half while improving quality.”</p>
-        <strong>- Jane Doe, CEO</strong>
-      </div>
-      <div class="testimonial-card">
-        <p>“The team brought our vision to life with superb execution.”</p>
-        <strong>- John Smith, CTO</strong>
-      </div>
+  <!-- DIVIDER -->
+  <div class="divider">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0,80 L1200,0 L1200,80 L0,80 Z" fill="#FF0000"/>
+    </svg>
+  </div>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Bring Your Vision to Life?</h2>
+      <p>Contact us today and let's create designs and campaigns that truly stand out.</p>
+      <a href="#" class="btn">Request a Quote</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
   <script>
-    // Portfolio carousel logic (simple, non-breaking)
-    (function() {
-      const carousel = document.getElementById('portfolioCarousel');
-      const items = carousel.children;
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const dots = Array.from(document.querySelectorAll('#dots .dot'));
-      let index = 0;
-      const itemWidth = 360; // approximate including gap
-      function update() {
-        carousel.style.transform = 'translateX(' + (-index * (itemWidth + 20)) + 'px)';
-        dots.forEach((d, i) => d.classList.toggle('active', i === index));
-      }
-      prevBtn.addEventListener('click', () => {
-        index = Math.max(0, index - 1);
-        update();
-      });
-      nextBtn.addEventListener('click', () => {
-        index = Math.min(items.length - 1, index + 1);
-        update();
-      });
-      dots.forEach(d => d.addEventListener('click', () => {
-        index = parseInt(d.dataset.index, 10);
-        update();
-      }));
-      update();
-    })();
+    // Navigation scroll effect
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
 
-    // Optional: simple reveal for testimonials
+    // Testimonial cards animation
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const ctaHeading = document.querySelector('.cta h2');
+    
+    const observer = new IntersectionObserver(entries => { 
+      entries.forEach(entry => { 
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show'); 
+        }
+      }); 
+    }, { threshold: 0.2 });
+    
+    testimonialCards.forEach(card => observer.observe(card));
+    observer.observe(ctaHeading);
+
+    // Portfolio Carousel
+    let currentIndex = 0;
+    const carousel = document.getElementById('carousel');
+    const items = document.querySelectorAll('.portfolio-item');
+    const totalItems = items.length;
+    const itemsToShow = 3;
+    const maxIndex = Math.max(0, totalItems - itemsToShow);
+
+    // Create dots
+    const dotsContainer = document.getElementById('dots');
+    for(let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      if(i === 0) dot.classList.add('active');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      const offset = currentIndex * -340;
+      carousel.style.transform = `translateX(${offset}px)`;
+      
+      // Update dots
+      document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function moveCarousel(direction) {
+      currentIndex += direction;
+      if(currentIndex < 0) currentIndex = 0;
+      if(currentIndex > maxIndex) currentIndex = maxIndex;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+    }
+
+    // Auto-play carousel
+    setInterval(() => {
+      currentIndex++;
+      if(currentIndex > maxIndex) currentIndex = 0;
+      updateCarousel();
+    }, 4000);
   </script>
-
 </body>
 </html>
