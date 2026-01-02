@@ -1,1 +1,630 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Services Terms - TechSpec</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #111;
+    }
+
+    h1 { font-size: 42px; margin-bottom: 10px; }
+    h2 { font-size: 28px; margin-top: 50px; margin-bottom: 20px; color: #FF0000; }
+    h3 { font-size: 20px; margin-top: 30px; margin-bottom: 15px; }
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .btn {
+      padding: 18px 45px;
+      background: #fff;
+      color: #FF0000;
+      border-radius: 50px;
+      font-size: 18px;
+      font-weight: 700;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #fff;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: #FF0000;
+      transition: left 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* NAVIGATION */
+    header.nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #fff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    header.nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    nav a {
+      color: #333;
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #FF0000;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* MOBILE MENU */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: #fff;
+      z-index: 1000;
+      padding: 80px 30px 30px;
+      transition: right 0.3s ease;
+      box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    }
+
+    .side-menu.active {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 15px 0;
+      color: #333;
+      font-weight: 500;
+      font-size: 18px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .side-menu a:hover {
+      color: #FF0000;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav { display: none; }
+      .nav-inner { padding: 15px 20px; }
+    }
+
+    /* TOS CONTENT */
+    .tos-hero {
+      padding: 140px 20px 80px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .tos-hero h1 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .tos-hero p {
+      font-size: 18px;
+      color: #f0f0f0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .tos-content {
+      padding: 80px 20px;
+      background: #fff;
+    }
+
+    .tos-content p {
+      margin-bottom: 20px;
+      color: #555;
+      font-size: 16px;
+    }
+
+    .tos-content ul {
+      margin: 15px 0 25px 20px;
+      color: #555;
+    }
+
+    .tos-content li {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: #999;
+      margin-bottom: 40px;
+    }
+
+    .friendly-note {
+      background: #fff5f5;
+      border-left: 4px solid #FF0000;
+      padding: 20px 25px;
+      margin: 30px 0;
+      border-radius: 8px;
+    }
+
+    .friendly-note p {
+      color: #666;
+      margin: 0;
+    }
+
+    .contact-cta {
+      text-align: center;
+      padding: 60px 20px;
+      background: #f7f7f7;
+    }
+
+    .contact-cta h2 {
+      color: #111;
+      margin-bottom: 20px;
+    }
+
+    .contact-cta p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+      color: #fff;
+      padding: 60px 20px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #FF0000, #CC0000, #FF0000);
+    }
+
+    footer .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+      height: 50px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FF0000;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      background: #FF0000;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer p { 
+      margin: 0; 
+      font-size: 14px; 
+      color: #999; 
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 24px; }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="TechSpec Logo"></a>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
+    <a href="print.html" onclick="toggleMenu()">Print</a>
+    <a href="design.html" onclick="toggleMenu()">Design</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="tos-hero">
+    <div class="container">
+      <h1>Print Services Terms of Service</h1>
+      <p>Clear, straightforward terms for our printing and production services</p>
+    </div>
+  </section>
+
+  <!-- TOS CONTENT -->
+  <section class="tos-content">
+    <div class="container">
+      <p class="last-updated"><strong>Effective Date:</strong> January 1, 2026</p>
+
+      <div class="friendly-note">
+        <p><strong>👋 Quick Note:</strong> These Terms and Conditions govern all print services provided by TechSpec LLC. By submitting files, approving proofs, or placing a print order, you agree to these Terms.</p>
+      </div>
+
+      <h2>1. Proofs & Client Approval</h2>
+      <p>Your responsibility in the approval process:</p>
+      <ul>
+        <li><strong>Client Solely Responsible:</strong> You are solely responsible for reviewing and approving all proofs prior to production</li>
+        <li><strong>Approval = Acceptance:</strong> Approval constitutes acceptance of all content, layout, spelling, sizing, color, and placement</li>
+        <li><strong>No Liability After Approval:</strong> Once approved, TechSpec LLC shall not be liable for errors or omissions</li>
+        <li><strong>Check Everything Carefully:</strong> Review spelling, phone numbers, addresses, colors, and all content before approving</li>
+        <li>Take your time with proofs—once you approve, we move to production immediately</li>
+      </ul>
+
+      <h2>2. QR Codes & Scannable Elements</h2>
+      <p>Important information about QR codes:</p>
+      <ul>
+        <li><strong>Best Practices:</strong> TechSpec LLC designs and prints QR codes using industry best practices</li>
+        <li><strong>Recommended Guidelines:</strong> We follow recommended sizing, contrast, and placement guidelines</li>
+        <li><strong>Factors Beyond Our Control:</strong> Print materials, substrates, lighting conditions, and device variability may affect scan performance</li>
+        <li><strong>Client Responsibility:</strong> Final responsibility for verifying QR code functionality rests with you prior to approval</li>
+        <li><strong>No Liability After Production:</strong> TechSpec LLC shall not be liable for QR code failures, misreads, or inability to scan after production when the proof has been approved</li>
+        <li><strong>Pro Tip:</strong> Always test QR codes with multiple devices before approving your proof</li>
+      </ul>
+
+      <h2>3. Color & Print Variations</h2>
+      <p>Understanding color accuracy:</p>
+      <ul>
+        <li><strong>Screen vs. Print:</strong> Colors displayed on screens may vary from printed output</li>
+        <li><strong>Why Differences Occur:</strong> Due to monitor calibration, materials, inks, and printing processes</li>
+        <li><strong>No Exact Matching:</strong> Exact color matching is not guaranteed</li>
+        <li><strong>What We Do:</strong> We use color management best practices to get as close as possible</li>
+        <li><strong>Critical Color Matching:</strong> If exact color is critical, request a physical proof before full production</li>
+      </ul>
+
+      <h2>4. Payment Terms</h2>
+      <p>When payment is required:</p>
+      <ul>
+        <li><strong>Payment Before Production:</strong> Full payment is required prior to production unless otherwise agreed in writing</li>
+        <li><strong>Established Account Terms:</strong> Regular customers may qualify for NET-15 or other terms by written agreement</li>
+        <li><strong>Additional Charges:</strong> Custom printing, special finishes, file preparation, or revisions may incur additional charges</li>
+        <li>Quotes are provided before any additional work begins</li>
+      </ul>
+
+      <h2>5. Turnaround Time & Delivery</h2>
+      <p>Production and shipping timelines:</p>
+      <ul>
+        <li><strong>Estimates Only:</strong> Turnaround times are estimates only and not guaranteed</li>
+        <li><strong>Not Responsible For:</strong> TechSpec LLC is not responsible for delays caused by:
+          <ul style="margin-top: 10px;">
+            <li>Shipping carriers (FedEx, UPS, USPS, etc.)</li>
+            <li>Supply shortages or material availability</li>
+            <li>Equipment failure or maintenance</li>
+            <li>Events beyond our control (weather, natural disasters, etc.)</li>
+          </ul>
+        </li>
+        <li>We'll always communicate if unexpected delays occur</li>
+      </ul>
+
+      <h2>6. Client-Provided Materials</h2>
+      <p>Your responsibility for supplied files:</p>
+      <ul>
+        <li><strong>You Warrant Ownership:</strong> You represent that all supplied content, artwork, logos, and files are owned by you or properly licensed</li>
+        <li><strong>Copyright Compliance:</strong> You have the legal right to print all materials you provide</li>
+        <li><strong>File Quality Issues:</strong> TechSpec LLC is not responsible for errors resulting from:
+          <ul style="margin-top: 10px;">
+            <li>Low-resolution files</li>
+            <li>Incorrect dimensions or sizing</li>
+            <li>Missing or improperly embedded fonts</li>
+            <li>Other issues with client-supplied materials</li>
+          </ul>
+        </li>
+        <li>Need help with file prep? Just ask—we're happy to assist for a small fee</li>
+      </ul>
+
+      <h2>7. Intellectual Property</h2>
+      <p>Who owns what:</p>
+      <ul>
+        <li><strong>Your Artwork:</strong> You retain ownership of client-supplied artwork</li>
+        <li><strong>Our Design Elements:</strong> TechSpec LLC retains ownership of any design elements created unless otherwise agreed</li>
+        <li><strong>Portfolio Use:</strong> TechSpec LLC may display completed print work in portfolios or marketing materials unless you submit a written objection</li>
+        <li>Want your project kept confidential? Just let us know in writing</li>
+      </ul>
+
+      <h2>8. Quantity Tolerance</h2>
+      <p>Industry standard practice:</p>
+      <ul>
+        <li><strong>+/- 10% Variance:</strong> Final quantity may vary plus or minus 10% from your order</li>
+        <li><strong>You Pay For What You Receive:</strong> You'll only be charged for the quantity you actually receive</li>
+        <li><strong>Exact Quantity Needs:</strong> If you need an exact quantity, order 10% extra to account for variance</li>
+        <li>This is standard in the printing industry due to machine setup and waste</li>
+      </ul>
+
+      <h2>9. Reprints & Corrections</h2>
+      <p>If something goes wrong:</p>
+      <ul>
+        <li><strong>Our Error = Free Reprint:</strong> We'll reprint at no charge if we made the mistake</li>
+        <li><strong>Your Error = Your Cost:</strong> Errors in approved files are your responsibility</li>
+        <li><strong>Damage in Transit:</strong> Contact us within 48 hours of delivery with photos</li>
+        <li><strong>Color Issues:</strong> Report within 48 hours with photo evidence</li>
+        <li>We stand behind our work and will always make things right when it's our error</li>
+      </ul>
+
+      <h2>10. Cancellations & Returns</h2>
+      <p>Order changes and cancellations:</p>
+      <ul>
+        <li><strong>Before Production:</strong> Orders can be canceled with a 50% restocking fee</li>
+        <li><strong>In Production:</strong> Orders in production cannot be canceled</li>
+        <li><strong>Custom/Personalized Items:</strong> Non-refundable once produced</li>
+        <li><strong>Defective Items:</strong> Full refund or reprint within 7 days of receipt</li>
+        <li><strong>No Returns:</strong> No returns on approved custom orders</li>
+      </ul>
+
+      <h2>11. Limitation of Liability</h2>
+      <p>Our maximum liability:</p>
+      <ul>
+        <li><strong>Limited to Order Amount:</strong> To the fullest extent permitted by law, TechSpec LLC shall not be liable for indirect, incidental, or consequential damages, including loss of revenue or business</li>
+        <li><strong>Maximum Liability:</strong> Liability, if any, shall not exceed the amount paid for the specific print order</li>
+        <li><strong>No Business Loss Claims:</strong> We're not responsible for missed events, lost opportunities, or business interruption</li>
+      </ul>
+
+      <h2>12. No Warranty</h2>
+      <p>Provided "as is":</p>
+      <ul>
+        <li><strong>As-Is Basis:</strong> All print services and materials are provided "as is"</li>
+        <li><strong>Disclaimer:</strong> TechSpec LLC disclaims any implied warranties, including merchantability or fitness for a particular purpose</li>
+        <li>We always strive for the highest quality, but printed materials are subject to normal variation</li>
+      </ul>
+
+      <h2>13. File Storage & Reprints</h2>
+      <p>For easy reordering:</p>
+      <ul>
+        <li>We store approved files for 12 months for easy reordering</li>
+        <li>Reorders using stored files may qualify for discounts</li>
+        <li>After 12 months, files may be archived (retrieval fee may apply)</li>
+      </ul>
+
+      <h2>14. Acceptance of Terms</h2>
+      <p>How these terms become binding:</p>
+      <ul>
+        <li><strong>Agreement Methods:</strong> Placing an order, submitting files, or approving proofs constitutes acceptance of the full Print Terms & Conditions</li>
+        <li>These terms apply to all print orders unless a separate written agreement is signed</li>
+      </ul>
+
+      <div class="friendly-note" style="margin-top: 50px;">
+        <p><strong>⚖️ Quality Printing, Clear Terms:</strong> By placing a print order with TechSpec LLC, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. We're committed to delivering quality printing and excellent service. Questions? We're here to help!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section class="contact-cta">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Let's talk about how we can help grow your brand</p>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="logo.png" alt="TechSpec Logo">
+        </div>
+        <div class="footer-links">
+          <a href="tosmarketing.html">Marketing Terms</a>
+          <a href="tosprint.html">Print Terms</a>
+          <a href="tosdesign.html">Design Terms</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://facebook.com/techspecb2b" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+  </script>
+
+</body>
+</html>
