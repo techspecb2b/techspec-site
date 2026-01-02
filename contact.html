@@ -511,6 +511,22 @@
       height: 50px;
     }
 
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #FF0000;
+    }
+
     .footer-social {
       display: flex;
       gap: 15px;
@@ -744,6 +760,28 @@
             </div>
           </div>
 
+          <!-- Dynamic TOS Checkboxes (shown based on service selection) -->
+          <div class="form-group" id="tosMarketing" style="margin-top: 20px; display: none;">
+            <label style="display: flex; align-items: start; gap: 10px; font-size: 14px; cursor: pointer;">
+              <input type="checkbox" name="acceptMarketingTerms" style="width: 18px; height: 18px; cursor: pointer; margin-top: 2px; flex-shrink: 0;">
+              <span>I agree to the <a href="tosmarketing.html" target="_blank" style="color: #FF0000; font-weight: 600;">TechSpec Marketing Terms of Service</a> *</span>
+            </label>
+          </div>
+
+          <div class="form-group" id="tosPrint" style="margin-top: 20px; display: none;">
+            <label style="display: flex; align-items: start; gap: 10px; font-size: 14px; cursor: pointer;">
+              <input type="checkbox" name="acceptPrintTerms" style="width: 18px; height: 18px; cursor: pointer; margin-top: 2px; flex-shrink: 0;">
+              <span>I agree to the <a href="tosprint.html" target="_blank" style="color: #FF0000; font-weight: 600;">TechSpec Print Terms of Service</a> *</span>
+            </label>
+          </div>
+
+          <div class="form-group" id="tosDesign" style="margin-top: 20px; display: none;">
+            <label style="display: flex; align-items: start; gap: 10px; font-size: 14px; cursor: pointer;">
+              <input type="checkbox" name="acceptDesignTerms" style="width: 18px; height: 18px; cursor: pointer; margin-top: 2px; flex-shrink: 0;">
+              <span>I agree to the <a href="tosdesign.html" target="_blank" style="color: #FF0000; font-weight: 600;">TechSpec Design Terms of Service</a> *</span>
+            </label>
+          </div>
+
           <button type="submit" class="btn submit-btn">Send Request</button>
         </form>
 
@@ -764,6 +802,11 @@
       <div class="footer-content">
         <div class="footer-logo">
           <img src="logo.png" alt="TechSpec Logo">
+        </div>
+        <div class="footer-links">
+          <a href="tosmarketing.html">Marketing Terms</a>
+          <a href="tosprint.html">Print Terms</a>
+          <a href="tosdesign.html">Design Terms</a>
         </div>
         <div class="footer-social">
           <a href="https://facebook.com/techspecb2b" target="_blank" aria-label="Facebook">
@@ -844,6 +887,20 @@
       designAndPrintFields.classList.remove('show');
       commonPrintFields.classList.remove('show');
 
+      // Hide all TOS checkboxes
+      document.getElementById('tosMarketing').style.display = 'none';
+      document.getElementById('tosPrint').style.display = 'none';
+      document.getElementById('tosDesign').style.display = 'none';
+
+      // Remove required from all TOS checkboxes
+      const marketingTosCheckbox = document.querySelector('input[name="acceptMarketingTerms"]');
+      const printTosCheckbox = document.querySelector('input[name="acceptPrintTerms"]');
+      const designTosCheckbox = document.querySelector('input[name="acceptDesignTerms"]');
+      
+      if (marketingTosCheckbox) marketingTosCheckbox.removeAttribute('required');
+      if (printTosCheckbox) printTosCheckbox.removeAttribute('required');
+      if (designTosCheckbox) designTosCheckbox.removeAttribute('required');
+
       // Remove ALL required attributes from dynamic fields
       document.getElementById('marketingPlatform').removeAttribute('required');
       document.getElementById('storeLocation').removeAttribute('required');
@@ -858,11 +915,20 @@
         document.getElementById('marketingPlatform').setAttribute('required', 'required');
         document.getElementById('storeLocation').setAttribute('required', 'required');
         document.getElementById('businessType').setAttribute('required', 'required');
+        // Show Marketing TOS
+        document.getElementById('tosMarketing').style.display = 'block';
+        if (marketingTosCheckbox) marketingTosCheckbox.setAttribute('required', 'required');
       } else if (this.value === 'print') {
         printFields.classList.add('show');
         document.getElementById('printService').setAttribute('required', 'required');
+        // Show Print TOS
+        document.getElementById('tosPrint').style.display = 'block';
+        if (printTosCheckbox) printTosCheckbox.setAttribute('required', 'required');
       } else if (this.value === 'design') {
         designFields.classList.add('show');
+        // Show Design TOS
+        document.getElementById('tosDesign').style.display = 'block';
+        if (designTosCheckbox) designTosCheckbox.setAttribute('required', 'required');
       }
     });
 
@@ -954,6 +1020,11 @@
       printOnlyFields.classList.remove('show');
       designAndPrintFields.classList.remove('show');
       commonPrintFields.classList.remove('show');
+      
+      // Hide all TOS checkboxes
+      document.getElementById('tosMarketing').style.display = 'none';
+      document.getElementById('tosPrint').style.display = 'none';
+      document.getElementById('tosDesign').style.display = 'none';
       
       // Scroll to top of form
       formContainer.scrollIntoView({ behavior: 'smooth' });
