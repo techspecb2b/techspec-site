@@ -215,17 +215,34 @@
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: pulse 15s ease-in-out infinite;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(30deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0) 60%),
+        linear-gradient(90deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0) 60%),
+        linear-gradient(150deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.04) 60%, rgba(255,255,255,0) 60%);
+      background-size: 100px 173px, 100px 173px, 100px 173px;
+      background-position: 0 0, 50px 86.5px, 0 0;
+      opacity: 0.5;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 60%);
+      border-radius: 50%;
+      animation: pulse 8s ease-in-out infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(10%, 10%) scale(1.1); }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     .hero * { position: relative; z-index: 2; }
@@ -310,6 +327,81 @@
     .capability-item:hover::before {
       width: 100%;
       opacity: 0.05;
+    }
+
+    /* CAPABILITY MODAL */
+    .capability-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .capability-modal.show {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #999;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      color: #FF0000;
+    }
+
+    .modal-content h3 {
+      color: #FF0000;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .modal-content p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
     }
 
     /* LOGO SHOWCASE */
@@ -669,12 +761,26 @@
     .cta::before {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: pulse 15s ease-in-out infinite;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
+      opacity: 0.6;
+    }
+
+    .cta::after {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .cta * { position: relative; z-index: 2; }
@@ -740,7 +846,6 @@
 
     .footer-logo img {
       height: 50px;
-      filter: brightness(0) invert(1);
     }
 
     .footer-social {
@@ -900,31 +1005,31 @@
       <h2>What We Design</h2>
       
       <div class="capabilities-grid">
-        <div class="capability-item">Logos</div>
-        <div class="capability-item">Branding Guides</div>
-        <div class="capability-item">Social Media Ads</div>
-        <div class="capability-item">Social Media Posts</div>
-        <div class="capability-item">Social Media Banners</div>
-        <div class="capability-item">Mascots</div>
-        <div class="capability-item">Hand Drawn Images</div>
-        <div class="capability-item">Window Signage</div>
-        <div class="capability-item">Door Signage</div>
-        <div class="capability-item">Banners</div>
-        <div class="capability-item">Vehicle Wraps</div>
-        <div class="capability-item">Websites</div>
-        <div class="capability-item">Business Cards</div>
-        <div class="capability-item">Brochures</div>
-        <div class="capability-item">Signs</div>
-        <div class="capability-item">Channel Letter Signs</div>
-        <div class="capability-item">Door Hangers</div>
-        <div class="capability-item">Shirts</div>
-        <div class="capability-item">Hoodies</div>
-        <div class="capability-item">Hats</div>
-        <div class="capability-item">Sports Uniforms</div>
-        <div class="capability-item">Canopies</div>
-        <div class="capability-item">Table Cloths</div>
-        <div class="capability-item">Packaging</div>
-        <div class="capability-item">Website Assets</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Logos', 'Custom logo design that captures your brand identity. From minimalist wordmarks to detailed emblematic designs, we create memorable logos that stand out.')">Logos</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Branding Guides', 'Comprehensive brand guidelines including logo usage, color palettes, typography, and visual standards to ensure consistent brand presentation across all materials.')">Branding Guides</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Social Media Ads', 'Eye-catching ad designs optimized for Facebook, Instagram, and other platforms. Designed to stop the scroll and drive engagement.')">Social Media Ads</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Social Media Posts', 'Engaging graphics for your social media channels. Consistent, on-brand content that keeps your audience engaged.')">Social Media Posts</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Social Media Banners', 'Professional header and cover images for Facebook, Twitter, LinkedIn, and YouTube that showcase your brand professionally.')">Social Media Banners</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Mascots', 'Custom character design and mascot creation. From playful cartoons to professional brand ambassadors.')">Mascots</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Hand Drawn Images', 'Unique hand-drawn illustrations and artwork. Perfect for adding a personal, artistic touch to your brand.')">Hand Drawn Images</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Window Signage', 'Custom window graphics and decals for storefronts. Attract attention and promote your business 24/7.')">Window Signage</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Door Signage', 'Professional door graphics including hours of operation, branding, and directional signage.')">Door Signage</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Banners', 'Large-format banner designs for events, promotions, and advertising. Indoor and outdoor options available.')">Banners</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Vehicle Wraps', 'Full and partial vehicle wrap designs that transform your vehicle into a mobile billboard.')">Vehicle Wraps</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Websites', 'Modern, responsive website design that looks great on all devices and converts visitors into customers.')">Websites</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Business Cards', 'Professional business card designs that make lasting first impressions. From traditional to creative styles.')">Business Cards</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Brochures', 'Compelling brochure designs for bi-fold, tri-fold, and multi-page layouts that showcase your products and services.')">Brochures</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Signs', 'Custom signage design for indoor and outdoor use. From yard signs to storefront displays.')">Signs</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Channel Letter Signs', 'Three-dimensional illuminated channel letter designs for building exteriors and storefronts.')">Channel Letter Signs</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Door Hangers', 'Eye-catching door hanger designs perfect for local marketing and direct mail campaigns.')">Door Hangers</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Shirts', 'Custom t-shirt graphics including screen printing designs, heat transfer artwork, and DTG printing layouts.')">Shirts</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Hoodies', 'Hoodie and sweatshirt designs for teams, brands, and events. Front, back, and sleeve artwork options.')">Hoodies</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Hats', 'Custom hat and cap designs including embroidery artwork and printed graphics.')">Hats</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Sports Uniforms', 'Complete sports uniform design including jerseys, shorts, and warm-ups with team branding and player numbers.')">Sports Uniforms</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Canopies', 'Custom canopy and tent graphics for events, trade shows, and outdoor marketing.')">Canopies</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Table Cloths', 'Branded tablecloth designs for trade shows, events, and professional presentations.')">Table Cloths</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Packaging', 'Product packaging design including boxes, bags, labels, and retail displays.')">Packaging</div>
+        <div class="capability-item" onclick="showCapabilityInfo('Website Assets', 'Graphics and visual elements for websites including icons, buttons, headers, and promotional banners.')">Website Assets</div>
       </div>
       
       <p style="text-align: center; margin-top: 30px; font-size: 18px; color: #999; font-style: italic;">...and way more</p>
@@ -1063,6 +1168,15 @@
     </div>
   </footer>
 
+  <!-- CAPABILITY MODAL -->
+  <div class="capability-modal" id="capabilityModal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
   <!-- SCRIPTS -->
   <script>
     // Mobile menu toggle
@@ -1077,6 +1191,28 @@
     const nav = document.querySelector('header.nav');
     window.addEventListener('scroll', () => { 
       nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+
+    // Capability modal functions
+    function showCapabilityInfo(title, description) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDescription').textContent = description;
+      document.getElementById('capabilityModal').classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(event) {
+      if (!event || event.target.classList.contains('capability-modal') || event.target.classList.contains('modal-close')) {
+        document.getElementById('capabilityModal').classList.remove('show');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
     });
   </script>
 </body>
