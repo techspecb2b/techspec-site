@@ -554,7 +554,13 @@
     <div class="container">
       <div class="form-container" id="formContainer">
         <h2>Start Your Project</h2>
-        <form id="contactForm" action="https://www.formingo.co/submit/6924f315-7011-4bef-98c0-4011a9d40cb8" method="POST">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <!-- Web3Forms Access Key -->
+          <input type="hidden" name="access_key" value="14621453-ce7b-41cd-8899-7be51971c95c">
+          
+          <!-- Custom redirect back to contact page with success parameter -->
+          <input type="hidden" name="redirect" value="https://techspecb2b.github.io/techspec-site/contact.html?success=true">
+          
           <!-- Basic Fields -->
           <div class="form-group">
             <label>Name <span class="required">*</span></label>
