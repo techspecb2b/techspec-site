@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Services - TechSpec</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #111;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+    }
+
+    h1 { font-size: 52px; line-height: 1.2; }
+    h2 { font-size: 36px; }
+    h3 { font-size: 24px; }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    a { text-decoration: none; transition: all 0.3s ease; }
+
+    .btn {
+      padding: 16px 40px;
+      background-color: #FF0000;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn:hover { 
+      background-color: #CC0000; 
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(255,0,0,0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* GRAIN OVERLAY */
+    .grain-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.4;
+    }
+
+    /* NAVIGATION */
+    header.nav {
+      background-color: #FF0000;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    header.nav.scrolled {
+      background-color: #CC0000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo img { height: 40px; }
+
+    nav a {
+      margin-left: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: #f5f5f5; }
+
+    /* MOBILE MENU */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #111;
+      transition: right 0.3s ease;
+      z-index: 999;
+      padding: 80px 20px 20px;
+    }
+
+    .side-menu.active { right: 0; }
+
+    .side-menu a {
+      display: block;
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      padding: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    .side-menu a:hover { color: #FF0000; }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 998;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      padding: 120px 20px 100px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(10%, 10%) scale(1.1); }
+    }
+
+    .hero * { position: relative; z-index: 2; }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero .tagline {
+      font-size: 28px;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #f0f0f0;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .hero-features {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-feature {
+      text-align: center;
+    }
+
+    .hero-feature-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: #fff;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .hero-feature-label {
+      font-size: 16px;
+      color: #f0f0f0;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* PRODUCT CATEGORIES */
+    .product-categories {
+      padding: 100px 20px;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .product-categories h2 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .category-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border: 2px solid transparent;
+    }
+
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255,0,0,0.15);
+      border-color: #FF0000;
+    }
+
+    .category-card.active {
+      border-color: #FF0000;
+      background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+    }
+
+    .category-card i {
+      font-size: 56px;
+      color: #FF0000;
+      margin-bottom: 20px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover i {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .category-card h3 {
+      color: #111;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .category-card p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+    }
+
+    /* PRODUCT LIST */
+    .product-list-container {
+      max-width: 1000px;
+      margin: 60px auto 0;
+      padding: 50px;
+      background: #f7f7f7;
+      border-radius: 12px;
+      display: none;
+    }
+
+    .product-list-container.show {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-list-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .product-list-header h3 {
+      color: #FF0000;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .product-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .product-item {
+      padding: 12px 20px;
+      background: #fff;
+      border-radius: 6px;
+      border-left: 3px solid #FF0000;
+      font-size: 16px;
+      color: #333;
+      transition: all 0.2s ease;
+    }
+
+    .product-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .close-list {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .close-list button {
+      background: #FF0000;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .close-list button:hover {
+      background: #CC0000;
+      transform: translateY(-2px);
+    }
+
+    /* GALLERY SECTION */
+    .gallery-section {
+      padding: 100px 20px;
+      background-color: #f7f7f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-section h2 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 60px;
+    }
+
+    .gallery-carousel-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .gallery-carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 20px;
+    }
+
+    .gallery-item {
+      min-width: 350px;
+      height: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      flex-shrink: 0;
+      background: #ddd;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .gallery-item:hover img { transform: scale(1.1); }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,0,0,0.9);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .carousel-btn:hover {
+      background: #CC0000;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: #FF0000;
+      width: 30px;
+      border-radius: 6px;
+    }
+
+    /* CTA SECTION */
+    .cta {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+
+    .cta * { position: relative; z-index: 2; }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #f0f0f0;
+      font-size: 22px;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta .btn {
+      background: #fff;
+      color: #FF0000;
+      font-size: 20px;
+      padding: 18px 50px;
+    }
+
+    .cta .btn:hover {
+      background: #f0f0f0;
+      color: #CC0000;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #111;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p { margin: 0; font-size: 14px; color: #aaa; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 38px; }
+      .hero .tagline { font-size: 20px; }
+      .hero p { font-size: 18px; }
+      .hero-features { gap: 30px; }
+      
+      .menu-toggle { display: block; }
+      .nav-inner nav { display: none; }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-columns {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item {
+        min-width: 300px;
+        height: 220px;
+      }
+
+      .carousel-btn { width: 40px; height: 40px; font-size: 16px; }
+      .cta h2 { font-size: 32px; }
+      .cta p { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MOBILE SIDE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu">
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
+    <a href="print.html" onclick="toggleMenu()">Print</a>
+    <a href="design.html" onclick="toggleMenu()">Design</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Professional Printing At Your Fingertips</h1>
+      <p class="tagline">20,000+ Products. Commercial Quality. Lightning Fast.</p>
+      <p>From business cards to banners, we print it all with commercial-grade materials, industry-leading printers, and extremely fast shipping—all at prices that won't break the bank.</p>
+      
+      <div class="hero-features">
+        <div class="hero-feature">
+          <span class="hero-feature-number">20,000+</span>
+          <span class="hero-feature-label">Print Products</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-number">24-48hr</span>
+          <span class="hero-feature-label">Turnaround</span>
+        </div>
+        <div class="hero-feature">
+          <span class="hero-feature-number">100%</span>
+          <span class="hero-feature-label">Quality Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT CATEGORIES -->
+  <section class="product-categories">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>What Can We Print?</h2>
+      
+      <div class="categories-grid">
+        <div class="category-card" onclick="showProducts('business')">
+          <i class="fas fa-id-card"></i>
+          <h3>Business Cards & Stationery</h3>
+          <p>Professional cards, letterhead, and more</p>
+        </div>
+        
+        <div class="category-card" onclick="showProducts('marketing')">
+          <i class="fas fa-bullhorn"></i>
+          <h3>Marketing Materials</h3>
+          <p>Flyers, brochures, postcards & more</p>
+        </div>
+        
+        <div class="category-card" onclick="showProducts('signs')">
+          <i class="fas fa-rectangle-ad"></i>
+          <h3>Signs & Banners</h3>
+          <p>Indoor & outdoor signage solutions</p>
+        </div>
+        
+        <div class="category-card" onclick="showProducts('apparel')">
+          <i class="fas fa-tshirt"></i>
+          <h3>Apparel & Promotional</h3>
+          <p>T-shirts, hats, bags & branded merch</p>
+        </div>
+        
+        <div class="category-card" onclick="showProducts('packaging')">
+          <i class="fas fa-box"></i>
+          <h3>Packaging & Labels</h3>
+          <p>Custom packaging and product labels</p>
+        </div>
+        
+        <div class="category-card" onclick="showProducts('events')">
+          <i class="fas fa-calendar-check"></i>
+          <h3>Events & Trade Shows</h3>
+          <p>Booths, displays, and event materials</p>
+        </div>
+      </div>
+
+      <!-- PRODUCT LISTS -->
+      <div id="productLists"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY CAROUSEL -->
+  <section class="gallery-section">
+    <div class="grain-overlay"></div>
+    <div class="container">
+      <h2>Our Recent Work</h2>
+      <div class="gallery-carousel-wrapper">
+        <button class="carousel-btn prev" onclick="moveGallery(-1)">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="gallery-carousel" id="galleryCarousel">
+          <div class="gallery-item"><img src="portfolio1.png" alt="Print Sample 1"></div>
+          <div class="gallery-item"><img src="portfolio2.png" alt="Print Sample 2"></div>
+          <div class="gallery-item"><img src="portfolio3.png" alt="Print Sample 3"></div>
+          <div class="gallery-item"><img src="portfolio4.png" alt="Print Sample 4"></div>
+          <div class="gallery-item"><img src="portfolio5.png" alt="Print Sample 5"></div>
+          <div class="gallery-item"><img src="portfolio6.png" alt="Print Sample 6"></div>
+          <div class="gallery-item"><img src="portfolio7.png" alt="Print Sample 7"></div>
+          <div class="gallery-item"><img src="portfolio8.png" alt="Print Sample 8"></div>
+        </div>
+        <button class="carousel-btn next" onclick="moveGallery(1)">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="carousel-dots" id="galleryDots"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Print Your Vision?</h2>
+      <p>Get a quote today and experience premium printing with unbeatable turnaround times.</p>
+      <a href="contact.html" class="btn">Get Your Free Quote</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const sideMenu = document.getElementById('sideMenu');
+      const menuOverlay = document.getElementById('menuOverlay');
+      sideMenu.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+    }
+
+    // Navigation scroll effect
+    const nav = document.querySelector('header.nav');
+    window.addEventListener('scroll', () => { 
+      nav.classList.toggle('scrolled', window.scrollY > 10); 
+    });
+
+    // Product categories data
+    const productData = {
+      business: {
+        title: 'Business Cards & Stationery',
+        products: [
+          'Business Cards', 'Letterhead', 'Envelopes', 'Notepads', 'Thank You Cards',
+          'Greeting Cards', 'Appointment Cards', 'Loyalty Cards', 'Gift Cards',
+          'Bookmarks', 'Calendars', 'Planners', 'Stamps', 'Custom Checks',
+          'Invoice Forms', 'Receipt Books', 'Presentation Folders', 'File Folders'
+        ]
+      },
+      marketing: {
+        title: 'Marketing Materials',
+        products: [
+          'Flyers', 'Brochures', 'Postcards', 'Rack Cards', 'Door Hangers',
+          'Hang Tags', 'Posters', 'Table Tents', 'Menus', 'Catalogs',
+          'Booklets', 'Magazines', 'Newsletters', 'Coupons', 'Gift Certificates',
+          'Invitations', 'Announcements', 'Programs', 'Tickets', 'Wristbands'
+        ]
+      },
+      signs: {
+        title: 'Signs & Banners',
+        products: [
+          'Vinyl Banners', 'Retractable Banners', 'Step & Repeat Banners', 'Mesh Banners',
+          'Fabric Banners', 'Yard Signs', 'A-Frame Signs', 'Foam Board Signs',
+          'Metal Signs', 'Aluminum Signs', 'Coroplast Signs', 'Acrylic Signs',
+          'Magnetic Signs', 'Window Clings', 'Wall Decals', 'Floor Graphics',
+          'Sidewalk Signs', 'Real Estate Signs', 'Political Signs', 'Wayfinding Signs'
+        ]
+      },
+      apparel: {
+        title: 'Apparel & Promotional Items',
+        products: [
+          'T-Shirts', 'Polo Shirts', 'Hoodies', 'Jackets', 'Hats & Caps',
+          'Beanies', 'Tote Bags', 'Backpacks', 'Drawstring Bags', 'Mugs',
+          'Water Bottles', 'Tumblers', 'Pens', 'Notebooks', 'USB Drives',
+          'Keychains', 'Lanyards', 'Phone Cases', 'PopSockets', 'Magnets',
+          'Buttons & Badges', 'Stickers', 'Decals', 'Koozies', 'Stadium Cups'
+        ]
+      },
+      packaging: {
+        title: 'Packaging & Labels',
+        products: [
+          'Product Labels', 'Roll Labels', 'Die-Cut Labels', 'Food Labels',
+          'Bottle Labels', 'Jar Labels', 'Shipping Labels', 'Barcode Labels',
+          'Custom Boxes', 'Mailer Boxes', 'Product Boxes', 'Gift Boxes',
+          'Corrugated Boxes', 'Retail Packaging', 'Hang Tags', 'Sleeve Packaging',
+          'Bag Tags', 'Sticker Sheets', 'Window Stickers', 'Bumper Stickers'
+        ]
+      },
+      events: {
+        title: 'Events & Trade Show Materials',
+        products: [
+          'Pop-Up Displays', 'Trade Show Booths', 'Backdrop Stands', 'Table Covers',
+          'Table Runners', 'Tablecloths', 'Booth Graphics', 'Banner Stands',
+          'Literature Racks', 'Brochure Holders', 'Display Boards', 'Easel Stands',
+          'Feather Flags', 'Teardrop Flags', 'Event Tickets', 'Name Tags',
+          'Badge Holders', 'Lanyards', 'Event Programs', 'Event Invitations',
+          'Raffle Tickets', 'Wristbands', 'Event Posters', 'Photo Booth Backdrops'
+        ]
+      }
+    };
+
+    // Show products function
+    let currentCategory = null;
+
+    function showProducts(category) {
+      const container = document.getElementById('productLists');
+      const data = productData[category];
+      
+      // Remove active class from all cards
+      document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      
+      // If same category clicked, close it
+      if (currentCategory === category) {
+        container.innerHTML = '';
+        currentCategory = null;
+        return;
+      }
+      
+      // Add active class to clicked card
+      event.target.closest('.category-card').classList.add('active');
+      
+      // Create product list HTML
+      const productsHTML = data.products.map(product => 
+        `<div class="product-item">${product}</div>`
+      ).join('');
+      
+      container.innerHTML = `
+        <div class="product-list-container show">
+          <div class="product-list-header">
+            <h3>${data.title}</h3>
+            <p>All products available with custom design and fast turnaround</p>
+          </div>
+          <div class="product-columns">
+            ${productsHTML}
+          </div>
+          <div class="close-list">
+            <button onclick="closeProductList()">Close</button>
+          </div>
+        </div>
+      `;
+      
+      currentCategory = category;
+      
+      // Scroll to product list
+      container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function closeProductList() {
+      document.getElementById('productLists').innerHTML = '';
+      document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      currentCategory = null;
+    }
+
+    // Gallery Carousel
+    let currentGalleryIndex = 0;
+    const galleryCarousel = document.getElementById('galleryCarousel');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const totalGalleryItems = galleryItems.length;
+    const itemsToShow = 3;
+    const maxGalleryIndex = Math.max(0, totalGalleryItems - itemsToShow);
+
+    // Create dots
+    const dotsContainer = document.getElementById('galleryDots');
+    for(let i = 0; i <= maxGalleryIndex; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      if(i === 0) dot.classList.add('active');
+      dot.onclick = () => goToGallerySlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateGallery() {
+      const offset = currentGalleryIndex * -370;
+      galleryCarousel.style.transform = `translateX(${offset}px)`;
+      
+      // Update dots
+      document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentGalleryIndex);
+      });
+    }
+
+    function moveGallery(direction) {
+      currentGalleryIndex += direction;
+      if(currentGalleryIndex < 0) currentGalleryIndex = 0;
+      if(currentGalleryIndex > maxGalleryIndex) currentGalleryIndex = maxGalleryIndex;
+      updateGallery();
+    }
+
+    function goToGallerySlide(index) {
+      currentGalleryIndex = index;
+      updateGallery();
+    }
+
+    // Auto-play gallery
+    setInterval(() => {
+      currentGalleryIndex++;
+      if(currentGalleryIndex > maxGalleryIndex) currentGalleryIndex = 0;
+      updateGallery();
+    }, 4000);
+  </script>
+</body>
+</html>
