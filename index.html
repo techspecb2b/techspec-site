@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:image" content="share-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="share-image.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechSpec</title>
@@ -338,7 +344,79 @@
       font-size: 16px;
     }
 
-    /* PORTFOLIO CAROUSEL */
+    /* SERVICE DETAIL SECTIONS */
+    .service-detail {
+      padding: 80px 20px;
+      background: #fff;
+    }
+
+    .service-detail:nth-child(even) {
+      background: #f7f7f7;
+    }
+
+    .service-detail-content {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .service-detail-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .service-detail-text h2 {
+      color: #111;
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+
+    .service-detail-text p {
+      color: #666;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .service-detail-text .btn {
+      margin-top: 20px;
+    }
+
+    .service-detail-text .available-soon {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #999;
+      font-style: italic;
+    }
+
+    .service-detail-image {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+
+    .service-detail-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .service-detail-content {
+        flex-direction: column;
+      }
+      
+      .service-detail-text h2 {
+        font-size: 28px;
+      }
+    }
+
+    /* PORTFOLIO */
     .portfolio {
       padding: 100px 20px;
       background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
@@ -774,7 +852,7 @@
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <a href="index.html" style="text-decoration: none;"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
       <button class="menu-toggle" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
       </button>
@@ -816,16 +894,16 @@
   <section class="services" id="services">
     <div class="grain-overlay"></div>
     <div class="container">
-      <h2>Our Services</h2>
-      <p style="text-align: center; color: #666; margin: -10px 0 30px; font-size: 16px; font-style: italic;">
+      <h2>What We Offer</h2>
+      <p style="text-align: center; color: #666; margin: 10px 0 30px; font-size: 16px; font-style: italic;">
         <i class="fas fa-hand-pointer" style="color: #FF0000; margin-right: 5px;"></i>Click any service to learn more
       </p>
       <div class="services-grid">
-        <a href="design.html" style="text-decoration: none; color: inherit;">
+        <a href="print.html" style="text-decoration: none; color: inherit;">
           <div class="service-card">
-            <i class="fas fa-palette"></i>
-            <h3>Branding & Design</h3>
-            <p>Custom logos, brand identity, and visuals crafted for your business.</p>
+            <i class="fas fa-print"></i>
+            <h3>Print & Visual Assets</h3>
+            <p>Business cards, posters, and other high-quality print materials.</p>
           </div>
         </a>
         <a href="marketing.html" style="text-decoration: none; color: inherit;">
@@ -835,13 +913,74 @@
             <p>Campaigns on Facebook, Google, and beyond that grow your audience.</p>
           </div>
         </a>
-        <a href="print.html" style="text-decoration: none; color: inherit;">
+        <a href="design.html" style="text-decoration: none; color: inherit;">
           <div class="service-card">
-            <i class="fas fa-print"></i>
-            <h3>Print & Visual Assets</h3>
-            <p>Business cards, posters, and other high-quality print materials.</p>
+            <i class="fas fa-palette"></i>
+            <h3>Branding & Design</h3>
+            <p>Custom logos, brand identity, and visuals crafted for your business.</p>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINT SERVICE DETAIL -->
+  <section class="service-detail">
+    <div class="service-detail-content">
+      <div class="service-detail-text">
+        <h2>Print & Visual Assets</h2>
+        <p>From business cards to banners, we deliver premium commercial-quality printing with lightning-fast turnaround. Over 20,000 products available, all designed and printed to perfection.</p>
+        <p>Whether you need professional business cards, eye-catching yard signs, or large-format banners, our commercial-grade equipment and expert design team ensure every print makes an impact.</p>
+        <a href="print.html" class="btn">Explore Print Services</a>
+      </div>
+      <div class="service-detail-image">
+        <img src="print-detail.jpg" alt="Print Services">
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETING SERVICE DETAIL -->
+  <section class="service-detail">
+    <div class="service-detail-content">
+      <div class="service-detail-image">
+        <img src="marketing-detail.jpg" alt="Marketing Services">
+      </div>
+      <div class="service-detail-text">
+        <h2>Advertising & Marketing</h2>
+        <p>Grow your audience with targeted campaigns on Facebook, Instagram, Google, and beyond. Our expert team manages every aspect of your digital advertising—from strategy to execution.</p>
+        <p>Month-to-month flexibility, transparent reporting, and real results. We focus on ROI so you can focus on running your business.</p>
+        <a href="marketing.html" class="btn">Start Marketing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN SERVICE DETAIL -->
+  <section class="service-detail">
+    <div class="service-detail-content">
+      <div class="service-detail-text">
+        <h2>Branding & Design</h2>
+        <p>Stand out with custom branding that captures your unique identity. From memorable logos to complete brand kits, we create visuals that leave a lasting impression.</p>
+        <p>Everything designed in-house from scratch—whether you need playful hand-drawn art or sleek corporate branding. Professional design at prices that work for everyone.</p>
+        <a href="design.html" class="btn">View Design Work</a>
+      </div>
+      <div class="service-detail-image">
+        <img src="design-detail.jpg" alt="Design Services">
+      </div>
+    </div>
+  </section>
+
+  <!-- WEB DESIGN SERVICE DETAIL -->
+  <section class="service-detail">
+    <div class="service-detail-content">
+      <div class="service-detail-image">
+        <img src="webdesign-detail.jpg" alt="Web Design Services">
+      </div>
+      <div class="service-detail-text">
+        <h2>New Year, New Website</h2>
+        <p>Transform your online presence with clean, intelligent web design that converts visitors into customers. Our modern, responsive websites are built to look stunning on every device while delivering exceptional user experience.</p>
+        <p>From sleek landing pages to full e-commerce platforms, we create websites that work as hard as you do. Fast loading times, SEO-optimized, and designed with your brand in mind.</p>
+        <a href="webdesign.html" class="btn">Get Your Website</a>
+        <span class="available-soon">Available Soon</span>
       </div>
     </div>
   </section>
