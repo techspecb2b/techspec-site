@@ -1459,7 +1459,8 @@
       itemsToShow = 1; // Show 1 item at a time on mobile
     }
     
-    const maxGalleryIndex = Math.max(0, totalGalleryItems - itemsToShow);
+    // Fix: Allow scrolling to show last image (19 items - 1 to show = 18 positions)
+    const maxGalleryIndex = Math.max(0, totalGalleryItems - 1);
 
     // Create dots
     const dotsContainer = document.getElementById('galleryDots');
@@ -1502,10 +1503,10 @@
     const galleryItemImages = galleryCarousel.querySelectorAll('.gallery-item img');
     let currentLightboxIndex = 0;
 
-    // Make gallery items clickable
-    galleryItemImages.forEach((img, index) => {
+    // Images already have onclick handlers in HTML, so no need to add them again
+    // Just make sure cursor shows they're clickable
+    galleryItemImages.forEach((img) => {
       img.style.cursor = 'pointer';
-      img.onclick = () => openLightbox(index);
     });
 
     function openLightbox(index) {
