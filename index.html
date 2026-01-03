@@ -277,46 +277,41 @@
       overflow: hidden;
     }
 
-    /* Multiple abstract tech elements in services section */
+    /* Network connection lines from edges */
     .services::before {
       content: '';
       position: absolute;
-      top: -50px;
-      right: 5%;
-      width: 100px;
-      height: 100px;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
       background: 
-        linear-gradient(45deg, transparent 40%, #FF0000 40%, #FF0000 60%, transparent 60%),
-        linear-gradient(-45deg, transparent 40%, #FF0000 40%, #FF0000 60%, transparent 60%);
-      opacity: 0.1;
+        linear-gradient(to bottom left, #FF0000 0%, transparent 100%),
+        linear-gradient(to bottom left, #FF0000 0%, transparent 100%),
+        linear-gradient(to bottom left, #FF0000 0%, transparent 100%);
+      background-size: 2px 100%, 2px 80%, 2px 60%;
+      background-position: 0 0, 30px 0, 60px 0;
+      background-repeat: no-repeat;
+      opacity: 0.15;
+      transform: rotate(-25deg);
     }
 
     .services::after {
       content: '';
       position: absolute;
-      bottom: 10%;
-      left: -30px;
-      width: 150px;
-      height: 150px;
-      border: 3px solid rgba(255,0,0,0.15);
-      border-radius: 50%;
-      border-top-color: transparent;
-      border-left-color: transparent;
-    }
-
-    /* Additional decorative elements */
-    .services {
-      background-image: 
-        /* Hexagon top left */
-        linear-gradient(30deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
-        linear-gradient(150deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
-        linear-gradient(30deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
-        linear-gradient(150deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
-        linear-gradient(60deg, rgba(0,0,0,0.05) 25%, transparent 25.5%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05)),
-        linear-gradient(60deg, rgba(0,0,0,0.05) 25%, transparent 25.5%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05));
-      background-size: 60px 105px, 60px 105px, 60px 105px, 60px 105px, 60px 105px, 60px 105px;
-      background-position: -80px 20px, -80px 20px, -80px 72.5px, -80px 72.5px, 0 0, 30px 52.5px;
-      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+      bottom: 0;
+      left: 0;
+      width: 250px;
+      height: 250px;
+      background: 
+        linear-gradient(to top right, rgba(0,0,0,0.1) 0%, transparent 100%),
+        linear-gradient(to top right, rgba(0,0,0,0.1) 0%, transparent 100%),
+        linear-gradient(to top right, rgba(0,0,0,0.1) 0%, transparent 100%);
+      background-size: 2px 100%, 2px 85%, 2px 70%;
+      background-position: 0 0, 25px 0, 50px 0;
+      background-repeat: no-repeat;
+      opacity: 0.4;
+      transform: rotate(20deg);
     }
 
     .services-grid {
@@ -399,89 +394,82 @@
       background: #fff;
     }
 
-    /* Print Section - Black background with varied shapes */
+    /* Print Section - Black background with red connection lines */
     .service-detail:nth-child(1) {
       background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
       position: relative;
+      overflow: hidden;
     }
 
     .service-detail:nth-child(1)::before {
       content: '';
       position: absolute;
-      top: 15%;
-      right: 8%;
-      width: 120px;
-      height: 120px;
-      border: 4px solid rgba(255,0,0,0.2);
-      border-radius: 50%;
-      border-right-color: transparent;
-      border-bottom-color: transparent;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 400px;
+      background: 
+        linear-gradient(to bottom left, rgba(255,0,0,0.4) 0%, transparent 70%),
+        linear-gradient(to bottom left, rgba(255,0,0,0.3) 0%, transparent 65%),
+        linear-gradient(to bottom left, rgba(255,0,0,0.2) 0%, transparent 60%),
+        linear-gradient(to bottom left, rgba(255,0,0,0.15) 0%, transparent 55%);
+      background-size: 2px 100%, 2px 90%, 2px 80%, 2px 70%;
+      background-position: 0 0, 40px 0, 80px 0, 120px 0;
+      background-repeat: no-repeat;
     }
 
     .service-detail:nth-child(1)::after {
       content: '';
       position: absolute;
-      bottom: 20%;
-      left: 5%;
-      width: 80px;
-      height: 80px;
+      bottom: 0;
+      left: 0;
+      width: 350px;
+      height: 350px;
       background: 
-        linear-gradient(135deg, transparent 35%, rgba(255,0,0,0.15) 35%, rgba(255,0,0,0.15) 65%, transparent 65%),
-        linear-gradient(45deg, transparent 35%, rgba(255,0,0,0.15) 35%, rgba(255,0,0,0.15) 65%, transparent 65%);
+        linear-gradient(to top right, rgba(255,0,0,0.3) 0%, transparent 65%),
+        linear-gradient(to top right, rgba(255,0,0,0.2) 0%, transparent 60%),
+        linear-gradient(to top right, rgba(255,0,0,0.15) 0%, transparent 55%);
+      background-size: 2px 100%, 2px 85%, 2px 70%;
+      background-position: 0 0, 35px 0, 70px 0;
+      background-repeat: no-repeat;
     }
 
-    /* Lightning bolts and lines */
-    .service-detail:nth-child(1) {
-      background-image:
-        /* Lightning bolt top right */
-        linear-gradient(30deg, transparent 45%, rgba(255,0,0,0.3) 46%, rgba(255,0,0,0.3) 54%, transparent 55%),
-        /* Diagonal lines bottom right */
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,0,0,0.08) 10px, rgba(255,0,0,0.08) 12px);
-      background-size: 60px 120px, 100% 100%;
-      background-position: 95% 10%, 0 0;
-      background-repeat: no-repeat, no-repeat;
-    }
-
-    /* Marketing Section - White with tech shapes */
+    /* Marketing Section - White with red connection lines */
     .service-detail:nth-child(2) {
       background: #fff;
       position: relative;
+      overflow: hidden;
     }
 
     .service-detail:nth-child(2)::before {
       content: '';
       position: absolute;
-      top: 10%;
-      right: 3%;
-      width: 100px;
-      height: 100px;
-      background: conic-gradient(from 0deg, rgba(255,0,0,0.15) 0deg 90deg, transparent 90deg 180deg, rgba(255,0,0,0.15) 180deg 270deg, transparent 270deg);
-      border-radius: 50%;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background: 
+        linear-gradient(to bottom right, rgba(255,0,0,0.2) 0%, transparent 70%),
+        linear-gradient(to bottom right, rgba(255,0,0,0.15) 0%, transparent 65%),
+        linear-gradient(to bottom right, rgba(255,0,0,0.1) 0%, transparent 60%);
+      background-size: 2px 100%, 2px 80%, 2px 65%;
+      background-position: 0 0, 30px 0, 60px 0;
+      background-repeat: no-repeat;
     }
 
     .service-detail:nth-child(2)::after {
       content: '';
       position: absolute;
-      bottom: 15%;
-      left: 2%;
-      width: 90px;
-      height: 90px;
-      border: 3px solid rgba(0,0,0,0.06);
-      border-radius: 50%;
-    }
-
-    /* Hexagons and X shapes */
-    .service-detail:nth-child(2) {
-      background-image:
-        /* Hexagon outline top left */
-        linear-gradient(30deg, rgba(255,0,0,0.12) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.12) 87.5%),
-        linear-gradient(150deg, rgba(255,0,0,0.12) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.12) 87.5%),
-        linear-gradient(270deg, rgba(255,0,0,0.12) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.12) 87.5%),
-        /* X shape bottom right */
-        linear-gradient(45deg, transparent 45%, rgba(0,0,0,0.04) 46%, rgba(0,0,0,0.04) 54%, transparent 55%),
-        linear-gradient(-45deg, transparent 45%, rgba(0,0,0,0.04) 46%, rgba(0,0,0,0.04) 54%, transparent 55%);
-      background-size: 80px 140px, 80px 140px, 80px 140px, 100px 100px, 100px 100px;
-      background-position: 5% 20%, 5% 20%, 5% 20%, 92% 75%, 92% 75%;
+      bottom: 0;
+      right: 0;
+      width: 320px;
+      height: 320px;
+      background: 
+        linear-gradient(to top left, rgba(0,0,0,0.08) 0%, transparent 65%),
+        linear-gradient(to top left, rgba(0,0,0,0.06) 0%, transparent 60%),
+        linear-gradient(to top left, rgba(0,0,0,0.04) 0%, transparent 55%);
+      background-size: 2px 100%, 2px 85%, 2px 70%;
+      background-position: 0 0, 35px 0, 70px 0;
       background-repeat: no-repeat;
     }
 
@@ -523,93 +511,82 @@
       color: #FF0000;
     }
 
-    /* Design Section - Red background with shapes */
+    /* Design Section - Red background with white/black connection lines */
     .service-detail:nth-child(3) {
       background: #FF0000;
       position: relative;
+      overflow: hidden;
     }
 
     .service-detail:nth-child(3)::before {
       content: '';
       position: absolute;
-      top: 12%;
-      right: 6%;
-      width: 110px;
-      height: 110px;
-      border: 4px dashed rgba(255,255,255,0.25);
-      border-radius: 50%;
+      top: 0;
+      right: 0;
+      width: 380px;
+      height: 380px;
+      background: 
+        linear-gradient(to bottom left, rgba(255,255,255,0.3) 0%, transparent 65%),
+        linear-gradient(to bottom left, rgba(255,255,255,0.2) 0%, transparent 60%),
+        linear-gradient(to bottom left, rgba(255,255,255,0.15) 0%, transparent 55%),
+        linear-gradient(to bottom left, rgba(0,0,0,0.2) 0%, transparent 60%);
+      background-size: 2px 100%, 2px 85%, 2px 70%, 2px 90%;
+      background-position: 0 0, 45px 0, 90px 0, 25px 0;
+      background-repeat: no-repeat;
     }
 
     .service-detail:nth-child(3)::after {
       content: '';
       position: absolute;
-      bottom: 18%;
-      left: 4%;
-      width: 70px;
-      height: 70px;
+      bottom: 0;
+      left: 0;
+      width: 340px;
+      height: 340px;
       background: 
-        linear-gradient(0deg, transparent 48%, rgba(0,0,0,0.15) 48%, rgba(0,0,0,0.15) 52%, transparent 52%),
-        linear-gradient(90deg, transparent 48%, rgba(0,0,0,0.15) 48%, rgba(0,0,0,0.15) 52%, transparent 52%);
+        linear-gradient(to top right, rgba(0,0,0,0.25) 0%, transparent 65%),
+        linear-gradient(to top right, rgba(0,0,0,0.18) 0%, transparent 60%),
+        linear-gradient(to top right, rgba(0,0,0,0.12) 0%, transparent 55%);
+      background-size: 2px 100%, 2px 80%, 2px 65%;
+      background-position: 0 0, 40px 0, 80px 0;
+      background-repeat: no-repeat;
     }
 
-    /* Donuts and lightning on red */
-    .service-detail:nth-child(3) {
-      background-image:
-        /* Donut shape top left */
-        radial-gradient(circle, transparent 30px, rgba(255,255,255,0.15) 30px, rgba(255,255,255,0.15) 45px, transparent 45px),
-        /* Lightning bolt bottom right */
-        linear-gradient(60deg, transparent 40%, rgba(0,0,0,0.1) 41%, rgba(0,0,0,0.1) 43%, transparent 44%),
-        linear-gradient(120deg, transparent 40%, rgba(0,0,0,0.1) 41%, rgba(0,0,0,0.1) 43%, transparent 44%),
-        /* Diagonal lines */
-        repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(0,0,0,0.05) 15px, rgba(0,0,0,0.05) 17px);
-      background-size: 90px 90px, 50px 80px, 50px 80px, 100% 100%;
-      background-position: 8% 25%, 94% 80%, 94% 80%, 0 0;
-      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    }
-
-    /* Web Design Section - White with all varieties */
+    /* Web Design Section - White with red/black connection lines */
     .service-detail:nth-child(4) {
       background: #fff;
       position: relative;
+      overflow: hidden;
     }
 
     .service-detail:nth-child(4)::before {
       content: '';
       position: absolute;
-      top: 8%;
-      left: 3%;
-      width: 95px;
-      height: 95px;
-      border: 3px solid rgba(255,0,0,0.15);
-      transform: rotate(45deg);
+      top: 0;
+      left: 0;
+      width: 360px;
+      height: 360px;
+      background: 
+        linear-gradient(to bottom right, rgba(255,0,0,0.18) 0%, transparent 70%),
+        linear-gradient(to bottom right, rgba(255,0,0,0.12) 0%, transparent 65%),
+        linear-gradient(to bottom right, rgba(255,0,0,0.08) 0%, transparent 60%);
+      background-size: 2px 100%, 2px 85%, 2px 70%;
+      background-position: 0 0, 35px 0, 70px 0;
+      background-repeat: no-repeat;
     }
 
     .service-detail:nth-child(4)::after {
       content: '';
       position: absolute;
-      bottom: 12%;
-      right: 5%;
-      width: 85px;
-      height: 85px;
-      background: radial-gradient(circle, transparent 25px, rgba(0,0,0,0.05) 25px, rgba(0,0,0,0.05) 35px, transparent 35px);
-    }
-
-    /* Hexagons, X's, and connection nodes */
-    .service-detail:nth-child(4) {
-      background-image:
-        /* Hexagon outline top right */
-        linear-gradient(30deg, rgba(255,0,0,0.1) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.1) 87.5%),
-        linear-gradient(150deg, rgba(255,0,0,0.1) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.1) 87.5%),
-        linear-gradient(270deg, rgba(255,0,0,0.1) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.1) 87.5%),
-        /* Connection nodes bottom left */
-        radial-gradient(circle at center, #FF0000 4px, transparent 4px),
-        radial-gradient(circle at center, rgba(255,0,0,0.4) 3px, transparent 3px),
-        radial-gradient(circle at center, rgba(255,0,0,0.3) 3px, transparent 3px),
-        /* X pattern middle left */
-        linear-gradient(45deg, transparent 47%, rgba(0,0,0,0.04) 48%, rgba(0,0,0,0.04) 52%, transparent 53%),
-        linear-gradient(-45deg, transparent 47%, rgba(0,0,0,0.04) 48%, rgba(0,0,0,0.04) 52%, transparent 53%);
-      background-size: 75px 130px, 75px 130px, 75px 130px, 10px 10px, 8px 8px, 8px 8px, 80px 80px, 80px 80px;
-      background-position: 93% 15%, 93% 15%, 93% 15%, 8% 85%, 14% 82%, 12% 90%, 6% 50%, 6% 50%;
+      bottom: 0;
+      right: 0;
+      width: 330px;
+      height: 330px;
+      background: 
+        linear-gradient(to top left, rgba(0,0,0,0.1) 0%, transparent 70%),
+        linear-gradient(to top left, rgba(0,0,0,0.07) 0%, transparent 65%),
+        linear-gradient(to top left, rgba(0,0,0,0.05) 0%, transparent 60%);
+      background-size: 2px 100%, 2px 80%, 2px 65%;
+      background-position: 0 0, 40px 0, 80px 0;
       background-repeat: no-repeat;
     }
 
@@ -755,6 +732,42 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: visible;
+    }
+
+    /* Connection lines radiating from mockup images */
+    .service-detail-image .mockup-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      width: 150px;
+      height: 150px;
+      background: 
+        linear-gradient(to right, rgba(255,0,0,0.2) 0%, transparent 100%),
+        linear-gradient(to right, rgba(255,0,0,0.15) 0%, transparent 100%),
+        linear-gradient(to right, rgba(255,0,0,0.1) 0%, transparent 100%);
+      background-size: 2px 60%, 2px 40%, 2px 25%;
+      background-position: 0 0, 0 30%, 0 60%;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+    }
+
+    .service-detail-image .mockup-container::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -100px;
+      width: 150px;
+      height: 150px;
+      background: 
+        linear-gradient(to left, rgba(255,0,0,0.2) 0%, transparent 100%),
+        linear-gradient(to left, rgba(255,0,0,0.15) 0%, transparent 100%),
+        linear-gradient(to left, rgba(255,0,0,0.1) 0%, transparent 100%);
+      background-size: 2px 60%, 2px 40%, 2px 25%;
+      background-position: 100% 0, 100% 30%, 100% 60%;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
     }
 
     .service-detail-image .placeholder-text {
