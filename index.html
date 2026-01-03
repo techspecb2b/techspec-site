@@ -320,8 +320,15 @@
     /* Force center the subtitle text */
     .services .container > p {
       text-align: center !important;
-      width: 100%;
-      display: block;
+      width: 100% !important;
+      display: block !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    /* Also target the specific paragraph */
+    .services p[style*="text-align"] {
+      text-align: center !important;
     }
 
     .service-card {
@@ -799,12 +806,19 @@
         text-align: left;
       }
 
-      /* Center buttons on mobile */
+      /* Center buttons on mobile - FORCE IT */
       .service-detail-text .btn {
-        display: block;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+        display: block !important;
+        width: fit-content !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+      }
+
+      .service-detail-text a.btn {
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
 
       .service-detail-image {
@@ -815,27 +829,20 @@
       }
 
       .service-detail-image .mockup-container {
-        padding: 20px 10px !important;
-        min-height: 350px !important;
-        max-height: 400px !important;
-        overflow: visible !important;
+        padding: 40px 20px !important;
+        min-height: 450px !important;
+        max-height: 500px !important;
+        overflow: hidden !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         position: relative !important;
       }
 
-      /* Better positioning for mockup elements on mobile */
+      /* Scale down mockups uniformly for mobile */
       .service-detail-image .mockup-container > div {
-        position: static !important;
-        transform: scale(0.55) !important;
+        transform: scale(0.6) !important;
         transform-origin: center center !important;
-        margin: 0 auto !important;
-      }
-
-      /* Center the main mockup wrapper */
-      .service-detail-image .mockup-container > div > div {
-        position: relative !important;
       }
 
       /* Hide floating CHEVRON text on mobile */
