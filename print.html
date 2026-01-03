@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:image" content="share-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="share-image.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Print Services - TechSpec</title>
@@ -1019,7 +1025,7 @@
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
+      <a href="index.html" style="text-decoration: none;"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div>
       <button class="menu-toggle" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
       </button>
@@ -1299,6 +1305,48 @@
     // Show products function
     let currentCategory = null;
 
+    // Custom product specs based on product type
+    function getProductSpecs(productName) {
+      const name = productName.toLowerCase();
+      
+      // Business Cards - keep multiple sizes and materials
+      if (name.includes('business card') || name.includes('letterhead') || 
+          name.includes('envelope') || name.includes('stationery') || 
+          name.includes('ncr form') || name.includes('folder')) {
+        return 'Multiple sizes and materials';
+      }
+      
+      // Vinyl/Mesh Banners - specific sizing
+      if (name.includes('vinyl banner')) return 'Multiple sizes and thicknesses';
+      if (name.includes('mesh banner')) return 'Multiple sizes';
+      
+      // Other banners
+      if (name.includes('banner') || name.includes('backdrop') || name.includes('flag')) {
+        return 'Multiple sizes';
+      }
+      
+      // Yard signs
+      if (name.includes('yard sign')) return 'Multiple sizes';
+      
+      // Signs & Displays general
+      if (name.includes('sign') || name.includes('display') || name.includes('tent') || 
+          name.includes('table cover') || name.includes('cling') || name.includes('poster')) {
+        return 'Multiple sizes and styles';
+      }
+      
+      // Apparel & Merch
+      if (name.includes('shirt') || name.includes('polo') || name.includes('hoodie') || 
+          name.includes('hat') || name.includes('cap') || name.includes('mug') || 
+          name.includes('bottle') || name.includes('tumbler') || name.includes('bag') || 
+          name.includes('backpack') || name.includes('magnet') || name.includes('keychain') || 
+          name.includes('pen') || name.includes('giveaway')) {
+        return 'Multiple styles and sizes';
+      }
+      
+      // Default for everything else
+      return 'Multiple sizes and finishes/materials';
+    }
+
     function showProducts(category, element) {
       const modal = document.getElementById('productModal');
       const modalContent = document.getElementById('modalProductContent');
@@ -1315,6 +1363,7 @@
       // Create product list HTML with expandable details
       const productsHTML = data.products.map((product, index) => {
         const productId = `product-${category}-${index}`;
+        const specs = getProductSpecs(product);
         return `
           <div class="product-item-wrapper">
             <div class="product-item" onclick="toggleProductDetails('${productId}')">
@@ -1326,7 +1375,7 @@
               <div class="product-specs">
                 <strong>Available Options:</strong>
                 <ul>
-                  <li>Multiple sizes and materials</li>
+                  <li>${specs}</li>
                   <li>Full color printing</li>
                   <li>Fast turnaround available</li>
                   <li>Bulk discounts on large orders</li>
