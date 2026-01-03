@@ -740,17 +740,62 @@
     }
 
     @media (max-width: 768px) {
+      .service-detail {
+        padding: 60px 20px;
+        overflow: hidden;
+      }
+
       .service-detail-content {
         flex-direction: column;
         gap: 40px;
       }
       
+      .service-detail-text {
+        text-align: center;
+        padding: 0 10px;
+      }
+
       .service-detail-text h2 {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+
+      .service-detail-text > p {
+        font-size: 16px;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+
+      .service-detail-text .feature-list {
+        max-width: 100%;
+        padding: 0 10px;
+        text-align: left;
       }
 
       .service-detail-image {
-        min-width: 300px;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+      }
+
+      .service-detail-image .mockup-container {
+        padding: 20px 10px !important;
+        min-height: 250px !important;
+        overflow: hidden !important;
+      }
+
+      /* Scale down all absolute positioned elements in mockups */
+      .service-detail-image .mockup-container > div {
+        transform: scale(0.65) !important;
+        transform-origin: center center !important;
+      }
+
+      /* Hide floating CHEVRON text on mobile - causes overlaps */
+      .service-detail::before,
+      .service-detail::after,
+      .services::before,
+      .services::after {
+        display: none !important;
       }
     }
 
