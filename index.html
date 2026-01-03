@@ -277,31 +277,27 @@
       overflow: hidden;
     }
 
-    /* Floating chevron arrows on sides - Dockyard style */
+    /* Abstract tech elements in services section */
     .services::before {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      top: 20%;
-      left: -60px;
-      font-size: 80px;
-      font-weight: 900;
-      letter-spacing: 10px;
-      color: rgba(255,0,0,0.08);
-      transform: rotate(90deg);
-      font-family: 'Poppins', sans-serif;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,0,0,0.08) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .services::after {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      top: 60%;
-      right: -60px;
-      font-size: 80px;
-      font-weight: 900;
-      letter-spacing: 10px;
-      color: rgba(255,0,0,0.08);
-      transform: rotate(-90deg);
-      font-family: 'Poppins', sans-serif;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .services-grid {
@@ -384,70 +380,77 @@
       background: #fff;
     }
 
-    /* Print Section - Black background with red chevrons */
+    /* Abstract floating tech elements for all sections */
+    .service-detail::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px solid rgba(255,0,0,0.1);
+      border-radius: 50%;
+      top: 10%;
+      right: 5%;
+      z-index: 0;
+    }
+
+    .service-detail::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 2px solid rgba(0,0,0,0.05);
+      border-radius: 50%;
+      bottom: 15%;
+      left: 8%;
+      z-index: 0;
+    }
+
+    /* Alternating dramatic backgrounds */
     .service-detail:nth-child(1) {
       background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-      position: relative;
-      overflow: hidden;
     }
 
     .service-detail:nth-child(1)::before {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      top: 15%;
-      left: -70px;
-      font-size: 90px;
-      font-weight: 900;
-      letter-spacing: 12px;
-      color: rgba(255,0,0,0.15);
-      transform: rotate(90deg);
-      font-family: 'Poppins', sans-serif;
+      top: 10%;
+      right: 5%;
+      width: 400px;
+      height: 400px;
+      background: conic-gradient(from 0deg at 50% 50%, 
+        rgba(255,0,0,0.15) 0deg, 
+        transparent 60deg, 
+        transparent 120deg, 
+        rgba(255,0,0,0.15) 180deg, 
+        transparent 240deg, 
+        transparent 300deg, 
+        rgba(255,0,0,0.15) 360deg);
+      border-radius: 50%;
+      animation: rotate 20s linear infinite;
     }
 
-    .service-detail:nth-child(1)::after {
-      content: 'CHEVRON';
-      position: absolute;
-      bottom: 20%;
-      right: -70px;
-      font-size: 90px;
-      font-weight: 900;
-      letter-spacing: 12px;
-      color: rgba(255,0,0,0.15);
-      transform: rotate(-90deg);
-      font-family: 'Poppins', sans-serif;
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
-    /* Marketing Section - White with red chevrons */
     .service-detail:nth-child(2) {
       background: #fff;
       position: relative;
-      overflow: hidden;
-    }
-
-    .service-detail:nth-child(2)::before {
-      content: 'CHEVRON';
-      position: absolute;
-      top: 25%;
-      left: -65px;
-      font-size: 85px;
-      font-weight: 900;
-      letter-spacing: 10px;
-      color: rgba(255,0,0,0.07);
-      transform: rotate(90deg);
-      font-family: 'Poppins', sans-serif;
     }
 
     .service-detail:nth-child(2)::after {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      bottom: 15%;
-      right: -65px;
-      font-size: 85px;
-      font-weight: 900;
-      letter-spacing: 10px;
-      color: rgba(0,0,0,0.04);
-      transform: rotate(-90deg);
-      font-family: 'Poppins', sans-serif;
+      bottom: 5%;
+      left: 10%;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-bottom: 200px solid rgba(255,0,0,0.04);
+      transform: rotate(45deg);
+      z-index: 0;
     }
 
     .service-detail:nth-child(2) .service-detail-text {
@@ -488,75 +491,73 @@
       color: #FF0000;
     }
 
-    /* Design Section - Red background with white/black chevrons */
     .service-detail:nth-child(3) {
       background: #FF0000;
       position: relative;
-      overflow: hidden;
     }
 
     .service-detail:nth-child(3)::before {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      top: 18%;
-      left: -68px;
-      font-size: 88px;
-      font-weight: 900;
-      letter-spacing: 11px;
-      color: rgba(255,255,255,0.12);
-      transform: rotate(90deg);
-      font-family: 'Poppins', sans-serif;
+      top: 5%;
+      right: 10%;
+      width: 250px;
+      height: 250px;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(0,0,0,0.1) 20px,
+        rgba(0,0,0,0.1) 22px
+      );
+      border-radius: 50%;
+      z-index: 0;
     }
 
     .service-detail:nth-child(3)::after {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      bottom: 22%;
-      right: -68px;
-      font-size: 88px;
-      font-weight: 900;
-      letter-spacing: 11px;
-      color: rgba(0,0,0,0.15);
-      transform: rotate(-90deg);
-      font-family: 'Poppins', sans-serif;
+      bottom: 10%;
+      left: 5%;
+      width: 0;
+      height: 0;
+      border-left: 120px solid transparent;
+      border-right: 120px solid transparent;
+      border-top: 180px solid rgba(0,0,0,0.08);
+      transform: rotate(-20deg);
+      z-index: 0;
     }
 
-    /* Web Design Section - White with red/black chevrons */
     .service-detail:nth-child(4) {
       background: #fff;
       position: relative;
-      overflow: hidden;
     }
 
     .service-detail:nth-child(4)::before {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      top: 20%;
-      left: -66px;
-      font-size: 86px;
-      font-weight: 900;
-      letter-spacing: 10px;
-      color: rgba(255,0,0,0.08);
-      transform: rotate(90deg);
-      font-family: 'Poppins', sans-serif;
+      top: 15%;
+      left: 5%;
+      width: 350px;
+      height: 350px;
+      background: 
+        linear-gradient(45deg, transparent 48%, rgba(255,0,0,0.05) 49%, rgba(255,0,0,0.05) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255,0,0,0.05) 49%, rgba(255,0,0,0.05) 51%, transparent 52%);
+      background-size: 40px 40px;
+      border-radius: 50%;
+      z-index: 0;
     }
 
     .service-detail:nth-child(4)::after {
-      content: 'CHEVRON';
+      content: '';
       position: absolute;
-      bottom: 18%;
-      right: -66px;
-      font-size: 86px;
-      font-weight: 900;
-      letter-spacing: 10px;
-      color: rgba(0,0,0,0.05);
-      transform: rotate(-90deg);
-      font-family: 'Poppins', sans-serif;
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      bottom: 5%;
+      right: 8%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(0,0,0,0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
     }
 
     .service-detail:nth-child(3) .service-detail-text {
@@ -580,6 +581,39 @@
 
     .service-detail:nth-child(3) .feature-list li .icon {
       background: #000;
+    }
+
+    /* Curved dividers between sections */
+    .service-detail:nth-child(2)::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: 15%;
+      width: 8px;
+      height: 8px;
+      background: #FF0000;
+      border-radius: 50%;
+      box-shadow: 
+        80px 60px 0 4px rgba(255,0,0,0.3),
+        160px 20px 0 4px rgba(255,0,0,0.2),
+        240px 80px 0 4px rgba(255,0,0,0.15);
+      z-index: 0;
+    }
+
+    .service-detail:nth-child(4)::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      width: 6px;
+      height: 6px;
+      background: #FF0000;
+      border-radius: 50%;
+      box-shadow: 
+        120px 40px 0 3px rgba(255,0,0,0.25),
+        60px 100px 0 3px rgba(255,0,0,0.2),
+        180px 120px 0 3px rgba(255,0,0,0.15);
+      z-index: 0;
     }
 
     .service-detail-content {
