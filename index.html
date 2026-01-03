@@ -746,13 +746,23 @@
       }
 
       .service-detail-content {
-        flex-direction: column;
-        gap: 40px;
+        flex-direction: column-reverse; /* Image on top, text below */
+        gap: 30px;
+      }
+
+      /* Force image to appear first on mobile */
+      .service-detail:nth-child(odd) .service-detail-content {
+        flex-direction: column; /* Image first for odd sections */
+      }
+
+      .service-detail:nth-child(even) .service-detail-content {
+        flex-direction: column; /* Image first for even sections too */
       }
       
       .service-detail-text {
         text-align: center;
         padding: 0 10px;
+        order: 2; /* Text always comes second */
       }
 
       .service-detail-text h2 {
@@ -775,18 +785,23 @@
       .service-detail-image {
         min-width: 100%;
         max-width: 100%;
-        padding: 0 10px;
+        padding: 0;
+        order: 1; /* Image always comes first */
       }
 
       .service-detail-image .mockup-container {
-        padding: 20px 10px !important;
-        min-height: 250px !important;
-        overflow: hidden !important;
+        padding: 30px 15px !important;
+        min-height: 350px !important;
+        max-height: 400px !important;
+        overflow: visible !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
-      /* Scale down all absolute positioned elements in mockups */
+      /* Scale down all absolute positioned elements in mockups to fit mobile */
       .service-detail-image .mockup-container > div {
-        transform: scale(0.65) !important;
+        transform: scale(0.55) !important;
         transform-origin: center center !important;
       }
 
