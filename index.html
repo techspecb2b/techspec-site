@@ -93,6 +93,16 @@
       padding: 0 20px;
       position: relative;
       z-index: 1;
+      text-align: center;
+    }
+
+    .container > * {
+      text-align: left; /* Reset for child elements */
+    }
+
+    .container > h2,
+    .container > p {
+      text-align: center; /* Keep headings and paragraphs centered */
     }
 
     /* SECTION DIVIDERS */
@@ -317,6 +327,10 @@
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       border-top: 3px solid transparent;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .service-card::before {
@@ -747,33 +761,23 @@
 
       /* Extra spacing for first service detail to prevent mockup overlap */
       .service-detail:first-of-type {
-        padding-top: 80px;
+        padding-top: 100px; /* Increased from 80px */
       }
 
       .service-detail-content {
-        flex-direction: column-reverse; /* Image on top, text below */
-        gap: 30px;
-      }
-
-      /* Force image to appear first on mobile */
-      .service-detail:nth-child(odd) .service-detail-content {
-        flex-direction: column; /* Image first for odd sections */
-      }
-
-      .service-detail:nth-child(even) .service-detail-content {
-        flex-direction: column; /* Image first for even sections too */
+        flex-direction: column; /* Image on top, text below */
+        gap: 50px; /* Increased gap */
       }
       
       .service-detail-text {
         text-align: center;
         padding: 0 10px;
-        order: 2; /* Text always comes second */
       }
 
       .service-detail-text h2 {
         font-size: 28px;
         margin-bottom: 15px;
-        margin-top: 20px; /* Extra space below mockup */
+        margin-top: 30px; /* Increased space below mockup */
       }
 
       .service-detail-text > p {
@@ -792,23 +796,22 @@
         min-width: 100%;
         max-width: 100%;
         padding: 0;
-        order: 1; /* Image always comes first */
-        margin-bottom: 20px; /* Space between image and text */
+        margin-bottom: 30px; /* Increased space */
       }
 
       .service-detail-image .mockup-container {
-        padding: 30px 15px !important;
-        min-height: 320px !important;
-        max-height: 380px !important;
+        padding: 20px 10px !important;
+        min-height: 280px !important; /* Reduced height */
+        max-height: 320px !important; /* Reduced height */
         overflow: visible !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
       }
 
-      /* Scale down all absolute positioned elements in mockups to fit mobile */
+      /* Scale down mockups even more for mobile */
       .service-detail-image .mockup-container > div {
-        transform: scale(0.5) !important;
+        transform: scale(0.45) !important; /* Reduced from 0.5 */
         transform-origin: center center !important;
       }
 
