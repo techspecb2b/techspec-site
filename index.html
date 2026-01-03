@@ -1966,7 +1966,8 @@
       itemsToShow = 1; // Show 1 item at a time on mobile
     }
     
-    const maxIndex = Math.max(0, totalItems - itemsToShow);
+    // Fix: Allow scrolling to show last image (19 items - 1 to show = 18 positions)
+    const maxIndex = Math.max(0, totalItems - 1);
 
     // Create dots
     const dotsContainer = document.getElementById('dots');
@@ -2009,10 +2010,10 @@
     const portfolioItems = document.querySelectorAll('.portfolio-item img');
     let currentLightboxIndex = 0;
 
-    // Make portfolio items clickable
-    portfolioItems.forEach((img, index) => {
+    // Images already have onclick handlers in HTML, so no need to add them again
+    // Just make sure cursor shows they're clickable
+    portfolioItems.forEach((img) => {
       img.style.cursor = 'pointer';
-      img.onclick = () => openLightbox(index);
     });
 
     function openLightbox(index) {
