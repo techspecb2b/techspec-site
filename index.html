@@ -277,41 +277,31 @@
       overflow: hidden;
     }
 
-    /* Network connection lines from edges */
+    /* Floating chevron arrows on sides - Dockyard style */
     .services::before {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 300px;
-      background: 
-        linear-gradient(to bottom left, #FF0000 0%, transparent 100%),
-        linear-gradient(to bottom left, #FF0000 0%, transparent 100%),
-        linear-gradient(to bottom left, #FF0000 0%, transparent 100%);
-      background-size: 2px 100%, 2px 80%, 2px 60%;
-      background-position: 0 0, 30px 0, 60px 0;
-      background-repeat: no-repeat;
-      opacity: 0.15;
-      transform: rotate(-25deg);
+      top: 20%;
+      left: -60px;
+      font-size: 80px;
+      font-weight: 900;
+      letter-spacing: 10px;
+      color: rgba(255,0,0,0.08);
+      transform: rotate(90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     .services::after {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 250px;
-      height: 250px;
-      background: 
-        linear-gradient(to top right, rgba(0,0,0,0.1) 0%, transparent 100%),
-        linear-gradient(to top right, rgba(0,0,0,0.1) 0%, transparent 100%),
-        linear-gradient(to top right, rgba(0,0,0,0.1) 0%, transparent 100%);
-      background-size: 2px 100%, 2px 85%, 2px 70%;
-      background-position: 0 0, 25px 0, 50px 0;
-      background-repeat: no-repeat;
-      opacity: 0.4;
-      transform: rotate(20deg);
+      top: 60%;
+      right: -60px;
+      font-size: 80px;
+      font-weight: 900;
+      letter-spacing: 10px;
+      color: rgba(255,0,0,0.08);
+      transform: rotate(-90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     .services-grid {
@@ -394,7 +384,7 @@
       background: #fff;
     }
 
-    /* Print Section - Black background with red connection lines */
+    /* Print Section - Black background with red chevrons */
     .service-detail:nth-child(1) {
       background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
       position: relative;
@@ -402,39 +392,32 @@
     }
 
     .service-detail:nth-child(1)::before {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 400px;
-      height: 400px;
-      background: 
-        linear-gradient(to bottom left, rgba(255,0,0,0.4) 0%, transparent 70%),
-        linear-gradient(to bottom left, rgba(255,0,0,0.3) 0%, transparent 65%),
-        linear-gradient(to bottom left, rgba(255,0,0,0.2) 0%, transparent 60%),
-        linear-gradient(to bottom left, rgba(255,0,0,0.15) 0%, transparent 55%);
-      background-size: 2px 100%, 2px 90%, 2px 80%, 2px 70%;
-      background-position: 0 0, 40px 0, 80px 0, 120px 0;
-      background-repeat: no-repeat;
+      top: 15%;
+      left: -70px;
+      font-size: 90px;
+      font-weight: 900;
+      letter-spacing: 12px;
+      color: rgba(255,0,0,0.15);
+      transform: rotate(90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     .service-detail:nth-child(1)::after {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 350px;
-      height: 350px;
-      background: 
-        linear-gradient(to top right, rgba(255,0,0,0.3) 0%, transparent 65%),
-        linear-gradient(to top right, rgba(255,0,0,0.2) 0%, transparent 60%),
-        linear-gradient(to top right, rgba(255,0,0,0.15) 0%, transparent 55%);
-      background-size: 2px 100%, 2px 85%, 2px 70%;
-      background-position: 0 0, 35px 0, 70px 0;
-      background-repeat: no-repeat;
+      bottom: 20%;
+      right: -70px;
+      font-size: 90px;
+      font-weight: 900;
+      letter-spacing: 12px;
+      color: rgba(255,0,0,0.15);
+      transform: rotate(-90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* Marketing Section - White with red connection lines */
+    /* Marketing Section - White with red chevrons */
     .service-detail:nth-child(2) {
       background: #fff;
       position: relative;
@@ -442,35 +425,29 @@
     }
 
     .service-detail:nth-child(2)::before {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 300px;
-      height: 300px;
-      background: 
-        linear-gradient(to bottom right, rgba(255,0,0,0.2) 0%, transparent 70%),
-        linear-gradient(to bottom right, rgba(255,0,0,0.15) 0%, transparent 65%),
-        linear-gradient(to bottom right, rgba(255,0,0,0.1) 0%, transparent 60%);
-      background-size: 2px 100%, 2px 80%, 2px 65%;
-      background-position: 0 0, 30px 0, 60px 0;
-      background-repeat: no-repeat;
+      top: 25%;
+      left: -65px;
+      font-size: 85px;
+      font-weight: 900;
+      letter-spacing: 10px;
+      color: rgba(255,0,0,0.07);
+      transform: rotate(90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     .service-detail:nth-child(2)::after {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 320px;
-      height: 320px;
-      background: 
-        linear-gradient(to top left, rgba(0,0,0,0.08) 0%, transparent 65%),
-        linear-gradient(to top left, rgba(0,0,0,0.06) 0%, transparent 60%),
-        linear-gradient(to top left, rgba(0,0,0,0.04) 0%, transparent 55%);
-      background-size: 2px 100%, 2px 85%, 2px 70%;
-      background-position: 0 0, 35px 0, 70px 0;
-      background-repeat: no-repeat;
+      bottom: 15%;
+      right: -65px;
+      font-size: 85px;
+      font-weight: 900;
+      letter-spacing: 10px;
+      color: rgba(0,0,0,0.04);
+      transform: rotate(-90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     .service-detail:nth-child(2) .service-detail-text {
@@ -511,7 +488,7 @@
       color: #FF0000;
     }
 
-    /* Design Section - Red background with white/black connection lines */
+    /* Design Section - Red background with white/black chevrons */
     .service-detail:nth-child(3) {
       background: #FF0000;
       position: relative;
@@ -519,39 +496,32 @@
     }
 
     .service-detail:nth-child(3)::before {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 380px;
-      height: 380px;
-      background: 
-        linear-gradient(to bottom left, rgba(255,255,255,0.3) 0%, transparent 65%),
-        linear-gradient(to bottom left, rgba(255,255,255,0.2) 0%, transparent 60%),
-        linear-gradient(to bottom left, rgba(255,255,255,0.15) 0%, transparent 55%),
-        linear-gradient(to bottom left, rgba(0,0,0,0.2) 0%, transparent 60%);
-      background-size: 2px 100%, 2px 85%, 2px 70%, 2px 90%;
-      background-position: 0 0, 45px 0, 90px 0, 25px 0;
-      background-repeat: no-repeat;
+      top: 18%;
+      left: -68px;
+      font-size: 88px;
+      font-weight: 900;
+      letter-spacing: 11px;
+      color: rgba(255,255,255,0.12);
+      transform: rotate(90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     .service-detail:nth-child(3)::after {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 340px;
-      height: 340px;
-      background: 
-        linear-gradient(to top right, rgba(0,0,0,0.25) 0%, transparent 65%),
-        linear-gradient(to top right, rgba(0,0,0,0.18) 0%, transparent 60%),
-        linear-gradient(to top right, rgba(0,0,0,0.12) 0%, transparent 55%);
-      background-size: 2px 100%, 2px 80%, 2px 65%;
-      background-position: 0 0, 40px 0, 80px 0;
-      background-repeat: no-repeat;
+      bottom: 22%;
+      right: -68px;
+      font-size: 88px;
+      font-weight: 900;
+      letter-spacing: 11px;
+      color: rgba(0,0,0,0.15);
+      transform: rotate(-90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* Web Design Section - White with red/black connection lines */
+    /* Web Design Section - White with red/black chevrons */
     .service-detail:nth-child(4) {
       background: #fff;
       position: relative;
@@ -559,35 +529,29 @@
     }
 
     .service-detail:nth-child(4)::before {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 360px;
-      height: 360px;
-      background: 
-        linear-gradient(to bottom right, rgba(255,0,0,0.18) 0%, transparent 70%),
-        linear-gradient(to bottom right, rgba(255,0,0,0.12) 0%, transparent 65%),
-        linear-gradient(to bottom right, rgba(255,0,0,0.08) 0%, transparent 60%);
-      background-size: 2px 100%, 2px 85%, 2px 70%;
-      background-position: 0 0, 35px 0, 70px 0;
-      background-repeat: no-repeat;
+      top: 20%;
+      left: -66px;
+      font-size: 86px;
+      font-weight: 900;
+      letter-spacing: 10px;
+      color: rgba(255,0,0,0.08);
+      transform: rotate(90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     .service-detail:nth-child(4)::after {
-      content: '';
+      content: 'CHEVRON';
       position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 330px;
-      height: 330px;
-      background: 
-        linear-gradient(to top left, rgba(0,0,0,0.1) 0%, transparent 70%),
-        linear-gradient(to top left, rgba(0,0,0,0.07) 0%, transparent 65%),
-        linear-gradient(to top left, rgba(0,0,0,0.05) 0%, transparent 60%);
-      background-size: 2px 100%, 2px 80%, 2px 65%;
-      background-position: 0 0, 40px 0, 80px 0;
-      background-repeat: no-repeat;
+      bottom: 18%;
+      right: -66px;
+      font-size: 86px;
+      font-weight: 900;
+      letter-spacing: 10px;
+      color: rgba(0,0,0,0.05);
+      transform: rotate(-90deg);
+      font-family: 'Poppins', sans-serif;
     }
 
     @keyframes rotate {
@@ -732,42 +696,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: visible;
-    }
-
-    /* Connection lines radiating from mockup images */
-    .service-detail-image .mockup-container::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -100px;
-      width: 150px;
-      height: 150px;
-      background: 
-        linear-gradient(to right, rgba(255,0,0,0.2) 0%, transparent 100%),
-        linear-gradient(to right, rgba(255,0,0,0.15) 0%, transparent 100%),
-        linear-gradient(to right, rgba(255,0,0,0.1) 0%, transparent 100%);
-      background-size: 2px 60%, 2px 40%, 2px 25%;
-      background-position: 0 0, 0 30%, 0 60%;
-      background-repeat: no-repeat;
-      transform: translateY(-50%);
-    }
-
-    .service-detail-image .mockup-container::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: -100px;
-      width: 150px;
-      height: 150px;
-      background: 
-        linear-gradient(to left, rgba(255,0,0,0.2) 0%, transparent 100%),
-        linear-gradient(to left, rgba(255,0,0,0.15) 0%, transparent 100%),
-        linear-gradient(to left, rgba(255,0,0,0.1) 0%, transparent 100%);
-      background-size: 2px 60%, 2px 40%, 2px 25%;
-      background-position: 100% 0, 100% 30%, 100% 60%;
-      background-repeat: no-repeat;
-      transform: translateY(-50%);
     }
 
     .service-detail-image .placeholder-text {
