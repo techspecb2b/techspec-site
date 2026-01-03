@@ -1141,18 +1141,25 @@
           <i class="fas fa-chevron-left"></i>
         </button>
         <div class="gallery-carousel" id="galleryCarousel">
-          <div class="gallery-item"><img src="portfolio1.png" alt="Print Sample 1"></div>
-          <div class="gallery-item"><img src="portfolio2.png" alt="Print Sample 2"></div>
-          <div class="gallery-item"><img src="portfolio3.png" alt="Print Sample 3"></div>
-          <div class="gallery-item"><img src="portfolio4.png" alt="Print Sample 4"></div>
-          <div class="gallery-item"><img src="portfolio5.png" alt="Print Sample 5"></div>
-          <div class="gallery-item"><img src="portfolio6.png" alt="Print Sample 6"></div>
-          <div class="gallery-item"><img src="portfolio7.png" alt="Print Sample 7"></div>
-          <div class="gallery-item"><img src="portfolio8.png" alt="Print Sample 8"></div>
-          <div class="gallery-item"><img src="portfolio9.png" alt="Print Sample 9"></div>
-          <div class="gallery-item"><img src="portfolio10.png" alt="Print Sample 10"></div>
-          <div class="gallery-item"><img src="portfolio11.png" alt="Print Sample 11"></div>
-          <div class="gallery-item"><img src="portfolio12.png" alt="Print Sample 12"></div>
+          <div class="gallery-item"><img src="portfolio1.png" alt="Print Sample 1" onclick="openLightbox(0)"></div>
+          <div class="gallery-item"><img src="portfolio2.png" alt="Print Sample 2" onclick="openLightbox(1)"></div>
+          <div class="gallery-item"><img src="portfolio3.png" alt="Print Sample 3" onclick="openLightbox(2)"></div>
+          <div class="gallery-item"><img src="portfolio4.png" alt="Print Sample 4" onclick="openLightbox(3)"></div>
+          <div class="gallery-item"><img src="portfolio5.png" alt="Print Sample 5" onclick="openLightbox(4)"></div>
+          <div class="gallery-item"><img src="portfolio6.png" alt="Print Sample 6" onclick="openLightbox(5)"></div>
+          <div class="gallery-item"><img src="portfolio7.png" alt="Print Sample 7" onclick="openLightbox(6)"></div>
+          <div class="gallery-item"><img src="portfolio8.png" alt="Print Sample 8" onclick="openLightbox(7)"></div>
+          <div class="gallery-item"><img src="portfolio9.png" alt="Print Sample 9" onclick="openLightbox(8)"></div>
+          <div class="gallery-item"><img src="portfolio10.png" alt="Print Sample 10" onclick="openLightbox(9)"></div>
+          <div class="gallery-item"><img src="portfolio11.png" alt="Print Sample 11" onclick="openLightbox(10)"></div>
+          <div class="gallery-item"><img src="portfolio12.png" alt="Print Sample 12" onclick="openLightbox(11)"></div>
+          <div class="gallery-item"><img src="portfolio13.png" alt="Print Sample 13" onclick="openLightbox(12)"></div>
+          <div class="gallery-item"><img src="portfolio14.png" alt="Print Sample 14" onclick="openLightbox(13)"></div>
+          <div class="gallery-item"><img src="portfolio15.png" alt="Print Sample 15" onclick="openLightbox(14)"></div>
+          <div class="gallery-item"><img src="portfolio16.png" alt="Print Sample 16" onclick="openLightbox(15)"></div>
+          <div class="gallery-item"><img src="portfolio17.png" alt="Print Sample 17" onclick="openLightbox(16)"></div>
+          <div class="gallery-item"><img src="portfolio18.png" alt="Print Sample 18" onclick="openLightbox(17)"></div>
+          <div class="gallery-item"><img src="portfolio19.png" alt="Print Sample 19" onclick="openLightbox(18)"></div>
         </div>
         <button class="carousel-btn next" onclick="moveGallery(1)">
           <i class="fas fa-chevron-right"></i>
@@ -1486,12 +1493,7 @@
       updateGallery();
     }
 
-    // Auto-play gallery
-    setInterval(() => {
-      currentGalleryIndex++;
-      if(currentGalleryIndex > maxGalleryIndex) currentGalleryIndex = 0;
-      updateGallery();
-    }, 4000);
+    // NO AUTO-PLAY - carousel only moves when user clicks arrows
 
     // LIGHTBOX FUNCTIONALITY
     const lightbox = document.getElementById('lightbox');
