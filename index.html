@@ -344,20 +344,20 @@
       font-size: 16px;
     }
 
-    /* SERVICE DETAIL SECTIONS */
+    /* SERVICE DETAIL SECTIONS - HighLevel Style */
     .service-detail {
-      padding: 80px 20px;
+      padding: 100px 20px;
       background: #fff;
     }
 
     .service-detail:nth-child(even) {
-      background: #f7f7f7;
+      background: #f9f9f9;
     }
 
     .service-detail-content {
       display: flex;
       align-items: center;
-      gap: 60px;
+      gap: 80px;
       max-width: 1200px;
       margin: 0 auto;
       flex-wrap: wrap;
@@ -368,17 +368,67 @@
       min-width: 300px;
     }
 
-    .service-detail-text h2 {
-      color: #111;
+    .service-detail-text .section-badge {
+      display: inline-block;
+      background: #FF0000;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
       margin-bottom: 20px;
-      font-size: 36px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .service-detail-text p {
+    .service-detail-text h2 {
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .service-detail-text > p {
       color: #666;
       font-size: 18px;
-      line-height: 1.8;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .service-detail-text .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    .service-detail-text .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
       margin-bottom: 20px;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .service-detail-text .feature-list li .icon {
+      min-width: 24px;
+      width: 24px;
+      height: 24px;
+      background: #FF0000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .service-detail-text .feature-list li strong {
+      color: #1a1a1a;
+      display: block;
+      margin-bottom: 4px;
     }
 
     .service-detail-text .btn {
@@ -395,24 +445,42 @@
 
     .service-detail-image {
       flex: 1;
-      min-width: 300px;
-      max-width: 500px;
+      min-width: 400px;
+      max-width: 550px;
+      position: relative;
     }
 
-    .service-detail-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    .service-detail-image .mockup-container {
+      background: #f0f0f0;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      position: relative;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-detail-image .placeholder-text {
+      text-align: center;
+      color: #999;
+      font-size: 18px;
+      font-style: italic;
     }
 
     @media (max-width: 768px) {
       .service-detail-content {
         flex-direction: column;
+        gap: 40px;
       }
       
       .service-detail-text h2 {
-        font-size: 28px;
+        font-size: 32px;
+      }
+
+      .service-detail-image {
+        min-width: 300px;
       }
     }
 
@@ -928,27 +996,51 @@
   <section class="service-detail">
     <div class="service-detail-content">
       <div class="service-detail-text">
-        <h2>Print & Visual Assets</h2>
-        <p>From business cards to banners, we deliver premium commercial-quality printing with lightning-fast turnaround. Over 20,000 products available, all designed and printed to perfection.</p>
-        <p>Whether you need professional business cards, eye-catching yard signs, or large-format banners, our commercial-grade equipment and expert design team ensure every print makes an impact.</p>
+        <span class="section-badge">Print Services</span>
+        <h2>Professional Printing That Makes An Impact</h2>
+        <p>From business cards to banners, we deliver premium commercial-quality printing with lightning-fast turnaround. Over 20,000 products available.</p>
+        
+        <ul class="feature-list">
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>20,000+ Products</strong>
+              Business cards, banners, yard signs, apparel, and more—all in one place
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Commercial-Grade Quality</strong>
+              Industry-leading printers and premium materials for professional results
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Fast Turnaround</strong>
+              24-48 hour production on most products with rush options available
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Expert Design Support</strong>
+              Our team ensures every print looks perfect before production
+            </div>
+          </li>
+        </ul>
+        
         <a href="print.html" class="btn">Explore Print Services</a>
       </div>
       <div class="service-detail-image">
-        <svg width="500" height="375" viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="printGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#FF0000;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#CC0000;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <rect width="500" height="375" fill="url(#printGradient)" rx="12"/>
-          <circle cx="250" cy="160" r="60" fill="rgba(255,255,255,0.15)"/>
-          <path d="M220 130 L280 130 L280 145 L285 145 L285 175 L215 175 L215 145 L220 145 Z M225 150 L275 150 L275 170 L225 170 Z" fill="white"/>
-          <rect x="230" y="155" width="40" height="3" fill="#FF0000"/>
-          <rect x="230" y="162" width="40" height="3" fill="#FF0000"/>
-          <text x="250" y="240" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">Print Services</text>
-          <text x="250" y="270" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.9)" text-anchor="middle">20,000+ Products</text>
-        </svg>
+        <div class="mockup-container">
+          <p class="placeholder-text">
+            📦<br><br>
+            Add your print product images here<br>
+            (business cards, banners, signage)
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -957,28 +1049,50 @@
   <section class="service-detail">
     <div class="service-detail-content">
       <div class="service-detail-image">
-        <svg width="500" height="375" viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="marketingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#FF3333;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#FF0000;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <rect width="500" height="375" fill="url(#marketingGradient)" rx="12"/>
-          <circle cx="250" cy="160" r="60" fill="rgba(255,255,255,0.15)"/>
-          <path d="M230 140 L230 180 L245 165 L250 172 L255 165 L270 180 L270 140 Z" fill="white"/>
-          <circle cx="235" cy="150" r="3" fill="#FF0000"/>
-          <circle cx="245" cy="147" r="3" fill="#FF0000"/>
-          <circle cx="255" cy="145" r="3" fill="#FF0000"/>
-          <circle cx="265" cy="148" r="3" fill="#FF0000"/>
-          <text x="250" y="240" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">Marketing</text>
-          <text x="250" y="270" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.9)" text-anchor="middle">Digital Campaigns</text>
-        </svg>
+        <div class="mockup-container">
+          <p class="placeholder-text">
+            📊<br><br>
+            Add your marketing dashboard/analytics images here<br>
+            (campaign results, ad examples)
+          </p>
+        </div>
       </div>
       <div class="service-detail-text">
-        <h2>Advertising & Marketing</h2>
-        <p>Grow your audience with targeted campaigns on Facebook, Instagram, Google, and beyond. Our expert team manages every aspect of your digital advertising—from strategy to execution.</p>
-        <p>Month-to-month flexibility, transparent reporting, and real results. We focus on ROI so you can focus on running your business.</p>
+        <span class="section-badge">Marketing</span>
+        <h2>Digital Marketing That Drives Real Results</h2>
+        <p>Grow your audience with targeted campaigns on Facebook, Instagram, Google, and beyond. Our expert team manages every aspect of your digital advertising.</p>
+        
+        <ul class="feature-list">
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Multi-Platform Campaigns</strong>
+              Facebook, Instagram, Google Ads—we handle it all for maximum reach
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Month-to-Month Flexibility</strong>
+              No long-term contracts. Scale up or down based on your needs
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Transparent Reporting</strong>
+              Real-time access to campaign performance and ROI metrics
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Expert Strategy & Execution</strong>
+              From targeting to creative, we optimize every aspect of your ads
+            </div>
+          </li>
+        </ul>
+        
         <a href="marketing.html" class="btn">Start Marketing</a>
       </div>
     </div>
@@ -988,27 +1102,51 @@
   <section class="service-detail">
     <div class="service-detail-content">
       <div class="service-detail-text">
-        <h2>Branding & Design</h2>
+        <span class="section-badge">Branding & Design</span>
+        <h2>Custom Branding That Stands Out</h2>
         <p>Stand out with custom branding that captures your unique identity. From memorable logos to complete brand kits, we create visuals that leave a lasting impression.</p>
-        <p>Everything designed in-house from scratch—whether you need playful hand-drawn art or sleek corporate branding. Professional design at prices that work for everyone.</p>
+        
+        <ul class="feature-list">
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>100% Custom Design</strong>
+              Everything designed from scratch—no templates, no stock art
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Complete Brand Kits</strong>
+              Logos, color palettes, fonts, and usage guidelines all included
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Unlimited Revisions</strong>
+              We refine your design until it's absolutely perfect
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Fast 2-3 Day Turnaround</strong>
+              Get your initial concepts quickly, revisions even faster
+            </div>
+          </li>
+        </ul>
+        
         <a href="design.html" class="btn">View Design Work</a>
       </div>
       <div class="service-detail-image">
-        <svg width="500" height="375" viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="designGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#CC0000;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#FF0000;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <rect width="500" height="375" fill="url(#designGradient)" rx="12"/>
-          <circle cx="250" cy="160" r="60" fill="rgba(255,255,255,0.15)"/>
-          <path d="M225 135 Q225 125 235 125 L265 125 Q275 125 275 135 L275 145 Q265 145 265 155 L265 175 L235 175 L235 155 Q235 145 225 145 Z" fill="white"/>
-          <ellipse cx="250" cy="150" rx="8" ry="12" fill="#FF0000"/>
-          <rect x="240" y="165" width="20" height="8" fill="#FF0000"/>
-          <text x="250" y="240" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">Branding & Design</text>
-          <text x="250" y="270" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.9)" text-anchor="middle">Custom Creatives</text>
-        </svg>
+        <div class="mockup-container">
+          <p class="placeholder-text">
+            🎨<br><br>
+            Add your logo/branding portfolio images here<br>
+            (logo designs, brand kits)
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -1017,45 +1155,50 @@
   <section class="service-detail">
     <div class="service-detail-content">
       <div class="service-detail-image">
-        <svg width="500" height="375" viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="webGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#FF0000;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#990000;stop-opacity:1" />
-            </linearGradient>
-          </defs>
-          <rect width="500" height="375" fill="url(#webGradient)" rx="12"/>
-          
-          <!-- Laptop in perspective -->
-          <g transform="translate(250, 187.5) rotate(-5) translate(-120, -70)">
-            <!-- Screen -->
-            <rect x="20" y="10" width="200" height="130" fill="#2a2a2a" rx="4"/>
-            <rect x="30" y="20" width="180" height="105" fill="#f5f5f5" rx="2"/>
-            
-            <!-- Website elements on screen -->
-            <rect x="40" y="30" width="60" height="8" fill="#FF0000" rx="2"/>
-            <rect x="40" y="45" width="160" height="4" fill="#ddd" rx="1"/>
-            <rect x="40" y="53" width="140" height="4" fill="#ddd" rx="1"/>
-            <rect x="40" y="61" width="150" height="4" fill="#ddd" rx="1"/>
-            
-            <rect x="40" y="75" width="70" height="40" fill="#e0e0e0" rx="2"/>
-            <rect x="120" y="75" width="80" height="15" fill="#ddd" rx="1"/>
-            <rect x="120" y="93" width="80" height="4" fill="#ddd" rx="1"/>
-            <rect x="120" y="100" width="60" height="4" fill="#ddd" rx="1"/>
-            
-            <!-- Base -->
-            <path d="M10 145 L230 145 L220 155 L20 155 Z" fill="#2a2a2a"/>
-            <ellipse cx="120" cy="156" rx="15" ry="3" fill="#1a1a1a"/>
-          </g>
-          
-          <text x="250" y="280" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">Web Design</text>
-          <text x="250" y="310" font-family="Arial, sans-serif" font-size="20" fill="rgba(255,255,255,0.9)" text-anchor="middle">Modern Websites</text>
-        </svg>
+        <div class="mockup-container">
+          <p class="placeholder-text">
+            💻<br><br>
+            Add your web design mockup images here<br>
+            (website screenshots, laptop mockups)
+          </p>
+        </div>
       </div>
       <div class="service-detail-text">
+        <span class="section-badge">Coming Soon</span>
         <h2>New Year, New Website</h2>
-        <p>Transform your online presence with clean, intelligent web design that converts visitors into customers. Our modern, responsive websites are built to look stunning on every device while delivering exceptional user experience.</p>
-        <p>From sleek landing pages to full e-commerce platforms, we create websites that work as hard as you do. Fast loading times, SEO-optimized, and designed with your brand in mind.</p>
+        <p>Transform your online presence with clean, intelligent web design that converts visitors into customers. Modern, responsive websites built for results.</p>
+        
+        <ul class="feature-list">
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Clean, Modern Design</strong>
+              Beautiful websites that look stunning on every device
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>SEO-Optimized</strong>
+              Built from the ground up to rank well in search engines
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Lightning-Fast Loading</strong>
+              Optimized for speed to keep visitors engaged
+            </div>
+          </li>
+          <li>
+            <span class="icon">✓</span>
+            <div>
+              <strong>Full E-Commerce Support</strong>
+              From landing pages to complete online stores
+            </div>
+          </li>
+        </ul>
+        
         <a href="webdesign.html" class="btn">Get Your Website</a>
         <span class="available-soon">Available Soon</span>
       </div>
