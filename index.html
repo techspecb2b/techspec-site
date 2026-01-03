@@ -277,27 +277,46 @@
       overflow: hidden;
     }
 
-    /* Abstract tech elements in services section */
+    /* Multiple abstract tech elements in services section */
     .services::before {
       content: '';
       position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255,0,0,0.08) 0%, transparent 70%);
-      border-radius: 50%;
+      top: -50px;
+      right: 5%;
+      width: 100px;
+      height: 100px;
+      background: 
+        linear-gradient(45deg, transparent 40%, #FF0000 40%, #FF0000 60%, transparent 60%),
+        linear-gradient(-45deg, transparent 40%, #FF0000 40%, #FF0000 60%, transparent 60%);
+      opacity: 0.1;
     }
 
     .services::after {
       content: '';
       position: absolute;
-      bottom: -150px;
-      left: -150px;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%);
+      bottom: 10%;
+      left: -30px;
+      width: 150px;
+      height: 150px;
+      border: 3px solid rgba(255,0,0,0.15);
       border-radius: 50%;
+      border-top-color: transparent;
+      border-left-color: transparent;
+    }
+
+    /* Additional decorative elements */
+    .services {
+      background-image: 
+        /* Hexagon top left */
+        linear-gradient(30deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
+        linear-gradient(150deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
+        linear-gradient(30deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
+        linear-gradient(150deg, #FF0000 12%, transparent 12.5%, transparent 87%, #FF0000 87.5%, #FF0000),
+        linear-gradient(60deg, rgba(0,0,0,0.05) 25%, transparent 25.5%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05)),
+        linear-gradient(60deg, rgba(0,0,0,0.05) 25%, transparent 25.5%, transparent 75%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.05));
+      background-size: 60px 105px, 60px 105px, 60px 105px, 60px 105px, 60px 105px, 60px 105px;
+      background-position: -80px 20px, -80px 20px, -80px 72.5px, -80px 72.5px, 0 0, 30px 52.5px;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
     }
 
     .services-grid {
@@ -380,77 +399,90 @@
       background: #fff;
     }
 
-    /* Abstract floating tech elements for all sections */
-    .service-detail::before {
-      content: '';
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border: 2px solid rgba(255,0,0,0.1);
-      border-radius: 50%;
-      top: 10%;
-      right: 5%;
-      z-index: 0;
-    }
-
-    .service-detail::after {
-      content: '';
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border: 2px solid rgba(0,0,0,0.05);
-      border-radius: 50%;
-      bottom: 15%;
-      left: 8%;
-      z-index: 0;
-    }
-
-    /* Alternating dramatic backgrounds */
+    /* Print Section - Black background with varied shapes */
     .service-detail:nth-child(1) {
       background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+      position: relative;
     }
 
     .service-detail:nth-child(1)::before {
       content: '';
       position: absolute;
-      top: 10%;
-      right: 5%;
-      width: 400px;
-      height: 400px;
-      background: conic-gradient(from 0deg at 50% 50%, 
-        rgba(255,0,0,0.15) 0deg, 
-        transparent 60deg, 
-        transparent 120deg, 
-        rgba(255,0,0,0.15) 180deg, 
-        transparent 240deg, 
-        transparent 300deg, 
-        rgba(255,0,0,0.15) 360deg);
+      top: 15%;
+      right: 8%;
+      width: 120px;
+      height: 120px;
+      border: 4px solid rgba(255,0,0,0.2);
       border-radius: 50%;
-      animation: rotate 20s linear infinite;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
     }
 
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .service-detail:nth-child(1)::after {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 5%;
+      width: 80px;
+      height: 80px;
+      background: 
+        linear-gradient(135deg, transparent 35%, rgba(255,0,0,0.15) 35%, rgba(255,0,0,0.15) 65%, transparent 65%),
+        linear-gradient(45deg, transparent 35%, rgba(255,0,0,0.15) 35%, rgba(255,0,0,0.15) 65%, transparent 65%);
     }
 
+    /* Lightning bolts and lines */
+    .service-detail:nth-child(1) {
+      background-image:
+        /* Lightning bolt top right */
+        linear-gradient(30deg, transparent 45%, rgba(255,0,0,0.3) 46%, rgba(255,0,0,0.3) 54%, transparent 55%),
+        /* Diagonal lines bottom right */
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,0,0,0.08) 10px, rgba(255,0,0,0.08) 12px);
+      background-size: 60px 120px, 100% 100%;
+      background-position: 95% 10%, 0 0;
+      background-repeat: no-repeat, no-repeat;
+    }
+
+    /* Marketing Section - White with tech shapes */
     .service-detail:nth-child(2) {
       background: #fff;
       position: relative;
     }
 
+    .service-detail:nth-child(2)::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 3%;
+      width: 100px;
+      height: 100px;
+      background: conic-gradient(from 0deg, rgba(255,0,0,0.15) 0deg 90deg, transparent 90deg 180deg, rgba(255,0,0,0.15) 180deg 270deg, transparent 270deg);
+      border-radius: 50%;
+    }
+
     .service-detail:nth-child(2)::after {
       content: '';
       position: absolute;
-      bottom: 5%;
-      left: 10%;
-      width: 0;
-      height: 0;
-      border-left: 150px solid transparent;
-      border-right: 150px solid transparent;
-      border-bottom: 200px solid rgba(255,0,0,0.04);
-      transform: rotate(45deg);
-      z-index: 0;
+      bottom: 15%;
+      left: 2%;
+      width: 90px;
+      height: 90px;
+      border: 3px solid rgba(0,0,0,0.06);
+      border-radius: 50%;
+    }
+
+    /* Hexagons and X shapes */
+    .service-detail:nth-child(2) {
+      background-image:
+        /* Hexagon outline top left */
+        linear-gradient(30deg, rgba(255,0,0,0.12) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.12) 87.5%),
+        linear-gradient(150deg, rgba(255,0,0,0.12) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.12) 87.5%),
+        linear-gradient(270deg, rgba(255,0,0,0.12) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.12) 87.5%),
+        /* X shape bottom right */
+        linear-gradient(45deg, transparent 45%, rgba(0,0,0,0.04) 46%, rgba(0,0,0,0.04) 54%, transparent 55%),
+        linear-gradient(-45deg, transparent 45%, rgba(0,0,0,0.04) 46%, rgba(0,0,0,0.04) 54%, transparent 55%);
+      background-size: 80px 140px, 80px 140px, 80px 140px, 100px 100px, 100px 100px;
+      background-position: 5% 20%, 5% 20%, 5% 20%, 92% 75%, 92% 75%;
+      background-repeat: no-repeat;
     }
 
     .service-detail:nth-child(2) .service-detail-text {
@@ -491,6 +523,7 @@
       color: #FF0000;
     }
 
+    /* Design Section - Red background with shapes */
     .service-detail:nth-child(3) {
       background: #FF0000;
       position: relative;
@@ -499,35 +532,42 @@
     .service-detail:nth-child(3)::before {
       content: '';
       position: absolute;
-      top: 5%;
-      right: 10%;
-      width: 250px;
-      height: 250px;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        rgba(0,0,0,0.1) 20px,
-        rgba(0,0,0,0.1) 22px
-      );
+      top: 12%;
+      right: 6%;
+      width: 110px;
+      height: 110px;
+      border: 4px dashed rgba(255,255,255,0.25);
       border-radius: 50%;
-      z-index: 0;
     }
 
     .service-detail:nth-child(3)::after {
       content: '';
       position: absolute;
-      bottom: 10%;
-      left: 5%;
-      width: 0;
-      height: 0;
-      border-left: 120px solid transparent;
-      border-right: 120px solid transparent;
-      border-top: 180px solid rgba(0,0,0,0.08);
-      transform: rotate(-20deg);
-      z-index: 0;
+      bottom: 18%;
+      left: 4%;
+      width: 70px;
+      height: 70px;
+      background: 
+        linear-gradient(0deg, transparent 48%, rgba(0,0,0,0.15) 48%, rgba(0,0,0,0.15) 52%, transparent 52%),
+        linear-gradient(90deg, transparent 48%, rgba(0,0,0,0.15) 48%, rgba(0,0,0,0.15) 52%, transparent 52%);
     }
 
+    /* Donuts and lightning on red */
+    .service-detail:nth-child(3) {
+      background-image:
+        /* Donut shape top left */
+        radial-gradient(circle, transparent 30px, rgba(255,255,255,0.15) 30px, rgba(255,255,255,0.15) 45px, transparent 45px),
+        /* Lightning bolt bottom right */
+        linear-gradient(60deg, transparent 40%, rgba(0,0,0,0.1) 41%, rgba(0,0,0,0.1) 43%, transparent 44%),
+        linear-gradient(120deg, transparent 40%, rgba(0,0,0,0.1) 41%, rgba(0,0,0,0.1) 43%, transparent 44%),
+        /* Diagonal lines */
+        repeating-linear-gradient(-45deg, transparent, transparent 15px, rgba(0,0,0,0.05) 15px, rgba(0,0,0,0.05) 17px);
+      background-size: 90px 90px, 50px 80px, 50px 80px, 100% 100%;
+      background-position: 8% 25%, 94% 80%, 94% 80%, 0 0;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    }
+
+    /* Web Design Section - White with all varieties */
     .service-detail:nth-child(4) {
       background: #fff;
       position: relative;
@@ -536,28 +576,46 @@
     .service-detail:nth-child(4)::before {
       content: '';
       position: absolute;
-      top: 15%;
-      left: 5%;
-      width: 350px;
-      height: 350px;
-      background: 
-        linear-gradient(45deg, transparent 48%, rgba(255,0,0,0.05) 49%, rgba(255,0,0,0.05) 51%, transparent 52%),
-        linear-gradient(-45deg, transparent 48%, rgba(255,0,0,0.05) 49%, rgba(255,0,0,0.05) 51%, transparent 52%);
-      background-size: 40px 40px;
-      border-radius: 50%;
-      z-index: 0;
+      top: 8%;
+      left: 3%;
+      width: 95px;
+      height: 95px;
+      border: 3px solid rgba(255,0,0,0.15);
+      transform: rotate(45deg);
     }
 
     .service-detail:nth-child(4)::after {
       content: '';
       position: absolute;
-      bottom: 5%;
-      right: 8%;
-      width: 200px;
-      height: 200px;
-      background: radial-gradient(circle, rgba(0,0,0,0.04) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 0;
+      bottom: 12%;
+      right: 5%;
+      width: 85px;
+      height: 85px;
+      background: radial-gradient(circle, transparent 25px, rgba(0,0,0,0.05) 25px, rgba(0,0,0,0.05) 35px, transparent 35px);
+    }
+
+    /* Hexagons, X's, and connection nodes */
+    .service-detail:nth-child(4) {
+      background-image:
+        /* Hexagon outline top right */
+        linear-gradient(30deg, rgba(255,0,0,0.1) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.1) 87.5%),
+        linear-gradient(150deg, rgba(255,0,0,0.1) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.1) 87.5%),
+        linear-gradient(270deg, rgba(255,0,0,0.1) 12%, transparent 12.5%, transparent 87%, rgba(255,0,0,0.1) 87.5%),
+        /* Connection nodes bottom left */
+        radial-gradient(circle at center, #FF0000 4px, transparent 4px),
+        radial-gradient(circle at center, rgba(255,0,0,0.4) 3px, transparent 3px),
+        radial-gradient(circle at center, rgba(255,0,0,0.3) 3px, transparent 3px),
+        /* X pattern middle left */
+        linear-gradient(45deg, transparent 47%, rgba(0,0,0,0.04) 48%, rgba(0,0,0,0.04) 52%, transparent 53%),
+        linear-gradient(-45deg, transparent 47%, rgba(0,0,0,0.04) 48%, rgba(0,0,0,0.04) 52%, transparent 53%);
+      background-size: 75px 130px, 75px 130px, 75px 130px, 10px 10px, 8px 8px, 8px 8px, 80px 80px, 80px 80px;
+      background-position: 93% 15%, 93% 15%, 93% 15%, 8% 85%, 14% 82%, 12% 90%, 6% 50%, 6% 50%;
+      background-repeat: no-repeat;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     .service-detail:nth-child(3) .service-detail-text {
@@ -581,39 +639,6 @@
 
     .service-detail:nth-child(3) .feature-list li .icon {
       background: #000;
-    }
-
-    /* Curved dividers between sections */
-    .service-detail:nth-child(2)::before {
-      content: '';
-      position: absolute;
-      top: 20%;
-      right: 15%;
-      width: 8px;
-      height: 8px;
-      background: #FF0000;
-      border-radius: 50%;
-      box-shadow: 
-        80px 60px 0 4px rgba(255,0,0,0.3),
-        160px 20px 0 4px rgba(255,0,0,0.2),
-        240px 80px 0 4px rgba(255,0,0,0.15);
-      z-index: 0;
-    }
-
-    .service-detail:nth-child(4)::before {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: 10%;
-      width: 6px;
-      height: 6px;
-      background: #FF0000;
-      border-radius: 50%;
-      box-shadow: 
-        120px 40px 0 3px rgba(255,0,0,0.25),
-        60px 100px 0 3px rgba(255,0,0,0.2),
-        180px 120px 0 3px rgba(255,0,0,0.15);
-      z-index: 0;
     }
 
     .service-detail-content {
