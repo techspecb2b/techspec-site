@@ -272,7 +272,7 @@
     /* SERVICES */
     .services {
       padding: 100px 20px;
-      background-color: #ffffff;
+      background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
       position: relative;
     }
 
@@ -353,7 +353,7 @@
     }
 
     .service-detail:nth-child(even) {
-      background: #f9f9f9;
+      background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
     }
 
     /* Alternating dramatic backgrounds */
@@ -372,6 +372,43 @@
       transform: rotate(-15deg);
       opacity: 0.1;
       border-radius: 50px;
+    }
+
+    .service-detail:nth-child(2) {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    }
+
+    .service-detail:nth-child(2)::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 50%;
+      height: 140%;
+      background: #FF0000;
+      transform: rotate(20deg);
+      opacity: 0.08;
+      border-radius: 50px;
+      z-index: 0;
+    }
+
+    .service-detail:nth-child(2) .service-detail-text {
+      color: white;
+    }
+
+    .service-detail:nth-child(2) .service-detail-text h2,
+    .service-detail:nth-child(2) .service-detail-text .feature-list li strong,
+    .service-detail:nth-child(2) .service-detail-text .feature-list li {
+      color: white;
+    }
+
+    .service-detail:nth-child(2) .service-detail-text > p {
+      color: #ccc;
+    }
+
+    .service-detail:nth-child(2) .section-badge {
+      background: #FF0000;
+      color: white;
     }
 
     .service-detail:nth-child(1) .service-detail-text {
@@ -1170,10 +1207,16 @@
               <div style="padding: 35px; color: white; position: relative;">
                 <div style="position: absolute; top: -10px; right: -10px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
                 <div style="position: relative; z-index: 1;">
-                  <!-- Premium Icon instead of TS -->
+                  <!-- Premium Geometric Icon -->
                   <div style="width: 60px; height: 60px; background: white; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M18 3L22 14L33 14L24 21L28 32L18 25L8 32L12 21L3 14L14 14L18 3Z" fill="#FF0000" stroke="#FF0000" stroke-width="2" stroke-linejoin="round"/>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <!-- Abstract geometric tech shape -->
+                      <path d="M20 5 L35 15 L35 25 L20 35 L5 25 L5 15 Z" fill="none" stroke="#FF0000" stroke-width="2.5" stroke-linejoin="round"/>
+                      <circle cx="20" cy="20" r="6" fill="#FF0000"/>
+                      <line x1="20" y1="5" x2="20" y2="14" stroke="#FF0000" stroke-width="2"/>
+                      <line x1="20" y1="26" x2="20" y2="35" stroke="#FF0000" stroke-width="2"/>
+                      <line x1="5" y1="15" x2="14" y2="20" stroke="#FF0000" stroke-width="2"/>
+                      <line x1="26" y1="20" x2="35" y2="25" stroke="#FF0000" stroke-width="2"/>
                     </svg>
                   </div>
                   <div style="font-size: 22px; font-weight: bold; margin-bottom: 8px;">John Smith</div>
@@ -1425,30 +1468,48 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
               <!-- Logo 1 - Primary -->
               <div style="background: #f8f8f8; padding: 25px; border-radius: 8px; text-align: center; border: 2px solid #FF0000;">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 3L24 16L37 16L27 24L31 37L20 29L9 37L13 24L3 16L16 16L20 3Z" fill="#FF0000" stroke="#FF0000" stroke-width="2" stroke-linejoin="round"/>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 6 L38 16 L38 28 L22 38 L6 28 L6 16 Z" fill="none" stroke="#FF0000" stroke-width="2.5" stroke-linejoin="round"/>
+                  <circle cx="22" cy="22" r="6" fill="#FF0000"/>
+                  <line x1="22" y1="6" x2="22" y2="16" stroke="#FF0000" stroke-width="2"/>
+                  <line x1="22" y1="28" x2="22" y2="38" stroke="#FF0000" stroke-width="2"/>
+                  <line x1="6" y1="16" x2="16" y2="22" stroke="#FF0000" stroke-width="2"/>
+                  <line x1="28" y1="22" x2="38" y2="28" stroke="#FF0000" stroke-width="2"/>
                 </svg>
                 <div style="font-size: 8px; color: #666; margin-top: 8px;">Primary</div>
               </div>
               <!-- Logo 2 - Dark -->
               <div style="background: #1a1a1a; padding: 25px; border-radius: 8px; text-align: center;">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 3L24 16L37 16L27 24L31 37L20 29L9 37L13 24L3 16L16 16L20 3Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 6 L38 16 L38 28 L22 38 L6 28 L6 16 Z" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+                  <circle cx="22" cy="22" r="6" fill="white"/>
+                  <line x1="22" y1="6" x2="22" y2="16" stroke="white" stroke-width="2"/>
+                  <line x1="22" y1="28" x2="22" y2="38" stroke="white" stroke-width="2"/>
+                  <line x1="6" y1="16" x2="16" y2="22" stroke="white" stroke-width="2"/>
+                  <line x1="28" y1="22" x2="38" y2="28" stroke="white" stroke-width="2"/>
                 </svg>
                 <div style="font-size: 8px; color: #999; margin-top: 8px;">Dark BG</div>
               </div>
               <!-- Logo 3 - Light -->
               <div style="background: white; padding: 25px; border-radius: 8px; text-align: center; border: 1px solid #e0e0e0;">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 3L24 16L37 16L27 24L31 37L20 29L9 37L13 24L3 16L16 16L20 3Z" fill="#1a1a1a" stroke="#1a1a1a" stroke-width="2" stroke-linejoin="round"/>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 6 L38 16 L38 28 L22 38 L6 28 L6 16 Z" fill="none" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+                  <circle cx="22" cy="22" r="6" fill="#1a1a1a"/>
+                  <line x1="22" y1="6" x2="22" y2="16" stroke="#1a1a1a" stroke-width="2"/>
+                  <line x1="22" y1="28" x2="22" y2="38" stroke="#1a1a1a" stroke-width="2"/>
+                  <line x1="6" y1="16" x2="16" y2="22" stroke="#1a1a1a" stroke-width="2"/>
+                  <line x1="28" y1="22" x2="38" y2="28" stroke="#1a1a1a" stroke-width="2"/>
                 </svg>
                 <div style="font-size: 8px; color: #666; margin-top: 8px;">Light BG</div>
               </div>
               <!-- Logo 4 - Icon -->
               <div style="background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%); padding: 25px; border-radius: 8px; text-align: center;">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="20" cy="20" r="15" fill="white"/>
-                  <path d="M20 10L22 17L29 17L23 21L25 28L20 24L15 28L17 21L11 17L18 17L20 10Z" fill="#FF0000" stroke="#FF0000" stroke-width="1.5" stroke-linejoin="round"/>
+                <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="22" cy="22" r="16" fill="white" opacity="0.95"/>
+                  <path d="M22 10 L34 18 L34 26 L22 34 L10 26 L10 18 Z" fill="none" stroke="#FF0000" stroke-width="2" stroke-linejoin="round"/>
+                  <circle cx="22" cy="22" r="4" fill="#FF0000"/>
+                  <line x1="22" y1="10" x2="22" y2="18" stroke="#FF0000" stroke-width="1.5"/>
+                  <line x1="22" y1="26" x2="22" y2="34" stroke="#FF0000" stroke-width="1.5"/>
                 </svg>
                 <div style="font-size: 8px; color: rgba(255,255,255,0.8); margin-top: 8px;">Icon</div>
               </div>
