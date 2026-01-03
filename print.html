@@ -1392,8 +1392,8 @@
     // Gallery Carousel
     let currentGalleryIndex = 0;
     const galleryCarousel = document.getElementById('galleryCarousel');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const totalGalleryItems = galleryItems.length;
+    const galleryCarouselItems = galleryCarousel.querySelectorAll('.gallery-item');
+    const totalGalleryItems = galleryCarouselItems.length;
     let itemWidth = 430; // 400px width + 30px gap (desktop)
     let itemsToShow = 2; // Show 2 full items at a time (desktop)
     
@@ -1448,11 +1448,11 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightboxImage');
     const lightboxCounter = document.getElementById('lightboxCounter');
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryItemImages = galleryCarousel.querySelectorAll('.gallery-item img');
     let currentLightboxIndex = 0;
 
     // Make gallery items clickable
-    galleryItems.forEach((img, index) => {
+    galleryItemImages.forEach((img, index) => {
       img.style.cursor = 'pointer';
       img.onclick = () => openLightbox(index);
     });
@@ -1473,15 +1473,15 @@
 
     function lightboxNavigate(direction) {
       currentLightboxIndex += direction;
-      if (currentLightboxIndex < 0) currentLightboxIndex = galleryItems.length - 1;
-      if (currentLightboxIndex >= galleryItems.length) currentLightboxIndex = 0;
+      if (currentLightboxIndex < 0) currentLightboxIndex = galleryItemImages.length - 1;
+      if (currentLightboxIndex >= galleryItemImages.length) currentLightboxIndex = 0;
       updateLightbox();
     }
 
     function updateLightbox() {
-      lightboxImage.src = galleryItems[currentLightboxIndex].src;
-      lightboxImage.alt = galleryItems[currentLightboxIndex].alt;
-      lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${galleryItems.length}`;
+      lightboxImage.src = galleryItemImages[currentLightboxIndex].src;
+      lightboxImage.alt = galleryItemImages[currentLightboxIndex].alt;
+      lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${galleryItemImages.length}`;
     }
 
     // Keyboard navigation
