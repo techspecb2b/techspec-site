@@ -806,19 +806,17 @@
         text-align: left;
       }
 
-      /* Center buttons on mobile - FORCE IT */
-      .service-detail-text .btn {
+      /* Center buttons on mobile - NUCLEAR OPTION */
+      .service-detail .service-detail-text .btn,
+      .service-detail .service-detail-text a.btn,
+      .service-detail-text > .btn,
+      .service-detail-text > a.btn {
         display: block !important;
         width: fit-content !important;
         margin-left: auto !important;
         margin-right: auto !important;
         text-align: center !important;
-      }
-
-      .service-detail-text a.btn {
-        display: block !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        float: none !important;
       }
 
       .service-detail-image {
@@ -829,10 +827,10 @@
       }
 
       .service-detail-image .mockup-container {
-        padding: 40px 20px !important;
-        min-height: 450px !important;
-        max-height: 500px !important;
-        overflow: hidden !important;
+        padding: 60px 20px !important;
+        min-height: 550px !important;
+        max-height: 600px !important;
+        overflow: visible !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -841,7 +839,7 @@
 
       /* Scale down mockups uniformly for mobile */
       .service-detail-image .mockup-container > div {
-        transform: scale(0.6) !important;
+        transform: scale(0.65) !important;
         transform-origin: center center !important;
       }
 
