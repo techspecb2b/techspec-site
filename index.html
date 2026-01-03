@@ -272,8 +272,32 @@
     /* SERVICES */
     .services {
       padding: 100px 20px;
-      background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
+      background: #ffffff;
       position: relative;
+      overflow: hidden;
+    }
+
+    /* Abstract tech elements in services section */
+    .services::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,0,0,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .services::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%);
+      border-radius: 50%;
     }
 
     .services-grid {
@@ -353,7 +377,32 @@
     }
 
     .service-detail:nth-child(even) {
-      background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+      background: #fff;
+    }
+
+    /* Abstract floating tech elements for all sections */
+    .service-detail::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 2px solid rgba(255,0,0,0.1);
+      border-radius: 50%;
+      top: 10%;
+      right: 5%;
+      z-index: 0;
+    }
+
+    .service-detail::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 2px solid rgba(0,0,0,0.05);
+      border-radius: 50%;
+      bottom: 15%;
+      left: 8%;
+      z-index: 0;
     }
 
     /* Alternating dramatic backgrounds */
@@ -364,46 +413,58 @@
     .service-detail:nth-child(1)::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 60%;
-      height: 150%;
-      background: #FF0000;
-      transform: rotate(-15deg);
-      opacity: 0.1;
-      border-radius: 50px;
+      top: 10%;
+      right: 5%;
+      width: 400px;
+      height: 400px;
+      background: conic-gradient(from 0deg at 50% 50%, 
+        rgba(255,0,0,0.15) 0deg, 
+        transparent 60deg, 
+        transparent 120deg, 
+        rgba(255,0,0,0.15) 180deg, 
+        transparent 240deg, 
+        transparent 300deg, 
+        rgba(255,0,0,0.15) 360deg);
+      border-radius: 50%;
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     .service-detail:nth-child(2) {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      background: #fff;
+      position: relative;
     }
 
     .service-detail:nth-child(2)::after {
       content: '';
       position: absolute;
-      top: -20%;
-      left: -10%;
-      width: 50%;
-      height: 140%;
-      background: #FF0000;
-      transform: rotate(20deg);
-      opacity: 0.08;
-      border-radius: 50px;
+      bottom: 5%;
+      left: 10%;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-bottom: 200px solid rgba(255,0,0,0.04);
+      transform: rotate(45deg);
       z-index: 0;
     }
 
     .service-detail:nth-child(2) .service-detail-text {
-      color: white;
+      color: inherit;
     }
 
     .service-detail:nth-child(2) .service-detail-text h2,
     .service-detail:nth-child(2) .service-detail-text .feature-list li strong,
     .service-detail:nth-child(2) .service-detail-text .feature-list li {
-      color: white;
+      color: inherit;
     }
 
     .service-detail:nth-child(2) .service-detail-text > p {
-      color: #ccc;
+      color: #666;
     }
 
     .service-detail:nth-child(2) .section-badge {
@@ -438,14 +499,65 @@
     .service-detail:nth-child(3)::before {
       content: '';
       position: absolute;
-      bottom: -30%;
-      left: -15%;
-      width: 70%;
-      height: 120%;
-      background: #000;
-      transform: rotate(12deg);
-      opacity: 0.15;
-      border-radius: 50px;
+      top: 5%;
+      right: 10%;
+      width: 250px;
+      height: 250px;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(0,0,0,0.1) 20px,
+        rgba(0,0,0,0.1) 22px
+      );
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .service-detail:nth-child(3)::after {
+      content: '';
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      width: 0;
+      height: 0;
+      border-left: 120px solid transparent;
+      border-right: 120px solid transparent;
+      border-top: 180px solid rgba(0,0,0,0.08);
+      transform: rotate(-20deg);
+      z-index: 0;
+    }
+
+    .service-detail:nth-child(4) {
+      background: #fff;
+      position: relative;
+    }
+
+    .service-detail:nth-child(4)::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 5%;
+      width: 350px;
+      height: 350px;
+      background: 
+        linear-gradient(45deg, transparent 48%, rgba(255,0,0,0.05) 49%, rgba(255,0,0,0.05) 51%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255,0,0,0.05) 49%, rgba(255,0,0,0.05) 51%, transparent 52%);
+      background-size: 40px 40px;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .service-detail:nth-child(4)::after {
+      content: '';
+      position: absolute;
+      bottom: 5%;
+      right: 8%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(0,0,0,0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
     }
 
     .service-detail:nth-child(3) .service-detail-text {
@@ -475,25 +587,33 @@
     .service-detail:nth-child(2)::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: white;
-      clip-path: ellipse(100% 100% at 50% 0%);
-      transform: translateY(-99px);
+      top: 20%;
+      right: 15%;
+      width: 8px;
+      height: 8px;
+      background: #FF0000;
+      border-radius: 50%;
+      box-shadow: 
+        80px 60px 0 4px rgba(255,0,0,0.3),
+        160px 20px 0 4px rgba(255,0,0,0.2),
+        240px 80px 0 4px rgba(255,0,0,0.15);
+      z-index: 0;
     }
 
     .service-detail:nth-child(4)::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      background: white;
-      clip-path: ellipse(100% 100% at 50% 0%);
-      transform: translateY(-99px);
+      top: 15%;
+      left: 10%;
+      width: 6px;
+      height: 6px;
+      background: #FF0000;
+      border-radius: 50%;
+      box-shadow: 
+        120px 40px 0 3px rgba(255,0,0,0.25),
+        60px 100px 0 3px rgba(255,0,0,0.2),
+        180px 120px 0 3px rgba(255,0,0,0.15);
+      z-index: 0;
     }
 
     .service-detail-content {
