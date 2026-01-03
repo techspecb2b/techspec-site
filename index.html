@@ -1798,18 +1798,25 @@
           <i class="fas fa-chevron-left"></i>
         </button>
         <div class="portfolio-carousel" id="carousel">
-          <div class="portfolio-item"><img src="portfolio1.png" alt="Project 1"></div>
-          <div class="portfolio-item"><img src="portfolio2.png" alt="Project 2"></div>
-          <div class="portfolio-item"><img src="portfolio3.png" alt="Project 3"></div>
-          <div class="portfolio-item"><img src="portfolio4.png" alt="Project 4"></div>
-          <div class="portfolio-item"><img src="portfolio5.png" alt="Project 5"></div>
-          <div class="portfolio-item"><img src="portfolio6.png" alt="Project 6"></div>
-          <div class="portfolio-item"><img src="portfolio7.png" alt="Project 7"></div>
-          <div class="portfolio-item"><img src="portfolio8.png" alt="Project 8"></div>
-          <div class="portfolio-item"><img src="portfolio9.png" alt="Project 9"></div>
-          <div class="portfolio-item"><img src="portfolio10.png" alt="Project 10"></div>
-          <div class="portfolio-item"><img src="portfolio11.png" alt="Project 11"></div>
-          <div class="portfolio-item"><img src="portfolio12.png" alt="Project 12"></div>
+          <div class="portfolio-item"><img src="portfolio1.png" alt="Project 1" onclick="openLightbox(0)"></div>
+          <div class="portfolio-item"><img src="portfolio2.png" alt="Project 2" onclick="openLightbox(1)"></div>
+          <div class="portfolio-item"><img src="portfolio3.png" alt="Project 3" onclick="openLightbox(2)"></div>
+          <div class="portfolio-item"><img src="portfolio4.png" alt="Project 4" onclick="openLightbox(3)"></div>
+          <div class="portfolio-item"><img src="portfolio5.png" alt="Project 5" onclick="openLightbox(4)"></div>
+          <div class="portfolio-item"><img src="portfolio6.png" alt="Project 6" onclick="openLightbox(5)"></div>
+          <div class="portfolio-item"><img src="portfolio7.png" alt="Project 7" onclick="openLightbox(6)"></div>
+          <div class="portfolio-item"><img src="portfolio8.png" alt="Project 8" onclick="openLightbox(7)"></div>
+          <div class="portfolio-item"><img src="portfolio9.png" alt="Project 9" onclick="openLightbox(8)"></div>
+          <div class="portfolio-item"><img src="portfolio10.png" alt="Project 10" onclick="openLightbox(9)"></div>
+          <div class="portfolio-item"><img src="portfolio11.png" alt="Project 11" onclick="openLightbox(10)"></div>
+          <div class="portfolio-item"><img src="portfolio12.png" alt="Project 12" onclick="openLightbox(11)"></div>
+          <div class="portfolio-item"><img src="portfolio13.png" alt="Project 13" onclick="openLightbox(12)"></div>
+          <div class="portfolio-item"><img src="portfolio14.png" alt="Project 14" onclick="openLightbox(13)"></div>
+          <div class="portfolio-item"><img src="portfolio15.png" alt="Project 15" onclick="openLightbox(14)"></div>
+          <div class="portfolio-item"><img src="portfolio16.png" alt="Project 16" onclick="openLightbox(15)"></div>
+          <div class="portfolio-item"><img src="portfolio17.png" alt="Project 17" onclick="openLightbox(16)"></div>
+          <div class="portfolio-item"><img src="portfolio18.png" alt="Project 18" onclick="openLightbox(17)"></div>
+          <div class="portfolio-item"><img src="portfolio19.png" alt="Project 19" onclick="openLightbox(18)"></div>
         </div>
         <button class="carousel-btn next" onclick="moveCarousel(1)">
           <i class="fas fa-chevron-right"></i>
@@ -1993,12 +2000,7 @@
       updateCarousel();
     }
 
-    // Auto-play carousel
-    setInterval(() => {
-      currentIndex++;
-      if(currentIndex > maxIndex) currentIndex = 0;
-      updateCarousel();
-    }, 4000);
+    // NO AUTO-PLAY - carousel only moves when user clicks arrows
 
     // LIGHTBOX FUNCTIONALITY
     const lightbox = document.getElementById('lightbox');
