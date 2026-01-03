@@ -317,6 +317,13 @@
       flex-wrap: wrap;
     }
 
+    /* Force center the subtitle text */
+    .services .container > p {
+      text-align: center !important;
+      width: 100%;
+      display: block;
+    }
+
     .service-card {
       background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
       padding: 40px 20px;
@@ -761,12 +768,12 @@
 
       /* Extra spacing for first service detail to prevent mockup overlap */
       .service-detail:first-of-type {
-        padding-top: 100px; /* Increased from 80px */
+        padding-top: 100px;
       }
 
       .service-detail-content {
-        flex-direction: column; /* Image on top, text below */
-        gap: 50px; /* Increased gap */
+        flex-direction: column-reverse; /* REVERSE so image (2nd in HTML) appears first */
+        gap: 50px;
       }
       
       .service-detail-text {
@@ -777,7 +784,7 @@
       .service-detail-text h2 {
         font-size: 28px;
         margin-bottom: 15px;
-        margin-top: 30px; /* Increased space below mockup */
+        margin-top: 30px;
       }
 
       .service-detail-text > p {
@@ -792,30 +799,46 @@
         text-align: left;
       }
 
+      /* Center buttons on mobile */
+      .service-detail-text .btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .service-detail-image {
         min-width: 100%;
         max-width: 100%;
         padding: 0;
-        margin-bottom: 30px; /* Increased space */
+        margin-bottom: 30px;
       }
 
       .service-detail-image .mockup-container {
         padding: 20px 10px !important;
-        min-height: 280px !important; /* Reduced height */
-        max-height: 320px !important; /* Reduced height */
+        min-height: 350px !important;
+        max-height: 400px !important;
         overflow: visible !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+        position: relative !important;
       }
 
-      /* Scale down mockups even more for mobile */
+      /* Better positioning for mockup elements on mobile */
       .service-detail-image .mockup-container > div {
-        transform: scale(0.45) !important; /* Reduced from 0.5 */
+        position: static !important;
+        transform: scale(0.55) !important;
         transform-origin: center center !important;
+        margin: 0 auto !important;
       }
 
-      /* Hide floating CHEVRON text on mobile - causes overlaps */
+      /* Center the main mockup wrapper */
+      .service-detail-image .mockup-container > div > div {
+        position: relative !important;
+      }
+
+      /* Hide floating CHEVRON text on mobile */
       .service-detail::before,
       .service-detail::after,
       .services::before,
