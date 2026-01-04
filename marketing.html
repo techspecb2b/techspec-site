@@ -650,17 +650,65 @@
       .menu-toggle { display: block; }
       .nav-inner nav { display: none; }
 
-      .pricing-header,
-      .pricing-row,
-      .pricing-footer {
-        grid-template-columns: 1fr;
+      /* Completely redesign pricing table for mobile */
+      .pricing-table {
+        background: transparent;
+        box-shadow: none;
       }
 
-      .pricing-header div:not(:first-child),
-      .pricing-row div:not(:first-child),
-      .pricing-footer div:not(:first-child) {
-        display: none;
+      .pricing-header,
+      .pricing-footer {
+        display: none; /* Hide header and footer on mobile */
       }
+
+      .pricing-row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        border-bottom: none;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+
+      .pricing-row div:first-child {
+        background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+        color: white;
+        text-align: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 16px;
+        padding: 20px;
+        border-right: none;
+      }
+
+      .pricing-row div:not(:first-child) {
+        display: flex !important;
+        padding: 15px 20px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+      }
+
+      .pricing-row div:not(:first-child)::before {
+        content: attr(data-tier);
+        font-weight: 600;
+        color: #666;
+        min-width: 100px;
+        text-align: left;
+      }
+
+      .pricing-row div:last-child {
+        border-bottom: none;
+      }
+
+      /* Add tier labels via pseudo-elements */
+      .pricing-row div:nth-child(2)::before { content: "Starter: "; }
+      .pricing-row div:nth-child(3)::before { content: "Pro: "; }
+      .pricing-row div:nth-child(4)::before { content: "Elite: "; }
+      .pricing-row div:nth-child(5)::before { content: "Franchise: "; }
 
       .tier-name {
         font-size: 16px;
