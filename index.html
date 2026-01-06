@@ -1,15 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta property="og:image" content="share-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="share-image.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechSpec</title>
+  
+  <!-- Primary Meta Tags -->
+  <title>TechSpec B2B | Professional Print, Design & Marketing Services</title>
+  <meta name="title" content="TechSpec B2B | Professional Print, Design & Marketing Services">
+  <meta name="description" content="TechSpec offers professional print services, graphic design, branding, digital marketing, and web design. Serving businesses with high-quality, affordable marketing solutions.">
+  <meta name="keywords" content="TechSpec, TechSpec B2B, TechSpec marketing, TechSpec design, TechSpec print, print services, graphic design, branding, digital marketing, web design, business cards, banners, logos, social media marketing, advertising">
+  <meta name="author" content="TechSpec">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://techspec.biz/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techspec.biz/">
+  <meta property="og:title" content="TechSpec B2B | Professional Print, Design & Marketing Services">
+  <meta property="og:description" content="TechSpec offers professional print services, graphic design, branding, digital marketing, and web design. Serving businesses with high-quality, affordable marketing solutions.">
+  <meta property="og:image" content="https://techspec.biz/share-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://techspec.biz/">
+  <meta name="twitter:title" content="TechSpec B2B | Professional Print, Design & Marketing Services">
+  <meta name="twitter:description" content="TechSpec offers professional print services, graphic design, branding, digital marketing, and web design.">
+  <meta name="twitter:image" content="https://techspec.biz/share-image.png">
+  
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TechSpec",
+    "alternateName": "TechSpec B2B",
+    "description": "Professional print services, graphic design, branding, digital marketing, and web design for businesses.",
+    "url": "https://techspec.biz",
+    "logo": "https://techspec.biz/logo.png",
+    "image": "https://techspec.biz/share-image.png",
+    "priceRange": "$$",
+    "telephone": "",
+    "email": "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "",
+      "addressLocality": "James City",
+      "addressRegion": "NC",
+      "postalCode": "",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://facebook.com/techspecb2b"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Print Services",
+            "description": "Professional commercial printing including business cards, banners, signage, apparel, and more."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Graphic Design & Branding",
+            "description": "Custom logo design, brand identity, and visual design services."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Marketing",
+            "description": "Social media marketing, Facebook ads, Google ads, and campaign management."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Design",
+            "description": "Custom website design and development for businesses."
+          }
+        }
+      ]
+    }
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,23 +104,169 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    /* CSS Variables for Light/Dark Mode */
+    :root {
+      --bg-primary: #f7f7f7;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --bg-mockup: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+      --text-primary: #111111;
+      --text-secondary: #666666;
+      --text-muted: #999999;
+      --border-color: #eeeeee;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --shadow-strong: rgba(0, 0, 0, 0.15);
+      --accent-color: #FF0000;
+      --nav-bg: #FF0000;
+      --service-card-bg: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
+      --feature-list-bg: #f8f8f8;
+      --grain-opacity: 0.4;
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #121212;
+      --bg-secondary: #1e1e1e;
+      --bg-card: #252525;
+      --bg-mockup: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
+      --text-primary: #f0f0f0;
+      --text-secondary: #b0b0b0;
+      --text-muted: #888888;
+      --border-color: #333333;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --shadow-strong: rgba(0, 0, 0, 0.4);
+      --accent-color: #FF3333;
+      --nav-bg: #CC0000;
+      --service-card-bg: linear-gradient(135deg, #2a2a2a 0%, #222222 100%);
+      --feature-list-bg: #2a2a2a;
+      --grain-opacity: 0.2;
+    }
+
+    /* Dark Mode Toggle Button Styles */
+    .dark-mode-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dark-mode-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    [data-theme="dark"] .dark-mode-toggle {
+      color: #FFD700;
+    }
+
+    .dark-mode-toggle .sun-icon {
+      display: none;
+    }
+
+    .dark-mode-toggle .moon-icon {
+      display: block;
+    }
+
+    [data-theme="dark"] .dark-mode-toggle .sun-icon {
+      display: block;
+    }
+
+    [data-theme="dark"] .dark-mode-toggle .moon-icon {
+      display: none;
+    }
+
+    /* Dark Mode Element Overrides */
+    [data-theme="dark"] .service-card {
+      background: var(--service-card-bg);
+      box-shadow: 0 8px 20px var(--shadow-color);
+    }
+
+    [data-theme="dark"] .service-card h3,
+    [data-theme="dark"] .service-card p {
+      color: var(--text-secondary);
+    }
+
+    [data-theme="dark"] .services {
+      background-color: var(--bg-secondary);
+    }
+
+    [data-theme="dark"] .service-detail {
+      background-color: var(--bg-primary);
+    }
+
+    [data-theme="dark"] .service-detail-text h2 {
+      color: var(--text-primary);
+    }
+
+    [data-theme="dark"] .service-detail-text p,
+    [data-theme="dark"] .service-detail-text .feature-list li {
+      color: var(--text-secondary);
+    }
+
+    [data-theme="dark"] .feature-list li {
+      background: var(--feature-list-bg);
+    }
+
+    [data-theme="dark"] .mockup-container {
+      background: var(--bg-mockup) !important;
+    }
+
+    [data-theme="dark"] footer {
+      background-color: #0a0a0a;
+    }
+
+    [data-theme="dark"] .carousel-container {
+      background: var(--bg-secondary);
+    }
+
+    [data-theme="dark"] .carousel-item img {
+      border-color: var(--border-color);
+    }
+
+    [data-theme="dark"] .partner-logos {
+      background: var(--bg-secondary);
+    }
+
+    [data-theme="dark"] .partner-logos img {
+      filter: brightness(0.8);
+    }
+
+    [data-theme="dark"] .grain-overlay {
+      opacity: var(--grain-opacity);
+    }
+
+    [data-theme="dark"] .lightbox-content {
+      background: var(--bg-secondary);
+    }
+
+    [data-theme="dark"] .side-menu {
+      background-color: #0a0a0a;
+    }
+
     * { box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f7f7f7;
-      color: #111;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       line-height: 1.6;
       text-align: center;
       overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       margin: 0 0 20px 0;
+      color: var(--text-primary);
     }
 
     h1 { font-size: 48px; }
@@ -41,7 +274,7 @@
 
     p {
       font-size: 18px;
-      color: #666;
+      color: var(--text-secondary);
       max-width: 600px;
       margin: 20px auto 40px;
     }
@@ -842,6 +1075,11 @@
         position: relative !important;
       }
 
+      /* Make background SVG more visible on mobile */
+      .service-detail-image .mockup-container svg {
+        opacity: 0.4 !important;
+      }
+
       /* Scale down mockups uniformly for mobile */
       .service-detail-image .mockup-container > div {
         transform: scale(0.65) !important;
@@ -1320,6 +1558,10 @@
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
         <a href="contact.html">Contact</a>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon moon-icon"></i>
+          <i class="fas fa-sun sun-icon"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -1332,6 +1574,10 @@
     <a href="print.html" onclick="toggleMenu()">Print</a>
     <a href="design.html" onclick="toggleMenu()">Design</a>
     <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" style="margin-top: 20px; color: white;">
+      <i class="fas fa-moon moon-icon"></i>
+      <i class="fas fa-sun sun-icon"></i>
+    </button>
   </div>
 
   <!-- HERO -->
@@ -1501,21 +1747,8 @@
             </div>
           </div>
           
-          <!-- Quality Badge - Bottom Right -->
-          <div style="position: absolute; bottom: 60px; right: 50px; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); width: 180px; z-index: 2;">
-            <div style="font-size: 10px; color: #999; margin-bottom: 12px; text-transform: uppercase;">Print Quality</div>
-            <div style="display: flex; gap: 10px; margin-bottom: 12px;">
-              <div style="flex: 1; height: 50px; background: linear-gradient(180deg, #fff 0%, #f0f0f0 100%); border-radius: 8px; border: 2px solid #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 20px;">✨</div>
-              <div style="flex: 1; height: 50px; background: linear-gradient(180deg, #fafafa 0%, #e8e8e8 100%); border-radius: 8px; border: 2px solid #d0d0d0; display: flex; align-items: center; justify-content: center; font-size: 20px;">💎</div>
-            </div>
-            <div style="font-size: 9px; color: #666; display: flex; justify-content: space-between;">
-              <span>Glossy</span>
-              <span>Premium</span>
-            </div>
-          </div>
-          
-          <!-- Speed Badge - Top Left -->
-          <div style="position: absolute; top: 50px; left: 60px; background: #FF0000; color: white; border-radius: 10px; padding: 15px 20px; box-shadow: 0 8px 25px rgba(255,0,0,0.3); z-index: 1;">
+          <!-- Speed Badge - Top Left (moved 10px right) -->
+          <div style="position: absolute; top: 50px; left: 70px; background: #FF0000; color: white; border-radius: 10px; padding: 15px 20px; box-shadow: 0 8px 25px rgba(255,0,0,0.3); z-index: 2;">
             <div style="font-size: 24px; font-weight: bold; margin-bottom: 4px;">24-48hr</div>
             <div style="font-size: 11px; opacity: 0.95;">Fast Turnaround</div>
           </div>
@@ -1552,7 +1785,7 @@
           </svg>
           
           <!-- Main analytics dashboard -->
-          <div style="position: absolute; bottom: 60px; right: 40px; background: white; border-radius: 12px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); width: 400px; z-index: 2;">
+          <div style="position: absolute; bottom: 60px; right: 40px; background: white; border-radius: 12px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); width: 400px; z-index: 1;">
             <div style="font-size: 11px; color: #999; margin-bottom: 15px;">CAMPAIGN PERFORMANCE</div>
             
             <!-- Funnel chart -->
@@ -1594,7 +1827,7 @@
           </div>
           
           <!-- Floating metric card -->
-          <div style="position: absolute; top: 70px; left: 50px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); width: 180px; z-index: 1;">
+          <div style="position: absolute; top: 70px; left: 50px; background: white; border-radius: 10px; padding: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); width: 180px; z-index: 2;">
             <div style="font-size: 10px; color: #999; margin-bottom: 8px;">AD SPEND ROI</div>
             <div style="font-size: 32px; font-weight: bold; color: #FF0000; margin-bottom: 5px;">4.2x</div>
             <div style="font-size: 11px; color: #27c93f;">↗ +18% vs last month</div>
@@ -1686,7 +1919,7 @@
       <div class="service-detail-image">
         <div class="mockup-container" style="background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%); overflow: visible; position: relative;">
           <!-- Color palette display -->
-          <div style="position: absolute; top: 40px; right: 40px; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); width: 200px; z-index: 1;">
+          <div style="position: absolute; top: 40px; right: 40px; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); width: 200px; z-index: 2;">
             <div style="font-size: 10px; color: #999; margin-bottom: 12px;">BRAND COLORS</div>
             <div style="display: flex; gap: 10px; margin-bottom: 15px;">
               <div style="width: 40px; height: 40px; background: #FF0000; border-radius: 8px; box-shadow: 0 2px 8px rgba(255,0,0,0.3);"></div>
@@ -1701,7 +1934,7 @@
           </div>
           
           <!-- Main logo showcase card -->
-          <div style="position: absolute; bottom: 28px; left: 40px; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); width: 380px; z-index: 2;">
+          <div style="position: absolute; bottom: 28px; left: 40px; background: white; border-radius: 12px; padding: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.15); width: 380px; z-index: 1;">
             <div style="font-size: 11px; color: #999; margin-bottom: 20px;">LOGO VARIATIONS</div>
             
             <!-- Logo variations display -->
@@ -1790,7 +2023,7 @@
           </svg>
           
           <!-- Main browser window -->
-          <div style="position: absolute; bottom: 40px; left: 30px; background: white; border-radius: 10px 10px 0 0; box-shadow: 0 10px 40px rgba(0,0,0,0.15); width: 440px; z-index: 2;">
+          <div style="position: absolute; bottom: 40px; left: 10px; background: white; border-radius: 10px 10px 0 0; box-shadow: 0 10px 40px rgba(0,0,0,0.15); width: 440px; z-index: 1;">
             <!-- Browser chrome -->
             <div style="background: #f0f0f0; padding: 12px; border-radius: 10px 10px 0 0; display: flex; gap: 8px; align-items: center;">
               <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
@@ -1830,7 +2063,7 @@
           </div>
           
           <!-- Floating performance metrics -->
-          <div style="position: absolute; top: 50px; left: 60px; background: white; border-radius: 10px; padding: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); width: 160px; z-index: 1;">
+          <div style="position: absolute; top: 50px; left: 60px; background: white; border-radius: 10px; padding: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.12); width: 160px; z-index: 2;">
             <div style="font-size: 9px; color: #999; margin-bottom: 10px;">SITE PERFORMANCE</div>
             <div style="margin-bottom: 10px;">
               <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 4px;">
@@ -1853,7 +2086,7 @@
           </div>
           
           <!-- Device icons -->
-          <div style="position: absolute; top: 40px; right: 50px; display: flex; gap: 8px; z-index: 1;">
+          <div style="position: absolute; top: 40px; right: 50px; display: flex; gap: 8px; z-index: 2;">
             <div style="background: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 20px;">💻</div>
             <div style="background: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-size: 20px;">📱</div>
           </div>
@@ -2171,6 +2404,27 @@
         if (e.key === 'ArrowRight') lightboxNavigate(1);
       }
     });
+
+    // Dark Mode Toggle with localStorage persistence
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('techspec-theme', newTheme);
+    }
+
+    // Initialize dark mode from localStorage on page load
+    (function initDarkMode() {
+      const savedTheme = localStorage.getItem('techspec-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Respect system preference if no saved preference
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
   </script>
 </body>
 </html>
