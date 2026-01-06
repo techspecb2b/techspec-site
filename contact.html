@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <meta property="og:image" content="share-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="share-image.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - TechSpec</title>
+  
+  <!-- Primary Meta Tags -->
+  <title>Contact TechSpec | Get a Quote for Print, Design & Marketing Services</title>
+  <meta name="title" content="Contact TechSpec | Get a Quote for Print, Design & Marketing Services">
+  <meta name="description" content="Contact TechSpec B2B for professional print, design, and marketing services. Get a free quote today. Serving James City, NC and beyond.">
+  <meta name="keywords" content="contact TechSpec, TechSpec B2B contact, get a quote, TechSpec James City NC, print quote, design quote, marketing quote">
+  <meta name="author" content="TechSpec">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://techspec.biz/contact.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techspec.biz/contact.html">
+  <meta property="og:title" content="Contact TechSpec | Get a Quote">
+  <meta property="og:description" content="Contact TechSpec B2B for professional print, design, and marketing services. Get a free quote today.">
+  <meta property="og:image" content="https://techspec.biz/share-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://techspec.biz/contact.html">
+  <meta name="twitter:title" content="Contact TechSpec | Get a Quote">
+  <meta name="twitter:description" content="Contact TechSpec B2B for professional print, design, and marketing services.">
+  <meta name="twitter:image" content="https://techspec.biz/share-image.png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,22 +38,86 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
+    /* CSS Variables for Light/Dark Mode */
+    :root {
+      --bg-primary: #f7f7f7;
+      --bg-secondary: #ffffff;
+      --bg-card: #ffffff;
+      --text-primary: #111111;
+      --text-secondary: #666666;
+      --border-color: #dddddd;
+      --input-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --accent-color: #FF0000;
+    }
+
+    [data-theme="dark"] {
+      --bg-primary: #121212;
+      --bg-secondary: #1e1e1e;
+      --bg-card: #252525;
+      --text-primary: #f0f0f0;
+      --text-secondary: #b0b0b0;
+      --border-color: #444444;
+      --input-bg: #2a2a2a;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --accent-color: #FF3333;
+    }
+
+    /* Dark Mode Toggle Button */
+    .dark-mode-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dark-mode-toggle:hover { background: rgba(255, 255, 255, 0.2); }
+    .dark-mode-toggle .sun-icon { display: none; }
+    .dark-mode-toggle .moon-icon { display: block; }
+    [data-theme="dark"] .dark-mode-toggle .sun-icon { display: block; }
+    [data-theme="dark"] .dark-mode-toggle .moon-icon { display: none; }
+    [data-theme="dark"] .dark-mode-toggle { color: #FFD700; }
+
+    /* Dark Mode Element Overrides */
+    [data-theme="dark"] body { background-color: var(--bg-primary); color: var(--text-primary); }
+    [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3 { color: var(--text-primary); }
+    [data-theme="dark"] p { color: var(--text-secondary); }
+    [data-theme="dark"] footer { background-color: #0a0a0a; }
+    [data-theme="dark"] .side-menu { background-color: #0a0a0a; }
+    [data-theme="dark"] .form-group input,
+    [data-theme="dark"] .form-group select,
+    [data-theme="dark"] .form-group textarea {
+      background-color: var(--input-bg);
+      border-color: var(--border-color);
+      color: var(--text-primary);
+    }
+    [data-theme="dark"] .form-group label { color: var(--text-primary); }
+    [data-theme="dark"] .contact-card { background: var(--bg-card); }
+
     * { box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f7f7f7;
-      color: #111;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       margin: 0 0 20px 0;
+      color: var(--text-primary);
     }
 
     h1 { font-size: 48px; }
@@ -40,7 +125,7 @@
 
     p {
       font-size: 18px;
-      color: #666;
+      color: var(--text-secondary);
       max-width: 600px;
       margin: 20px auto 40px;
     }
@@ -600,6 +685,10 @@
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
         <a href="contact.html">Contact</a>
+        <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon moon-icon"></i>
+          <i class="fas fa-sun sun-icon"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -612,6 +701,10 @@
     <a href="print.html" onclick="toggleMenu()">Print</a>
     <a href="design.html" onclick="toggleMenu()">Design</a>
     <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" style="margin-top: 20px; color: white;">
+      <i class="fas fa-moon moon-icon"></i>
+      <i class="fas fa-sun sun-icon"></i>
+    </button>
   </div>
 
   <!-- HERO HEADER -->
@@ -1031,6 +1124,25 @@
       // Scroll to top of form
       formContainer.scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Dark Mode Toggle with localStorage persistence
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('techspec-theme', newTheme);
+    }
+
+    // Initialize dark mode from localStorage
+    (function initDarkMode() {
+      const savedTheme = localStorage.getItem('techspec-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
   </script>
 </body>
 </html>
