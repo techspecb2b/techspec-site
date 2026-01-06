@@ -104,169 +104,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* CSS Variables for Light/Dark Mode */
-    :root {
-      --bg-primary: #f7f7f7;
-      --bg-secondary: #ffffff;
-      --bg-card: #ffffff;
-      --bg-mockup: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-      --text-primary: #111111;
-      --text-secondary: #666666;
-      --text-muted: #999999;
-      --border-color: #eeeeee;
-      --shadow-color: rgba(0, 0, 0, 0.1);
-      --shadow-strong: rgba(0, 0, 0, 0.15);
-      --accent-color: #FF0000;
-      --nav-bg: #FF0000;
-      --service-card-bg: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
-      --feature-list-bg: #f8f8f8;
-      --grain-opacity: 0.4;
-    }
-
-    [data-theme="dark"] {
-      --bg-primary: #121212;
-      --bg-secondary: #1e1e1e;
-      --bg-card: #252525;
-      --bg-mockup: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
-      --text-primary: #f0f0f0;
-      --text-secondary: #b0b0b0;
-      --text-muted: #888888;
-      --border-color: #333333;
-      --shadow-color: rgba(0, 0, 0, 0.3);
-      --shadow-strong: rgba(0, 0, 0, 0.4);
-      --accent-color: #FF3333;
-      --nav-bg: #CC0000;
-      --service-card-bg: linear-gradient(135deg, #2a2a2a 0%, #222222 100%);
-      --feature-list-bg: #2a2a2a;
-      --grain-opacity: 0.2;
-    }
-
-    /* Dark Mode Toggle Button Styles */
-    .dark-mode-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .dark-mode-toggle:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    [data-theme="dark"] .dark-mode-toggle {
-      color: #FFD700;
-    }
-
-    .dark-mode-toggle .sun-icon {
-      display: none;
-    }
-
-    .dark-mode-toggle .moon-icon {
-      display: block;
-    }
-
-    [data-theme="dark"] .dark-mode-toggle .sun-icon {
-      display: block;
-    }
-
-    [data-theme="dark"] .dark-mode-toggle .moon-icon {
-      display: none;
-    }
-
-    /* Dark Mode Element Overrides */
-    [data-theme="dark"] .service-card {
-      background: var(--service-card-bg);
-      box-shadow: 0 8px 20px var(--shadow-color);
-    }
-
-    [data-theme="dark"] .service-card h3,
-    [data-theme="dark"] .service-card p {
-      color: var(--text-secondary);
-    }
-
-    [data-theme="dark"] .services {
-      background-color: var(--bg-secondary);
-    }
-
-    [data-theme="dark"] .service-detail {
-      background-color: var(--bg-primary);
-    }
-
-    [data-theme="dark"] .service-detail-text h2 {
-      color: var(--text-primary);
-    }
-
-    [data-theme="dark"] .service-detail-text p,
-    [data-theme="dark"] .service-detail-text .feature-list li {
-      color: var(--text-secondary);
-    }
-
-    [data-theme="dark"] .feature-list li {
-      background: var(--feature-list-bg);
-    }
-
-    [data-theme="dark"] .mockup-container {
-      background: var(--bg-mockup) !important;
-    }
-
-    [data-theme="dark"] footer {
-      background-color: #0a0a0a;
-    }
-
-    [data-theme="dark"] .carousel-container {
-      background: var(--bg-secondary);
-    }
-
-    [data-theme="dark"] .carousel-item img {
-      border-color: var(--border-color);
-    }
-
-    [data-theme="dark"] .partner-logos {
-      background: var(--bg-secondary);
-    }
-
-    [data-theme="dark"] .partner-logos img {
-      filter: brightness(0.8);
-    }
-
-    [data-theme="dark"] .grain-overlay {
-      opacity: var(--grain-opacity);
-    }
-
-    [data-theme="dark"] .lightbox-content {
-      background: var(--bg-secondary);
-    }
-
-    [data-theme="dark"] .side-menu {
-      background-color: #0a0a0a;
-    }
-
     * { box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
+      background-color: #f7f7f7;
+      color: #111;
       line-height: 1.6;
       text-align: center;
       overflow-x: hidden;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     h1, h2, h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       margin: 0 0 20px 0;
-      color: var(--text-primary);
     }
 
     h1 { font-size: 48px; }
@@ -274,7 +128,7 @@
 
     p {
       font-size: 18px;
-      color: var(--text-secondary);
+      color: #666;
       max-width: 600px;
       margin: 20px auto 40px;
     }
@@ -1558,10 +1412,6 @@
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
         <a href="contact.html">Contact</a>
-        <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-          <i class="fas fa-moon moon-icon"></i>
-          <i class="fas fa-sun sun-icon"></i>
-        </button>
       </nav>
     </div>
   </header>
@@ -1574,10 +1424,6 @@
     <a href="print.html" onclick="toggleMenu()">Print</a>
     <a href="design.html" onclick="toggleMenu()">Design</a>
     <a href="contact.html" onclick="toggleMenu()">Contact</a>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()" style="margin-top: 20px; color: white;">
-      <i class="fas fa-moon moon-icon"></i>
-      <i class="fas fa-sun sun-icon"></i>
-    </button>
   </div>
 
   <!-- HERO -->
@@ -2404,27 +2250,6 @@
         if (e.key === 'ArrowRight') lightboxNavigate(1);
       }
     });
-
-    // Dark Mode Toggle with localStorage persistence
-    function toggleDarkMode() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('techspec-theme', newTheme);
-    }
-
-    // Initialize dark mode from localStorage on page load
-    (function initDarkMode() {
-      const savedTheme = localStorage.getItem('techspec-theme');
-      if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // Respect system preference if no saved preference
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-    })();
   </script>
 </body>
 </html>
