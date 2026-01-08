@@ -5,1034 +5,1030 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary Meta Tags -->
-  <title>Digital Marketing Services | TechSpec B2B Marketing & Advertising</title>
-  <meta name="title" content="Digital Marketing Services | TechSpec B2B Marketing & Advertising">
-  <meta name="description" content="Professional digital marketing services including social media management, Facebook ads, Google ads, and campaign management. Grow your business with TechSpec Marketing.">
-  <meta name="keywords" content="TechSpec marketing, digital marketing, social media marketing, Facebook ads, Google ads, Instagram marketing, advertising services, campaign management, TechSpec B2B">
-  <meta name="author" content="TechSpec">
-  <meta name="robots" content="index, follow">
+  <title>Digital Marketing Services | TechSpec - Facebook Ads, Google Ads & Social Media</title>
+  <meta name="description" content="Professional digital marketing services including Facebook Ads, Google Ads, and social media management. Knock out your competition with proven strategies.">
+  <meta name="keywords" content="TechSpec marketing, Facebook ads, Google ads, social media marketing, digital marketing, advertising agency">
   <link rel="canonical" href="https://techspec.biz/marketing.html">
-  
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://techspec.biz/marketing.html">
-  <meta property="og:title" content="Digital Marketing Services | TechSpec B2B">
-  <meta property="og:description" content="Professional digital marketing services including social media management, Facebook ads, Google ads, and campaign management.">
-  <meta property="og:image" content="https://techspec.biz/share-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:title" content="Digital Marketing Services | TechSpec">
+  <meta property="og:description" content="Facebook Ads, Google Ads & Social Media Management. Knock out your competition.">
   
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://techspec.biz/marketing.html">
-  <meta name="twitter:title" content="Digital Marketing Services | TechSpec B2B">
-  <meta name="twitter:description" content="Professional digital marketing services including social media management, Facebook ads, Google ads, and campaign management.">
-  <meta name="twitter:image" content="https://techspec.biz/share-image.png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #FF0000;
+      --red-dark: #CC0000;
+      --black: #111111;
+      --dark-gray: #1a1a1a;
+      --light-gray: #f5f5f5;
+      --orange: #ff6b35;
+      --purple: #6c5ce7;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #111;
+      background-color: var(--light-gray);
+      color: var(--black);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      margin: 0 0 20px 0;
-    }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 800; }
+    .comic-text { font-family: 'Bangers', cursive; letter-spacing: 2px; }
 
-    h1 { font-size: 52px; line-height: 1.2; }
-    h2 { font-size: 36px; }
-    h3 { font-size: 24px; }
-
-    p {
-      font-size: 18px;
-      color: #666;
-      line-height: 1.8;
-    }
-
-    a { text-decoration: none; transition: all 0.3s ease; }
-
-    .btn {
-      padding: 18px 45px;
-      background: #fff;
-      color: #FF0000;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 700;
-      display: inline-block;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      border: 3px solid #fff;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
+    /* NAV */
+    .nav {
+      background-color: var(--red);
+      padding: 12px 0;
+      position: fixed;
       top: 0;
-      left: -100%;
       width: 100%;
-      height: 100%;
-      background: #FF0000;
-      transition: left 0.5s ease;
-      z-index: -1;
-    }
-
-    .btn:hover {
-      color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
-    }
-
-    .btn:hover::before {
-      left: 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* GRAIN OVERLAY */
-    .grain-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.4;
-    }
-
-    /* NAVIGATION */
-    header.nav {
-      background-color: #FF0000;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
       z-index: 1000;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    header.nav.scrolled {
-      background-color: #CC0000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 50px;
     }
 
-    .logo img { height: 40px; }
+    .nav .logo img { height: 60px; width: auto; }
 
-    nav a {
-      margin-left: 30px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #fff;
-      position: relative;
+    .nav nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #fff;
-      transition: width 0.3s ease;
+    .nav nav a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-size: 15px;
     }
 
-    nav a:hover::after { width: 100%; }
-    nav a:hover { color: #f5f5f5; }
+    .nav nav a:hover { background: rgba(255,255,255,0.2); }
+    .nav nav a.members-btn { background: var(--black); border: 2px solid white; }
 
-    /* MOBILE MENU */
     .menu-toggle {
       display: none;
       background: none;
       border: none;
-      color: #fff;
-      font-size: 24px;
+      color: white;
+      font-size: 28px;
       cursor: pointer;
-      z-index: 1001;
     }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 998;
+    }
+    .menu-overlay.active { display: block; }
 
     .side-menu {
       position: fixed;
       top: 0;
       right: -300px;
       width: 300px;
-      height: 100vh;
-      background-color: #111;
-      transition: right 0.3s ease;
+      height: 100%;
+      background: var(--dark-gray);
       z-index: 999;
-      padding: 80px 20px 20px;
+      transition: right 0.3s ease;
+      padding: 100px 30px 30px;
     }
-
     .side-menu.active { right: 0; }
 
     .side-menu a {
       display: block;
-      margin: 0 0 20px 0;
+      color: white;
+      padding: 18px 0;
       font-size: 18px;
-      font-weight: 500;
-      color: #fff;
-      padding: 10px;
+      font-weight: 600;
       border-bottom: 1px solid #333;
+      text-decoration: none;
     }
 
-    .side-menu a:hover { color: #FF0000; }
-
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0,0,0,0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      z-index: 998;
-    }
-
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* HERO SECTION */
+    /* HERO */
     .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--orange) 0%, var(--red) 50%, var(--purple) 100%);
       position: relative;
-      padding: 120px 20px 100px;
-      background: 
-        linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px),
-        repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px);
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      padding: 120px 20px 80px;
       overflow: hidden;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      top: 20%;
-      right: 10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: float 20s ease-in-out infinite;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20l20-20H0zM20 20L0 40h40z'/%3E%3C/g%3E%3C/svg%3E");
     }
 
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-50px, 50px); }
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 10;
     }
 
-    .hero * { position: relative; z-index: 2; }
+    .hero-content { color: white; }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--black);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
 
     .hero h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
-      font-weight: 800;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
     }
 
-    .hero .tagline {
-      font-size: 28px;
-      color: #fff;
-      font-weight: 600;
+    .hero h1 .knockout {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 3px;
+      display: block;
+      font-size: 1.2em;
+    }
+
+    .hero-description {
+      font-size: 20px;
+      opacity: 0.95;
       margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 35px;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat .number {
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .hero-stat .label {
+      font-size: 14px;
+      opacity: 0.9;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-    .hero p {
-      font-size: 20px;
-      color: #f0f0f0;
-      max-width: 800px;
-      margin: 0 auto 40px;
+    .btn {
+      padding: 18px 40px;
+      font-size: 16px;
+      font-weight: 800;
+      border-radius: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    /* SERVICES OVERVIEW */
-    .services-overview {
-      padding: 100px 20px;
-      background-color: #ffffff;
+    .btn-primary {
+      background: white;
+      color: var(--red);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 3px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: var(--red);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero Visual - Boxing Mascot */
+    .hero-visual {
       position: relative;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .services-overview h2 {
-      color: #111;
+    .mascot-boxing {
+      width: 400px;
+      animation: boxer 1s ease-in-out infinite alternate;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+    }
+
+    @keyframes boxer {
+      0% { transform: translateY(0) rotate(-2deg); }
+      100% { transform: translateY(-15px) rotate(2deg); }
+    }
+
+    .knockout-text {
+      position: absolute;
+      top: 10%;
+      right: -20px;
+      font-family: 'Bangers', cursive;
+      font-size: 48px;
+      color: white;
+      text-shadow: 3px 3px 0px var(--black);
+      transform: rotate(15deg);
+      animation: punch 0.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes punch {
+      0% { transform: rotate(12deg) scale(1); }
+      100% { transform: rotate(18deg) scale(1.1); }
+    }
+
+    /* SERVICES SECTION */
+    .services-section {
+      padding: 120px 20px;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       margin-bottom: 20px;
     }
 
-    .services-overview > p {
-      max-width: 700px;
-      margin: 0 auto 60px;
-      font-size: 20px;
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      margin-bottom: 20px;
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-top: 60px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .service-item {
-      padding: 30px 20px;
-      text-align: center;
+    .service-card {
+      background: var(--light-gray);
+      border-radius: 20px;
+      padding: 40px 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--orange), var(--red), var(--purple));
+      transform: scaleX(0);
       transition: transform 0.3s ease;
     }
 
-    .service-item:hover {
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover {
       transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
 
-    .service-item i {
-      font-size: 56px;
-      color: #FF0000;
-      margin-bottom: 20px;
-      display: block;
+    .service-card .icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--orange), var(--red));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 25px;
     }
 
-    .service-item h3 {
-      color: #111;
-      margin-bottom: 15px;
+    .service-card .icon i {
+      font-size: 28px;
+      color: white;
+    }
+
+    .service-card h3 {
       font-size: 22px;
+      margin-bottom: 15px;
     }
 
-    .service-item p {
+    .service-card p {
       color: #666;
-      font-size: 16px;
+      font-size: 15px;
+      margin-bottom: 20px;
     }
 
-    /* PRICING TIERS */
-    .pricing-section {
-      padding: 100px 20px;
-      background-color: #f7f7f7;
-      position: relative;
-    }
-
-    .pricing-section h2 {
-      text-align: center;
-      color: #111;
-      margin-bottom: 60px;
-    }
-
-    .pricing-table {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-    }
-
-    .pricing-header {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .pricing-header div {
-      padding: 25px 20px;
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .pricing-header div:first-child {
-      text-align: left;
+    .service-card .price {
+      font-weight: 800;
+      color: var(--red);
       font-size: 18px;
     }
 
-    .pricing-header div:last-child {
-      border-right: none;
+    /* RESULTS SECTION */
+    .results-section {
+      padding: 120px 20px;
+      background: var(--dark-gray);
+      color: white;
     }
 
-    .tier-name {
-      font-size: 20px;
-      font-weight: 700;
+    .results-section .section-header h2,
+    .results-section .section-header p {
+      color: white;
     }
 
-    .tier-price {
+    .results-section .section-header p {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .result-showcase {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 24px;
+      padding: 50px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .result-header h3 {
+      font-size: 28px;
+    }
+
+    .result-header .location {
+      background: var(--red);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .result-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .result-stat {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+    }
+
+    .result-stat .number {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .result-stat .label {
       font-size: 14px;
-      opacity: 0.9;
-      margin-top: 5px;
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .result-note {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 16px;
+      opacity: 0.7;
+    }
+
+    /* PRICING SECTION */
+    .pricing-section {
+      padding: 120px 20px;
+      background: var(--light-gray);
+    }
+
+    .pricing-table-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     }
 
     .pricing-row {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      border-bottom: 1px solid #eee;
-      transition: background-color 0.2s ease;
     }
 
-    .pricing-row:hover {
-      background-color: #f9f9f9;
-    }
-
-    .pricing-row div {
-      padding: 20px;
-      text-align: center;
-      border-right: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .pricing-row div:first-child {
-      text-align: left;
-      justify-content: flex-start;
-      font-weight: 500;
-      color: #333;
-    }
-
-    .pricing-row div:last-child {
-      border-right: none;
-    }
-
-    .pricing-footer {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
-      color: #fff;
+    .pricing-row.header {
+      background: var(--red);
+      color: white;
       font-weight: 700;
     }
 
-    .pricing-footer div {
-      padding: 25px 20px;
+    .pricing-row.header .pricing-cell {
+      padding: 20px 15px;
+      font-size: 16px;
+    }
+
+    .pricing-row.prices {
+      background: var(--red);
+      color: white;
+    }
+
+    .pricing-row.prices .pricing-cell.price {
+      font-size: 28px;
+      font-weight: 900;
+      padding: 25px 15px;
+    }
+
+    .pricing-row.prices .pricing-cell.price span {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .pricing-row.cta-row {
+      background: var(--red);
+    }
+
+    .pricing-row.cta-row .pricing-cell {
+      padding: 20px 15px 25px;
+    }
+
+    .pricing-cell {
+      padding: 15px;
       text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid #eee;
     }
 
-    .pricing-footer div:last-child {
-      border-right: none;
+    .pricing-cell.feature-name {
+      text-align: left;
+      font-weight: 500;
+      color: #333;
     }
 
-    .tier-price-bottom {
-      font-size: 24px;
-      font-weight: 800;
+    .pricing-row.header .pricing-cell.feature-name {
+      color: white;
     }
 
-    .check {
-      color: #00C851;
-      font-size: 24px;
+    .pricing-cell.highlight {
+      background: rgba(255,0,0,0.1);
     }
 
-    .cross {
-      color: #ff4444;
-      font-size: 20px;
-      opacity: 0.3;
+    .pricing-row.header .pricing-cell.highlight,
+    .pricing-row.prices .pricing-cell.highlight,
+    .pricing-row.cta-row .pricing-cell.highlight {
+      background: rgba(0,0,0,0.2);
     }
 
-    /* WHY CHOOSE US */
-    .why-choose-us {
-      padding: 100px 20px;
-      background-color: #ffffff;
-      position: relative;
-      text-align: center;
+    .pricing-cell i.fa-check {
+      color: #00b894;
+      font-size: 18px;
     }
 
-    .why-choose-us h2 {
-      color: #111;
-      margin-bottom: 60px;
+    .pricing-cell i.fa-times {
+      color: #ddd;
+      font-size: 18px;
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .stat-card {
-      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
-      padding: 40px 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    .btn-table {
+      display: inline-block;
+      background: white;
+      color: var(--red);
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
       transition: all 0.3s ease;
     }
 
-    .stat-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255,0,0,0.15);
+    .btn-table:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
-    .stat-number {
-      font-size: 56px;
-      font-weight: 800;
-      color: #FF0000;
-      margin-bottom: 10px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .stat-label {
-      font-size: 18px;
-      color: #666;
-      font-weight: 500;
-    }
-
-    .experience-text {
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: 20px;
-      color: #333;
-      line-height: 1.8;
-    }
-
-    .experience-text strong {
-      color: #FF0000;
-      font-weight: 600;
-    }
-
-    /* CTA SECTION */
-    .cta {
-      padding: 100px 20px;
-      background: 
-        linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px),
-        repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(0,0,0,0.03) 10px, rgba(0,0,0,0.03) 20px);
-      background-size: cover;
-      background-position: center;
-      color: #fff;
+    /* CTA */
+    .cta-section {
+      padding: 120px 20px;
+      background: linear-gradient(135deg, var(--orange), var(--red));
       text-align: center;
-      position: relative;
-      overflow: hidden;
+      color: white;
     }
 
-    .cta::before {
-      content: '';
-      position: absolute;
-      bottom: 20%;
-      left: 10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%);
-      border-radius: 50%;
+    .cta-mascot {
+      width: 180px;
+      margin-bottom: 30px;
+      animation: float 4s ease-in-out infinite;
     }
 
-    .cta * { position: relative; z-index: 2; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
 
-    .cta h2 {
-      font-size: 42px;
+    .cta-section h2 {
+      font-size: clamp(32px, 5vw, 52px);
       margin-bottom: 20px;
     }
 
-    .cta p {
-      color: #f0f0f0;
-      font-size: 22px;
-      margin-bottom: 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta .btn {
-      background: #fff;
-      color: #FF0000;
+    .cta-section p {
       font-size: 20px;
-      padding: 18px 50px;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto 40px;
     }
 
-    .cta .btn:hover {
-      background: #f0f0f0;
-      color: #CC0000;
+    .cta-section .btn-primary {
+      background: white;
+      color: var(--red);
     }
 
     /* FOOTER */
     footer {
-      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-      color: #fff;
-      padding: 60px 20px 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #FF0000, #CC0000, #FF0000);
-    }
-
-    footer .container {
-      position: relative;
-      z-index: 2;
+      background: var(--dark-gray);
+      color: #ccc;
+      padding: 80px 50px 30px;
     }
 
     .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-bottom: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
     }
 
-    .footer-logo img {
-      height: 50px;
+    .footer-brand img { height: 60px; margin-bottom: 20px; }
+    .footer-brand p { color: #888; font-size: 15px; line-height: 1.8; }
+
+    .footer-section h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: #ccc;
-      font-size: 14px;
+    .footer-section a {
+      display: block;
+      color: #888;
+      text-decoration: none;
+      padding: 8px 0;
       transition: color 0.3s ease;
     }
 
-    .footer-links a:hover {
-      color: #FF0000;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 15px;
-    }
-
-    .footer-social a {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      transition: all 0.3s ease;
-    }
-
-    .footer-social a:hover {
-      background: #FF0000;
-      transform: translateY(-3px);
-    }
+    .footer-section a:hover { color: var(--red); }
 
     .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      max-width: 1400px;
+      margin: 60px auto 0;
+      padding-top: 30px;
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
     }
 
-    footer p { 
-      margin: 0; 
-      font-size: 14px; 
-      color: #999; 
+    .social-links a {
+      color: #888;
+      font-size: 22px;
+      margin-left: 20px;
+      transition: color 0.3s ease;
     }
 
-    /* MOBILE */
+    .social-links a:hover { color: var(--red); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-container { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { order: -1; }
+      .mascot-boxing { width: 300px; }
+      .hero-stats { justify-content: center; }
+      .services-grid, .pricing-grid, .result-stats { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+    }
+
     @media (max-width: 768px) {
-      .hero h1 { font-size: 38px; }
-      .hero .tagline { font-size: 20px; }
-      .hero p { font-size: 18px; }
-      
       .menu-toggle { display: block; }
       .nav-inner nav { display: none; }
-
-      /* Completely redesign pricing table for mobile */
-      .pricing-table {
-        background: transparent;
-        box-shadow: none;
-      }
-
-      .pricing-header,
-      .pricing-footer {
-        display: none; /* Hide header and footer on mobile */
-      }
-
-      .pricing-row {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0;
-        border-bottom: none;
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      }
-
-      .pricing-row div:first-child {
-        background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
-        color: white;
-        text-align: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 16px;
-        padding: 20px;
-        border-right: none;
-      }
-
-      .pricing-row div:not(:first-child) {
-        display: flex !important;
-        padding: 15px 20px;
-        border-right: none;
-        border-bottom: 1px solid #eee;
-        position: relative;
-      }
-
-      .pricing-row div:not(:first-child)::before {
-        content: attr(data-tier);
-        font-weight: 600;
-        color: #666;
-        min-width: 100px;
-        text-align: left;
-      }
-
-      .pricing-row div:last-child {
-        border-bottom: none;
-      }
-
-      /* Add tier labels via pseudo-elements */
-      .pricing-row div:nth-child(2)::before { content: "Starter: "; }
-      .pricing-row div:nth-child(3)::before { content: "Pro: "; }
-      .pricing-row div:nth-child(4)::before { content: "Elite: "; }
-      .pricing-row div:nth-child(5)::before { content: "Franchise: "; }
-
-      .tier-name {
-        font-size: 16px;
-      }
-
-      .stat-number { font-size: 42px; }
-      .cta h2 { font-size: 32px; }
-      .cta p { font-size: 18px; }
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .pricing-header,
-      .pricing-row,
-      .pricing-footer {
-        grid-template-columns: 2fr 1fr 1fr 1fr;
-      }
-
-      .pricing-header div:last-child,
-      .pricing-row div:last-child,
-      .pricing-footer div:last-child {
-        display: none;
-      }
+      .nav-inner { padding: 0 20px; }
+      .hero { padding: 140px 20px 80px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .result-showcase { padding: 30px 20px; }
+      .footer-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .footer-bottom { flex-direction: column; gap: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" style="text-decoration: none;"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div></a>
-      <button class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="index.html"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div></a>
+      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="index.html">Home</a>
         <a href="marketing.html">Marketing</a>
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
+        <a href="web.html">Web</a>
         <a href="contact.html">Contact</a>
+        <a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a>
       </nav>
     </div>
   </header>
 
-  <!-- MOBILE SIDE MENU -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu">
-    <a href="index.html" onclick="toggleMenu()">Home</a>
-    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
-    <a href="print.html" onclick="toggleMenu()">Print</a>
-    <a href="design.html" onclick="toggleMenu()">Design</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="marketing.html">Marketing</a>
+    <a href="print.html">Print</a>
+    <a href="design.html">Design</a>
+    <a href="web.html">Web</a>
+    <a href="contact.html">Contact</a>
+    <a href="members.html">Members Area</a>
   </div>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <h1>Transform Your Digital Presence</h1>
-      <p class="tagline">Maximum Impact. Proven Results. Real Growth.</p>
-      <p>Smart investment, exceptional returns. We deliver marketing strategies that drive real growth—turning every dollar into measurable success for your business.</p>
-    </div>
-  </section>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">Digital Marketing Services</div>
+        <h1>
+          <span class="knockout">KNOCK OUT</span>
+          THE COMPETITION
+        </h1>
+        <p class="hero-description">
+          Facebook Ads. Google Ads. Social Media Management. We help local businesses 
+          dominate their market with proven digital marketing strategies.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="number">769</div>
+            <div class="label">Avg Clicks/Mo</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">305</div>
+            <div class="label">Avg Calls/Mo</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">$350</div>
+            <div class="label">Starting At</div>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="contact.html?service=marketing" class="btn btn-primary">
+            <i class="fas fa-rocket"></i> Get Started
+          </a>
+          <a href="#pricing" class="btn btn-secondary">
+            View Packages
+          </a>
+        </div>
+      </div>
 
-  <!-- SERVICES OVERVIEW -->
-  <section class="services-overview">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>What We Offer</h2>
-      <p>From social media management to paid advertising, we provide comprehensive marketing solutions tailored to your business goals.</p>
-      
-      <div class="services-grid">
-        <div class="service-item">
-          <i class="fab fa-facebook"></i>
-          <h3>Social Media Marketing</h3>
-          <p>Engaging content, consistent posting, and community management across all major platforms.</p>
-        </div>
-        
-        <div class="service-item">
-          <i class="fas fa-ad"></i>
-          <h3>Paid Advertising</h3>
-          <p>High-converting Facebook and Google Ads campaigns that maximize your ROI.</p>
-        </div>
-        
-        <div class="service-item">
-          <i class="fas fa-envelope"></i>
-          <h3>Email Marketing</h3>
-          <p>Targeted email campaigns that nurture leads and drive sales.</p>
-        </div>
-        
-        <div class="service-item">
-          <i class="fas fa-chart-line"></i>
-          <h3>Analytics & Optimization</h3>
-          <p>Data-driven insights to continuously improve your marketing performance.</p>
-        </div>
+      <div class="hero-visual">
+        <!-- MASCOT PLACEHOLDER: Spec Bot in Joe Yabuki boxing pose with gloves -->
+        <!-- Image file: specbot-boxing.png (you'll need to create this) -->
+        <img src="vegetapic.png" alt="Spec Bot" class="mascot-boxing">
+        <div class="knockout-text">POW!</div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING TIERS -->
-  <section class="pricing-section">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>Marketing Packages</h2>
-      
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="section-header">
+      <span class="section-label">Our Services</span>
+      <h2>Marketing That Works</h2>
+      <p>We only take one client per area, so you get our full attention and zero competition from us.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon"><i class="fab fa-facebook-f"></i></div>
+        <h3>Facebook Ads</h3>
+        <p>Targeted campaigns that reach your ideal customers where they spend their time. Real results, real ROI.</p>
+        <span class="price">From $350/mo</span>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><i class="fab fa-google"></i></div>
+        <h3>Google Ads</h3>
+        <p>Show up when customers search for your services. We optimize for calls and location requests.</p>
+        <span class="price">From $350/mo</span>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><i class="fas fa-share-alt"></i></div>
+        <h3>Social Media</h3>
+        <p>Content creation, posting schedules, and community management across all platforms.</p>
+        <span class="price">From $150/mo</span>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email Marketing</h3>
+        <p>Stay connected with your customers. Automated campaigns that drive repeat business.</p>
+        <span class="price">Included in Elite+</span>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><i class="fas fa-file-alt"></i></div>
+        <h3>Landing Pages</h3>
+        <p>High-converting pages designed to turn clicks into customers.</p>
+        <span class="price">Included in Pro+</span>
+      </div>
+
+      <div class="service-card">
+        <div class="icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Analytics Reports</h3>
+        <p>Know exactly where your money goes. Transparent reporting and optimization recommendations.</p>
+        <span class="price">Included in Pro+</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-section">
+    <div class="section-header">
+      <span class="section-label">Real Results</span>
+      <h2>This Could Be You</h2>
+      <p>One of our clients, just 1 month in, with only $462 ad spend.</p>
+    </div>
+
+    <div class="result-showcase">
+      <div class="result-header">
+        <h3>Phone Repair Shop</h3>
+        <span class="location"><i class="fas fa-map-marker-alt"></i> Memphis, TN</span>
+      </div>
+      <div class="result-stats">
+        <div class="result-stat">
+          <div class="number">$462</div>
+          <div class="label">Ad Spend</div>
+        </div>
+        <div class="result-stat">
+          <div class="number">769</div>
+          <div class="label">Clicks</div>
+        </div>
+        <div class="result-stat">
+          <div class="number">305</div>
+          <div class="label">Phone Calls</div>
+        </div>
+        <div class="result-stat">
+          <div class="number">676</div>
+          <div class="label">Directions</div>
+        </div>
+      </div>
+      <p class="result-note">Our methods work in competitive markets. Memphis has hundreds of repair shops.</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-header">
+      <span class="section-label">Pricing</span>
+      <h2>Simple, Transparent Pricing</h2>
+      <p>No hidden fees. No long-term contracts. Cancel anytime.</p>
+    </div>
+
+    <div class="pricing-table-container">
       <div class="pricing-table">
-        <!-- Header -->
-        <div class="pricing-header">
-          <div>Features</div>
-          <div>
-            <div class="tier-name">Starter</div>
-          </div>
-          <div>
-            <div class="tier-name">Pro</div>
-          </div>
-          <div>
-            <div class="tier-name">Elite</div>
-          </div>
-          <div>
-            <div class="tier-name">Franchise</div>
-          </div>
+        <div class="pricing-row header">
+          <div class="pricing-cell feature-name">Features</div>
+          <div class="pricing-cell">Starter</div>
+          <div class="pricing-cell">Pro</div>
+          <div class="pricing-cell">Elite</div>
+          <div class="pricing-cell highlight">Franchise</div>
         </div>
-
-        <!-- Rows -->
+        
         <div class="pricing-row">
-          <div>Number of Posts per Month</div>
-          <div>12+</div>
-          <div>12+</div>
-          <div>12+</div>
-          <div>Contact</div>
+          <div class="pricing-cell feature-name">Number of Posts per Month</div>
+          <div class="pricing-cell">12+</div>
+          <div class="pricing-cell">12+</div>
+          <div class="pricing-cell">12+</div>
+          <div class="pricing-cell highlight">Contact</div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Platforms Managed</div>
-          <div>1-3</div>
-          <div>1</div>
-          <div>2-3</div>
-          <div>Contact</div>
+          <div class="pricing-cell feature-name">Platforms Managed</div>
+          <div class="pricing-cell">1-3</div>
+          <div class="pricing-cell">1</div>
+          <div class="pricing-cell">2-3</div>
+          <div class="pricing-cell highlight">Contact</div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Content Creation</div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
+          <div class="pricing-cell feature-name">Content Creation</div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell highlight"><i class="fas fa-check"></i></div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Ad Accounts Managed</div>
-          <div>0</div>
-          <div>1</div>
-          <div>2-3</div>
-          <div>Contact</div>
+          <div class="pricing-cell feature-name">Ad Accounts Managed</div>
+          <div class="pricing-cell">0</div>
+          <div class="pricing-cell">1</div>
+          <div class="pricing-cell">2-3</div>
+          <div class="pricing-cell highlight">Contact</div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Landing Page</div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
+          <div class="pricing-cell feature-name">Landing Page</div>
+          <div class="pricing-cell"><i class="fas fa-times"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell highlight"><i class="fas fa-check"></i></div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Email Marketing Campaigns</div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
+          <div class="pricing-cell feature-name">Email Marketing Campaigns</div>
+          <div class="pricing-cell"><i class="fas fa-times"></i></div>
+          <div class="pricing-cell"><i class="fas fa-times"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell highlight"><i class="fas fa-check"></i></div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Analytics Reports</div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
+          <div class="pricing-cell feature-name">Analytics Reports</div>
+          <div class="pricing-cell"><i class="fas fa-times"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell highlight"><i class="fas fa-check"></i></div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Discounts on Additional Work</div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
-          <div><i class="fas fa-check check"></i></div>
+          <div class="pricing-cell feature-name">Discounts on Additional Work</div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell"><i class="fas fa-check"></i></div>
+          <div class="pricing-cell highlight"><i class="fas fa-check"></i></div>
         </div>
-
+        
         <div class="pricing-row">
-          <div>Contract Required</div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-times cross"></i></div>
-          <div><i class="fas fa-times cross"></i></div>
+          <div class="pricing-cell feature-name">Contract Required</div>
+          <div class="pricing-cell"><i class="fas fa-times"></i></div>
+          <div class="pricing-cell"><i class="fas fa-times"></i></div>
+          <div class="pricing-cell"><i class="fas fa-times"></i></div>
+          <div class="pricing-cell highlight"><i class="fas fa-times"></i></div>
         </div>
-
-        <!-- Pricing Footer -->
-        <div class="pricing-footer">
-          <div></div>
-          <div>
-            <div class="tier-price-bottom">$150/mo</div>
-          </div>
-          <div>
-            <div class="tier-price-bottom">$350/mo</div>
-          </div>
-          <div>
-            <div class="tier-price-bottom">$525/mo</div>
-          </div>
-          <div>
-            <div class="tier-price-bottom">Custom</div>
-          </div>
+        
+        <div class="pricing-row prices">
+          <div class="pricing-cell feature-name"></div>
+          <div class="pricing-cell price">$150<span>/mo</span></div>
+          <div class="pricing-cell price">$350<span>/mo</span></div>
+          <div class="pricing-cell price">$525<span>/mo</span></div>
+          <div class="pricing-cell price highlight">Custom</div>
+        </div>
+        
+        <div class="pricing-row cta-row">
+          <div class="pricing-cell feature-name"></div>
+          <div class="pricing-cell"><a href="contact.html?package=starter" class="btn-table">Get Started</a></div>
+          <div class="pricing-cell"><a href="contact.html?package=pro" class="btn-table">Get Started</a></div>
+          <div class="pricing-cell"><a href="contact.html?package=elite" class="btn-table">Get Started</a></div>
+          <div class="pricing-cell highlight"><a href="contact.html?package=franchise" class="btn-table">Contact Us</a></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- WHY CHOOSE US -->
-  <section class="why-choose-us">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>Results You Can Expect</h2>
-      
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">3-5x</div>
-          <div class="stat-label">Average ROI</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-number">40%</div>
-          <div class="stat-label">Increase in Leads</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-number">2.8x</div>
-          <div class="stat-label">Revenue Growth</div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-number">65%</div>
-          <div class="stat-label">Engagement Boost</div>
-        </div>
-      </div>
-
-      <p class="experience-text">
-        We've worked with <strong>hundreds of businesses around the globe</strong>, with a specialized focus on the <strong>wireless and electronic repair industry</strong>. Our founder, <strong>Brandon Talbert</strong>, owned and operated electronics repair shops for years before launching TechSpec, giving us unparalleled insight into your market, customers, and what actually drives results. That industry expertise, combined with our expanding knowledge across diverse sectors, means we deliver strategies that work for businesses of all types—from local repair shops to national brands.
-      </p>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2>Ready to Grow Your Business?</h2>
-      <p>Let's create a marketing strategy that delivers real results. Get started with a free consultation today.</p>
-      <a href="contact.html" class="btn">Get Your Free Consultation</a>
-    </div>
+  <section class="cta-section">
+    <img src="specs.png" alt="Spec Bot" class="cta-mascot">
+    <h2>Ready to Knock Out Your Competition?</h2>
+    <p>Let's talk about your business goals. Free consultation, no pressure.</p>
+    <a href="contact.html?service=marketing" class="btn btn-primary">
+      <i class="fas fa-comments"></i> Let's Talk
+    </a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="logo.png" alt="TechSpec Logo">
-        </div>
-        <div class="footer-links">
-          <a href="tosmarketing.html">Marketing Terms</a>
-          <a href="tosprint.html">Print Terms</a>
-          <a href="tosdesign.html">Design Terms</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://facebook.com/techspecb2b" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="logo.png" alt="TechSpec">
+        <p>Professional print, design, and marketing solutions for businesses that mean business.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="web.html">Web Design</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="members.html">Members Area</a>
+        <a href="tosmarketing.html">Marketing TOS</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TechSpec. All rights reserved.</span>
+      <div class="social-links">
+        <a href="https://facebook.com/techspecb2b" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    // Mobile menu toggle
     function toggleMenu() {
-      const sideMenu = document.getElementById('sideMenu');
-      const menuOverlay = document.getElementById('menuOverlay');
-      sideMenu.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
+      document.getElementById('sideMenu').classList.toggle('active');
+      document.getElementById('menuOverlay').classList.toggle('active');
     }
-
-    // Navigation scroll effect
-    const nav = document.querySelector('header.nav');
-    window.addEventListener('scroll', () => { 
-      nav.classList.toggle('scrolled', window.scrollY > 10); 
-    });
   </script>
 </body>
 </html>
