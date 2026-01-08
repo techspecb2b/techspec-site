@@ -19,6 +19,8 @@
     .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
     .nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}
     .nav .logo img{height:55px}
+    .nav .logo .mobile-logo{display:none}
+    @media(max-width:900px){.nav .logo img.desktop-logo{display:none}.nav .logo .mobile-logo{display:block;height:40px}}
     .nav nav{display:flex;align-items:center;gap:8px}
     .nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}
     .nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}
@@ -167,7 +169,7 @@
   <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" class="logo"><img src="logo.png" alt="TechSpec"></a>
+      <a href="index.html" class="logo"><img src="logo.png" alt="TechSpec" class="desktop-logo"><img src="head only.png" alt="TechSpec" class="mobile-logo"></a>
       <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="index.html" class="active">Home</a>
