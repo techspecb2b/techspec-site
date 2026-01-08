@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order / Get a Quote | TechSpec</title>
+  <meta name="description" content="Request a quote or place an order for print, design, marketing, or web services.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}:root{--red:#FF0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5}body{font-family:'Inter',sans-serif;background:var(--dark-gray);color:var(--black);min-height:100vh}h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+
+    .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}.nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}.nav .logo img{height:55px}.nav nav{display:flex;align-items:center;gap:8px}.nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}.nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}.nav nav a.order-btn{background:white;color:var(--red);font-weight:800;padding:10px 22px}.nav nav a.members-btn{background:var(--black);border:2px solid white}.menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}.menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}.menu-overlay.active{display:block}.side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}.side-menu.active{right:0}.side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}.side-menu a.order-link{color:var(--red);background:white;text-align:center;border-radius:8px;margin-top:15px;font-weight:800}@media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}}
+
+    .page-container{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 20px 60px;background:linear-gradient(135deg,var(--dark-gray) 0%,#2a2a2a 50%,var(--dark-gray) 100%)}
+    .form-wrapper{max-width:700px;margin:0 auto;width:100%}
+    .form-header{text-align:center;color:white;margin-bottom:40px}
+    .form-header h1{font-size:clamp(32px,5vw,48px);margin-bottom:15px}
+    .form-header p{font-size:18px;opacity:0.8}
+
+    .order-form{background:white;border-radius:24px;padding:50px 45px;box-shadow:0 25px 80px rgba(0,0,0,0.4)}
+    .form-section{margin-bottom:35px}
+    .form-section-title{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+    .form-section-title i{font-size:18px}
+
+    .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .svc-opt input{display:none}
+    .svc-opt label{display:flex;flex-direction:column;align-items:center;padding:25px 15px;background:var(--light-gray);border-radius:16px;cursor:pointer;border:3px solid transparent;transition:all 0.2s}
+    .svc-opt label i{font-size:32px;color:var(--red);margin-bottom:10px}
+    .svc-opt label span{font-weight:700;font-size:14px}
+    .svc-opt input:checked+label{border-color:var(--red);background:white;box-shadow:0 8px 25px rgba(255,0,0,0.15);transform:scale(1.02)}
+
+    .form-group{margin-bottom:20px}
+    .form-group label{display:block;font-weight:600;margin-bottom:8px;font-size:14px;color:#333}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:16px 20px;border:2px solid #eee;border-radius:12px;font-size:16px;font-family:inherit;transition:all 0.3s}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(255,0,0,0.1)}
+    .form-group textarea{min-height:120px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    @media(max-width:600px){.form-row,.service-grid{grid-template-columns:1fr}}
+
+    .btn-submit{width:100%;padding:20px;background:var(--red);color:white;border:none;border-radius:50px;font-size:18px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;transition:all 0.3s;text-transform:uppercase;letter-spacing:1px}
+    .btn-submit:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,0,0,0.4)}
+    .btn-submit:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
+
+    .form-note{text-align:center;margin-top:20px;font-size:13px;color:#888}
+    .form-note i{color:var(--red)}
+
+    .success-message{display:none;text-align:center;padding:60px 30px}
+    .success-message.show{display:block}
+    .success-message i{font-size:80px;color:#00b894;margin-bottom:25px}
+    .success-message h2{font-size:32px;margin-bottom:15px;color:var(--black)}
+    .success-message p{font-size:18px;color:#666}
+
+    .contact-info{max-width:700px;margin:40px auto 0;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+    .contact-item{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.7)}
+    .contact-item i{font-size:20px;color:var(--red)}
+    .contact-item a{color:rgba(255,255,255,0.9);text-decoration:none}
+    .contact-item a:hover{color:white}
+
+    footer{background:var(--black);color:#888;padding:40px 20px;text-align:center}
+    footer p{font-size:13px}
+    footer a{color:#888;margin:0 10px}
+    footer a:hover{color:var(--red)}
+  </style>
+</head>
+<body>
+  <header class="nav"><div class="nav-inner"><a href="index.html" class="logo"><img src="logo.png" alt="TechSpec"></a><button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button><nav><a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="order.html" class="order-btn active"><i class="fas fa-shopping-cart"></i> Order</a><a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a></nav></div></header>
+  <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+  <div class="side-menu" id="sideMenu"><a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="order.html" class="order-link"><i class="fas fa-shopping-cart"></i> Order Now</a><a href="members.html">Members Area</a></div>
+
+  <div class="page-container">
+    <div class="form-wrapper">
+      <div class="form-header">
+        <h1>Let's Work Together</h1>
+        <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+      </div>
+
+      <div class="order-form" id="orderForm">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="New Order Request from TechSpec Website">
+          <input type="hidden" name="from_name" value="TechSpec Website">
+          <input type="checkbox" name="botcheck" style="display:none">
+
+          <div class="form-section">
+            <div class="form-section-title"><i class="fas fa-th-large"></i> What do you need?</div>
+            <div class="service-grid">
+              <div class="svc-opt"><input type="radio" name="service" id="s-print" value="Print Services" required><label for="s-print"><i class="fas fa-print"></i><span>Print</span></label></div>
+              <div class="svc-opt"><input type="radio" name="service" id="s-design" value="Graphic Design"><label for="s-design"><i class="fas fa-palette"></i><span>Design</span></label></div>
+              <div class="svc-opt"><input type="radio" name="service" id="s-marketing" value="Digital Marketing"><label for="s-marketing"><i class="fas fa-bullhorn"></i><span>Marketing</span></label></div>
+              <div class="svc-opt"><input type="radio" name="service" id="s-web" value="Web Design"><label for="s-web"><i class="fas fa-globe"></i><span>Web</span></label></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title"><i class="fas fa-clipboard-list"></i> Project Details</div>
+            <div class="form-group">
+              <label>What do you need? *</label>
+              <input type="text" name="project_type" placeholder="e.g., Logo design, 500 business cards, Facebook ads..." required>
+            </div>
+            <div class="form-group">
+              <label>Tell us more (optional)</label>
+              <textarea name="description" placeholder="Any specific requirements, colors, sizes, ideas..."></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Timeline</label>
+                <select name="timeline">
+                  <option value="">Select timeline</option>
+                  <option value="ASAP">ASAP (rush rates may apply)</option>
+                  <option value="1-2 weeks">1-2 weeks</option>
+                  <option value="1 month">Within a month</option>
+                  <option value="Flexible">Flexible / No rush</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Budget Range</label>
+                <select name="budget">
+                  <option value="">Select budget</option>
+                  <option value="Under $250">Under $250</option>
+                  <option value="$250-$500">$250 - $500</option>
+                  <option value="$500-$1000">$500 - $1,000</option>
+                  <option value="$1000-$2500">$1,000 - $2,500</option>
+                  <option value="$2500+">$2,500+</option>
+                  <option value="Not sure">Not sure yet</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title"><i class="fas fa-user"></i> Your Information</div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" name="first_name" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" name="last_name" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone (optional)</label>
+                <input type="tel" name="phone">
+              </div>
+              <div class="form-group">
+                <label>Business Name (optional)</label>
+                <input type="text" name="business">
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Send Request
+          </button>
+          <p class="form-note"><i class="fas fa-clock"></i> We typically respond within 24 hours</p>
+        </form>
+
+        <div class="success-message" id="successMsg">
+          <i class="fas fa-check-circle"></i>
+          <h2>Request Sent!</h2>
+          <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Eastern North Carolina</span></div>
+        <div class="contact-item"><i class="fab fa-facebook"></i><a href="https://facebook.com/techspecb2b" target="_blank">TechSpecB2B</a></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 TechSpec. <a href="tosprint.html">Print TOS</a> <a href="tosmarketing.html">Marketing TOS</a> <a href="tosdesign.html">Design TOS</a></p>
+  </footer>
+
+  <script>
+    function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('menuOverlay').classList.toggle('active')}
+    
+    // Pre-select service from URL
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get('service');
+    if(service){
+      const map = {print:'s-print',design:'s-design',marketing:'s-marketing',web:'s-web'};
+      const el = document.getElementById(map[service]);
+      if(el) el.checked = true;
+    }
+
+    // Form submission
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        
+        if(response.ok) {
+          form.style.display = 'none';
+          document.getElementById('successMsg').classList.add('show');
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch(err) {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
+        alert('Something went wrong. Please try again or email us directly at brandon@techspec.biz');
+      }
+    });
+  </script>
+</body>
+</html>
