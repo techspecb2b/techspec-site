@@ -3,1275 +3,277 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Primary Meta Tags -->
-  <title>Graphic Design & Branding Services | TechSpec Design - Custom Logos & Brand Identity</title>
-  <meta name="title" content="Graphic Design & Branding Services | TechSpec Design - Custom Logos & Brand Identity">
-  <meta name="description" content="Custom logo design, brand identity, and visual design services. 100% original designs crafted for your business. TechSpec Design delivers professional branding that stands out.">
-  <meta name="keywords" content="TechSpec design, graphic design, logo design, branding, brand identity, custom logos, visual design, TechSpec B2B, design services">
-  <meta name="author" content="TechSpec">
-  <meta name="robots" content="index, follow">
+  <title>Graphic Design Services | TechSpec - Logos, Branding & More</title>
+  <meta name="description" content="Professional graphic design services including logo design, branding, social media graphics. 100% original designs.">
   <link rel="canonical" href="https://techspec.biz/design.html">
-  
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://techspec.biz/design.html">
-  <meta property="og:title" content="Graphic Design & Branding Services | TechSpec Design">
-  <meta property="og:description" content="Custom logo design, brand identity, and visual design services. 100% original designs crafted for your business.">
-  <meta property="og:image" content="https://techspec.biz/share-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://techspec.biz/design.html">
-  <meta name="twitter:title" content="Graphic Design & Branding Services | TechSpec Design">
-  <meta name="twitter:description" content="Custom logo design, brand identity, and visual design services.">
-  <meta name="twitter:image" content="https://techspec.biz/share-image.png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #111;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      margin: 0 0 20px 0;
-    }
-
-    h1 { font-size: 52px; line-height: 1.2; }
-    h2 { font-size: 36px; }
-    h3 { font-size: 24px; }
-
-    p {
-      font-size: 18px;
-      color: #666;
-      line-height: 1.8;
-    }
-
-    a { text-decoration: none; transition: all 0.3s ease; }
-
-    .btn {
-      padding: 18px 45px;
-      background: #fff;
-      color: #FF0000;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 700;
-      display: inline-block;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      border: 3px solid #fff;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: #FF0000;
-      transition: left 0.5s ease;
-      z-index: -1;
-    }
-
-    .btn:hover {
-      color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
-    }
-
-    .btn:hover::before {
-      left: 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* GRAIN OVERLAY */
-    .grain-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.4;
-    }
-
-    /* NAVIGATION */
-    header.nav {
-      background-color: #FF0000;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    header.nav.scrolled {
-      background-color: #CC0000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .logo img { height: 40px; }
-
-    nav a {
-      margin-left: 30px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #fff;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #fff;
-      transition: width 0.3s ease;
-    }
-
-    nav a:hover::after { width: 100%; }
-    nav a:hover { color: #f5f5f5; }
-
-    /* MOBILE MENU */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -300px;
-      width: 300px;
-      height: 100vh;
-      background-color: #111;
-      transition: right 0.3s ease;
-      z-index: 999;
-      padding: 80px 20px 20px;
-    }
-
-    .side-menu.active { right: 0; }
-
-    .side-menu a {
-      display: block;
-      margin: 0 0 20px 0;
-      font-size: 18px;
-      font-weight: 500;
-      color: #fff;
-      padding: 10px;
-      border-bottom: 1px solid #333;
-    }
-
-    .side-menu a:hover { color: #FF0000; }
-
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0,0,0,0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      z-index: 998;
-    }
-
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* HERO SECTION */
-    .hero {
-      position: relative;
-      padding: 120px 20px 100px;
-      background: 
-        linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
-        repeating-linear-gradient(30deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px),
-        repeating-linear-gradient(120deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 80px);
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      bottom: 10%;
-      right: 20%;
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(0,0,0,0.08) 0%, transparent 60%);
-      border-radius: 50%;
-      animation: pulse 8s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
-    .hero * { position: relative; z-index: 2; }
-
-    .hero h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
-      font-weight: 800;
-    }
-
-    .hero .tagline {
-      font-size: 28px;
-      color: #fff;
-      font-weight: 600;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .hero p {
-      font-size: 20px;
-      color: #f0f0f0;
-      max-width: 900px;
-      margin: 0 auto 40px;
-    }
-
-    /* DESIGN CAPABILITIES */
-    .design-capabilities {
-      padding: 100px 20px;
-      background-color: #ffffff;
-      position: relative;
-    }
-
-    .design-capabilities h2 {
-      text-align: center;
-      color: #111;
-      margin-bottom: 60px;
-    }
-
-    .capabilities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .capability-item {
-      padding: 14px 18px;
-      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
-      border-radius: 8px;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-      color: #333;
-      border: 1px solid #e0e0e0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .capability-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, #FF0000, #CC0000);
-      transition: width 0.3s ease;
-    }
-
-    .capability-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(255,0,0,0.2);
-      background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
-      border-color: #FF0000;
-      color: #FF0000;
-    }
-
-    .capability-item:hover::before {
-      width: 100%;
-      opacity: 0.05;
-    }
-
-    .capability-item {
-      cursor: pointer;
-    }
-
-    /* CAPABILITY MODAL */
-    .capability-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      overflow-y: auto;
-    }
-
-    .capability-modal.show {
-      display: flex;
-      animation: fadeIn 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .capability-modal-content {
-      background: #fff;
-      padding: 40px;
-      border-radius: 12px;
-      max-width: 700px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      animation: slideUp 0.3s ease;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: #999;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-
-    .modal-close:hover {
-      color: #FF0000;
-    }
-
-    .capability-modal-content h3 {
-      color: #FF0000;
-      margin-bottom: 20px;
-      font-size: 28px;
-      padding-right: 40px;
-    }
-
-    .capability-modal-content p {
-      color: #666;
-      font-size: 16px;
-      line-height: 1.8;
-      margin: 0 0 20px 0;
-    }
-
-    .capability-specs {
-      background: #f9f9f9;
-      padding: 15px;
-      border-radius: 6px;
-      border-left: 3px solid #FF0000;
-      margin-top: 15px;
-    }
-
-    .capability-specs strong {
-      color: #333;
-      font-size: 14px;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .capability-specs ul {
-      margin: 5px 0 0 20px;
-      padding: 0;
-    }
-
-    .capability-specs li {
-      font-size: 14px;
-      color: #666;
-      margin: 5px 0;
-      line-height: 1.6;
-    }
-
-    /* LOGO SHOWCASE */
-    .logo-showcase {
-      padding: 100px 20px;
-      background-color: #f7f7f7;
-      position: relative;
-    }
-
-    .logo-showcase h2 {
-      text-align: center;
-      color: #111;
-      margin-bottom: 20px;
-    }
-
-    .logo-showcase > p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
-      font-size: 20px;
-    }
-
-    .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .logo-box {
-      width: 100%;
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-
-    .logo-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(255,0,0,0.2);
-    }
-
-    .logo-box img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    /* MOCKUP SECTION */
-    .mockup-section {
-      padding: 100px 20px;
-      background-color: #ffffff;
-      position: relative;
-    }
-
-    .mockup-section h2 {
-      text-align: center;
-      color: #111;
-      margin-bottom: 20px;
-    }
-
-    .mockup-section > p {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
-      font-size: 20px;
-    }
-
-    .mockup-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-
-    .mockup-image {
-      flex: 1;
-      min-width: 300px;
-      max-width: 450px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .mockup-image.blueprint {
-      background: #0f4c81;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      position: relative;
-      background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255,255,255,0.1) 19px, rgba(255,255,255,0.1) 20px),
-        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255,255,255,0.1) 19px, rgba(255,255,255,0.1) 20px);
-    }
-
-    .mockup-image.blueprint::before {
-      content: '';
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      bottom: 15px;
-      left: 15px;
-      border: 2px solid rgba(255,255,255,0.2);
-      pointer-events: none;
-    }
-
-    .mockup-image.blueprint::after {
-      content: 'DRAFT';
-      position: absolute;
-      bottom: 15px;
-      right: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 3px;
-      font-family: 'Courier New', monospace;
-    }
-
-    .mockup-image.storefront {
-      background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 20%, #f5f5f5 20%, #fff 100%);
-      padding: 50px 30px 30px 30px;
-      border-radius: 8px 8px 0 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      position: relative;
-      border: 3px solid #2c2c2c;
-      border-bottom: none;
-    }
-
-    .mockup-image.storefront::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 50px;
-      background: linear-gradient(180deg, #2c2c2c 0%, #1a1a1a 100%);
-      border-radius: 8px 8px 0 0;
-    }
-
-    /* Awning stripes */
-    .mockup-image.storefront::after {
-      content: '';
-      position: absolute;
-      top: 15px;
-      left: 30px;
-      right: 30px;
-      height: 25px;
-      background: repeating-linear-gradient(90deg, #FF0000 0px, #FF0000 20px, #fff 20px, #fff 40px);
-      border-radius: 4px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-    }
-
-    .mockup-image:hover {
-      transform: scale(1.03);
-    }
-
-    .mockup-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 4px;
-    }
-
-    .mockup-placeholder {
-      width: 100%;
-      height: 350px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-      font-size: 16px;
-      font-weight: 600;
-      border-radius: 4px;
-      border: 2px dashed #ddd;
-    }
-
-    .mockup-image.blueprint .mockup-placeholder {
-      background: rgba(255,255,255,0.95);
-      border: 2px dashed rgba(255,255,255,0.3);
-      color: #1e3a8a;
-    }
-
-    .mockup-image.storefront .mockup-placeholder {
-      margin-top: 20px;
-    }
-
-
-    .mockup-arrow {
-      font-size: 60px;
-      color: #FF0000;
-      animation: bounce 2s ease-in-out infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(10px); }
-    }
-
-    .mockup-placeholder {
-      width: 100%;
-      height: 400px;
-      background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    /* SOCIAL MEDIA ADS */
-    .social-ads-section {
-      padding: 100px 20px;
-      background-color: #f7f7f7;
-      position: relative;
-    }
-
-    .social-ads-content {
-      display: flex;
-      align-items: center;
-      gap: 80px;
-      max-width: 1100px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-
-    .social-ads-text {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .social-ads-text h2 {
-      color: #111;
-      margin-bottom: 20px;
-    }
-
-    .social-ads-text p {
-      font-size: 18px;
-      color: #666;
-      line-height: 1.8;
-      margin-bottom: 15px;
-    }
-
-    .social-ads-images {
-      flex: 1;
-      min-width: 300px;
-      max-width: 400px;
-      position: relative;
-      height: 350px;
-    }
-
-    .social-ad-card {
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .social-ad-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .social-ad-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .social-ad-card:nth-child(1) {
-      top: 20px;
-      left: 0;
-      transform: rotate(-6deg);
-      z-index: 1;
-    }
-
-    .social-ad-card:nth-child(2) {
-      top: 40px;
-      left: 50px;
-      transform: rotate(2deg);
-      z-index: 2;
-    }
-
-    .social-ad-card:nth-child(3) {
-      top: 60px;
-      left: 100px;
-      transform: rotate(-4deg);
-      z-index: 3;
-    }
-
-    .social-ad-card:hover {
-      transform: rotate(0deg) scale(1.08);
-      z-index: 10;
-      box-shadow: 0 20px 50px rgba(255,0,0,0.3);
-    }
-
-    /* CTA SECTION */
-    .cta {
-      padding: 100px 20px;
-      background: 
-        linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
-        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.02) 3px, rgba(255,255,255,0.02) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255,255,255,0.02) 3px, rgba(255,255,255,0.02) 4px);
-      background-size: cover;
-      background-position: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .cta * { position: relative; z-index: 2; }
-
-    .cta h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .cta p {
-      color: #f0f0f0;
-      font-size: 20px;
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta .btn {
-      background: #fff;
-      color: #FF0000;
-      font-size: 20px;
-      padding: 18px 50px;
-    }
-
-    .cta .btn:hover {
-      background: #f0f0f0;
-      color: #CC0000;
-    }
-
-    /* FOOTER */
-    footer {
-      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-      color: #fff;
-      padding: 60px 20px 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #FF0000, #CC0000, #FF0000);
-    }
-
-    footer .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-
-    .footer-logo img {
-      height: 50px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: #ccc;
-      font-size: 14px;
-      transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-      color: #FF0000;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 15px;
-    }
-
-    .footer-social a {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      transition: all 0.3s ease;
-    }
-
-    .footer-social a:hover {
-      background: #FF0000;
-      transform: translateY(-3px);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    footer p { 
-      margin: 0; 
-      font-size: 14px; 
-      color: #999; 
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 38px; }
-      .hero .tagline { font-size: 20px; }
-      .hero p { font-size: 18px; }
-      
-      .menu-toggle { display: block; }
-      .nav-inner nav { display: none; }
-
-      .capabilities-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-      }
-
-      .capability-item {
-        font-size: 13px;
-        padding: 10px 12px;
-      }
-
-      .logo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 10px;
-      }
-
-      .logo-box {
-        padding: 20px;
-      }
-
-      .mockup-arrow {
-        font-size: 40px;
-        transform: rotate(90deg);
-      }
-
-      .social-ads-content {
-        flex-direction: column;
-        flex-wrap: nowrap;
-      }
-
-      .social-ads-text {
-        order: 2;
-      }
-
-      .social-ads-images {
-        order: 1;
-        height: 450px;
-        min-height: 450px;
-        margin-bottom: 30px;
-        width: 100%;
-        max-width: 100%;
-      }
-
-      .social-ad-card {
-        width: 220px;
-        height: 220px;
-      }
-
-      .social-ad-card:nth-child(1) {
-        left: 10px;
-        top: 20px;
-      }
-
-      .social-ad-card:nth-child(2) {
-        left: 50px;
-        top: 100px;
-      }
-
-      .social-ad-card:nth-child(3) {
-        left: 90px;
-        top: 180px;
-      }
-
-      .cta h2 { font-size: 32px; }
-      .cta p { font-size: 18px; }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--red:#FF0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5;--purple:#6c5ce7;--pink:#fd79a8;--teal:#00cec9}
+    body{font-family:'Inter',sans-serif;background:var(--light-gray);color:var(--black);overflow-x:hidden}
+    h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+
+    /* === STANDARD NAV === */
+    .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}
+    .nav .logo img{height:55px}
+    .nav nav{display:flex;align-items:center;gap:8px}
+    .nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}
+    .nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}
+    .nav nav a.members-btn{background:var(--black);border:2px solid white}
+    .nav nav a.members-btn:hover{background:white;color:var(--black)}
+    .menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}
+    .menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}
+    .menu-overlay.active{display:block}
+    .side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}
+    .side-menu.active{right:0}
+    .side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}
+    @media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}}
+
+    /* === HERO === */
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 50%,var(--teal) 100%);position:relative;display:flex;align-items:center;padding:100px 20px 80px;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3C/g%3E%3C/svg%3E")}
+    .hero-container{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:10}
+    .hero-content{color:white}
+    .hero-badge{display:inline-block;background:rgba(0,0,0,0.3);padding:10px 25px;border-radius:50px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:25px}
+    .hero h1{font-size:clamp(36px,5vw,60px);line-height:1.1;margin-bottom:20px}
+    .hero-description{font-size:18px;opacity:0.95;margin-bottom:25px;line-height:1.7}
+    .hero-points{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
+    .hero-point{display:flex;align-items:center;gap:12px;font-size:16px}
+    .hero-point i{width:28px;height:28px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+    .btn{padding:16px 35px;font-size:15px;font-weight:800;border-radius:50px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;display:inline-flex;align-items:center;gap:10px}
+    .btn-primary{background:white;color:var(--purple);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,0.4)}
+    .btn-secondary{background:transparent;color:white;border:2px solid rgba(255,255,255,0.5)}
+    .btn-secondary:hover{background:white;color:var(--purple)}
+    .hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
+    .hero-visual{display:flex;justify-content:center;align-items:center}
+    .hero-icon-display{position:relative;width:300px;height:300px;display:flex;align-items:center;justify-content:center}
+    .hero-icon-main{font-size:140px;color:rgba(255,255,255,0.2)}
+    .hero-icon-float{position:absolute;font-size:30px;color:rgba(255,255,255,0.5);animation:floatIcon 4s ease-in-out infinite}
+    .hero-icon-float:nth-child(2){top:5%;left:15%;animation-delay:0s}
+    .hero-icon-float:nth-child(3){top:15%;right:10%;animation-delay:-1s}
+    .hero-icon-float:nth-child(4){bottom:20%;left:10%;animation-delay:-2s}
+    .hero-icon-float:nth-child(5){bottom:10%;right:15%;animation-delay:-3s}
+    @keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+    @media(max-width:1024px){.hero-container{grid-template-columns:1fr;text-align:center}.hero-visual{order:-1}.hero-points{align-items:center}.hero-buttons{justify-content:center}}
+
+    /* === SERVICES === */
+    .services-section{padding:100px 20px;background:white}
+    .section-header{text-align:center;margin-bottom:60px}
+    .section-label{display:inline-block;background:var(--purple);color:white;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
+    .section-header h2{font-size:clamp(28px,4vw,44px);margin-bottom:15px}
+    .section-header p{font-size:16px;color:#666;max-width:550px;margin:0 auto}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}
+    .service-card{background:var(--light-gray);border-radius:18px;padding:30px 20px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--purple),var(--pink),var(--teal));transform:scaleX(0);transition:transform 0.3s}
+    .service-card:hover::before{transform:scaleX(1)}
+    .service-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.1);background:white}
+    .service-card .icon{width:60px;height:60px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}
+    .service-card .icon i{font-size:24px;color:white}
+    .service-card h3{font-size:16px;margin-bottom:8px}
+    .service-card p{color:#666;font-size:13px;line-height:1.5}
+    @media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.services-grid{grid-template-columns:1fr}}
+
+    /* === LOGO SHOWCASE === */
+    .logo-section{padding:100px 20px;background:var(--dark-gray)}
+    .logo-section .section-header h2,.logo-section .section-header p{color:white}
+    .logo-section .section-header p{color:rgba(255,255,255,0.7)}
+    .logo-section .section-label{background:var(--pink)}
+    .logo-container{max-width:1200px;margin:0 auto}
+    .logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:25px}
+    .logo-item{background:linear-gradient(145deg,#222,#2d2d2d);border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:35px;position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)}
+    .logo-item::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(108,92,231,0.15),transparent 70%);opacity:0;transition:opacity 0.4s}
+    .logo-item::after{content:'';position:absolute;inset:0;border:2px solid transparent;border-radius:20px;transition:all 0.3s}
+    .logo-item:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 25px 50px rgba(108,92,231,0.3)}
+    .logo-item:hover::before{opacity:1}
+    .logo-item:hover::after{border-color:var(--purple)}
+    .logo-item img{max-width:80%;max-height:80%;object-fit:contain;filter:drop-shadow(0 8px 25px rgba(0,0,0,0.4));transition:all 0.4s}
+    .logo-item:hover img{transform:scale(1.1);filter:drop-shadow(0 12px 35px rgba(108,92,231,0.4))}
+
+    /* === PROCESS === */
+    .process-section{padding:100px 20px;background:var(--light-gray)}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;max-width:1000px;margin:0 auto}
+    .process-step{text-align:center;position:relative}
+    .process-step::after{content:'';position:absolute;top:35px;right:-12px;width:25px;height:2px;background:var(--purple)}
+    .process-step:last-child::after{display:none}
+    .step-number{width:70px;height:70px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Poppins',sans-serif;font-size:28px;font-weight:800;color:white}
+    .process-step h3{font-size:17px;margin-bottom:8px}
+    .process-step p{color:#666;font-size:13px}
+    @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr)}.process-step::after{display:none}}
+    @media(max-width:600px){.process-grid{grid-template-columns:1fr}}
+
+    /* === CTA === */
+    .cta-section{padding:100px 20px;background:linear-gradient(135deg,var(--purple),var(--pink));text-align:center;color:white}
+    .cta-icon{font-size:60px;margin-bottom:25px;opacity:0.9}
+    .cta-section h2{font-size:clamp(28px,4vw,44px);margin-bottom:15px}
+    .cta-section p{font-size:18px;opacity:0.95;max-width:550px;margin:0 auto 35px}
+    .cta-section .btn-primary{background:white;color:var(--purple)}
+
+    /* === FOOTER === */
+    footer{background:var(--dark-gray);color:#888;padding:60px 40px 25px}
+    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px}
+    .footer-brand img{height:50px;margin-bottom:15px}
+    .footer-brand p{font-size:14px;line-height:1.7}
+    .footer-col h4{color:white;font-size:13px;font-weight:700;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
+    .footer-col a{display:block;color:#888;text-decoration:none;padding:6px 0;font-size:14px;transition:color 0.3s}
+    .footer-col a:hover{color:var(--red)}
+    .footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:13px}
+    .social-links a{color:#888;font-size:20px;margin-left:15px}
+    .social-links a:hover{color:var(--red)}
+    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.footer-inner{grid-template-columns:1fr;text-align:center}.footer-bottom{flex-direction:column;gap:15px;text-align:center}}
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- STANDARD NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" style="text-decoration: none;"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div></a>
-      <button class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="index.html" class="logo"><img src="logo.png" alt="TechSpec"></a>
+      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="index.html">Home</a>
         <a href="marketing.html">Marketing</a>
         <a href="print.html">Print</a>
-        <a href="design.html">Design</a>
+        <a href="design.html" class="active">Design</a>
+        <a href="web.html">Web</a>
         <a href="contact.html">Contact</a>
+        <a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a>
       </nav>
     </div>
   </header>
-
-  <!-- MOBILE SIDE MENU -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu">
-    <a href="index.html" onclick="toggleMenu()">Home</a>
-    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
-    <a href="print.html" onclick="toggleMenu()">Print</a>
-    <a href="design.html" onclick="toggleMenu()">Design</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="contact.html">Contact</a><a href="members.html">Members Area</a>
   </div>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <h1>Creative Design That Captivates</h1>
-      <p class="tagline">From Hand-Drawn Art to High-Class Branding</p>
-      <p>Everything done in-house from scratch. Whether you need a playful hand-drawn mascot or a sleek corporate logo, we craft custom designs for businesses of all types—at prices that work for everyone.</p>
-    </div>
-  </section>
-
-  <!-- DESIGN CAPABILITIES -->
-  <section class="design-capabilities">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>What We Design</h2>
-      <p style="text-align: center; color: #666; margin: -10px 0 30px; font-size: 16px; font-style: italic;">
-        <i class="fas fa-hand-pointer" style="color: #FF0000; margin-right: 5px;"></i>Click any item for details
-      </p>
-      
-      <div class="capabilities-grid">
-        <div class="capability-item" onclick="showCapabilityInfo('Logos', 'Custom logo design that captures your brand identity. From minimalist wordmarks to detailed emblematic designs, we create memorable logos that stand out.')">Logos</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Branding Guides', 'Comprehensive brand guidelines including logo usage, color palettes, typography, and visual standards to ensure consistent brand presentation across all materials.')">Branding Guides</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Social Media Ads', 'Eye-catching ad designs optimized for Facebook, Instagram, and other platforms. Designed to stop the scroll and drive engagement.')">Social Media Ads</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Social Media Posts', 'Engaging graphics for your social media channels. Consistent, on-brand content that keeps your audience engaged.')">Social Media Posts</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Social Media Banners', 'Professional header and cover images for Facebook, Twitter, LinkedIn, and YouTube that showcase your brand professionally.')">Social Media Banners</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Mascots', 'Custom character design and mascot creation. From playful cartoons to professional brand ambassadors.')">Mascots</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Hand Drawn Images', 'Unique hand-drawn illustrations and artwork. Perfect for adding a personal, artistic touch to your brand.')">Hand Drawn Images</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Window Signage', 'Custom window graphics and decals for storefronts. Attract attention and promote your business 24/7.')">Window Signage</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Door Signage', 'Professional door graphics including hours of operation, branding, and directional signage.')">Door Signage</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Banners', 'Large-format banner designs for events, promotions, and advertising. Indoor and outdoor options available.')">Banners</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Vehicle Wraps', 'Full and partial vehicle wrap designs that transform your vehicle into a mobile billboard.')">Vehicle Wraps</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Websites', 'Modern, responsive website design that looks great on all devices and converts visitors into customers.')">Websites</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Business Cards', 'Professional business card designs that make lasting first impressions. From traditional to creative styles.')">Business Cards</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Brochures', 'Compelling brochure designs for bi-fold, tri-fold, and multi-page layouts that showcase your products and services.')">Brochures</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Signs', 'Custom signage design for indoor and outdoor use. From yard signs to storefront displays.')">Signs</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Channel Letter Signs', 'Three-dimensional illuminated channel letter designs for building exteriors and storefronts.')">Channel Letter Signs</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Door Hangers', 'Eye-catching door hanger designs perfect for local marketing and direct mail campaigns.')">Door Hangers</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Shirts', 'Custom t-shirt graphics including screen printing designs, heat transfer artwork, and DTG printing layouts.')">Shirts</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Hoodies', 'Hoodie and sweatshirt designs for teams, brands, and events. Front, back, and sleeve artwork options.')">Hoodies</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Hats', 'Custom hat and cap designs including embroidery artwork and printed graphics.')">Hats</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Sports Uniforms', 'Complete sports uniform design including jerseys, shorts, and warm-ups with team branding and player numbers.')">Sports Uniforms</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Canopies', 'Custom canopy and tent graphics for events, trade shows, and outdoor marketing.')">Canopies</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Table Cloths', 'Branded tablecloth designs for trade shows, events, and professional presentations.')">Table Cloths</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Packaging', 'Product packaging design including boxes, bags, labels, and retail displays.')">Packaging</div>
-        <div class="capability-item" onclick="showCapabilityInfo('Website Assets', 'Graphics and visual elements for websites including icons, buttons, headers, and promotional banners.')">Website Assets</div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">Graphic Design Services</div>
+        <h1>Designs That Make You Stand Out</h1>
+        <p class="hero-description">100% original designs crafted from scratch. No templates, no shortcuts. Just creative work that represents your brand perfectly.</p>
+        <div class="hero-points">
+          <div class="hero-point"><i class="fas fa-check"></i> Original artwork, never templates</div>
+          <div class="hero-point"><i class="fas fa-check"></i> Unlimited revisions until you love it</div>
+          <div class="hero-point"><i class="fas fa-check"></i> Full source files included</div>
+        </div>
+        <div class="hero-buttons">
+          <a href="contact.html?service=design" class="btn btn-primary"><i class="fas fa-palette"></i> Start Your Project</a>
+          <a href="#logos" class="btn btn-secondary">View Portfolio</a>
+        </div>
       </div>
-      
-      <p style="text-align: center; margin-top: 30px; font-size: 18px; color: #999; font-style: italic;">...and way more</p>
+      <div class="hero-visual">
+        <div class="hero-icon-display">
+          <i class="fas fa-palette hero-icon-main"></i>
+          <i class="fas fa-pen-nib hero-icon-float"></i>
+          <i class="fas fa-crown hero-icon-float"></i>
+          <i class="fas fa-vector-square hero-icon-float"></i>
+          <i class="fas fa-bezier-curve hero-icon-float"></i>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CAPABILITY MODAL -->
-  <div class="capability-modal" id="capabilityModal" onclick="closeCapabilityModal(event)">
-    <div class="capability-modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeCapabilityModal()">&times;</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDescription"></p>
+  <!-- SERVICES -->
+  <section class="services-section">
+    <div class="section-header">
+      <span class="section-label">What We Design</span>
+      <h2>Creative Services for Every Need</h2>
+      <p>From your logo to your entire brand identity, we create visuals that work.</p>
     </div>
-  </div>
+    <div class="services-grid">
+      <div class="service-card"><div class="icon"><i class="fas fa-crown"></i></div><h3>Logo Design</h3><p>Memorable logos that capture your brand's essence.</p></div>
+      <div class="service-card"><div class="icon"><i class="fas fa-book-open"></i></div><h3>Brand Identity</h3><p>Complete branding with colors, fonts, and guidelines.</p></div>
+      <div class="service-card"><div class="icon"><i class="fas fa-share-alt"></i></div><h3>Social Media</h3><p>Eye-catching graphics for posts, stories, and ads.</p></div>
+      <div class="service-card"><div class="icon"><i class="fas fa-store"></i></div><h3>In-Store Marketing</h3><p>Window graphics, posters, and displays.</p></div>
+      <div class="service-card"><div class="icon"><i class="fas fa-sign"></i></div><h3>Signage</h3><p>Indoor/outdoor signs, banners, A-frames.</p></div>
+      <div class="service-card"><div class="icon"><i class="fas fa-car"></i></div><h3>Vehicle Wraps</h3><p>Turn your vehicle into a mobile billboard.</p></div>
+      <div class="service-card"><div class="icon"><i class="fas fa-ad"></i></div><h3>Ad Creatives</h3><p>Digital ads for all platforms.</p></div>
+      <div class="service-card"><div class="icon"><i class="fas fa-ellipsis-h"></i></div><h3>Everything Else</h3><p>Menus, flyers, presentations, and more.</p></div>
+    </div>
+  </section>
 
   <!-- LOGO SHOWCASE -->
-  <section class="logo-showcase">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>Logo Design Portfolio</h2>
-      <p>From startup brands to established businesses, we create memorable logos that stand the test of time.</p>
-      
-      <div class="logo-grid">
-        <div class="logo-box">
-          <img src="logo1.png" alt="Logo Design 1">
-        </div>
-        <div class="logo-box">
-          <img src="logo2.png" alt="Logo Design 2">
-        </div>
-        <div class="logo-box">
-          <img src="logo3.png" alt="Logo Design 3">
-        </div>
-        <div class="logo-box">
-          <img src="logo4.png" alt="Logo Design 4">
-        </div>
-        <div class="logo-box">
-          <img src="logo5.png" alt="Logo Design 5">
-        </div>
-        <div class="logo-box">
-          <img src="logo6.png" alt="Logo Design 6">
-        </div>
-        <div class="logo-box">
-          <img src="logo7.png" alt="Logo Design 7">
-        </div>
-        <div class="logo-box">
-          <img src="logo8.png" alt="Logo Design 8">
-        </div>
-        <div class="logo-box">
-          <img src="logo9.png" alt="Logo Design 9">
-        </div>
-        <div class="logo-box">
-          <img src="logo10.png" alt="Logo Design 10">
-        </div>
-        <div class="logo-box">
-          <img src="logo11.png" alt="Logo Design 11">
-        </div>
-        <div class="logo-box">
-          <img src="logo12.png" alt="Logo Design 12">
-        </div>
-      </div>
+  <section class="logo-section" id="logos">
+    <div class="section-header">
+      <span class="section-label">Our Work</span>
+      <h2>Logo Designs We're Proud Of</h2>
+      <p>A selection of logos crafted for businesses across various industries.</p>
+    </div>
+    <div class="logo-container">
+      <div class="logo-grid" id="logoGrid"></div>
     </div>
   </section>
 
-  <!-- MOCKUP TO REALITY -->
-  <section class="mockup-section">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>From Concept to Reality</h2>
-      <p>We don't just design—we bring your vision to life. See how our storefront designs transform from digital mockup to stunning real-world installation.</p>
-      
-      <div class="mockup-container">
-        <div class="mockup-image blueprint">
-          <img src="mockup.png" alt="Digital Storefront Mockup">
-        </div>
-        
-        <div class="mockup-arrow">
-          <i class="fas fa-arrow-right"></i>
-        </div>
-        
-        <div class="mockup-image storefront">
-          <img src="storefront.png" alt="Final Storefront Installation">
-        </div>
-      </div>
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="section-header">
+      <span class="section-label">Our Process</span>
+      <h2>How We Work</h2>
+      <p>Simple, collaborative, and focused on results.</p>
     </div>
-  </section>
-
-  <!-- SOCIAL MEDIA ADS -->
-  <section class="social-ads-section">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <div class="social-ads-content">
-        <div class="social-ads-text">
-          <h2>Social Media Ads That Convert</h2>
-          <p>Eye-catching ad designs that stop the scroll and drive engagement. We create thumb-stopping visuals optimized for Facebook, Instagram, and all major platforms.</p>
-          <p>From product launches to seasonal promotions, our ads combine compelling visuals with strategic messaging to maximize your ROI.</p>
-          <p><strong>Professional designs. Proven results. Affordable rates.</strong></p>
-        </div>
-        
-        <div class="social-ads-images">
-          <div class="social-ad-card">
-            <img src="social-ad1.png" alt="Social Media Ad Example 1">
-          </div>
-          <div class="social-ad-card">
-            <img src="social-ad2.png" alt="Social Media Ad Example 2">
-          </div>
-          <div class="social-ad-card">
-            <img src="social-ad3.png" alt="Social Media Ad Example 3">
-          </div>
-        </div>
-      </div>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-number">1</div><h3>Discovery</h3><p>We learn about your business and vision.</p></div>
+      <div class="process-step"><div class="step-number">2</div><h3>Concepts</h3><p>We create initial directions for review.</p></div>
+      <div class="process-step"><div class="step-number">3</div><h3>Refine</h3><p>We refine until it's perfect.</p></div>
+      <div class="process-step"><div class="step-number">4</div><h3>Deliver</h3><p>You receive all final files.</p></div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2>Ready to Bring Your Vision to Life?</h2>
-      <p>Every project is unique, and so is our pricing. While we offer competitive standard rates, we'd love to hear the details of your project to provide an accurate quote. Let's create something amazing together.</p>
-      <a href="contact.html" class="btn">Get Your Custom Quote</a>
-    </div>
+  <section class="cta-section">
+    <div class="cta-icon"><i class="fas fa-magic"></i></div>
+    <h2>Ready to Create Something Amazing?</h2>
+    <p>Tell us about your project and let's bring your vision to life.</p>
+    <a href="contact.html?service=design" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get Started</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="logo.png" alt="TechSpec Logo">
-        </div>
-        <div class="footer-links">
-          <a href="tosmarketing.html">Marketing Terms</a>
-          <a href="tosprint.html">Print Terms</a>
-          <a href="tosdesign.html">Design Terms</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://facebook.com/techspecb2b" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
-      </div>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="logo.png" alt="TechSpec"><p>Professional print, design, and marketing solutions for businesses.</p></div>
+      <div class="footer-col"><h4>Services</h4><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web Design</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="contact.html">Contact</a><a href="members.html">Members Area</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></div>
     </div>
+    <div class="footer-bottom"><span>&copy; 2025 TechSpec. All rights reserved.</span><div class="social-links"><a href="https://facebook.com/techspecb2b"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-      const sideMenu = document.getElementById('sideMenu');
-      const menuOverlay = document.getElementById('menuOverlay');
-      sideMenu.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
+    function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('menuOverlay').classList.toggle('active')}
+    
+    // Load logos dynamically
+    const logoGrid = document.getElementById('logoGrid');
+    
+    async function checkImg(url) {
+      return new Promise(r => {
+        const img = new Image();
+        img.onload = () => r(true);
+        img.onerror = () => r(false);
+        img.src = url;
+      });
     }
 
-    // Navigation scroll effect
-    const nav = document.querySelector('header.nav');
-    window.addEventListener('scroll', () => { 
-      nav.classList.toggle('scrolled', window.scrollY > 10); 
-    });
-
-    // Capability modal functions
-    function showCapabilityInfo(title, description) {
-      const modal = document.getElementById('capabilityModal');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalDescription = document.getElementById('modalDescription');
-      
-      modalTitle.textContent = title;
-      
-      // Create enhanced description with specs
-      modalDescription.innerHTML = `
-        <p>${description}</p>
-        <div class="capability-specs">
-          <strong>What's Included:</strong>
-          <ul>
-            <li>Unlimited revisions until you're satisfied</li>
-            <li>High-resolution files in multiple formats</li>
-            <li>Fast turnaround time</li>
-            <li>Professional design tailored to your brand</li>
-          </ul>
-        </div>
-      `;
-      
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCapabilityModal(event) {
-      if (!event || event.target.classList.contains('capability-modal') || event.target.classList.contains('modal-close')) {
-        document.getElementById('capabilityModal').classList.remove('show');
-        document.body.style.overflow = 'auto';
+    async function loadLogos() {
+      for (let i = 1; i <= 20; i++) {
+        const exists = await checkImg(`logo${i}.png`);
+        if (exists) {
+          const item = document.createElement('div');
+          item.className = 'logo-item';
+          item.innerHTML = `<img src="logo${i}.png" alt="Logo Design ${i}" loading="lazy">`;
+          logoGrid.appendChild(item);
+        } else if (i > 12) {
+          break; // Stop after passing known logos
+        }
       }
     }
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeCapabilityModal({});
-      }
-    });
+    loadLogos();
   </script>
 </body>
 </html>
