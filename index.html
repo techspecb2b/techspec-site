@@ -4,61 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechSpec B2B | Professional Print, Design & Marketing Services</title>
-  <meta name="description" content="TechSpec offers professional print services, graphic design, branding, digital marketing, and web design. Serving businesses with high-quality, affordable marketing solutions.">
+  <meta name="description" content="TechSpec offers professional print services, graphic design, branding, digital marketing, and web design.">
   <link rel="canonical" href="https://techspec.biz/">
   <link rel="icon" type="image/png" href="favicon.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://techspec.biz/">
-  <meta property="og:title" content="TechSpec B2B | Print, Marketing & Design Made Easy">
-  <meta property="og:description" content="Professional print, design, and marketing services for businesses.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--red:#FF0000;--red-dark:#CC0000;--black:#111111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5}
-    body{font-family:'Inter',sans-serif;background:var(--black);color:var(--black);overflow-x:hidden}
+    :root{--red:#FF0000;--red-dark:#CC0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5}
+    body{font-family:'Inter',sans-serif;background:var(--light-gray);color:var(--black);overflow-x:hidden}
     h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
 
-    /* === STANDARD NAV (same across all pages) === */
+    /* NAV */
     .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
     .nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}
-    .nav .logo img{height:55px;width:auto}
+    .nav .logo img{height:55px}
     .nav nav{display:flex;align-items:center;gap:8px}
     .nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}
-    .nav nav a:hover{background:rgba(255,255,255,0.2)}
-    .nav nav a.active{background:rgba(255,255,255,0.2)}
+    .nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}
+    .nav nav a.order-btn{background:white;color:var(--red);font-weight:800;padding:10px 22px}
+    .nav nav a.order-btn:hover{background:#ffe6e6;transform:scale(1.05)}
     .nav nav a.members-btn{background:var(--black);border:2px solid white}
     .nav nav a.members-btn:hover{background:white;color:var(--black)}
-    .menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer;padding:5px}
+    .menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}
     .menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}
     .menu-overlay.active{display:block}
     .side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}
     .side-menu.active{right:0}
     .side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}
-    .side-menu a:hover{color:var(--red)}
+    .side-menu a.order-link{color:var(--red);background:white;text-align:center;border-radius:8px;margin-top:15px;font-weight:800}
     @media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}}
 
-    /* === HERO === */
-    .hero{min-height:100vh;background:linear-gradient(135deg,var(--black) 0%,#1a0000 50%,var(--black) 100%);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .hero-bg{position:absolute;inset:0;background:linear-gradient(-45deg,#ff0000,#cc0000,#111,#ff0000);background-size:400% 400%;animation:gradientShift 15s ease infinite;opacity:0.4}
-    @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px}
-    
-    /* Floating Icons */
-    .floating-icons{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-    .float-icon{position:absolute;color:rgba(255,255,255,0.08);animation:floatIcon 20s ease-in-out infinite}
-    .float-icon:nth-child(1){font-size:80px;top:10%;left:5%;animation-delay:0s}
-    .float-icon:nth-child(2){font-size:60px;top:60%;left:8%;animation-delay:-5s}
-    .float-icon:nth-child(3){font-size:100px;top:20%;right:10%;animation-delay:-10s}
-    .float-icon:nth-child(4){font-size:50px;top:70%;right:5%;animation-delay:-15s}
-    .float-icon:nth-child(5){font-size:70px;top:40%;left:15%;animation-delay:-7s}
-    .float-icon:nth-child(6){font-size:90px;bottom:15%;right:15%;animation-delay:-12s}
-    @keyframes floatIcon{0%,100%{transform:translateY(0) rotate(0deg);opacity:0.08}50%{transform:translateY(-30px) rotate(10deg);opacity:0.15}}
+    /* HERO - Optimized for performance */
+    .hero{min-height:100vh;background:var(--black);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(255,0,0,0.3),transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(255,0,0,0.2),transparent 50%),var(--black)}
 
-    .glow-orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.3;animation:pulse 6s ease-in-out infinite}
-    .orb-1{width:500px;height:500px;background:var(--red);top:0;left:-15%;animation-delay:0s}
-    .orb-2{width:400px;height:400px;background:#ff4444;bottom:0;right:-10%;animation-delay:-3s}
-    @keyframes pulse{0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.1);opacity:0.5}}
+    /* Floating Icons - Fish tank animation */
+    .floating-icons{position:absolute;inset:0;pointer-events:none}
+    .float-icon{position:absolute;color:rgba(255,255,255,0.25);font-size:50px;will-change:transform}
+    .float-icon:nth-child(1){top:15%;left:8%;animation:fish1 12s ease-in-out infinite}
+    .float-icon:nth-child(2){top:25%;right:12%;animation:fish2 15s ease-in-out infinite;font-size:40px}
+    .float-icon:nth-child(3){top:60%;left:5%;animation:fish3 18s ease-in-out infinite;font-size:45px}
+    .float-icon:nth-child(4){top:70%;right:8%;animation:fish1 14s ease-in-out infinite reverse;font-size:55px}
+    .float-icon:nth-child(5){top:40%;left:15%;animation:fish2 16s ease-in-out infinite;font-size:35px}
+    .float-icon:nth-child(6){bottom:20%;right:18%;animation:fish3 13s ease-in-out infinite reverse;font-size:42px}
+    @keyframes fish1{0%,100%{transform:translate(0,0)}25%{transform:translate(30px,-20px)}50%{transform:translate(0,-40px)}75%{transform:translate(-30px,-20px)}}
+    @keyframes fish2{0%,100%{transform:translate(0,0)}33%{transform:translate(-40px,25px)}66%{transform:translate(20px,50px)}}
+    @keyframes fish3{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,30px)}}
 
     .hero-content{position:relative;z-index:10;text-align:center;color:white;max-width:900px;padding:0 20px}
     .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);padding:12px 25px;border-radius:50px;font-size:14px;font-weight:600;margin-bottom:30px}
@@ -75,27 +67,23 @@
     .btn-primary:hover{transform:translateY(-3px);box-shadow:0 25px 50px rgba(255,255,255,0.3)}
     .btn-secondary{background:transparent;color:white;border:2px solid rgba(255,255,255,0.5)}
     .btn-secondary:hover{background:white;color:var(--black);border-color:white}
-    .scroll-indicator{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:white;text-align:center;animation:bounce 2s infinite;z-index:10}
-    .scroll-indicator span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:3px;margin-bottom:8px;opacity:0.6}
-    @keyframes bounce{0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0)}40%{transform:translateX(-50%) translateY(-10px)}60%{transform:translateX(-50%) translateY(-5px)}}
 
-    /* === TRUST BAR === */
+    /* TRUST BAR */
     .trust-bar{background:white;padding:25px 20px;border-bottom:1px solid #eee}
-    .trust-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;align-items:center;gap:50px;flex-wrap:wrap}
+    .trust-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:center;align-items:center;gap:50px;flex-wrap:wrap}
     .trust-item{display:flex;align-items:center;gap:12px;color:#333}
     .trust-item i{font-size:24px;color:var(--red)}
     .trust-item .text{font-weight:700;font-size:14px}
     .trust-item .sub{font-size:11px;color:#888}
-    @media(max-width:768px){.trust-inner{gap:25px}.trust-item{flex:0 0 45%}}
+    @media(max-width:768px){.trust-inner{gap:20px}.trust-item{flex:0 0 45%}}
 
-    /* === MARQUEE === */
+    /* MARQUEE */
     .marquee-section{background:var(--red);padding:15px 0;overflow:hidden}
     .marquee-track{display:flex;animation:marquee 30s linear infinite;width:max-content}
     .marquee-item{display:flex;align-items:center;gap:12px;padding:0 40px;color:white;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:2px;white-space:nowrap}
-    .marquee-item .star{font-size:10px}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    /* === SERVICES === */
+    /* SERVICES */
     .services-section{padding:100px 20px;background:var(--light-gray)}
     .section-header{text-align:center;margin-bottom:60px}
     .section-label{display:inline-block;background:var(--red);color:white;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
@@ -115,32 +103,43 @@
     @media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:600px){.services-grid{grid-template-columns:1fr}}
 
-    /* === PORTFOLIO === */
+    /* PORTFOLIO SLIDER */
     .portfolio-section{padding:100px 20px;background:var(--dark-gray)}
     .portfolio-section .section-header h2,.portfolio-section .section-header p{color:white}
     .portfolio-section .section-header p{color:rgba(255,255,255,0.7)}
-    .portfolio-container{max-width:1400px;margin:0 auto;position:relative}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-    .portfolio-item{position:relative;background:linear-gradient(145deg,#1a1a1a,#2a2a2a);border-radius:16px;overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:30px;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)}
-    .portfolio-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,0,0,0.1),transparent,rgba(255,0,0,0.05));opacity:0;transition:opacity 0.3s}
-    .portfolio-item:hover::before{opacity:1}
-    .portfolio-item:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 20px 40px rgba(255,0,0,0.2)}
-    .portfolio-item img{max-width:85%;max-height:85%;object-fit:contain;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));transition:all 0.4s}
-    .portfolio-item:hover img{transform:scale(1.1);filter:drop-shadow(0 15px 40px rgba(255,0,0,0.3))}
-    .portfolio-nav{display:flex;justify-content:center;gap:15px;margin-top:40px}
-    .portfolio-nav button{padding:12px 30px;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.2);color:white;font-weight:600;border-radius:50px;cursor:pointer;transition:all 0.3s}
-    .portfolio-nav button:hover{background:var(--red);border-color:var(--red)}
-    .load-more-btn{display:none}
-    .load-more-btn.visible{display:inline-block}
+    .slider-container{max-width:1400px;margin:0 auto;position:relative;padding:0 60px}
+    .slider{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+    .slider::-webkit-scrollbar{display:none}
+    .slide{flex:0 0 300px;scroll-snap-align:start;background:linear-gradient(145deg,#222,#2a2a2a);border-radius:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:30px;cursor:pointer;transition:all 0.4s}
+    .slide:hover{transform:scale(1.05);box-shadow:0 20px 40px rgba(255,0,0,0.3)}
+    .slide img{max-width:85%;max-height:85%;object-fit:contain;filter:drop-shadow(0 10px 20px rgba(0,0,0,0.5))}
+    .slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:white;color:var(--red);border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;transition:all 0.3s;box-shadow:0 5px 20px rgba(0,0,0,0.3)}
+    .slider-btn:hover{background:var(--red);color:white;transform:translateY(-50%) scale(1.1)}
+    .slider-btn.prev{left:0}
+    .slider-btn.next{right:0}
+    @media(max-width:768px){.slider-container{padding:0 20px}.slide{flex:0 0 260px}}
 
-    /* === STATS === */
+    /* LIGHTBOX */
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10000;align-items:center;justify-content:center}
+    .lightbox.show{display:flex}
+    .lightbox-content{position:relative;max-width:90vw;max-height:90vh}
+    .lightbox-content img{max-width:100%;max-height:85vh;object-fit:contain;border-radius:8px}
+    .lightbox-close{position:fixed;top:20px;right:20px;width:50px;height:50px;background:white;color:var(--red);border:none;border-radius:50%;font-size:24px;cursor:pointer;z-index:10001}
+    .lightbox-close:hover{background:var(--red);color:white}
+    .lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:50px;height:50px;background:white;color:var(--red);border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:10001}
+    .lightbox-nav:hover{background:var(--red);color:white}
+    .lightbox-nav.prev{left:20px}
+    .lightbox-nav.next{right:20px}
+    .lightbox-counter{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:white;color:#333;padding:10px 25px;border-radius:50px;font-weight:600}
+
+    /* STATS */
     .stats-section{padding:60px 20px;background:var(--red)}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:1000px;margin:0 auto;text-align:center;color:white}
-    .stat-item .number{font-family:'Poppins',sans-serif;font-size:clamp(36px,5vw,52px);font-weight:900;line-height:1}
-    .stat-item .label{font-size:13px;text-transform:uppercase;letter-spacing:2px;opacity:0.9;margin-top:5px}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;max-width:1100px;margin:0 auto;text-align:center;color:white}
+    .stat-item .number{font-family:'Poppins',sans-serif;font-size:clamp(32px,5vw,48px);font-weight:900;line-height:1}
+    .stat-item .label{font-size:12px;text-transform:uppercase;letter-spacing:2px;opacity:0.9;margin-top:5px}
     @media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);gap:25px}}
 
-    /* === CTA === */
+    /* CTA */
     .cta-section{padding:100px 20px;background:var(--light-gray);text-align:center}
     .cta-container{max-width:700px;margin:0 auto}
     .cta-icon{font-size:60px;color:var(--red);margin-bottom:25px}
@@ -149,7 +148,7 @@
     .btn-cta{padding:18px 45px;background:var(--red);color:white;font-size:16px;font-weight:800;border-radius:50px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;box-shadow:0 10px 30px rgba(255,0,0,0.3)}
     .btn-cta:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(255,0,0,0.4)}
 
-    /* === FOOTER === */
+    /* FOOTER */
     footer{background:var(--dark-gray);color:#888;padding:60px 40px 25px}
     .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px}
     .footer-brand img{height:50px;margin-bottom:15px}
@@ -158,32 +157,29 @@
     .footer-col a{display:block;color:#888;text-decoration:none;padding:6px 0;font-size:14px;transition:color 0.3s}
     .footer-col a:hover{color:var(--red)}
     .footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:13px}
-    .social-links a{color:#888;font-size:20px;margin-left:15px;transition:all 0.3s}
+    .social-links a{color:#888;font-size:20px;margin-left:15px}
     .social-links a:hover{color:var(--red)}
-    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:30px}}
+    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
     @media(max-width:600px){.footer-inner{grid-template-columns:1fr;text-align:center}.footer-bottom{flex-direction:column;gap:15px;text-align:center}}
   </style>
 </head>
 <body>
-
-  <!-- STANDARD NAV -->
+  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo"><img src="logo.png" alt="TechSpec"></a>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu"><i class="fas fa-bars"></i></button>
+      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="index.html" class="active">Home</a>
         <a href="marketing.html">Marketing</a>
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
         <a href="web.html">Web</a>
-        <a href="contact.html">Contact</a>
+        <a href="order.html" class="order-btn"><i class="fas fa-shopping-cart"></i> Order</a>
         <a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a>
       </nav>
     </div>
   </header>
-
-  <!-- MOBILE MENU -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu">
     <a href="index.html">Home</a>
@@ -191,18 +187,13 @@
     <a href="print.html">Print</a>
     <a href="design.html">Design</a>
     <a href="web.html">Web</a>
-    <a href="contact.html">Contact</a>
+    <a href="order.html" class="order-link"><i class="fas fa-shopping-cart"></i> Order Now</a>
     <a href="members.html">Members Area</a>
   </div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    
-    <!-- Floating Icons -->
     <div class="floating-icons">
       <i class="fas fa-print float-icon"></i>
       <i class="fas fa-palette float-icon"></i>
@@ -211,70 +202,32 @@
       <i class="fas fa-pen-nib float-icon"></i>
       <i class="fas fa-chart-line float-icon"></i>
     </div>
-
     <div class="hero-content">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Est. 2019 • Eastern North Carolina
-      </div>
-      <h1>
-        <span class="line-1">Print, Marketing & Design</span>
-        <span class="highlight">Made Easy</span>
-      </h1>
+      <div class="hero-badge"><span class="dot"></span>Est. 2019 • Eastern North Carolina</div>
+      <h1><span class="line-1">Print, Marketing & Design</span><span class="highlight">Made Easy</span></h1>
       <p class="hero-tagline">Everything your business needs to stand out. Professional quality. Fast turnaround. Fair prices.</p>
       <div class="hero-cta">
-        <a href="contact.html" class="btn-hero btn-primary"><i class="fas fa-rocket"></i> Get Started</a>
+        <a href="order.html" class="btn-hero btn-primary"><i class="fas fa-rocket"></i> Get Started</a>
         <a href="#portfolio" class="btn-hero btn-secondary">See Our Work</a>
       </div>
-    </div>
-
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
   <!-- TRUST BAR -->
   <section class="trust-bar">
     <div class="trust-inner">
-      <div class="trust-item">
-        <i class="fas fa-award"></i>
-        <div><div class="text">7+ Years Experience</div><div class="sub">Trusted by 500+ businesses</div></div>
-      </div>
-      <div class="trust-item">
-        <i class="fas fa-shipping-fast"></i>
-        <div><div class="text">Fast Turnaround</div><div class="sub">Most orders in 3-5 days</div></div>
-      </div>
-      <div class="trust-item">
-        <i class="fas fa-hand-holding-heart"></i>
-        <div><div class="text">Personal Service</div><div class="sub">Work directly with the owner</div></div>
-      </div>
-      <div class="trust-item">
-        <i class="fas fa-shield-alt"></i>
-        <div><div class="text">No Contracts</div><div class="sub">Cancel anytime</div></div>
-      </div>
+      <div class="trust-item"><i class="fas fa-award"></i><div><div class="text">7+ Years Experience</div><div class="sub">Trusted since 2019</div></div></div>
+      <div class="trust-item"><i class="fas fa-building"></i><div><div class="text">1,000+ Businesses Served</div><div class="sub">Across the USA</div></div></div>
+      <div class="trust-item"><i class="fas fa-shipping-fast"></i><div><div class="text">Fast Turnaround</div><div class="sub">Most orders in 3-5 days</div></div></div>
+      <div class="trust-item"><i class="fas fa-shield-alt"></i><div><div class="text">No Contracts</div><div class="sub">Cancel anytime</div></div></div>
     </div>
   </section>
 
   <!-- MARQUEE -->
   <section class="marquee-section">
     <div class="marquee-track">
-      <div class="marquee-item"><span class="star">★</span> BUSINESS CARDS</div>
-      <div class="marquee-item"><span class="star">★</span> LOGO DESIGN</div>
-      <div class="marquee-item"><span class="star">★</span> SOCIAL MEDIA</div>
-      <div class="marquee-item"><span class="star">★</span> GOOGLE ADS</div>
-      <div class="marquee-item"><span class="star">★</span> BANNERS</div>
-      <div class="marquee-item"><span class="star">★</span> WEB DESIGN</div>
-      <div class="marquee-item"><span class="star">★</span> BRANDING</div>
-      <div class="marquee-item"><span class="star">★</span> VEHICLE WRAPS</div>
-      <div class="marquee-item"><span class="star">★</span> BUSINESS CARDS</div>
-      <div class="marquee-item"><span class="star">★</span> LOGO DESIGN</div>
-      <div class="marquee-item"><span class="star">★</span> SOCIAL MEDIA</div>
-      <div class="marquee-item"><span class="star">★</span> GOOGLE ADS</div>
-      <div class="marquee-item"><span class="star">★</span> BANNERS</div>
-      <div class="marquee-item"><span class="star">★</span> WEB DESIGN</div>
-      <div class="marquee-item"><span class="star">★</span> BRANDING</div>
-      <div class="marquee-item"><span class="star">★</span> VEHICLE WRAPS</div>
+      <div class="marquee-item">★ BUSINESS CARDS</div><div class="marquee-item">★ LOGO DESIGN</div><div class="marquee-item">★ SOCIAL MEDIA</div><div class="marquee-item">★ GOOGLE ADS</div><div class="marquee-item">★ BANNERS</div><div class="marquee-item">★ WEB DESIGN</div><div class="marquee-item">★ BRANDING</div><div class="marquee-item">★ VEHICLE WRAPS</div>
+      <div class="marquee-item">★ BUSINESS CARDS</div><div class="marquee-item">★ LOGO DESIGN</div><div class="marquee-item">★ SOCIAL MEDIA</div><div class="marquee-item">★ GOOGLE ADS</div><div class="marquee-item">★ BANNERS</div><div class="marquee-item">★ WEB DESIGN</div><div class="marquee-item">★ BRANDING</div><div class="marquee-item">★ VEHICLE WRAPS</div>
     </div>
   </section>
 
@@ -288,35 +241,19 @@
     <div class="services-grid">
       <a href="print.html" class="service-card">
         <div class="service-card-icon" style="background:linear-gradient(135deg,#ff6b6b,#ff0000)"><i class="fas fa-print"></i></div>
-        <div class="service-card-content">
-          <h3>Print Services</h3>
-          <p>Business cards, banners, yard signs, apparel, and 20,000+ products.</p>
-          <span class="link">Explore Print <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <div class="service-card-content"><h3>Print Services</h3><p>Business cards, banners, yard signs, apparel, and 20,000+ products.</p><span class="link">Explore Print <i class="fas fa-arrow-right"></i></span></div>
       </a>
       <a href="marketing.html" class="service-card">
         <div class="service-card-icon" style="background:linear-gradient(135deg,#ff9500,#ff5500)"><i class="fas fa-bullhorn"></i></div>
-        <div class="service-card-content">
-          <h3>Digital Marketing</h3>
-          <p>Facebook ads, Google ads, social media management that gets results.</p>
-          <span class="link">Learn More <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <div class="service-card-content"><h3>Digital Marketing</h3><p>Facebook ads, Google ads, social media management that gets results.</p><span class="link">Learn More <i class="fas fa-arrow-right"></i></span></div>
       </a>
       <a href="design.html" class="service-card">
         <div class="service-card-icon" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)"><i class="fas fa-palette"></i></div>
-        <div class="service-card-content">
-          <h3>Graphic Design</h3>
-          <p>Logos, branding, social media graphics. 100% original designs.</p>
-          <span class="link">See Design <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <div class="service-card-content"><h3>Graphic Design</h3><p>Logos, branding, social media graphics. 100% original designs.</p><span class="link">See Design <i class="fas fa-arrow-right"></i></span></div>
       </a>
       <a href="web.html" class="service-card">
         <div class="service-card-icon" style="background:linear-gradient(135deg,#0066cc,#00d4aa)"><i class="fas fa-globe"></i></div>
-        <div class="service-card-content">
-          <h3>Web Design</h3>
-          <p>Custom websites starting at $399. Full setup, SEO included.</p>
-          <span class="link">View Websites <i class="fas fa-arrow-right"></i></span>
-        </div>
+        <div class="service-card-content"><h3>Web Design</h3><p>Custom websites starting at $399. Full setup, SEO included.</p><span class="link">View Websites <i class="fas fa-arrow-right"></i></span></div>
       </a>
     </div>
   </section>
@@ -328,23 +265,29 @@
       <h2>See What We've Created</h2>
       <p>Real results for real businesses. Every project crafted with care.</p>
     </div>
-    <div class="portfolio-container">
-      <div class="portfolio-grid" id="portfolioGrid">
-        <!-- Images loaded dynamically via JS -->
-      </div>
-      <div class="portfolio-nav">
-        <button class="load-more-btn" id="loadMoreBtn" onclick="loadMorePortfolio()">Load More <i class="fas fa-plus"></i></button>
-      </div>
+    <div class="slider-container">
+      <button class="slider-btn prev" onclick="slidePortfolio(-1)"><i class="fas fa-chevron-left"></i></button>
+      <div class="slider" id="portfolioSlider"></div>
+      <button class="slider-btn next" onclick="slidePortfolio(1)"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+    <button class="lightbox-nav prev" onclick="navLightbox(-1,event)"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-content"><img id="lightboxImg" src="" alt=""></div>
+    <button class="lightbox-nav next" onclick="navLightbox(1,event)"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
 
   <!-- STATS -->
   <section class="stats-section">
     <div class="stats-grid">
       <div class="stat-item"><div class="number">7+</div><div class="label">Years Experience</div></div>
-      <div class="stat-item"><div class="number">500+</div><div class="label">Projects Completed</div></div>
+      <div class="stat-item"><div class="number">5,000+</div><div class="label">Projects Completed</div></div>
+      <div class="stat-item"><div class="number">1,000+</div><div class="label">Businesses Served</div></div>
       <div class="stat-item"><div class="number">20K+</div><div class="label">Print Products</div></div>
-      <div class="stat-item"><div class="number">100%</div><div class="label">Original Designs</div></div>
     </div>
   </section>
 
@@ -354,124 +297,75 @@
       <div class="cta-icon"><i class="fas fa-comments"></i></div>
       <h2>Ready to Level Up Your Business?</h2>
       <p>Let's chat about your project. No pressure, no obligations. Just real talk about how we can help you grow.</p>
-      <a href="contact.html" class="btn-cta"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+      <a href="order.html" class="btn-cta"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="logo.png" alt="TechSpec">
-        <p>Professional print, design, and marketing solutions for businesses that mean business.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="marketing.html">Marketing</a>
-        <a href="print.html">Print</a>
-        <a href="design.html">Design</a>
-        <a href="web.html">Web Design</a>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <a href="contact.html">Contact</a>
-        <a href="members.html">Members Area</a>
-        <a href="tosmarketing.html">Marketing TOS</a>
-        <a href="tosprint.html">Print TOS</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a>
-        <a href="https://techspec.biz">techspec.biz</a>
-      </div>
+      <div class="footer-brand"><img src="logo.png" alt="TechSpec"><p>Professional print, design, and marketing solutions for businesses that mean business.</p></div>
+      <div class="footer-col"><h4>Services</h4><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web Design</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="order.html">Order / Quote</a><a href="members.html">Members Area</a><a href="tosmarketing.html">Marketing TOS</a><a href="tosprint.html">Print TOS</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a><a href="https://techspec.biz">techspec.biz</a></div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 TechSpec. All rights reserved.</span>
-      <div class="social-links">
-        <a href="https://facebook.com/techspecb2b" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
+    <div class="footer-bottom"><span>&copy; 2025 TechSpec. All rights reserved.</span><div class="social-links"><a href="https://facebook.com/techspecb2b"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
   </footer>
 
   <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-      document.getElementById('sideMenu').classList.toggle('active');
-      document.getElementById('menuOverlay').classList.toggle('active');
-    }
+    function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('menuOverlay').classList.toggle('active')}
+    
+    // Portfolio Slider & Lightbox
+    const slider=document.getElementById('portfolioSlider');
+    let images=[];
+    let currentImg=0;
 
-    // Dynamic Portfolio Loading
-    const portfolioGrid = document.getElementById('portfolioGrid');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    let loadedImages = 0;
-    const imagesPerLoad = 8;
-    const maxImages = 100;
-    let availableImages = [];
-
-    // Check which images exist
-    async function checkImageExists(url) {
-      return new Promise((resolve) => {
-        const img = new Image();
-        img.onload = () => resolve(true);
-        img.onerror = () => resolve(false);
-        img.src = url;
-      });
-    }
-
-    async function findAvailableImages() {
-      const found = [];
-      for (let i = 1; i <= maxImages; i++) {
-        const exists = await checkImageExists(`portfolio${i}.png`);
-        if (exists) {
-          found.push(`portfolio${i}.png`);
-        } else if (i > 17) {
-          // Stop checking after we've passed the known images and found a gap
-          break;
-        }
-      }
-      return found;
-    }
-
-    function createPortfolioItem(src) {
-      const item = document.createElement('div');
-      item.className = 'portfolio-item';
-      item.innerHTML = `<img src="${src}" alt="Portfolio Work" loading="lazy">`;
-      return item;
-    }
-
-    function loadMorePortfolio() {
-      const endIndex = Math.min(loadedImages + imagesPerLoad, availableImages.length);
-      for (let i = loadedImages; i < endIndex; i++) {
-        portfolioGrid.appendChild(createPortfolioItem(availableImages[i]));
-      }
-      loadedImages = endIndex;
-      
-      if (loadedImages >= availableImages.length) {
-        loadMoreBtn.classList.remove('visible');
+    async function checkImg(url){return new Promise(r=>{const img=new Image();img.onload=()=>r(true);img.onerror=()=>r(false);img.src=url})}
+    
+    async function loadPortfolio(){
+      for(let i=1;i<=100;i++){
+        const exists=await checkImg(`portfolio${i}.png`);
+        if(exists){images.push(`portfolio${i}.png`);
+          const slide=document.createElement('div');
+          slide.className='slide';
+          slide.innerHTML=`<img src="portfolio${i}.png" alt="Portfolio ${i}">`;
+          slide.onclick=()=>openLightbox(images.indexOf(`portfolio${i}.png`));
+          slider.appendChild(slide);
+        }else if(i>17)break;
       }
     }
+    loadPortfolio();
 
-    async function initPortfolio() {
-      availableImages = await findAvailableImages();
-      if (availableImages.length > 0) {
-        loadMorePortfolio();
-        if (availableImages.length > imagesPerLoad) {
-          loadMoreBtn.classList.add('visible');
-        }
+    function slidePortfolio(dir){slider.scrollBy({left:dir*320,behavior:'smooth'})}
+    
+    function openLightbox(idx){
+      currentImg=idx;
+      document.getElementById('lightboxImg').src=images[idx];
+      document.getElementById('lightboxCounter').textContent=`${idx+1} / ${images.length}`;
+      document.getElementById('lightbox').classList.add('show');
+      document.body.style.overflow='hidden';
+    }
+    
+    function closeLightbox(e){
+      if(!e||e.target.classList.contains('lightbox')){
+        document.getElementById('lightbox').classList.remove('show');
+        document.body.style.overflow='';
       }
     }
-
-    // Initialize
-    initPortfolio();
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
+    
+    function navLightbox(dir,e){
+      e.stopPropagation();
+      currentImg=(currentImg+dir+images.length)%images.length;
+      document.getElementById('lightboxImg').src=images[currentImg];
+      document.getElementById('lightboxCounter').textContent=`${currentImg+1} / ${images.length}`;
+    }
+    
+    document.addEventListener('keydown',e=>{
+      if(document.getElementById('lightbox').classList.contains('show')){
+        if(e.key==='Escape')closeLightbox();
+        if(e.key==='ArrowLeft')navLightbox(-1,e);
+        if(e.key==='ArrowRight')navLightbox(1,e);
+      }
     });
   </script>
 </body>
