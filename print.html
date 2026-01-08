@@ -4,1567 +4,826 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Primary Meta Tags -->
-  <title>Professional Print Services | TechSpec Print - Business Cards, Banners & More</title>
-  <meta name="title" content="Professional Print Services | TechSpec Print - Business Cards, Banners & More">
-  <meta name="description" content="Commercial-quality printing services including business cards, banners, yard signs, apparel, and 20,000+ products. Fast turnaround. TechSpec Print delivers professional results.">
-  <meta name="keywords" content="TechSpec print, print services, business cards, banners, yard signs, apparel printing, commercial printing, fast printing, TechSpec B2B">
-  <meta name="author" content="TechSpec">
-  <meta name="robots" content="index, follow">
+  <title>Print Services | TechSpec - Business Cards, Banners, Signs & More</title>
+  <meta name="description" content="Professional print services including business cards, banners, yard signs, apparel and 20,000+ products. Fast turnaround, commercial quality.">
+  <meta name="keywords" content="TechSpec print, business cards, banners, yard signs, custom printing, promotional products">
   <link rel="canonical" href="https://techspec.biz/print.html">
-  
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
   
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://techspec.biz/print.html">
-  <meta property="og:title" content="Professional Print Services | TechSpec Print">
-  <meta property="og:description" content="Commercial-quality printing services including business cards, banners, yard signs, apparel, and 20,000+ products.">
-  <meta property="og:image" content="https://techspec.biz/share-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://techspec.biz/print.html">
-  <meta name="twitter:title" content="Professional Print Services | TechSpec Print">
-  <meta name="twitter:description" content="Commercial-quality printing services including business cards, banners, yard signs, apparel, and 20,000+ products.">
-  <meta name="twitter:image" content="https://techspec.biz/share-image.png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #FF0000;
+      --red-dark: #CC0000;
+      --black: #111111;
+      --dark-gray: #1a1a1a;
+      --light-gray: #f5f5f5;
+      --green: #00b894;
+      --yellow: #fdcb6e;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #111;
+      background-color: var(--light-gray);
+      color: var(--black);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      margin: 0 0 20px 0;
-    }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 800; }
 
-    h1 { font-size: 52px; line-height: 1.2; }
-    h2 { font-size: 36px; }
-    h3 { font-size: 24px; }
-
-    p {
-      font-size: 18px;
-      color: #666;
-      line-height: 1.8;
-    }
-
-    a { text-decoration: none; transition: all 0.3s ease; }
-
-    .btn {
-      padding: 18px 45px;
-      background: #fff;
-      color: #FF0000;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 700;
-      display: inline-block;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      border: 3px solid #fff;
-      cursor: pointer;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
+    /* NAV */
+    .nav {
+      background-color: var(--red);
+      padding: 12px 0;
+      position: fixed;
       top: 0;
-      left: -100%;
       width: 100%;
-      height: 100%;
-      background: #FF0000;
-      transition: left 0.5s ease;
-      z-index: -1;
-    }
-
-    .btn:hover {
-      color: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
-    }
-
-    .btn:hover::before {
-      left: 0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* GRAIN OVERLAY */
-    .grain-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.4;
-    }
-
-    /* NAVIGATION */
-    header.nav {
-      background-color: #FF0000;
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
       z-index: 1000;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    header.nav.scrolled {
-      background-color: #CC0000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 50px;
     }
 
-    .logo img { height: 40px; }
+    .nav .logo img { height: 60px; width: auto; }
 
-    nav a {
-      margin-left: 30px;
-      font-size: 14px;
-      font-weight: 500;
-      color: #fff;
-      position: relative;
+    .nav nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: #fff;
-      transition: width 0.3s ease;
+    .nav nav a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-size: 15px;
     }
 
-    nav a:hover::after { width: 100%; }
-    nav a:hover { color: #f5f5f5; }
+    .nav nav a:hover { background: rgba(255,255,255,0.2); }
+    .nav nav a.members-btn { background: var(--black); border: 2px solid white; }
 
-    /* MOBILE MENU */
     .menu-toggle {
       display: none;
       background: none;
       border: none;
-      color: #fff;
-      font-size: 24px;
+      color: white;
+      font-size: 28px;
       cursor: pointer;
-      z-index: 1001;
     }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 998;
+    }
+    .menu-overlay.active { display: block; }
 
     .side-menu {
       position: fixed;
       top: 0;
       right: -300px;
       width: 300px;
-      height: 100vh;
-      background-color: #111;
-      transition: right 0.3s ease;
+      height: 100%;
+      background: var(--dark-gray);
       z-index: 999;
-      padding: 80px 20px 20px;
+      transition: right 0.3s ease;
+      padding: 100px 30px 30px;
     }
-
     .side-menu.active { right: 0; }
 
     .side-menu a {
       display: block;
-      margin: 0 0 20px 0;
+      color: white;
+      padding: 18px 0;
       font-size: 18px;
-      font-weight: 500;
-      color: #fff;
-      padding: 10px;
+      font-weight: 600;
       border-bottom: 1px solid #333;
+      text-decoration: none;
     }
 
-    .side-menu a:hover { color: #FF0000; }
-
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0,0,0,0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      z-index: 998;
-    }
-
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* HERO SECTION */
+    /* HERO */
     .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
       position: relative;
-      padding: 120px 20px 100px;
-      background: 
-        linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
-        radial-gradient(circle at 20% 50%, rgba(0,0,0,0.05) 2px, transparent 2px),
-        radial-gradient(circle at 80% 50%, rgba(0,0,0,0.05) 2px, transparent 2px);
-      background-size: cover, 30px 30px, 30px 30px;
-      background-position: center;
-      color: #fff;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      padding: 120px 20px 80px;
       overflow: hidden;
     }
 
     .hero::before {
       content: '';
       position: absolute;
-      top: 30%;
-      left: 20%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: rotate 30s linear infinite;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
 
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .hero-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 10;
     }
 
-    .hero * { position: relative; z-index: 2; }
+    .hero-content { color: white; }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--black);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
 
     .hero h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
-      font-weight: 800;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.1;
+      margin-bottom: 25px;
+      text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
     }
 
-    .hero .tagline {
-      font-size: 28px;
-      color: #fff;
-      font-weight: 600;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .hero p {
+    .hero-description {
       font-size: 20px;
-      color: #f0f0f0;
-      max-width: 800px;
-      margin: 0 auto 40px;
+      opacity: 0.95;
+      margin-bottom: 30px;
+      line-height: 1.7;
     }
 
     .hero-features {
       display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 50px;
       flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 35px;
     }
 
     .hero-feature {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
     }
 
-    .hero-feature-number {
-      font-size: 48px;
-      font-weight: 800;
-      color: #fff;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .hero-feature-label {
+    .btn {
+      padding: 18px 40px;
       font-size: 16px;
-      color: #f0f0f0;
-      font-weight: 500;
+      font-weight: 800;
+      border-radius: 50px;
+      text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 1px;
-    }
-
-    /* PRODUCT CATEGORIES */
-    .product-categories {
-      padding: 100px 20px;
-      background-color: #ffffff;
-      position: relative;
-    }
-
-    .product-categories h2 {
-      text-align: center;
-      color: #111;
-      margin-bottom: 60px;
-    }
-
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    @media (max-width: 968px) {
-      .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .categories-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .category-card {
-      background: linear-gradient(135deg, #ffffff 0%, #f7f7f7 100%);
-      padding: 40px 30px;
-      border-radius: 12px;
-      text-align: center;
-      cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      border: 2px solid transparent;
-    }
-
-    .category-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(255,0,0,0.15);
-      border-color: #FF0000;
-    }
-
-    .category-card.active {
-      border-color: #FF0000;
-      background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
-    }
-
-    .category-card i {
-      font-size: 56px;
-      color: #FF0000;
-      margin-bottom: 20px;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .category-card:hover i {
-      transform: scale(1.1) rotate(5deg);
-    }
-
-    .category-card h3 {
-      color: #111;
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-
-    .category-card p {
-      font-size: 14px;
-      color: #666;
-      margin: 0;
-    }
-
-    /* PRODUCT MODAL */
-    .product-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      z-index: 9999;
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 20px;
-      overflow-y: auto;
+      gap: 10px;
     }
 
-    .product-modal.show {
+    .btn-primary {
+      background: white;
+      color: var(--red);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .hero-buttons {
       display: flex;
-      animation: fadeIn 0.3s ease;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    /* Hero Visual */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
     }
 
-    .product-modal-content {
-      background: #fff;
-      padding: 40px;
+    .print-showcase {
+      position: relative;
+    }
+
+    .print-item {
+      position: absolute;
+      background: white;
       border-radius: 12px;
-      max-width: 900px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      animation: slideUp 0.3s ease;
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: #999;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-
-    .modal-close:hover {
-      color: #FF0000;
-    }
-
-    .product-modal-content h3 {
-      color: #FF0000;
-      margin-bottom: 10px;
-      font-size: 28px;
-      padding-right: 40px;
-    }
-
-    .product-modal-content > p {
-      color: #666;
-      margin-bottom: 30px;
-    }
-
-    .product-list-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .product-list-header h3 {
-      color: #FF0000;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .product-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-
-    .product-item {
-      padding: 12px 20px;
-      background: #fff;
-      border-radius: 6px;
-      border-left: 3px solid #FF0000;
-      font-size: 16px;
-      color: #333;
-      transition: all 0.2s ease;
-      cursor: pointer;
-      position: relative;
-      padding-right: 40px;
-    }
-
-    .product-item::after {
-      content: '+';
-      position: absolute;
-      right: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      color: #FF0000;
-      font-weight: bold;
-      transition: transform 0.3s ease;
-    }
-
-    .product-item.expanded::after {
-      content: '−';
-      transform: translateY(-50%) rotate(180deg);
-    }
-
-    .product-item:hover {
-      transform: translateX(5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      background: #fff5f5;
-    }
-
-    .product-details {
-      display: none;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
       padding: 15px;
-      background: #f9f9f9;
-      border-left: 3px solid #FF0000;
-      margin-top: 10px;
-      border-radius: 6px;
-      animation: slideDown 0.3s ease;
+      animation: floatPrint 5s ease-in-out infinite;
     }
 
-    .product-details.show {
-      display: block;
+    .print-item img {
+      max-width: 100%;
+      border-radius: 8px;
     }
 
-    @keyframes slideDown {
-      from { opacity: 0; max-height: 0; }
-      to { opacity: 1; max-height: 500px; }
+    .print-item-1 { top: 0; left: 0; width: 200px; animation-delay: 0s; }
+    .print-item-2 { top: 100px; right: 0; width: 180px; animation-delay: -1s; }
+    .print-item-3 { bottom: 50px; left: 30px; width: 160px; animation-delay: -2s; }
+
+    @keyframes floatPrint {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(3deg); }
     }
 
-    .product-details h4 {
-      color: #FF0000;
-      margin: 0 0 10px 0;
-      font-size: 16px;
+    .hero-mascot {
+      width: 300px;
+      animation: float 5s ease-in-out infinite;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
     }
 
-    .product-details p {
-      color: #666;
-      margin: 0 0 10px 0;
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* PRODUCTS SECTION */
+    .products-section {
+      padding: 120px 20px;
+      background: white;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
       font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .product-specs {
-      background: #fff;
-      padding: 10px;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-
-    .product-specs strong {
-      color: #333;
-      font-size: 13px;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .product-specs ul {
-      margin: 5px 0 0 20px;
-      padding: 0;
-    }
-
-    .product-specs li {
-      font-size: 13px;
-      color: #666;
-      margin: 3px 0;
-    }
-
-    .close-list {
-      text-align: center;
-      margin-top: 40px;
-    }
-
-    .close-list button {
-      background: #FF0000;
-      color: #fff;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .close-list button:hover {
-      background: #CC0000;
-      transform: translateY(-2px);
-    }
-
-    /* GALLERY SECTION */
-    .gallery-section {
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gallery-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #FF0000, #CC0000, #FF0000);
-    }
-
-    .gallery-section h2 {
-      text-align: center;
-      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
       margin-bottom: 20px;
-      font-size: 42px;
     }
 
-    .gallery-section > .container > p {
-      text-align: center;
-      color: #ccc;
-      margin-bottom: 60px;
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      margin-bottom: 20px;
+    }
+
+    .section-header p {
       font-size: 18px;
-    }
-
-    .gallery-carousel-wrapper {
-      position: relative;
-      max-width: 1200px;
+      color: #666;
+      max-width: 600px;
       margin: 0 auto;
-      padding: 0 80px;
     }
 
-    .gallery-carousel {
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: var(--light-gray);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    .product-card .icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      border-radius: 20px;
       display: flex;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
     }
 
-    .gallery-item {
-      min-width: 400px;
-      height: 500px;
+    .product-card .icon i {
+      font-size: 32px;
+      color: white;
+    }
+
+    .product-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* EXAMPLES CAROUSEL */
+    .examples-section {
+      padding: 120px 20px;
+      background: var(--dark-gray);
+    }
+
+    .examples-section .section-header h2,
+    .examples-section .section-header p {
+      color: white;
+    }
+
+    .examples-section .section-header p {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .examples-carousel-container {
+      max-width: 1400px;
+      margin: 0 auto;
       position: relative;
-      flex-shrink: 0;
+    }
+
+    .examples-carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .examples-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .example-item {
+      flex: 0 0 350px;
+      scroll-snap-align: start;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 3px solid rgba(255,255,255,0.1);
+      aspect-ratio: 4/3;
+      background: #333;
     }
 
-    .gallery-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .gallery-item:hover::before {
-      opacity: 1;
-    }
-
-    .gallery-item::after {
-      content: 'View Project';
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #fff;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      z-index: 3;
-      opacity: 0;
-      transition: all 0.4s ease;
-    }
-
-    .gallery-item:hover::after {
-      opacity: 1;
-      bottom: 40px;
-    }
-
-    .gallery-item img {
+    .example-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.3s ease;
     }
 
-    .gallery-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 80px rgba(255,0,0,0.3);
-      border-color: #FF0000;
+    .example-item:hover img {
+      transform: scale(1.05);
     }
 
-    .gallery-item:hover img { 
-      transform: scale(1.1); 
+    .carousel-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
     }
 
     .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #fff;
-      color: #FF0000;
-      border: 3px solid #FF0000;
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      font-size: 22px;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: white;
+      font-size: 20px;
       cursor: pointer;
-      z-index: 10;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .carousel-btn:hover {
-      background: #FF0000;
-      color: #fff;
-      transform: translateY(-50%) scale(1.15);
-      box-shadow: 0 12px 30px rgba(255,0,0,0.4);
+      background: var(--red);
+      border-color: var(--red);
     }
 
-    .carousel-btn.prev { left: 0; }
-    .carousel-btn.next { right: 0; }
-
-    /* LIGHTBOX MODAL */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.95);
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
+    /* QUALITY PROMISE */
+    .quality-section {
+      padding: 120px 20px;
+      background: var(--dark-gray);
+      color: white;
     }
 
-    .lightbox.show {
-      display: flex;
-      animation: fadeIn 0.3s ease;
+    .quality-section .section-header h2 {
+      color: white;
     }
 
-    .lightbox-content {
-      position: relative;
-      max-width: 90vw;
-      max-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .quality-section .section-header p {
+      color: rgba(255,255,255,0.7);
     }
 
-    .lightbox-image {
-      max-width: 100%;
-      max-height: 90vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #fff;
-      color: #FF0000;
-      border: 3px solid #FF0000;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 10001;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-close:hover {
-      background: #FF0000;
-      color: #fff;
-      transform: scale(1.1);
-    }
-
-    .lightbox-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #fff;
-      color: #FF0000;
-      border: 3px solid #FF0000;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10001;
-    }
-
-    .lightbox-nav:hover {
-      background: #FF0000;
-      color: #fff;
-      transform: translateY(-50%) scale(1.1);
-    }
-
-    .lightbox-nav.prev { left: 20px; }
-    .lightbox-nav.next { right: 20px; }
-
-    .lightbox-counter {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255,255,255,0.95);
-      color: #333;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-size: 16px;
-      font-weight: 600;
-      z-index: 10001;
-    }
-
-    .carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 30px;
-    }
-
-    .dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ccc;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .dot.active {
-      background: #FF0000;
-      width: 30px;
-      border-radius: 6px;
-    }
-
-    /* CTA SECTION */
-    .cta {
-      padding: 100px 20px;
-      background: 
-        linear-gradient(135deg, rgba(255,0,0,0.85) 0%, rgba(204,0,0,0.9) 100%),
-        repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 31px),
-        repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 31px);
-      background-size: cover;
-      background-position: center;
-      color: #fff;
+    .quality-item {
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
 
-    .cta::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 15%;
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    .quality-item .icon {
+      width: 80px;
+      height: 80px;
+      background: var(--red);
       border-radius: 50%;
-      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
     }
 
-    .cta * { position: relative; z-index: 2; }
+    .quality-item .icon i {
+      font-size: 32px;
+      color: white;
+    }
 
-    .cta h2 {
-      font-size: 42px;
+    .quality-item h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .quality-item p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 120px 20px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      text-align: center;
+      color: white;
+    }
+
+    .cta-mascot {
+      width: 180px;
+      margin-bottom: 30px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(32px, 5vw, 52px);
       margin-bottom: 20px;
     }
 
-    .cta p {
-      color: #f0f0f0;
-      font-size: 22px;
-      margin-bottom: 40px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cta .btn {
-      background: #fff;
-      color: #FF0000;
+    .cta-section p {
       font-size: 20px;
-      padding: 18px 50px;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto 40px;
     }
 
-    .cta .btn:hover {
-      background: #f0f0f0;
-      color: #CC0000;
+    .cta-section .btn-primary {
+      background: white;
+      color: var(--red);
     }
 
     /* FOOTER */
     footer {
-      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-      color: #fff;
-      padding: 60px 20px 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #FF0000, #CC0000, #FF0000);
-    }
-
-    footer .container {
-      position: relative;
-      z-index: 2;
+      background: var(--dark-gray);
+      color: #ccc;
+      padding: 80px 50px 30px;
     }
 
     .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-bottom: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
     }
 
-    .footer-logo img {
-      height: 50px;
+    .footer-brand img { height: 60px; margin-bottom: 20px; }
+    .footer-brand p { color: #888; font-size: 15px; line-height: 1.8; }
+
+    .footer-section h4 {
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: #ccc;
-      font-size: 14px;
+    .footer-section a {
+      display: block;
+      color: #888;
+      text-decoration: none;
+      padding: 8px 0;
       transition: color 0.3s ease;
     }
 
-    .footer-links a:hover {
-      color: #FF0000;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 15px;
-    }
-
-    .footer-social a {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      transition: all 0.3s ease;
-    }
-
-    .footer-social a:hover {
-      background: #FF0000;
-      transform: translateY(-3px);
-    }
+    .footer-section a:hover { color: var(--red); }
 
     .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      max-width: 1400px;
+      margin: 60px auto 0;
+      padding-top: 30px;
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
     }
 
-    footer p { 
-      margin: 0; 
-      font-size: 14px; 
-      color: #999; 
+    .social-links a {
+      color: #888;
+      font-size: 22px;
+      margin-left: 20px;
+      transition: color 0.3s ease;
     }
 
-    /* MOBILE */
+    .social-links a:hover { color: var(--red); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .hero-container { grid-template-columns: 1fr; text-align: center; }
+      .hero-visual { order: -1; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .quality-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 768px) {
-      .hero h1 { font-size: 38px; }
-      .hero .tagline { font-size: 20px; }
-      .hero p { font-size: 18px; }
-      .hero-features { gap: 30px; }
-      
       .menu-toggle { display: block; }
       .nav-inner nav { display: none; }
-
-      .categories-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .product-columns {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-item {
-        min-width: 300px;
-        height: 220px;
-      }
-
-      .carousel-btn { width: 40px; height: 40px; font-size: 16px; }
-      .cta h2 { font-size: 32px; }
-      .cta p { font-size: 18px; }
+      .nav-inner { padding: 0 20px; }
+      .hero { padding: 140px 20px 80px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .products-grid { grid-template-columns: 1fr; }
+      .footer-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+      .footer-bottom { flex-direction: column; gap: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" style="text-decoration: none;"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div></a>
-      <button class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="index.html"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div></a>
+      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="index.html">Home</a>
         <a href="marketing.html">Marketing</a>
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
+        <a href="web.html">Web</a>
         <a href="contact.html">Contact</a>
+        <a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a>
       </nav>
     </div>
   </header>
 
-  <!-- MOBILE SIDE MENU -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu">
-    <a href="index.html" onclick="toggleMenu()">Home</a>
-    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
-    <a href="print.html" onclick="toggleMenu()">Print</a>
-    <a href="design.html" onclick="toggleMenu()">Design</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="marketing.html">Marketing</a>
+    <a href="print.html">Print</a>
+    <a href="design.html">Design</a>
+    <a href="web.html">Web</a>
+    <a href="contact.html">Contact</a>
+    <a href="members.html">Members Area</a>
   </div>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <h1>Professional Printing At Your Fingertips</h1>
-      <p class="tagline">20,000+ Products. Commercial Quality. Lightning Fast.</p>
-      <p>From business cards to banners, we print it all with commercial-grade materials, industry-leading printers, and extremely fast shipping—all at prices that won't break the bank.</p>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">Print Services</div>
+        <h1>Professional Print for Professionals</h1>
+        <p class="hero-description">
+          Business cards, banners, yard signs, apparel, and over 20,000 products. 
+          Commercial quality printing with fast turnaround times.
+        </p>
+        <div class="hero-features">
+          <div class="hero-feature"><i class="fas fa-check"></i> 20,000+ Products</div>
+          <div class="hero-feature"><i class="fas fa-check"></i> Fast Turnaround</div>
+          <div class="hero-feature"><i class="fas fa-check"></i> Free Shipping*</div>
+        </div>
+        <div class="hero-buttons">
+          <a href="contact.html?service=print" class="btn btn-primary">
+            <i class="fas fa-print"></i> Get a Quote
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="specs.png" alt="Spec Bot" class="hero-mascot">
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section">
+    <div class="section-header">
+      <span class="section-label">Our Products</span>
+      <h2>Everything You Need to Promote</h2>
+      <p>From your first business card to a full trade show booth, we've got you covered.</p>
+    </div>
+
+    <div class="products-grid">
+      <a href="contact.html?product=business-cards" class="product-card">
+        <div class="icon"><i class="fas fa-id-card"></i></div>
+        <h3>Business Cards</h3>
+        <p>Premium cards in various finishes and papers.</p>
+      </a>
+
+      <a href="contact.html?product=flyers" class="product-card">
+        <div class="icon"><i class="fas fa-file-alt"></i></div>
+        <h3>Flyers & Brochures</h3>
+        <p>Eye-catching marketing materials.</p>
+      </a>
+
+      <a href="contact.html?product=banners" class="product-card">
+        <div class="icon"><i class="fas fa-flag"></i></div>
+        <h3>Banners</h3>
+        <p>Vinyl, retractable, and fabric options.</p>
+      </a>
+
+      <a href="contact.html?product=yard-signs" class="product-card">
+        <div class="icon"><i class="fas fa-home"></i></div>
+        <h3>Yard Signs</h3>
+        <p>Durable corrugated signs with stakes.</p>
+      </a>
+
+      <a href="contact.html?product=apparel" class="product-card">
+        <div class="icon"><i class="fas fa-tshirt"></i></div>
+        <h3>Apparel</h3>
+        <p>Custom t-shirts, polos, hoodies, hats.</p>
+      </a>
+
+      <a href="contact.html?product=stickers" class="product-card">
+        <div class="icon"><i class="fas fa-sticky-note"></i></div>
+        <h3>Stickers & Labels</h3>
+        <p>Die-cut, roll labels, and more.</p>
+      </a>
+
+      <a href="contact.html?product=promo" class="product-card">
+        <div class="icon"><i class="fas fa-gift"></i></div>
+        <h3>Promotional Items</h3>
+        <p>Pens, mugs, koozies, keychains.</p>
+      </a>
+
+      <a href="contact.html?product=large-format" class="product-card">
+        <div class="icon"><i class="fas fa-expand"></i></div>
+        <h3>Large Format</h3>
+        <p>Posters, canvas, wall graphics.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- EXAMPLES SHOWCASE -->
+  <section class="examples-section">
+    <div class="section-header">
+      <span class="section-label">Our Work</span>
+      <h2>See What We've Printed</h2>
+      <p>Real products for real businesses.</p>
+    </div>
+
+    <div class="examples-carousel-container">
+      <div class="examples-carousel" id="examplesCarousel">
+        <div class="example-item"><img src="print-example1.png" alt="Print Example"></div>
+        <div class="example-item"><img src="print-example2.png" alt="Print Example"></div>
+        <div class="example-item"><img src="print-example3.png" alt="Print Example"></div>
+        <div class="example-item"><img src="print-example4.png" alt="Print Example"></div>
+        <div class="example-item"><img src="print-example5.png" alt="Print Example"></div>
+        <div class="example-item"><img src="print-example6.png" alt="Print Example"></div>
+      </div>
       
-      <div class="hero-features">
-        <div class="hero-feature">
-          <span class="hero-feature-number">20,000+</span>
-          <span class="hero-feature-label">Print Products</span>
-        </div>
-        <div class="hero-feature">
-          <span class="hero-feature-number">24-48hr</span>
-          <span class="hero-feature-label">Turnaround</span>
-        </div>
-        <div class="hero-feature">
-          <span class="hero-feature-number">100%</span>
-          <span class="hero-feature-label">Quality Guarantee</span>
-        </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" onclick="scrollExamples(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn" onclick="scrollExamples(1)"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
 
-  <!-- PRODUCT CATEGORIES -->
-  <section class="product-categories">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>What Can We Print?</h2>
-      <p style="text-align: center; color: #666; margin: -10px 0 30px; font-size: 16px; font-style: italic;">
-        <i class="fas fa-hand-pointer" style="color: #FF0000; margin-right: 5px;"></i>Click any category to see all products
-      </p>
-      
-      <div class="categories-grid" id="categoriesGrid">
-        <div class="category-card" data-category="business" onclick="showProducts('business', this)">
-          <i class="fas fa-id-card"></i>
-          <h3>Business Cards</h3>
-          <p>Premium cards in every style & finish</p>
-        </div>
-        
-        <div class="category-card" data-category="marketing" onclick="showProducts('marketing', this)">
-          <i class="fas fa-bullhorn"></i>
-          <h3>Marketing Materials</h3>
-          <p>Flyers, brochures, door hangers & more</p>
-        </div>
-        
-        <div class="category-card" data-category="signs" onclick="showProducts('signs', this)">
-          <i class="fas fa-rectangle-ad"></i>
-          <h3>Signs & Banners</h3>
-          <p>Indoor & outdoor signage solutions</p>
-        </div>
-        
-        <div class="category-card" data-category="apparel" onclick="showProducts('apparel', this)">
-          <i class="fas fa-tshirt"></i>
-          <h3>Apparel & Merch</h3>
-          <p>T-shirts, hats, bags & promotional items</p>
-        </div>
-        
-        <div class="category-card" data-category="stickers" onclick="showProducts('stickers', this)">
-          <i class="fas fa-sticker-mule"></i>
-          <h3>Stickers & Labels</h3>
-          <p>Custom stickers, decals & product labels</p>
-        </div>
-        
-        <div class="category-card" data-category="specialty" onclick="showProducts('specialty', this)">
-          <i class="fas fa-star"></i>
-          <h3>Specialty Items</h3>
-          <p>Magnets, packaging, calendars & more</p>
-        </div>
+  <!-- QUALITY -->
+  <section class="quality-section">
+    <div class="section-header">
+      <span class="section-label">Why TechSpec</span>
+      <h2>Quality You Can Count On</h2>
+    </div>
+
+    <div class="quality-grid">
+      <div class="quality-item">
+        <div class="icon"><i class="fas fa-medal"></i></div>
+        <h3>Commercial Quality</h3>
+        <p>We use top-tier vendors and materials. Your prints will look professional.</p>
+      </div>
+      <div class="quality-item">
+        <div class="icon"><i class="fas fa-shipping-fast"></i></div>
+        <h3>Fast Turnaround</h3>
+        <p>Most orders ship within 3-5 business days. Rush options available.</p>
+      </div>
+      <div class="quality-item">
+        <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <h3>Personal Service</h3>
+        <p>Work directly with a real person. No call centers, no runaround.</p>
       </div>
     </div>
   </section>
-
-  <!-- PRODUCT MODAL -->
-  <div class="product-modal" id="productModal" onclick="closeModal(event)">
-    <div class="product-modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <div id="modalProductContent"></div>
-    </div>
-  </div>
-
-  <!-- GALLERY CAROUSEL -->
-  <section class="gallery-section">
-    <div class="grain-overlay"></div>
-    <div class="container">
-      <h2>Our Recent Work</h2>
-      <p>Quality printing that makes an impact</p>
-      <div class="gallery-carousel-wrapper">
-        <button class="carousel-btn prev" onclick="moveGallery(-1)">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="gallery-carousel" id="galleryCarousel">
-          <div class="gallery-item"><img src="portfolio1.png" alt="Print Sample 1" onclick="openLightbox(0)"></div>
-          <div class="gallery-item"><img src="portfolio2.png" alt="Print Sample 2" onclick="openLightbox(1)"></div>
-          <div class="gallery-item"><img src="portfolio3.png" alt="Print Sample 3" onclick="openLightbox(2)"></div>
-          <div class="gallery-item"><img src="portfolio4.png" alt="Print Sample 4" onclick="openLightbox(3)"></div>
-          <div class="gallery-item"><img src="portfolio5.png" alt="Print Sample 5" onclick="openLightbox(4)"></div>
-          <div class="gallery-item"><img src="portfolio6.png" alt="Print Sample 6" onclick="openLightbox(5)"></div>
-          <div class="gallery-item"><img src="portfolio7.png" alt="Print Sample 7" onclick="openLightbox(6)"></div>
-          <div class="gallery-item"><img src="portfolio8.png" alt="Print Sample 8" onclick="openLightbox(7)"></div>
-          <div class="gallery-item"><img src="portfolio9.png" alt="Print Sample 9" onclick="openLightbox(8)"></div>
-          <div class="gallery-item"><img src="portfolio10.png" alt="Print Sample 10" onclick="openLightbox(9)"></div>
-          <div class="gallery-item"><img src="portfolio11.png" alt="Print Sample 11" onclick="openLightbox(10)"></div>
-          <div class="gallery-item"><img src="portfolio12.png" alt="Print Sample 12" onclick="openLightbox(11)"></div>
-          <div class="gallery-item"><img src="portfolio13.png" alt="Print Sample 13" onclick="openLightbox(12)"></div>
-          <div class="gallery-item"><img src="portfolio14.png" alt="Print Sample 14" onclick="openLightbox(13)"></div>
-          <div class="gallery-item"><img src="portfolio15.png" alt="Print Sample 15" onclick="openLightbox(14)"></div>
-          <div class="gallery-item"><img src="portfolio16.png" alt="Print Sample 16" onclick="openLightbox(15)"></div>
-          <div class="gallery-item"><img src="portfolio17.png" alt="Print Sample 17" onclick="openLightbox(16)"></div>
-          <div class="gallery-item"><img src="portfolio18.png" alt="Print Sample 18" onclick="openLightbox(17)"></div>
-          <div class="gallery-item"><img src="portfolio19.png" alt="Print Sample 19" onclick="openLightbox(18)"></div>
-        </div>
-        <button class="carousel-btn next" onclick="moveGallery(1)">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-      <div class="carousel-dots" id="galleryDots"></div>
-    </div>
-  </section>
-
-  <!-- LIGHTBOX MODAL -->
-  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <button class="lightbox-nav prev" onclick="lightboxNavigate(-1); event.stopPropagation();">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <img class="lightbox-image" id="lightboxImage" src="" alt="Print Sample">
-    </div>
-    <button class="lightbox-nav next" onclick="lightboxNavigate(1); event.stopPropagation();">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-    <div class="lightbox-counter" id="lightboxCounter">1 / 12</div>
-  </div>
 
   <!-- CTA -->
-  <section class="cta">
-    <div class="container">
-      <h2>Ready to Print Your Vision?</h2>
-      <p>Get a quote today and experience premium printing with unbeatable turnaround times.</p>
-      <a href="contact.html" class="btn">Get Your Free Quote</a>
-    </div>
+  <section class="cta-section">
+    <img src="head_only.png" alt="Spec Bot" class="cta-mascot">
+    <h2>Ready to Get Printing?</h2>
+    <p>Tell us what you need and we'll get you a quote within 24 hours.</p>
+    <a href="contact.html?service=print" class="btn btn-primary">
+      <i class="fas fa-paper-plane"></i> Request Quote
+    </a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo">
-          <img src="logo.png" alt="TechSpec Logo">
-        </div>
-        <div class="footer-links">
-          <a href="tosmarketing.html">Marketing Terms</a>
-          <a href="tosprint.html">Print Terms</a>
-          <a href="tosdesign.html">Design Terms</a>
-        </div>
-        <div class="footer-social">
-          <a href="https://facebook.com/techspecb2b" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </div>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="logo.png" alt="TechSpec">
+        <p>Professional print, design, and marketing solutions for businesses that mean business.</p>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 TechSpec LLC. All rights reserved.</p>
+      <div class="footer-section">
+        <h4>Services</h4>
+        <a href="marketing.html">Marketing</a>
+        <a href="print.html">Print</a>
+        <a href="design.html">Design</a>
+        <a href="web.html">Web Design</a>
+      </div>
+      <div class="footer-section">
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="members.html">Members Area</a>
+        <a href="tosprint.html">Print TOS</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TechSpec. All rights reserved.</span>
+      <div class="social-links">
+        <a href="https://facebook.com/techspecb2b" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    // Mobile menu toggle
     function toggleMenu() {
-      const sideMenu = document.getElementById('sideMenu');
-      const menuOverlay = document.getElementById('menuOverlay');
-      sideMenu.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
+      document.getElementById('sideMenu').classList.toggle('active');
+      document.getElementById('menuOverlay').classList.toggle('active');
     }
 
-    // Navigation scroll effect
-    const nav = document.querySelector('header.nav');
-    window.addEventListener('scroll', () => { 
-      nav.classList.toggle('scrolled', window.scrollY > 10); 
-    });
-
-    // Product categories data (based on Splitfire Graphics)
-    const productData = {
-      business: {
-        title: 'Business Cards',
-        description: 'Premium cards in every style & finish. Make a lasting first impression with professional business cards.',
-        products: [
-          'Standard Business Cards', 'Gloss Business Cards', 'Matte Business Cards',
-          'Circle Business Cards', 'Rounded Corner Cards', 'Silk Laminated Cards',
-          'Spot UV Business Cards', 'Foil Business Cards', 'Plastic Business Cards',
-          'Metal Business Cards', 'Aluminum Business Cards', 'Letterhead',
-          'Envelopes', 'Business Stationery', 'NCR Forms', 'Custom Folders'
-        ]
-      },
-      marketing: {
-        title: 'Marketing Materials',
-        description: 'Flyers, brochures, door hangers & more. Eye-catching materials that get your message across.',
-        products: [
-          'Flyers', 'Postcards', 'Door Hangers', 'Brochures', 'Bookmarks',
-          'Tent Cards', 'Table Tents', 'Rack Cards', 'Hang Tags',
-          'Menus', 'Catalogs', 'Presentation Folders', 'Greeting Cards',
-          'Invitations', 'Announcements'
-        ]
-      },
-      signs: {
-        title: 'Signs & Banners',
-        description: 'Indoor & outdoor signage solutions. From banners to yard signs, get noticed with quality signage.',
-        products: [
-          'Vinyl Banners', 'Mesh Banners', 'Pull Up Banners', 'Retractable Banners',
-          'Canopy Tents', 'Backdrop Stands', 'Backdrops', 'Table Covers',
-          'Yard Signs', 'Double Sided Yard Signs', 'Real Estate Signs',
-          'Real Estate Sign Posts', 'For Sale Sign Posts', 'A-Frame Signs',
-          'Advertising Flags', 'Feather Flags', 'Teardrop Flags',
-          'Signs & Displays', 'Trade Show Booths', 'Window Clings', 'Posters'
-        ]
-      },
-      apparel: {
-        title: 'Apparel & Merch',
-        description: 'T-shirts, hats, bags & promotional items. Build your brand with quality branded merchandise.',
-        products: [
-          'T-Shirts', 'Polo Shirts', 'Hoodies', 'Hats & Caps',
-          'Mugs', 'Custom Drinkware', 'Water Bottles', 'Tumblers',
-          'Tote Bags', 'Backpacks', 'Promotional Products',
-          'Fridge Magnets', 'Car Magnets', 'Business Card Magnets',
-          'Keychains', 'Pens', 'Promotional Giveaways'
-        ]
-      },
-      stickers: {
-        title: 'Stickers & Labels',
-        description: 'Custom stickers, decals & product labels. Durable, weather-resistant, and fully customizable.',
-        products: [
-          'Die-Cut Stickers', 'Roll Stickers', 'Sheet Stickers',
-          'Bumper Stickers', 'Window Stickers', 'Floor Decals',
-          'Wall Decals', 'Vinyl Decals', 'Product Labels',
-          'Bottle Labels', 'Shipping Labels', 'Custom Labels',
-          'Kiss-Cut Stickers', 'Weatherproof Stickers'
-        ]
-      },
-      specialty: {
-        title: 'Specialty Items',
-        description: 'Magnets, packaging, calendars & more. Unique products for every promotional need.',
-        products: [
-          'Wall Calendars', 'Desk Calendars', 'Home & Office Wall Art',
-          'Canvas Prints', 'Acrylic Prints', 'Metal Prints', 'Framed Prints',
-          'Supply Boxes', 'Packaging Materials', 'Custom Boxes',
-          'Event Essentials Package', 'Hardware', 'Stamps', 'Address Stamps',
-          'Self-Inking Stamps', 'Custom Checks', 'Awards & Plaques'
-        ]
-      }
-    };
-
-    // Show products function
-    let currentCategory = null;
-
-    // Custom product specs based on product type
-    function getProductSpecs(productName) {
-      const name = productName.toLowerCase();
-      
-      // Business Cards - keep multiple sizes and materials
-      if (name.includes('business card') || name.includes('letterhead') || 
-          name.includes('envelope') || name.includes('stationery') || 
-          name.includes('ncr form') || name.includes('folder')) {
-        return 'Multiple sizes and materials';
-      }
-      
-      // Vinyl/Mesh Banners - specific sizing
-      if (name.includes('vinyl banner')) return 'Multiple sizes and thicknesses';
-      if (name.includes('mesh banner')) return 'Multiple sizes';
-      
-      // Other banners
-      if (name.includes('banner') || name.includes('backdrop') || name.includes('flag')) {
-        return 'Multiple sizes';
-      }
-      
-      // Yard signs
-      if (name.includes('yard sign')) return 'Multiple sizes';
-      
-      // Signs & Displays general
-      if (name.includes('sign') || name.includes('display') || name.includes('tent') || 
-          name.includes('table cover') || name.includes('cling') || name.includes('poster')) {
-        return 'Multiple sizes and styles';
-      }
-      
-      // Apparel & Merch
-      if (name.includes('shirt') || name.includes('polo') || name.includes('hoodie') || 
-          name.includes('hat') || name.includes('cap') || name.includes('mug') || 
-          name.includes('bottle') || name.includes('tumbler') || name.includes('bag') || 
-          name.includes('backpack') || name.includes('magnet') || name.includes('keychain') || 
-          name.includes('pen') || name.includes('giveaway')) {
-        return 'Multiple styles and sizes';
-      }
-      
-      // Default for everything else
-      return 'Multiple sizes and finishes/materials';
+    // Examples Carousel
+    function scrollExamples(direction) {
+      const carousel = document.getElementById('examplesCarousel');
+      const itemWidth = 370;
+      carousel.scrollBy({ left: direction * itemWidth * 2, behavior: 'smooth' });
     }
-
-    function showProducts(category, element) {
-      const modal = document.getElementById('productModal');
-      const modalContent = document.getElementById('modalProductContent');
-      const data = productData[category];
-      
-      // Remove active class from all cards
-      document.querySelectorAll('.category-card').forEach(card => {
-        card.classList.remove('active');
-      });
-      
-      // Add active class to clicked card
-      element.classList.add('active');
-      
-      // Create product list HTML with expandable details
-      const productsHTML = data.products.map((product, index) => {
-        const productId = `product-${category}-${index}`;
-        const specs = getProductSpecs(product);
-        return `
-          <div class="product-item-wrapper">
-            <div class="product-item" onclick="toggleProductDetails('${productId}')">
-              ${product}
-            </div>
-            <div class="product-details" id="${productId}">
-              <h4>${product}</h4>
-              <p>Custom ${product.toLowerCase()} with your design. Perfect for your business needs.</p>
-              <div class="product-specs">
-                <strong>Available Options:</strong>
-                <ul>
-                  <li>${specs}</li>
-                  <li>Full color printing</li>
-                  <li>Fast turnaround available</li>
-                  <li>Bulk discounts on large orders</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
-      
-      modalContent.innerHTML = `
-        <h3>${data.title}</h3>
-        <p>${data.description}</p>
-        <p style="font-size: 14px; color: #999; margin-bottom: 20px; font-style: italic;">
-          <i class="fas fa-hand-pointer" style="color: #FF0000;"></i> Click any product for details
-        </p>
-        <div class="product-columns">
-          ${productsHTML}
-        </div>
-      `;
-      
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-      currentCategory = category;
-    }
-
-    function toggleProductDetails(productId) {
-      const details = document.getElementById(productId);
-      const item = details.previousElementSibling;
-      
-      // Close all other details first
-      document.querySelectorAll('.product-details').forEach(d => {
-        if (d.id !== productId) {
-          d.classList.remove('show');
-          d.previousElementSibling.classList.remove('expanded');
-        }
-      });
-      
-      // Toggle current item
-      details.classList.toggle('show');
-      item.classList.toggle('expanded');
-    }
-
-    function closeModal(event) {
-      if (!event || event.target.classList.contains('product-modal') || event.target.classList.contains('modal-close')) {
-        const modal = document.getElementById('productModal');
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
-        document.querySelectorAll('.category-card').forEach(card => {
-          card.classList.remove('active');
-        });
-        currentCategory = null;
-      }
-    }
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeModal({});
-      }
-    });
-
-    // Gallery Carousel
-    let currentGalleryIndex = 0;
-    const galleryCarousel = document.getElementById('galleryCarousel');
-    const galleryCarouselItems = galleryCarousel.querySelectorAll('.gallery-item');
-    const totalGalleryItems = galleryCarouselItems.length;
-    let itemWidth = 430; // 400px width + 30px gap (desktop)
-    let itemsToShow = 2; // Show 2 full items at a time (desktop)
-    
-    // Adjust for mobile
-    if(window.innerWidth <= 768) {
-      itemWidth = 330; // 300px width + 30px gap
-      itemsToShow = 1; // Show 1 item at a time on mobile
-    }
-    
-    // Fix: Allow scrolling to show last image (19 items - 1 to show = 18 positions)
-    const maxGalleryIndex = Math.max(0, totalGalleryItems - 1);
-
-    // Create dots
-    const dotsContainer = document.getElementById('galleryDots');
-    for(let i = 0; i <= maxGalleryIndex; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'dot';
-      if(i === 0) dot.classList.add('active');
-      dot.onclick = () => goToGallerySlide(i);
-      dotsContainer.appendChild(dot);
-    }
-
-    function updateGallery() {
-      const offset = currentGalleryIndex * -itemWidth;
-      galleryCarousel.style.transform = `translateX(${offset}px)`;
-      
-      // Update dots
-      document.querySelectorAll('.dot').forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentGalleryIndex);
-      });
-    }
-
-    function moveGallery(direction) {
-      currentGalleryIndex += direction;
-      if(currentGalleryIndex < 0) currentGalleryIndex = 0;
-      if(currentGalleryIndex > maxGalleryIndex) currentGalleryIndex = maxGalleryIndex;
-      updateGallery();
-    }
-
-    function goToGallerySlide(index) {
-      currentGalleryIndex = index;
-      updateGallery();
-    }
-
-    // NO AUTO-PLAY - carousel only moves when user clicks arrows
-
-    // LIGHTBOX FUNCTIONALITY
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCounter = document.getElementById('lightboxCounter');
-    const galleryItemImages = galleryCarousel.querySelectorAll('.gallery-item img');
-    let currentLightboxIndex = 0;
-
-    // Images already have onclick handlers in HTML, so no need to add them again
-    // Just make sure cursor shows they're clickable
-    galleryItemImages.forEach((img) => {
-      img.style.cursor = 'pointer';
-    });
-
-    function openLightbox(index) {
-      currentLightboxIndex = index;
-      updateLightbox();
-      lightbox.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox(event) {
-      if (!event || event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
-        lightbox.classList.remove('show');
-        document.body.style.overflow = 'auto';
-      }
-    }
-
-    function lightboxNavigate(direction) {
-      currentLightboxIndex += direction;
-      if (currentLightboxIndex < 0) currentLightboxIndex = galleryItemImages.length - 1;
-      if (currentLightboxIndex >= galleryItemImages.length) currentLightboxIndex = 0;
-      updateLightbox();
-    }
-
-    function updateLightbox() {
-      lightboxImage.src = galleryItemImages[currentLightboxIndex].src;
-      lightboxImage.alt = galleryItemImages[currentLightboxIndex].alt;
-      lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${galleryItemImages.length}`;
-    }
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.classList.contains('show')) {
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') lightboxNavigate(-1);
-        if (e.key === 'ArrowRight') lightboxNavigate(1);
-      }
-    });
   </script>
 </body>
 </html>
