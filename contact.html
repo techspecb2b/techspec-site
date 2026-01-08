@@ -3,1231 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Primary Meta Tags -->
-  <title>Contact TechSpec | Get a Quote for Print, Design & Marketing Services</title>
-  <meta name="title" content="Contact TechSpec | Get a Quote for Print, Design & Marketing Services">
-  <meta name="description" content="Contact TechSpec B2B for professional print, design, and marketing services. Get a free quote today. Serving James City, NC and beyond.">
-  <meta name="keywords" content="contact TechSpec, TechSpec B2B contact, get a quote, TechSpec James City NC, print quote, design quote, marketing quote">
-  <meta name="author" content="TechSpec">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://techspec.biz/contact.html">
-  
-  <!-- Favicon -->
+  <title>Contact Us | TechSpec</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://techspec.biz/contact.html">
-  <meta property="og:title" content="Contact TechSpec | Get a Quote">
-  <meta property="og:description" content="Contact TechSpec B2B for professional print, design, and marketing services. Get a free quote today.">
-  <meta property="og:image" content="https://techspec.biz/share-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://techspec.biz/contact.html">
-  <meta name="twitter:title" content="Contact TechSpec | Get a Quote">
-  <meta name="twitter:description" content="Contact TechSpec B2B for professional print, design, and marketing services.">
-  <meta name="twitter:image" content="https://techspec.biz/share-image.png">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-      color: #111;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      margin: 0 0 20px 0;
-    }
-
-    h1 { font-size: 48px; }
-    h2 { font-size: 32px; }
-
-    p {
-      font-size: 18px;
-      color: #666;
-      max-width: 600px;
-      margin: 20px auto 40px;
-    }
-
-    a { text-decoration: none; transition: all 0.3s ease; }
-
-    /* NAV */
-    .nav {
-      background-color: #FF0000;
-      padding: 12px 0;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .nav-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 50px;
-    }
-
-    .nav a { color: white; font-weight: 500; margin-left: 35px; }
-    .nav a:hover { color: rgba(255,255,255,0.8); }
-
-    .nav .logo img {
-      height: 60px;
-      width: auto;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* SIDE MENU */
-    .menu-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 998;
-    }
-
-    .menu-overlay.active { display: block; }
-
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -280px;
-      width: 280px;
-      height: 100%;
-      background-color: #1a1a1a;
-      z-index: 999;
-      transition: right 0.3s ease;
-      padding: 80px 30px 30px;
-    }
-
-    .side-menu.active { right: 0; }
-
-    .side-menu a {
-      display: block;
-      color: white;
-      padding: 15px 0;
-      font-size: 18px;
-      border-bottom: 1px solid #333;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
-      padding: 160px 20px 80px;
-      text-align: center;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      color: rgba(255,255,255,0.9);
-      font-size: 18px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* FORM CONTAINER */
-    .form-section {
-      padding: 60px 20px 100px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .form-card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-      overflow: hidden;
-    }
-
-    /* PROGRESS STEPS */
-    .progress-steps {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-      background: #fafafa;
-      border-bottom: 1px solid #eee;
-      gap: 0;
-    }
-
-    .step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      flex: 1;
-      max-width: 150px;
-    }
-
-    .step-number {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      border: 3px solid #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      color: #999;
-      background: white;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 2;
-    }
-
-    .step.active .step-number {
-      border-color: #FF0000;
-      color: #FF0000;
-    }
-
-    .step.completed .step-number {
-      border-color: #FF0000;
-      background: #FF0000;
-      color: white;
-    }
-
-    .step-label {
-      margin-top: 10px;
-      font-size: 13px;
-      color: #999;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .step.active .step-label,
-    .step.completed .step-label {
-      color: #FF0000;
-    }
-
-    .step-line {
-      position: absolute;
-      top: 22px;
-      left: calc(50% + 30px);
-      width: calc(100% - 60px);
-      height: 3px;
-      background: #ddd;
-      z-index: 1;
-    }
-
-    .step:last-child .step-line {
-      display: none;
-    }
-
-    .step.completed .step-line {
-      background: #FF0000;
-    }
-
-    /* FORM CONTENT */
-    .form-content {
-      padding: 50px 40px;
-    }
-
-    .step-content {
-      display: none;
-      animation: fadeIn 0.4s ease;
-    }
-
-    .step-content.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .step-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-
-    /* SERVICE CARDS GRID */
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .service-option {
-      border: 2px solid #eee;
-      border-radius: 12px;
-      padding: 30px 15px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      background: white;
-    }
-
-    .service-option:hover {
-      border-color: #FF0000;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255,0,0,0.1);
-    }
-
-    .service-option.selected {
-      border-color: #FF0000;
-      background: #FFF5F5;
-      box-shadow: 0 8px 25px rgba(255,0,0,0.15);
-    }
-
-    .service-option i {
-      font-size: 48px;
-      color: #FF0000;
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .service-option span {
-      font-weight: 600;
-      color: #333;
-      font-size: 15px;
-    }
-
-    /* SUB-OPTIONS GRID */
-    .sub-options-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .sub-option {
-      border: 2px solid #eee;
-      border-radius: 10px;
-      padding: 20px 15px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      background: white;
-    }
-
-    .sub-option:hover {
-      border-color: #FF0000;
-    }
-
-    .sub-option.selected {
-      border-color: #FF0000;
-      background: #FFF5F5;
-    }
-
-    .sub-option i {
-      font-size: 32px;
-      color: #FF0000;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .sub-option span {
-      font-weight: 500;
-      color: #333;
-      font-size: 14px;
-      display: block;
-    }
-
-    /* FORM INPUTS */
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group.full-width {
-      grid-column: span 2;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 600;
-      color: #333;
-      font-size: 14px;
-    }
-
-    .form-group label .required {
-      color: #FF0000;
-      margin-left: 3px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 18px;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      font-size: 16px;
-      font-family: 'Inter', sans-serif;
-      transition: all 0.3s ease;
-      background: #fafafa;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #FF0000;
-      background: white;
-      box-shadow: 0 0 0 4px rgba(255,0,0,0.1);
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    /* TOS CHECKBOX */
-    .tos-checkbox {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin: 25px 0;
-      padding: 20px;
-      background: #fafafa;
-      border-radius: 10px;
-    }
-
-    .tos-checkbox input[type="checkbox"] {
-      width: 22px;
-      height: 22px;
-      cursor: pointer;
-      flex-shrink: 0;
-      margin-top: 2px;
-      accent-color: #FF0000;
-    }
-
-    .tos-checkbox label {
-      font-size: 14px;
-      color: #555;
-      cursor: pointer;
-      line-height: 1.5;
-    }
-
-    .tos-checkbox a {
-      color: #FF0000;
-      font-weight: 600;
-    }
-
-    /* BUTTONS */
-    .btn-row {
-      display: flex;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .btn-next,
-    .btn-back,
-    .btn-submit {
-      padding: 18px 50px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border: none;
-      font-family: 'Inter', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .btn-next,
-    .btn-submit {
-      background: #FF0000;
-      color: white;
-      flex: 1;
-    }
-
-    .btn-next:hover,
-    .btn-submit:hover {
-      background: #CC0000;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(255,0,0,0.3);
-    }
-
-    .btn-next:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-      transform: none;
-      box-shadow: none;
-    }
-
-    .btn-back {
-      background: white;
-      color: #666;
-      border: 2px solid #ddd;
-      flex: 0 0 auto;
-    }
-
-    .btn-back:hover {
-      border-color: #999;
-      color: #333;
-    }
-
-    /* SUCCESS MESSAGE */
-    .success-message {
-      text-align: center;
-      padding: 60px 40px;
-    }
-
-    .success-icon {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(135deg, #FF0000, #CC0000);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 30px;
-    }
-
-    .success-icon i {
-      font-size: 50px;
-      color: white;
-    }
-
-    .success-message h2 {
-      color: #111;
-      margin-bottom: 15px;
-    }
-
-    .success-message p {
-      color: #666;
-      margin: 0 auto;
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: #1a1a1a;
-      color: #ccc;
-      padding: 60px 50px 30px;
-    }
-
-    .footer-content {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 50px;
-    }
-
-    .footer-section h4 {
-      color: #fff;
-      font-size: 16px;
-      margin-bottom: 20px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .footer-section p {
-      font-size: 14px;
-      color: #999;
-      max-width: none;
-      margin: 0;
-      line-height: 1.8;
-    }
-
-    .footer-section a {
-      color: #999;
-      display: block;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-
-    .footer-section a:hover { color: #FF0000; }
-
-    .footer-bottom {
-      max-width: 1400px;
-      margin: 40px auto 0;
-      padding-top: 30px;
-      border-top: 1px solid #333;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 14px;
-      color: #666;
-    }
-
-    .social-links a {
-      color: #999;
-      font-size: 20px;
-      margin-left: 20px;
-    }
-
-    .social-links a:hover { color: #FF0000; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .menu-toggle { display: block; }
-      .nav-inner nav { display: none; }
-      .nav-inner { padding: 0 20px; }
-
-      .hero h1 { font-size: 32px; }
-      .hero { padding: 140px 20px 60px; }
-
-      .form-section { padding: 40px 15px 80px; }
-      .form-content { padding: 30px 20px; }
-
-      .progress-steps {
-        padding: 25px 10px;
-        gap: 5px;
-      }
-
-      .step-number {
-        width: 36px;
-        height: 36px;
-        font-size: 14px;
-      }
-
-      .step-label {
-        font-size: 11px;
-      }
-
-      .step-line {
-        top: 18px;
-        left: calc(50% + 22px);
-        width: calc(100% - 44px);
-      }
-
-      .step-title {
-        font-size: 22px;
-      }
-
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-
-      .service-option {
-        padding: 25px 10px;
-      }
-
-      .service-option i {
-        font-size: 36px;
-      }
-
-      .sub-options-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .form-group.full-width {
-        grid-column: span 1;
-      }
-
-      .btn-row {
-        flex-direction: column-reverse;
-      }
-
-      .btn-back {
-        text-align: center;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--red:#FF0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5}
+    body{font-family:'Inter',sans-serif;background:var(--light-gray);color:var(--black)}
+    h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+    .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}
+    .nav .logo img{height:55px}
+    .nav nav{display:flex;align-items:center;gap:8px}
+    .nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}
+    .nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}
+    .nav nav a.members-btn{background:var(--black);border:2px solid white}
+    .nav nav a.members-btn:hover{background:white;color:var(--black)}
+    .menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}
+    .menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}
+    .menu-overlay.active{display:block}
+    .side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}
+    .side-menu.active{right:0}
+    .side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}
+    @media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}}
+    .hero{min-height:45vh;background:linear-gradient(135deg,var(--red),#cc0000);display:flex;align-items:center;padding:140px 20px 80px;text-align:center}
+    .hero-content{max-width:700px;margin:0 auto;color:white}
+    .hero h1{font-size:clamp(36px,6vw,56px);margin-bottom:15px}
+    .hero p{font-size:18px;opacity:0.95}
+    .contact-section{padding:80px 20px 120px;margin-top:-40px;position:relative;z-index:10}
+    .contact-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:50px}
+    .contact-info{background:white;border-radius:20px;padding:45px 35px;box-shadow:0 10px 40px rgba(0,0,0,0.1)}
+    .contact-info h2{font-size:26px;margin-bottom:30px}
+    .info-item{display:flex;gap:18px;margin-bottom:28px}
+    .info-item .icon{width:48px;height:48px;background:var(--red);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .info-item .icon i{color:white;font-size:18px}
+    .info-item .text h3{font-size:16px;margin-bottom:4px;font-weight:700}
+    .info-item .text p,.info-item .text a{color:#666;font-size:14px;text-decoration:none}
+    .info-item .text a{color:var(--red);font-weight:600}
+    .mascot-contact{width:180px;margin:30px auto 0;display:block;animation:float 4s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    .contact-form{background:white;border-radius:20px;padding:45px 35px;box-shadow:0 10px 40px rgba(0,0,0,0.1)}
+    .progress-bar{display:flex;justify-content:space-between;margin-bottom:35px;position:relative}
+    .progress-bar::before{content:'';position:absolute;top:18px;left:0;right:0;height:3px;background:#eee}
+    .progress-step{text-align:center;position:relative;z-index:1}
+    .progress-step .num{width:36px;height:36px;background:#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:700;font-size:14px;color:#999}
+    .progress-step.active .num{background:var(--red);color:white}
+    .progress-step.done .num{background:#00b894;color:white}
+    .progress-step .lbl{font-size:11px;color:#999;text-transform:uppercase;letter-spacing:1px}
+    .progress-step.active .lbl{color:var(--red);font-weight:600}
+    .form-step{display:none}
+    .form-step.active{display:block;animation:fadeIn 0.3s}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .form-step h3{font-size:22px;margin-bottom:8px}
+    .form-step .sub{color:#666;margin-bottom:25px;font-size:14px}
+    .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:25px}
+    .svc-opt input{display:none}
+    .svc-opt label{display:flex;flex-direction:column;align-items:center;padding:22px 12px;background:var(--light-gray);border-radius:14px;cursor:pointer;border:2px solid transparent;transition:all 0.2s}
+    .svc-opt label i{font-size:26px;color:var(--red);margin-bottom:8px}
+    .svc-opt label span{font-weight:600;font-size:13px}
+    .svc-opt input:checked+label{border-color:var(--red);background:white;box-shadow:0 4px 15px rgba(255,0,0,0.15)}
+    .form-group{margin-bottom:18px}
+    .form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:13px}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:14px 18px;border:2px solid #eee;border-radius:10px;font-size:15px;font-family:inherit}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--red)}
+    .form-group textarea{min-height:100px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .form-nav{display:flex;justify-content:space-between;margin-top:25px}
+    .btn{padding:14px 30px;font-size:15px;font-weight:700;border-radius:50px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s}
+    .btn-back{background:#eee;color:#666}
+    .btn-back:hover{background:#ddd}
+    .btn-next,.btn-submit{background:var(--red);color:white}
+    .btn-next:hover,.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,0,0,0.3)}
+    .review-box{background:var(--light-gray);padding:22px;border-radius:14px;margin-bottom:25px}
+    .review-box div{margin-bottom:10px;font-size:14px}
+    .review-box strong{color:var(--black)}
+    .success-msg{text-align:center;padding:40px 20px;display:none}
+    .success-msg.active{display:block}
+    .success-msg i{font-size:55px;color:#00b894;margin-bottom:18px}
+    .success-msg h3{font-size:26px;margin-bottom:12px}
+    .success-msg p{color:#666}
+    footer{background:var(--dark-gray);color:#888;padding:60px 40px 25px}
+    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px}
+    .footer-brand img{height:50px;margin-bottom:15px}
+    .footer-brand p{font-size:14px;line-height:1.7}
+    .footer-col h4{color:white;font-size:14px;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
+    .footer-col a{display:block;color:#888;text-decoration:none;padding:6px 0;font-size:14px}
+    .footer-col a:hover{color:var(--red)}
+    .footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:13px}
+    .social-links a{color:#888;font-size:20px;margin-left:15px}
+    .social-links a:hover{color:var(--red)}
+    @media(max-width:900px){.contact-container{grid-template-columns:1fr}}
+    @media(max-width:768px){.menu-toggle{display:block}.nav-inner nav{display:none}.nav-inner{padding:0 20px}.service-grid,.form-row{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr;text-align:center}.footer-bottom{flex-direction:column;gap:15px;text-align:center}}
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html" style="text-decoration: none;"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div></a>
-      <button class="menu-toggle" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="index.html"><div class="logo"><img src="logo.png" alt="TechSpec"></div></a>
+      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="index.html">Home</a>
         <a href="marketing.html">Marketing</a>
         <a href="print.html">Print</a>
         <a href="design.html">Design</a>
+        <a href="web.html">Web</a>
         <a href="contact.html">Contact</a>
+        <a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a>
       </nav>
     </div>
   </header>
-
-  <!-- MOBILE SIDE MENU -->
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu">
-    <a href="index.html" onclick="toggleMenu()">Home</a>
-    <a href="marketing.html" onclick="toggleMenu()">Marketing</a>
-    <a href="print.html" onclick="toggleMenu()">Print</a>
-    <a href="design.html" onclick="toggleMenu()">Design</a>
-    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    <a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="contact.html">Contact</a><a href="members.html">Members</a>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
-    <h1>Get Your Free Quote</h1>
-    <p>Tell us about your project and we'll get back to you within 24 hours with a custom solution.</p>
+    <div class="hero-content">
+      <h1>Let's Work Together</h1>
+      <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+    </div>
   </section>
 
-  <!-- FORM SECTION -->
-  <section class="form-section">
-    <div class="form-card">
-      
-      <!-- Progress Steps -->
-      <div class="progress-steps">
-        <div class="step active" data-step="1">
-          <div class="step-number">1</div>
-          <div class="step-label">Service</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step" data-step="2">
-          <div class="step-number">2</div>
-          <div class="step-label">Details</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step" data-step="3">
-          <div class="step-number">3</div>
-          <div class="step-label">Info</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step" data-step="4">
-          <div class="step-number">4</div>
-          <div class="step-label">Submit</div>
-        </div>
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <div class="info-item"><div class="icon"><i class="fas fa-envelope"></i></div><div class="text"><h3>Email</h3><a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></div></div>
+        <div class="info-item"><div class="icon"><i class="fas fa-clock"></i></div><div class="text"><h3>Response Time</h3><p>Within 24 hours</p></div></div>
+        <div class="info-item"><div class="icon"><i class="fas fa-map-marker-alt"></i></div><div class="text"><h3>Location</h3><p>Eastern North Carolina</p></div></div>
+        <div class="info-item"><div class="icon"><i class="fab fa-facebook-f"></i></div><div class="text"><h3>Social</h3><a href="https://facebook.com/techspecb2b" target="_blank">facebook.com/techspecb2b</a></div></div>
+        <img src="" alt="" class="mascot-contact" style="display:none">
       </div>
 
-      <!-- Form Content -->
-      <form id="contactForm" action="https://hooks.zapier.com/hooks/catch/22012589/2lhvnwk/" method="POST">
-        <div class="form-content">
-
-          <!-- STEP 1: Select Service -->
-          <div class="step-content active" data-step="1">
-            <h3 class="step-title">Select Your Service</h3>
-            
+      <div class="contact-form">
+        <div class="progress-bar">
+          <div class="progress-step active" data-s="1"><div class="num">1</div><div class="lbl">Service</div></div>
+          <div class="progress-step" data-s="2"><div class="num">2</div><div class="lbl">Details</div></div>
+          <div class="progress-step" data-s="3"><div class="num">3</div><div class="lbl">Info</div></div>
+          <div class="progress-step" data-s="4"><div class="num">4</div><div class="lbl">Submit</div></div>
+        </div>
+        <form id="cForm">
+          <div class="form-step active" data-s="1">
+            <h3>What can we help with?</h3>
+            <p class="sub">Select the service you need</p>
             <div class="service-grid">
-              <div class="service-option" data-service="print" onclick="selectService(this, 'print')">
-                <i class="fas fa-print"></i>
-                <span>Print</span>
-              </div>
-              <div class="service-option" data-service="marketing" onclick="selectService(this, 'marketing')">
-                <i class="fas fa-bullhorn"></i>
-                <span>Marketing</span>
-              </div>
-              <div class="service-option" data-service="design" onclick="selectService(this, 'design')">
-                <i class="fas fa-palette"></i>
-                <span>Graphic Design</span>
-              </div>
-              <div class="service-option" data-service="web" onclick="selectService(this, 'web')">
-                <i class="fas fa-globe"></i>
-                <span>Web Design</span>
-              </div>
+              <div class="svc-opt"><input type="radio" name="service" id="s-print" value="Print"><label for="s-print"><i class="fas fa-print"></i><span>Print</span></label></div>
+              <div class="svc-opt"><input type="radio" name="service" id="s-design" value="Design"><label for="s-design"><i class="fas fa-palette"></i><span>Design</span></label></div>
+              <div class="svc-opt"><input type="radio" name="service" id="s-marketing" value="Marketing"><label for="s-marketing"><i class="fas fa-bullhorn"></i><span>Marketing</span></label></div>
+              <div class="svc-opt"><input type="radio" name="service" id="s-web" value="Web"><label for="s-web"><i class="fas fa-globe"></i><span>Web</span></label></div>
             </div>
-
-            <input type="hidden" name="service" id="selectedService">
-
-            <div class="btn-row">
-              <button type="button" class="btn-next" id="btnStep1" disabled onclick="nextStep(2)">Next</button>
-            </div>
+            <div class="form-nav"><div></div><button type="button" class="btn btn-next" onclick="next()">Next <i class="fas fa-arrow-right"></i></button></div>
           </div>
-
-          <!-- STEP 2: Service-Specific Options -->
-          <div class="step-content" data-step="2">
-            
-            <!-- PRINT OPTIONS -->
-            <div id="printOptions" class="service-options" style="display: none;">
-              <h3 class="step-title">What do you need printed?</h3>
-              <div class="sub-options-grid">
-                <div class="sub-option" onclick="selectSubOption(this, 'Business Cards')">
-                  <i class="fas fa-id-card"></i>
-                  <span>Business Cards</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Flyers & Brochures')">
-                  <i class="fas fa-file-alt"></i>
-                  <span>Flyers & Brochures</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Signs & Banners')">
-                  <i class="fas fa-sign"></i>
-                  <span>Signs & Banners</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Yard Signs')">
-                  <i class="fas fa-home"></i>
-                  <span>Yard Signs</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Apparel & Merch')">
-                  <i class="fas fa-tshirt"></i>
-                  <span>Apparel & Merch</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Other Print')">
-                  <i class="fas fa-ellipsis-h"></i>
-                  <span>Other</span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label>Do you need design services?</label>
-                <select name="needsDesign" id="needsDesign">
-                  <option value="">Select...</option>
-                  <option value="no">No, I have print-ready files</option>
-                  <option value="yes">Yes, I need design help</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- MARKETING OPTIONS -->
-            <div id="marketingOptions" class="service-options" style="display: none;">
-              <h3 class="step-title">What type of marketing?</h3>
-              <div class="sub-options-grid">
-                <div class="sub-option" onclick="selectSubOption(this, 'Social Media Management')">
-                  <i class="fas fa-share-alt"></i>
-                  <span>Social Media Management</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Facebook Ads')">
-                  <i class="fab fa-facebook"></i>
-                  <span>Facebook Ads</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Google Ads')">
-                  <i class="fab fa-google"></i>
-                  <span>Google Ads</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Instagram Marketing')">
-                  <i class="fab fa-instagram"></i>
-                  <span>Instagram Marketing</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Email Campaigns')">
-                  <i class="fas fa-envelope"></i>
-                  <span>Email Campaigns</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Full Marketing Package')">
-                  <i class="fas fa-rocket"></i>
-                  <span>Full Package</span>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label>Which package interests you?</label>
-                <select name="marketingPackage" id="marketingPackage">
-                  <option value="">Select a package...</option>
-                  <option value="starter">Starter</option>
-                  <option value="pro">Pro</option>
-                  <option value="elite">Elite</option>
-                  <option value="franchise">Franchise</option>
-                  <option value="unsure">Not sure yet</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- DESIGN OPTIONS -->
-            <div id="designOptions" class="service-options" style="display: none;">
-              <h3 class="step-title">What type of design?</h3>
-              <div class="sub-options-grid">
-                <div class="sub-option" onclick="selectSubOption(this, 'Logo Design')">
-                  <i class="fas fa-pen-nib"></i>
-                  <span>Logo Design</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Brand Identity')">
-                  <i class="fas fa-fingerprint"></i>
-                  <span>Brand Identity</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Social Media Graphics')">
-                  <i class="fas fa-images"></i>
-                  <span>Social Media Graphics</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Illustration')">
-                  <i class="fas fa-paint-brush"></i>
-                  <span>Illustration</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Marketing Materials')">
-                  <i class="fas fa-ad"></i>
-                  <span>Marketing Materials</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Other Design')">
-                  <i class="fas fa-ellipsis-h"></i>
-                  <span>Other</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- WEB DESIGN OPTIONS -->
-            <div id="webOptions" class="service-options" style="display: none;">
-              <h3 class="step-title">What type of website?</h3>
-              <div class="sub-options-grid">
-                <div class="sub-option" onclick="selectSubOption(this, 'Business Website')">
-                  <i class="fas fa-briefcase"></i>
-                  <span>Business Website</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'E-commerce Store')">
-                  <i class="fas fa-shopping-cart"></i>
-                  <span>E-commerce Store</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Landing Page')">
-                  <i class="fas fa-file"></i>
-                  <span>Landing Page</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Portfolio Site')">
-                  <i class="fas fa-folder-open"></i>
-                  <span>Portfolio Site</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Website Redesign')">
-                  <i class="fas fa-sync-alt"></i>
-                  <span>Website Redesign</span>
-                </div>
-                <div class="sub-option" onclick="selectSubOption(this, 'Other Web')">
-                  <i class="fas fa-ellipsis-h"></i>
-                  <span>Other</span>
-                </div>
-              </div>
-            </div>
-
-            <input type="hidden" name="subService" id="selectedSubService">
-
-            <div class="btn-row">
-              <button type="button" class="btn-back" onclick="prevStep(1)">Back</button>
-              <button type="button" class="btn-next" id="btnStep2" disabled onclick="nextStep(3)">Next</button>
-            </div>
-          </div>
-
-          <!-- STEP 3: Contact Info -->
-          <div class="step-content" data-step="3">
-            <h3 class="step-title">Your Information</h3>
-            
+          <div class="form-step" data-s="2">
+            <h3>Project Details</h3>
+            <p class="sub">Tell us what you need</p>
+            <div class="form-group"><label>What do you need?</label><input type="text" name="project" placeholder="e.g., Logo, Business cards, Facebook ads..."></div>
+            <div class="form-group"><label>Description</label><textarea name="desc" placeholder="Tell us more about your project..."></textarea></div>
             <div class="form-row">
-              <div class="form-group">
-                <label>First Name <span class="required">*</span></label>
-                <input type="text" name="firstName" id="firstName" required>
-              </div>
-              <div class="form-group">
-                <label>Last Name <span class="required">*</span></label>
-                <input type="text" name="lastName" id="lastName" required>
-              </div>
+              <div class="form-group"><label>Timeline</label><select name="timeline"><option value="">Select</option><option>ASAP</option><option>1-2 weeks</option><option>1 month</option><option>Flexible</option></select></div>
+              <div class="form-group"><label>Budget</label><select name="budget"><option value="">Select</option><option>Under $500</option><option>$500-$1,000</option><option>$1,000-$2,500</option><option>$2,500+</option><option>Not sure</option></select></div>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label>Email <span class="required">*</span></label>
-                <input type="email" name="email" id="email" required>
-              </div>
-              <div class="form-group">
-                <label>Phone <span class="required">*</span></label>
-                <input type="tel" name="phone" id="phone" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label>Business Name</label>
-              <input type="text" name="businessName" id="businessName">
-            </div>
-
-            <div class="btn-row">
-              <button type="button" class="btn-back" onclick="prevStep(2)">Back</button>
-              <button type="button" class="btn-next" id="btnStep3" onclick="nextStep(4)">Next</button>
-            </div>
+            <div class="form-nav"><button type="button" class="btn btn-back" onclick="prev()"><i class="fas fa-arrow-left"></i> Back</button><button type="button" class="btn btn-next" onclick="next()">Next <i class="fas fa-arrow-right"></i></button></div>
           </div>
-
-          <!-- STEP 4: Project Details & Submit -->
-          <div class="step-content" data-step="4">
-            <h3 class="step-title">Project Details</h3>
-            
-            <div class="form-group">
-              <label>Tell us about your project <span class="required">*</span></label>
-              <textarea name="projectDetails" id="projectDetails" placeholder="Describe what you're looking for, any specific requirements, timeline, budget range, etc." required></textarea>
-            </div>
-
-            <div class="form-group">
-              <label>How did you hear about us?</label>
-              <select name="referralSource">
-                <option value="">Select...</option>
-                <option value="google">Google Search</option>
-                <option value="social">Social Media</option>
-                <option value="referral">Friend/Referral</option>
-                <option value="returning">Returning Customer</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-
-            <!-- Dynamic TOS based on service -->
-            <div class="tos-checkbox" id="tosMarketing" style="display: none;">
-              <input type="checkbox" id="acceptMarketingTerms" name="acceptMarketingTerms">
-              <label for="acceptMarketingTerms">I agree to the <a href="tosmarketing.html" target="_blank">TechSpec Marketing Terms of Service</a> <span class="required">*</span></label>
-            </div>
-
-            <div class="tos-checkbox" id="tosPrint" style="display: none;">
-              <input type="checkbox" id="acceptPrintTerms" name="acceptPrintTerms">
-              <label for="acceptPrintTerms">I agree to the <a href="tosprint.html" target="_blank">TechSpec Print Terms of Service</a> <span class="required">*</span></label>
-            </div>
-
-            <div class="btn-row">
-              <button type="button" class="btn-back" onclick="prevStep(3)">Back</button>
-              <button type="submit" class="btn-submit">Submit Request</button>
-            </div>
+          <div class="form-step" data-s="3">
+            <h3>Your Information</h3>
+            <p class="sub">How can we reach you?</p>
+            <div class="form-row"><div class="form-group"><label>First Name *</label><input type="text" name="fname" required></div><div class="form-group"><label>Last Name *</label><input type="text" name="lname" required></div></div>
+            <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+            <div class="form-group"><label>Phone (optional)</label><input type="tel" name="phone"></div>
+            <div class="form-group"><label>Business Name (optional)</label><input type="text" name="business"></div>
+            <div class="form-nav"><button type="button" class="btn btn-back" onclick="prev()"><i class="fas fa-arrow-left"></i> Back</button><button type="button" class="btn btn-next" onclick="next()">Next <i class="fas fa-arrow-right"></i></button></div>
           </div>
-
-          <!-- SUCCESS MESSAGE -->
-          <div class="step-content" data-step="success">
-            <div class="success-message">
-              <div class="success-icon">
-                <i class="fas fa-check"></i>
-              </div>
-              <h2>Thank You!</h2>
-              <p>Your request has been submitted successfully. We'll review your project details and get back to you within 24 hours.</p>
-            </div>
+          <div class="form-step" data-s="4">
+            <h3>Review & Submit</h3>
+            <p class="sub">Make sure everything looks good</p>
+            <div class="review-box" id="review"></div>
+            <div class="form-nav"><button type="button" class="btn btn-back" onclick="prev()"><i class="fas fa-arrow-left"></i> Back</button><button type="submit" class="btn btn-submit"><i class="fas fa-paper-plane"></i> Send</button></div>
           </div>
-
-        </div>
-      </form>
+        </form>
+        <div class="success-msg" id="success"><i class="fas fa-check-circle"></i><h3>Message Sent!</h3><p>We'll get back to you within 24 hours.</p></div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>TechSpec</h4>
-        <p>Professional print, design, and marketing solutions for businesses that mean business. Quality work, fast turnaround, fair prices.</p>
-      </div>
-      <div class="footer-section">
-        <h4>Services</h4>
-        <a href="marketing.html">Marketing</a>
-        <a href="print.html">Print</a>
-        <a href="design.html">Design</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-section">
-        <h4>Legal</h4>
-        <a href="tosmarketing.html">Marketing TOS</a>
-        <a href="tosprint.html">Print TOS</a>
-      </div>
-      <div class="footer-section">
-        <h4>Contact</h4>
-        <p>brandon@techspec.biz</p>
-      </div>
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="logo.png" alt="TechSpec"><p>Professional print, design, and marketing solutions.</p></div>
+      <div class="footer-col"><h4>Services</h4><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="contact.html">Contact</a><a href="members.html">Members</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 TechSpec. All rights reserved.</span>
-      <div class="social-links">
-        <a href="https://facebook.com/techspecb2b" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
+    <div class="footer-bottom"><span>&copy; 2025 TechSpec</span><div class="social-links"><a href="https://facebook.com/techspecb2b"><i class="fab fa-facebook"></i></a></div></div>
   </footer>
 
   <script>
-    // State
-    let currentStep = 1;
-    let selectedService = '';
-    let selectedSubServices = [];
-
-    // Toggle mobile menu
-    function toggleMenu() {
-      document.getElementById('sideMenu').classList.toggle('active');
-      document.getElementById('menuOverlay').classList.toggle('active');
-    }
-
-    // Select main service
-    function selectService(element, service) {
-      // Remove selection from all
-      document.querySelectorAll('.service-option').forEach(el => el.classList.remove('selected'));
-      // Add selection to clicked
-      element.classList.add('selected');
-      selectedService = service;
-      document.getElementById('selectedService').value = service;
-      
-      // Enable next button
-      document.getElementById('btnStep1').disabled = false;
-    }
-
-    // Select sub-option (allow multiple)
-    function selectSubOption(element, value) {
-      element.classList.toggle('selected');
-      
-      if (element.classList.contains('selected')) {
-        if (!selectedSubServices.includes(value)) {
-          selectedSubServices.push(value);
-        }
-      } else {
-        selectedSubServices = selectedSubServices.filter(v => v !== value);
-      }
-      
-      document.getElementById('selectedSubService').value = selectedSubServices.join(', ');
-      
-      // Enable next button if at least one selected
-      document.getElementById('btnStep2').disabled = selectedSubServices.length === 0;
-    }
-
-    // Navigate to next step
-    function nextStep(step) {
-      // Validate current step
-      if (step === 2) {
-        // Show appropriate options based on service
-        hideAllServiceOptions();
-        if (selectedService === 'print') {
-          document.getElementById('printOptions').style.display = 'block';
-        } else if (selectedService === 'marketing') {
-          document.getElementById('marketingOptions').style.display = 'block';
-        } else if (selectedService === 'design') {
-          document.getElementById('designOptions').style.display = 'block';
-        } else if (selectedService === 'web') {
-          document.getElementById('webOptions').style.display = 'block';
-        }
-        // Reset sub-selections
-        selectedSubServices = [];
-        document.querySelectorAll('.sub-option').forEach(el => el.classList.remove('selected'));
-        document.getElementById('btnStep2').disabled = true;
-      }
-
-      if (step === 4) {
-        // Show appropriate TOS
-        document.getElementById('tosMarketing').style.display = 'none';
-        document.getElementById('tosPrint').style.display = 'none';
-        
-        if (selectedService === 'marketing') {
-          document.getElementById('tosMarketing').style.display = 'flex';
-        } else if (selectedService === 'print') {
-          document.getElementById('tosPrint').style.display = 'flex';
-        }
-      }
-
-      goToStep(step);
-    }
-
-    // Navigate to previous step
-    function prevStep(step) {
-      goToStep(step);
-    }
-
-    // Go to specific step
-    function goToStep(step) {
-      currentStep = step;
-      
-      // Update progress indicators
-      document.querySelectorAll('.progress-steps .step').forEach(el => {
-        const stepNum = parseInt(el.dataset.step);
-        el.classList.remove('active', 'completed');
-        if (stepNum === step) {
-          el.classList.add('active');
-        } else if (stepNum < step) {
-          el.classList.add('completed');
-        }
-      });
-
-      // Show correct content
-      document.querySelectorAll('.step-content').forEach(el => {
-        el.classList.remove('active');
-        if (parseInt(el.dataset.step) === step) {
-          el.classList.add('active');
-        }
-      });
-    }
-
-    // Hide all service option sections
-    function hideAllServiceOptions() {
-      document.querySelectorAll('.service-options').forEach(el => {
-        el.style.display = 'none';
-      });
-    }
-
-    // Form submission
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Validate TOS if needed
-      if (selectedService === 'marketing' && !document.getElementById('acceptMarketingTerms').checked) {
-        alert('Please accept the Marketing Terms of Service to continue.');
-        return;
-      }
-      if (selectedService === 'print' && !document.getElementById('acceptPrintTerms').checked) {
-        alert('Please accept the Print Terms of Service to continue.');
-        return;
-      }
-
-      // Collect form data
-      const formData = new FormData(this);
-      
-      // Submit to Zapier
-      fetch(this.action, {
-        method: 'POST',
-        body: formData
-      }).then(() => {
-        // Show success
-        document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
-        document.querySelector('.step-content[data-step="success"]').classList.add('active');
-        
-        // Update progress to complete
-        document.querySelectorAll('.progress-steps .step').forEach(el => {
-          el.classList.remove('active');
-          el.classList.add('completed');
-        });
-      }).catch(() => {
-        // Still show success (Zapier sometimes doesn't return proper response)
-        document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
-        document.querySelector('.step-content[data-step="success"]').classList.add('active');
-        document.querySelectorAll('.progress-steps .step').forEach(el => {
-          el.classList.remove('active');
-          el.classList.add('completed');
-        });
-      });
-    });
-
-    // Check for success parameter in URL
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === 'true') {
-      document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
-      document.querySelector('.step-content[data-step="success"]').classList.add('active');
-      document.querySelectorAll('.progress-steps .step').forEach(el => {
-        el.classList.remove('active');
-        el.classList.add('completed');
-      });
-    }
+    function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('menuOverlay').classList.toggle('active')}
+    let step=1;
+    const url=new URLSearchParams(location.search);
+    if(url.get('service')){const r=document.getElementById('s-'+url.get('service'));if(r)r.checked=true}
+    function upd(){document.querySelectorAll('.progress-step').forEach((s,i)=>{s.classList.remove('active','done');if(i+1<step)s.classList.add('done');if(i+1===step)s.classList.add('active')});document.querySelectorAll('.form-step').forEach(s=>{s.classList.toggle('active',+s.dataset.s===step)})}
+    function next(){if(step===1&&!document.querySelector('input[name="service"]:checked')){alert('Please select a service');return}if(step===3)review();if(step<4){step++;upd()}}
+    function prev(){if(step>1){step--;upd()}}
+    function review(){const f=new FormData(document.getElementById('cForm'));let h='';h+=`<div><strong>Service:</strong> ${f.get('service')||'-'}</div>`;h+=`<div><strong>Project:</strong> ${f.get('project')||'-'}</div>`;h+=`<div><strong>Name:</strong> ${f.get('fname')} ${f.get('lname')}</div>`;h+=`<div><strong>Email:</strong> ${f.get('email')}</div>`;if(f.get('phone'))h+=`<div><strong>Phone:</strong> ${f.get('phone')}</div>`;if(f.get('business'))h+=`<div><strong>Business:</strong> ${f.get('business')}</div>`;document.getElementById('review').innerHTML=h}
+    document.getElementById('cForm').onsubmit=e=>{e.preventDefault();document.getElementById('cForm').style.display='none';document.querySelector('.progress-bar').style.display='none';document.getElementById('success').classList.add('active')}
   </script>
 </body>
 </html>
