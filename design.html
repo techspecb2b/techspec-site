@@ -7,164 +7,57 @@
   <meta name="description" content="Professional graphic design services including logo design, branding, social media graphics. 100% original designs.">
   <link rel="canonical" href="https://techspec.biz/design.html">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    :root{--red:#FF0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5;--purple:#6c5ce7;--pink:#fd79a8;--teal:#00cec9}
-    body{font-family:'Inter',sans-serif;background:var(--light-gray);color:var(--black);overflow-x:hidden}
-    h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+    *{box-sizing:border-box;margin:0;padding:0}:root{--red:#FF0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5;--purple:#6c5ce7;--pink:#fd79a8;--teal:#00cec9}body{font-family:'Inter',sans-serif;background:var(--light-gray);color:var(--black);overflow-x:hidden}h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+    .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}.nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}.nav .logo img{height:55px}.nav nav{display:flex;align-items:center;gap:8px}.nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}.nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}.nav nav a.order-btn{background:white;color:var(--red);font-weight:800;padding:10px 22px}.nav nav a.order-btn:hover{background:#ffe6e6;transform:scale(1.05)}.nav nav a.members-btn{background:var(--black);border:2px solid white}.menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}.menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}.menu-overlay.active{display:block}.side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}.side-menu.active{right:0}.side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}.side-menu a.order-link{color:var(--red);background:white;text-align:center;border-radius:8px;margin-top:15px;font-weight:800}@media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}}
 
-    /* === STANDARD NAV === */
-    .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
-    .nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}
-    .nav .logo img{height:55px}
-    .nav nav{display:flex;align-items:center;gap:8px}
-    .nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}
-    .nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}
-    .nav nav a.members-btn{background:var(--black);border:2px solid white}
-    .nav nav a.members-btn:hover{background:white;color:var(--black)}
-    .menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}
-    .menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}
-    .menu-overlay.active{display:block}
-    .side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}
-    .side-menu.active{right:0}
-    .side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}
-    @media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}}
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 50%,var(--teal) 100%);position:relative;display:flex;align-items:center;padding:100px 20px 80px;overflow:hidden}.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3C/g%3E%3C/svg%3E")}.hero-container{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:10}.hero-content{color:white}.hero-badge{display:inline-block;background:rgba(0,0,0,0.3);padding:10px 25px;border-radius:50px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:25px}.hero h1{font-size:clamp(36px,5vw,60px);line-height:1.1;margin-bottom:20px}.hero-description{font-size:18px;opacity:0.95;margin-bottom:25px;line-height:1.7}.hero-points{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}.hero-point{display:flex;align-items:center;gap:12px;font-size:16px}.hero-point i{width:28px;height:28px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}.btn{padding:16px 35px;font-size:15px;font-weight:800;border-radius:50px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;display:inline-flex;align-items:center;gap:10px}.btn-primary{background:white;color:var(--purple);box-shadow:0 10px 30px rgba(0,0,0,0.3)}.btn-primary:hover{transform:translateY(-3px)}.btn-secondary{background:transparent;color:white;border:2px solid rgba(255,255,255,0.5)}.btn-secondary:hover{background:white;color:var(--purple)}.hero-buttons{display:flex;gap:15px;flex-wrap:wrap}.hero-visual{display:flex;justify-content:center}.hero-icon-display{position:relative;width:300px;height:300px;display:flex;align-items:center;justify-content:center}.hero-icon-main{font-size:140px;color:rgba(255,255,255,0.2)}.hero-icon-float{position:absolute;font-size:30px;color:rgba(255,255,255,0.5);animation:floatIcon 4s ease-in-out infinite}.hero-icon-float:nth-child(2){top:5%;left:15%}.hero-icon-float:nth-child(3){top:15%;right:10%;animation-delay:-1s}.hero-icon-float:nth-child(4){bottom:20%;left:10%;animation-delay:-2s}.hero-icon-float:nth-child(5){bottom:10%;right:15%;animation-delay:-3s}@keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}@media(max-width:1024px){.hero-container{grid-template-columns:1fr;text-align:center}.hero-visual{order:-1}.hero-points{align-items:center}.hero-buttons{justify-content:center}}
 
-    /* === HERO === */
-    .hero{min-height:100vh;background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 50%,var(--teal) 100%);position:relative;display:flex;align-items:center;padding:100px 20px 80px;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3C/g%3E%3C/svg%3E")}
-    .hero-container{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:10}
-    .hero-content{color:white}
-    .hero-badge{display:inline-block;background:rgba(0,0,0,0.3);padding:10px 25px;border-radius:50px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:25px}
-    .hero h1{font-size:clamp(36px,5vw,60px);line-height:1.1;margin-bottom:20px}
-    .hero-description{font-size:18px;opacity:0.95;margin-bottom:25px;line-height:1.7}
-    .hero-points{display:flex;flex-direction:column;gap:12px;margin-bottom:30px}
-    .hero-point{display:flex;align-items:center;gap:12px;font-size:16px}
-    .hero-point i{width:28px;height:28px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
-    .btn{padding:16px 35px;font-size:15px;font-weight:800;border-radius:50px;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;display:inline-flex;align-items:center;gap:10px}
-    .btn-primary{background:white;color:var(--purple);box-shadow:0 10px 30px rgba(0,0,0,0.3)}
-    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,0.4)}
-    .btn-secondary{background:transparent;color:white;border:2px solid rgba(255,255,255,0.5)}
-    .btn-secondary:hover{background:white;color:var(--purple)}
-    .hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
-    .hero-visual{display:flex;justify-content:center;align-items:center}
-    .hero-icon-display{position:relative;width:300px;height:300px;display:flex;align-items:center;justify-content:center}
-    .hero-icon-main{font-size:140px;color:rgba(255,255,255,0.2)}
-    .hero-icon-float{position:absolute;font-size:30px;color:rgba(255,255,255,0.5);animation:floatIcon 4s ease-in-out infinite}
-    .hero-icon-float:nth-child(2){top:5%;left:15%;animation-delay:0s}
-    .hero-icon-float:nth-child(3){top:15%;right:10%;animation-delay:-1s}
-    .hero-icon-float:nth-child(4){bottom:20%;left:10%;animation-delay:-2s}
-    .hero-icon-float:nth-child(5){bottom:10%;right:15%;animation-delay:-3s}
-    @keyframes floatIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-    @media(max-width:1024px){.hero-container{grid-template-columns:1fr;text-align:center}.hero-visual{order:-1}.hero-points{align-items:center}.hero-buttons{justify-content:center}}
+    .services-section{padding:100px 20px;background:white}.section-header{text-align:center;margin-bottom:60px}.section-label{display:inline-block;background:var(--purple);color:white;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}.section-header h2{font-size:clamp(28px,4vw,44px);margin-bottom:15px}.section-header p{font-size:16px;color:#666;max-width:550px;margin:0 auto}.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}.service-card{background:var(--light-gray);border-radius:18px;padding:30px 20px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--purple),var(--pink),var(--teal));transform:scaleX(0);transition:transform 0.3s}.service-card:hover::before{transform:scaleX(1)}.service-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.1);background:white}.service-card .icon{width:60px;height:60px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}.service-card .icon i{font-size:24px;color:white}.service-card h3{font-size:16px;margin-bottom:8px}.service-card p{color:#666;font-size:13px;line-height:1.5}@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.services-grid{grid-template-columns:1fr}}
 
-    /* === SERVICES === */
-    .services-section{padding:100px 20px;background:white}
-    .section-header{text-align:center;margin-bottom:60px}
-    .section-label{display:inline-block;background:var(--purple);color:white;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:20px}
-    .section-header h2{font-size:clamp(28px,4vw,44px);margin-bottom:15px}
-    .section-header p{font-size:16px;color:#666;max-width:550px;margin:0 auto}
-    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}
-    .service-card{background:var(--light-gray);border-radius:18px;padding:30px 20px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
-    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--purple),var(--pink),var(--teal));transform:scaleX(0);transition:transform 0.3s}
-    .service-card:hover::before{transform:scaleX(1)}
-    .service-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.1);background:white}
-    .service-card .icon{width:60px;height:60px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}
-    .service-card .icon i{font-size:24px;color:white}
-    .service-card h3{font-size:16px;margin-bottom:8px}
-    .service-card p{color:#666;font-size:13px;line-height:1.5}
-    @media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.services-grid{grid-template-columns:1fr}}
+    /* LOGO SHOWCASE - Improved visibility */
+    .logo-section{padding:100px 20px;background:var(--dark-gray)}.logo-section .section-header h2,.logo-section .section-header p{color:white}.logo-section .section-header p{color:rgba(255,255,255,0.7)}.logo-section .section-label{background:var(--pink)}
+    .slider-container{max-width:1400px;margin:0 auto;position:relative;padding:0 60px}
+    .logo-slider{display:flex;gap:25px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}.logo-slider::-webkit-scrollbar{display:none}
+    .logo-slide{flex:0 0 280px;scroll-snap-align:start;background:linear-gradient(145deg,#2a2a2a,#333);border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:40px;cursor:pointer;transition:all 0.4s;position:relative;border:2px solid #444}
+    .logo-slide::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(255,255,255,0.1),transparent 70%);border-radius:18px}
+    .logo-slide:hover{transform:scale(1.05);box-shadow:0 25px 50px rgba(108,92,231,0.4);border-color:var(--purple)}
+    .logo-slide img{max-width:80%;max-height:80%;object-fit:contain;filter:drop-shadow(0 5px 15px rgba(0,0,0,0.3)) brightness(1.1);transition:all 0.4s}
+    .logo-slide:hover img{transform:scale(1.1);filter:drop-shadow(0 10px 30px rgba(108,92,231,0.5)) brightness(1.2)}
+    .slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:white;color:var(--purple);border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;transition:all 0.3s;box-shadow:0 5px 20px rgba(0,0,0,0.3)}.slider-btn:hover{background:var(--purple);color:white}.slider-btn.prev{left:0}.slider-btn.next{right:0}
+    @media(max-width:768px){.slider-container{padding:0 20px}.logo-slide{flex:0 0 240px;padding:30px}}
 
-    /* === LOGO SHOWCASE === */
-    .logo-section{padding:100px 20px;background:var(--dark-gray)}
-    .logo-section .section-header h2,.logo-section .section-header p{color:white}
-    .logo-section .section-header p{color:rgba(255,255,255,0.7)}
-    .logo-section .section-label{background:var(--pink)}
-    .logo-container{max-width:1200px;margin:0 auto}
-    .logo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:25px}
-    .logo-item{background:linear-gradient(145deg,#222,#2d2d2d);border-radius:20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:35px;position:relative;overflow:hidden;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)}
-    .logo-item::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(108,92,231,0.15),transparent 70%);opacity:0;transition:opacity 0.4s}
-    .logo-item::after{content:'';position:absolute;inset:0;border:2px solid transparent;border-radius:20px;transition:all 0.3s}
-    .logo-item:hover{transform:translateY(-10px) scale(1.03);box-shadow:0 25px 50px rgba(108,92,231,0.3)}
-    .logo-item:hover::before{opacity:1}
-    .logo-item:hover::after{border-color:var(--purple)}
-    .logo-item img{max-width:80%;max-height:80%;object-fit:contain;filter:drop-shadow(0 8px 25px rgba(0,0,0,0.4));transition:all 0.4s}
-    .logo-item:hover img{transform:scale(1.1);filter:drop-shadow(0 12px 35px rgba(108,92,231,0.4))}
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10000;align-items:center;justify-content:center}.lightbox.show{display:flex}.lightbox-content{position:relative;max-width:90vw;max-height:90vh;background:#222;padding:40px;border-radius:20px}.lightbox-content img{max-width:100%;max-height:75vh;object-fit:contain;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5))}.lightbox-close{position:fixed;top:20px;right:20px;width:50px;height:50px;background:white;color:var(--purple);border:none;border-radius:50%;font-size:24px;cursor:pointer;z-index:10001}.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:50px;height:50px;background:white;color:var(--purple);border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:10001}.lightbox-nav.prev{left:20px}.lightbox-nav.next{right:20px}.lightbox-counter{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:white;color:#333;padding:10px 25px;border-radius:50px;font-weight:600}
 
-    /* === PROCESS === */
-    .process-section{padding:100px 20px;background:var(--light-gray)}
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;max-width:1000px;margin:0 auto}
-    .process-step{text-align:center;position:relative}
-    .process-step::after{content:'';position:absolute;top:35px;right:-12px;width:25px;height:2px;background:var(--purple)}
-    .process-step:last-child::after{display:none}
-    .step-number{width:70px;height:70px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Poppins',sans-serif;font-size:28px;font-weight:800;color:white}
-    .process-step h3{font-size:17px;margin-bottom:8px}
-    .process-step p{color:#666;font-size:13px}
-    @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr)}.process-step::after{display:none}}
-    @media(max-width:600px){.process-grid{grid-template-columns:1fr}}
+    .process-section{padding:100px 20px;background:var(--light-gray)}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;max-width:1000px;margin:0 auto}.process-step{text-align:center;position:relative}.process-step::after{content:'';position:absolute;top:35px;right:-12px;width:25px;height:2px;background:var(--purple)}.process-step:last-child::after{display:none}.step-number{width:70px;height:70px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Poppins',sans-serif;font-size:28px;font-weight:800;color:white}.process-step h3{font-size:17px;margin-bottom:8px}.process-step p{color:#666;font-size:13px}@media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr)}.process-step::after{display:none}}@media(max-width:600px){.process-grid{grid-template-columns:1fr}}
 
-    /* === CTA === */
-    .cta-section{padding:100px 20px;background:linear-gradient(135deg,var(--purple),var(--pink));text-align:center;color:white}
-    .cta-icon{font-size:60px;margin-bottom:25px;opacity:0.9}
-    .cta-section h2{font-size:clamp(28px,4vw,44px);margin-bottom:15px}
-    .cta-section p{font-size:18px;opacity:0.95;max-width:550px;margin:0 auto 35px}
-    .cta-section .btn-primary{background:white;color:var(--purple)}
+    .footnote{text-align:center;padding:20px;background:var(--light-gray);font-size:13px;color:#888}.footnote a{color:var(--purple)}
 
-    /* === FOOTER === */
-    footer{background:var(--dark-gray);color:#888;padding:60px 40px 25px}
-    .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px}
-    .footer-brand img{height:50px;margin-bottom:15px}
-    .footer-brand p{font-size:14px;line-height:1.7}
-    .footer-col h4{color:white;font-size:13px;font-weight:700;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}
-    .footer-col a{display:block;color:#888;text-decoration:none;padding:6px 0;font-size:14px;transition:color 0.3s}
-    .footer-col a:hover{color:var(--red)}
-    .footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:13px}
-    .social-links a{color:#888;font-size:20px;margin-left:15px}
-    .social-links a:hover{color:var(--red)}
-    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}
-    @media(max-width:600px){.footer-inner{grid-template-columns:1fr;text-align:center}.footer-bottom{flex-direction:column;gap:15px;text-align:center}}
+    .cta-section{padding:100px 20px;background:linear-gradient(135deg,var(--purple),var(--pink));text-align:center;color:white}.cta-icon{font-size:60px;margin-bottom:25px;opacity:0.9}.cta-section h2{font-size:clamp(28px,4vw,44px);margin-bottom:15px}.cta-section p{font-size:18px;opacity:0.95;max-width:550px;margin:0 auto 35px}.cta-section .btn-primary{background:white;color:var(--purple)}
+
+    footer{background:var(--dark-gray);color:#888;padding:60px 40px 25px}.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px}.footer-brand img{height:50px;margin-bottom:15px}.footer-brand p{font-size:14px;line-height:1.7}.footer-col h4{color:white;font-size:13px;font-weight:700;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}.footer-col a{display:block;color:#888;text-decoration:none;padding:6px 0;font-size:14px}.footer-col a:hover{color:var(--red)}.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:20px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:13px}.social-links a{color:#888;font-size:20px;margin-left:15px}@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr}}@media(max-width:600px){.footer-inner{grid-template-columns:1fr;text-align:center}.footer-bottom{flex-direction:column;gap:15px;text-align:center}}
   </style>
 </head>
 <body>
-
-  <!-- STANDARD NAV -->
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="logo"><img src="logo.png" alt="TechSpec"></a>
-      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="marketing.html">Marketing</a>
-        <a href="print.html">Print</a>
-        <a href="design.html" class="active">Design</a>
-        <a href="web.html">Web</a>
-        <a href="contact.html">Contact</a>
-        <a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a>
-      </nav>
-    </div>
-  </header>
+  <header class="nav"><div class="nav-inner"><a href="index.html" class="logo"><img src="logo.png" alt="TechSpec"></a><button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button><nav><a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html" class="active">Design</a><a href="web.html">Web</a><a href="order.html" class="order-btn"><i class="fas fa-shopping-cart"></i> Order</a><a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a></nav></div></header>
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
-  <div class="side-menu" id="sideMenu">
-    <a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="contact.html">Contact</a><a href="members.html">Members Area</a>
-  </div>
+  <div class="side-menu" id="sideMenu"><a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="order.html" class="order-link"><i class="fas fa-shopping-cart"></i> Order Now</a><a href="members.html">Members Area</a></div>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
         <div class="hero-badge">Graphic Design Services</div>
         <h1>Designs That Make You Stand Out</h1>
-        <p class="hero-description">100% original designs crafted from scratch. No templates, no shortcuts. Just creative work that represents your brand perfectly.</p>
+        <p class="hero-description">100% original designs crafted from scratch. Creative work that represents your brand perfectly.</p>
         <div class="hero-points">
-          <div class="hero-point"><i class="fas fa-check"></i> Original artwork, never templates</div>
-          <div class="hero-point"><i class="fas fa-check"></i> Unlimited revisions until you love it</div>
-          <div class="hero-point"><i class="fas fa-check"></i> Full source files included</div>
+          <div class="hero-point"><i class="fas fa-check"></i> Custom artwork for your brand</div>
+          <div class="hero-point"><i class="fas fa-check"></i> Unlimited revisions*</div>
+          <div class="hero-point"><i class="fas fa-check"></i> Full source files + branding guide included</div>
         </div>
         <div class="hero-buttons">
-          <a href="contact.html?service=design" class="btn btn-primary"><i class="fas fa-palette"></i> Start Your Project</a>
+          <a href="order.html?service=design" class="btn btn-primary"><i class="fas fa-palette"></i> Start Your Project</a>
           <a href="#logos" class="btn btn-secondary">View Portfolio</a>
         </div>
       </div>
@@ -180,13 +73,8 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section class="services-section">
-    <div class="section-header">
-      <span class="section-label">What We Design</span>
-      <h2>Creative Services for Every Need</h2>
-      <p>From your logo to your entire brand identity, we create visuals that work.</p>
-    </div>
+    <div class="section-header"><span class="section-label">What We Design</span><h2>Creative Services for Every Need</h2><p>From your logo to your entire brand identity, we create visuals that work.</p></div>
     <div class="services-grid">
       <div class="service-card"><div class="icon"><i class="fas fa-crown"></i></div><h3>Logo Design</h3><p>Memorable logos that capture your brand's essence.</p></div>
       <div class="service-card"><div class="icon"><i class="fas fa-book-open"></i></div><h3>Brand Identity</h3><p>Complete branding with colors, fonts, and guidelines.</p></div>
@@ -199,25 +87,25 @@
     </div>
   </section>
 
-  <!-- LOGO SHOWCASE -->
   <section class="logo-section" id="logos">
-    <div class="section-header">
-      <span class="section-label">Our Work</span>
-      <h2>Logo Designs We're Proud Of</h2>
-      <p>A selection of logos crafted for businesses across various industries.</p>
-    </div>
-    <div class="logo-container">
-      <div class="logo-grid" id="logoGrid"></div>
+    <div class="section-header"><span class="section-label">Our Work</span><h2>Logo Designs We're Proud Of</h2><p>A selection of logos crafted for businesses across various industries.</p></div>
+    <div class="slider-container">
+      <button class="slider-btn prev" onclick="slideLogos(-1)"><i class="fas fa-chevron-left"></i></button>
+      <div class="logo-slider" id="logoSlider"></div>
+      <button class="slider-btn next" onclick="slideLogos(1)"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
 
-  <!-- PROCESS -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+    <button class="lightbox-nav prev" onclick="navLightbox(-1,event)"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-content"><img id="lightboxImg" src="" alt=""></div>
+    <button class="lightbox-nav next" onclick="navLightbox(1,event)"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
   <section class="process-section">
-    <div class="section-header">
-      <span class="section-label">Our Process</span>
-      <h2>How We Work</h2>
-      <p>Simple, collaborative, and focused on results.</p>
-    </div>
+    <div class="section-header"><span class="section-label">Our Process</span><h2>How We Work</h2><p>Simple, collaborative, and focused on results.</p></div>
     <div class="process-grid">
       <div class="process-step"><div class="step-number">1</div><h3>Discovery</h3><p>We learn about your business and vision.</p></div>
       <div class="process-step"><div class="step-number">2</div><h3>Concepts</h3><p>We create initial directions for review.</p></div>
@@ -226,20 +114,20 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <div class="footnote">*Some exclusions apply. <a href="tosdesign.html">Read Design TOS for more info</a>.</div>
+
   <section class="cta-section">
     <div class="cta-icon"><i class="fas fa-magic"></i></div>
     <h2>Ready to Create Something Amazing?</h2>
     <p>Tell us about your project and let's bring your vision to life.</p>
-    <a href="contact.html?service=design" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get Started</a>
+    <a href="order.html?service=design" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get Started</a>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand"><img src="logo.png" alt="TechSpec"><p>Professional print, design, and marketing solutions for businesses.</p></div>
       <div class="footer-col"><h4>Services</h4><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web Design</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="contact.html">Contact</a><a href="members.html">Members Area</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="order.html">Order / Quote</a><a href="members.html">Members Area</a><a href="tosdesign.html">Design TOS</a></div>
       <div class="footer-col"><h4>Contact</h4><a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2025 TechSpec. All rights reserved.</span><div class="social-links"><a href="https://facebook.com/techspecb2b"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div>
@@ -248,32 +136,15 @@
   <script>
     function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('menuOverlay').classList.toggle('active')}
     
-    // Load logos dynamically
-    const logoGrid = document.getElementById('logoGrid');
-    
-    async function checkImg(url) {
-      return new Promise(r => {
-        const img = new Image();
-        img.onload = () => r(true);
-        img.onerror = () => r(false);
-        img.src = url;
-      });
-    }
-
-    async function loadLogos() {
-      for (let i = 1; i <= 20; i++) {
-        const exists = await checkImg(`logo${i}.png`);
-        if (exists) {
-          const item = document.createElement('div');
-          item.className = 'logo-item';
-          item.innerHTML = `<img src="logo${i}.png" alt="Logo Design ${i}" loading="lazy">`;
-          logoGrid.appendChild(item);
-        } else if (i > 12) {
-          break; // Stop after passing known logos
-        }
-      }
-    }
+    const slider=document.getElementById('logoSlider');let images=[];let currentImg=0;
+    async function checkImg(url){return new Promise(r=>{const img=new Image();img.onload=()=>r(true);img.onerror=()=>r(false);img.src=url})}
+    async function loadLogos(){for(let i=1;i<=30;i++){const exists=await checkImg(`logo${i}.png`);if(exists){images.push(`logo${i}.png`);const slide=document.createElement('div');slide.className='logo-slide';slide.innerHTML=`<img src="logo${i}.png" alt="Logo Design ${i}">`;slide.onclick=()=>openLightbox(images.indexOf(`logo${i}.png`));slider.appendChild(slide)}else if(i>12)break}}
     loadLogos();
+    function slideLogos(dir){slider.scrollBy({left:dir*305,behavior:'smooth'})}
+    function openLightbox(idx){currentImg=idx;document.getElementById('lightboxImg').src=images[idx];document.getElementById('lightboxCounter').textContent=`${idx+1} / ${images.length}`;document.getElementById('lightbox').classList.add('show');document.body.style.overflow='hidden'}
+    function closeLightbox(e){if(!e||e.target.classList.contains('lightbox')){document.getElementById('lightbox').classList.remove('show');document.body.style.overflow=''}}
+    function navLightbox(dir,e){e.stopPropagation();currentImg=(currentImg+dir+images.length)%images.length;document.getElementById('lightboxImg').src=images[currentImg];document.getElementById('lightboxCounter').textContent=`${currentImg+1} / ${images.length}`}
+    document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').classList.contains('show')){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')navLightbox(-1,e);if(e.key==='ArrowRight')navLightbox(1,e)}});
   </script>
 </body>
 </html>
