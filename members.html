@@ -34,6 +34,8 @@
     }
 
     .nav .logo img { height:55px }
+    .nav .logo .mobile-logo { display:none }
+    @media(max-width:900px) { .nav .logo img.desktop-logo { display:none } .nav .logo .mobile-logo { display:block; height:40px } }
 
     .nav nav {
       display:flex;align-items:center;gap:8px
@@ -333,7 +335,7 @@
 
   <header class="nav">
     <div class="nav-inner">
-      <a href="index.html"><div class="logo"><img src="logo.png" alt="TechSpec Logo"></div></a>
+      <a href="index.html" class="logo"><img src="logo.png" alt="TechSpec" class="desktop-logo"><img src="head only.png" alt="TechSpec" class="mobile-logo"></a>
       <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
       <nav>
         <a href="index.html">Home</a>
