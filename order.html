@@ -108,8 +108,7 @@
           <div class="progress-step"><div class="num">3</div><div class="label">Contact</div></div>
         </div>
 
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="14621453-ce7b-41cd-8899-7be51971c95c">
+        <form id="contactForm">
           <input type="hidden" name="subject" value="New Order Request from TechSpec Website">
           <input type="hidden" name="from_name" value="TechSpec Website">
           <input type="checkbox" name="botcheck" style="display:none">
@@ -168,7 +167,45 @@
     function nextStep(n){if(currentStep===1){if(!document.querySelector('input[name="service"]:checked')){alert('Please select a service');return}}if(currentStep===2){if(!document.getElementById('projectType').value.trim()){alert('Please tell us what you need');return}}showStep(n)}
     function prevStep(n){showStep(n)}
     const form=document.getElementById('contactForm');
-    form.addEventListener('submit',async function(e){e.preventDefault();const btn=document.getElementById('submitBtn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';try{const response=await fetch(form.action,{method:'POST',body:new FormData(form)});if(response.ok){document.getElementById('progressBar').style.display='none';document.querySelectorAll('.form-step').forEach(s=>s.style.display='none');document.getElementById('successMsg').classList.add('show')}else{throw new Error('Failed')}}catch(err){btn.disabled=false;btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Request';alert('Something went wrong. Please email us directly at brandon@techspec.biz')}});
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      const btn=document.getElementById('submitBtn');
+      btn.disabled=true;
+      btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      const service=document.querySelector('input[name="service"]:checked')?.value||'Not specified';
+      const projectType=document.getElementById('projectType').value;
+      const projectDetails=document.getElementById('projectDetails').value;
+      const firstName=document.getElementById('firstName').value;
+      const lastName=document.getElementById('lastName').value;
+      const email=document.getElementById('email').value;
+      const phone=document.getElementById('phone').value;
+      const business=document.getElementById('business').value;
+      
+      const cardName=`${service}: ${firstName} ${lastName}` + (business ? ` (${business})` : '');
+      const cardDesc=`**Service:** ${service}\n**Project Type:** ${projectType}\n\n**Details:**\n${projectDetails||'None provided'}\n\n---\n**Contact Info:**\n- Name: ${firstName} ${lastName}\n- Email: ${email}\n- Phone: ${phone||'Not provided'}\n- Business: ${business||'Not provided'}`;
+      
+      const trelloKey='3ea0ef2b85773186d7ae30322ae1782d';
+      const trelloToken='ATTAde902321af1ec6600e16a0587516fb0b68cff7d5ce58997aa165fc08ba35568217827FB6';
+      const listId='6961e2ac1fb32d0d4c9172a7';
+      
+      try{
+        const response=await fetch(`https://api.trello.com/1/cards?idList=${listId}&key=${trelloKey}&token=${trelloToken}`,{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({name:cardName,desc:cardDesc,pos:'top'})
+        });
+        if(response.ok){
+          document.getElementById('progressBar').style.display='none';
+          document.querySelectorAll('.form-step').forEach(s=>s.style.display='none');
+          document.getElementById('successMsg').classList.add('show');
+        }else{throw new Error('Failed')}
+      }catch(err){
+        btn.disabled=false;
+        btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Request';
+        alert('Something went wrong. Please email us directly at brandon@techspec.biz');
+      }
+    });
   </script>
 </body>
 </html>
