@@ -130,7 +130,11 @@
             <h3 class="step-title"><i class="fas fa-clipboard-list"></i> Project details</h3>
             <p class="step-subtitle">Tell us more about what you're looking for</p>
             <div class="form-group"><label for="projectType">What do you need? *</label><input type="text" id="projectType" name="project_type" placeholder="e.g., 500 business cards, logo design, Facebook ads..." required></div>
-            <div class="form-group"><label for="projectDetails">Additional details (optional)</label><textarea id="projectDetails" name="project_details" placeholder="Any specific requirements, colors, ideas, timeline, budget..."></textarea></div>
+            <div class="form-group"><label for="projectDetails">Additional details (optional)</label><textarea id="projectDetails" name="project_details" placeholder="Any specific requirements, colors, ideas..."></textarea></div>
+            <div class="form-row">
+              <div class="form-group"><label>Timeline</label><select id="timeline" name="timeline"><option value="">Select timeline</option><option value="ASAP">ASAP (rush may apply)</option><option value="1-2 weeks">1-2 weeks</option><option value="1 month">Within a month</option><option value="Flexible">Flexible / No rush</option></select></div>
+              <div class="form-group"><label>Budget Range</label><select id="budget" name="budget"><option value="">Select budget</option><option value="Under $250">Under $250</option><option value="$250-$500">$250 - $500</option><option value="$500-$1000">$500 - $1,000</option><option value="$1000-$2500">$1,000 - $2,500</option><option value="$2500+">$2,500+</option><option value="Not sure">Not sure yet</option></select></div>
+            </div>
             <div class="btn-row"><button type="button" class="btn btn-back" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Back</button><button type="button" class="btn btn-next" onclick="nextStep(3)">Continue <i class="fas fa-arrow-right"></i></button></div>
           </div>
 
@@ -154,7 +158,10 @@
           <i class="fas fa-check-circle"></i>
           <h2>Request Sent!</h2>
           <p>Thanks for reaching out! We'll review your request and get back to you within 24 hours.</p>
-          <a href="index.html" class="btn"><i class="fas fa-home"></i> Back to Home</a>
+          <div class="btn-row" style="max-width:500px;margin:0 auto">
+            <a href="index.html" class="btn btn-back"><i class="fas fa-home"></i> Back to Home</a>
+            <button type="button" class="btn btn-next" onclick="resetForm()"><i class="fas fa-plus"></i> New Order</button>
+          </div>
         </div>
       </div>
 
@@ -230,7 +237,7 @@
       var business=document.getElementById('business').value;
       
       var cardName=selectedService+': '+firstName+' '+lastName+(business?' ('+business+')':'');
-      var cardDesc='**Service:** '+selectedService+'\n**Project Type:** '+projectType+'\n\n**Details:**\n'+(projectDetails||'None provided')+'\n\n---\n**Contact Info:**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+(phone||'Not provided')+'\n- Business: '+(business||'Not provided');
+      var cardDesc='**Service:** '+selectedService+'\n**Project Type:** '+projectType+'\n**Timeline:** '+(document.getElementById('timeline').value||'Not specified')+'\n**Budget:** '+(document.getElementById('budget').value||'Not specified')+'\n\n**Details:**\n'+(projectDetails||'None provided')+'\n\n---\n**Contact Info:**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+(phone||'Not provided')+'\n- Business: '+(business||'Not provided');
       
       var trelloKey='3ea0ef2b85773186d7ae30322ae1782d';
       var trelloToken='ATTAde902321af1ec6600e16a0587516fb0b68cff7d5ce58997aa165fc08ba35568217827FB6';
@@ -255,6 +262,16 @@
           alert('Something went wrong. Please email us directly at brandon@techspec.biz');
         });
     });
+function resetForm(){
+      form.reset();
+      document.getElementById('progressBar').style.display='flex';
+      var formSteps=document.querySelectorAll('.form-step');
+      for(var i=0;i<formSteps.length;i++){formSteps[i].style.display='block'}
+      document.getElementById('successMsg').classList.remove('show');
+      showStep(1);
+      document.getElementById('submitBtn').disabled=false;
+      document.getElementById('submitBtn').innerHTML='<i class="fas fa-paper-plane"></i> Send Request';
+    }
   </script>
 </body>
 </html>
