@@ -10,15 +10,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--red:#FF0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5;--purple:#6c5ce7}
-    body{font-family:'Inter',sans-serif;background:var(--light-gray);color:var(--black);overflow-x:hidden}
+    :root{--red:#FF0000;--black:#111;--dark-gray:#1a1a1a;--light-gray:#f5f5f5}
+    body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,var(--red) 100%);min-height:100vh;color:var(--black)}
     h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
 
-    .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}.nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}.nav .logo img.desktop-logo{height:55px}.nav .logo img.mobile-logo{display:none;height:40px}.nav nav{display:flex;align-items:center;gap:8px}.nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}.nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}.nav nav a.order-btn{background:white;color:var(--red);font-weight:800;padding:10px 22px}.nav nav a.order-btn:hover{background:#ffe6e6;transform:scale(1.05)}.nav nav a.members-btn{background:var(--black);border:2px solid white}.nav nav a.members-btn:hover{background:white;color:var(--black)}.menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}.menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}.menu-overlay.active{display:block}.side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}.side-menu.active{right:0}.side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}.side-menu a.order-link{color:var(--red);background:white;text-align:center;border-radius:8px;margin-top:15px;font-weight:800}@media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}.nav .logo img.desktop-logo{display:none}.nav .logo img.mobile-logo{display:block}}
+    .nav{background:var(--red);padding:12px 0;position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.3)}.nav-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 50px}.nav .logo{display:flex;align-items:center}.nav .logo .desktop-logo{height:55px}.nav .logo .mobile-logo{height:40px;display:none}.nav nav{display:flex;align-items:center;gap:8px}.nav nav a{color:white;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:50px;transition:all 0.3s;font-size:14px}.nav nav a:hover,.nav nav a.active{background:rgba(255,255,255,0.2)}.nav nav a.order-btn{background:white;color:var(--red);font-weight:800;padding:10px 22px}.nav nav a.order-btn:hover{background:#ffe6e6;transform:scale(1.05)}.nav nav a.members-btn{background:var(--black);border:2px solid white}.nav nav a.members-btn:hover{background:white;color:var(--black)}.menu-toggle{display:none;background:none;border:none;color:white;font-size:26px;cursor:pointer}.menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:998}.menu-overlay.active{display:block}.side-menu{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--dark-gray);z-index:999;transition:right 0.3s;padding:80px 25px 25px}.side-menu.active{right:0}.side-menu a{display:block;color:white;padding:15px 0;font-size:16px;font-weight:600;border-bottom:1px solid #333;text-decoration:none}.side-menu a.order-link{color:var(--red);background:white;text-align:center;border-radius:8px;margin-top:15px;font-weight:800}@media(max-width:900px){.menu-toggle{display:block}.nav nav{display:none}.nav-inner{padding:0 20px}.nav .logo .desktop-logo{display:none}.nav .logo .mobile-logo{display:block}}
 
-    .hero{min-height:100vh;background:linear-gradient(135deg,var(--purple) 0%,var(--red) 100%);display:flex;align-items:center;justify-content:center;padding:120px 20px 60px;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")}
-
+    .page-container{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 60px}
     .form-wrapper{max-width:900px;width:100%}
     .form-header{text-align:center;color:white;margin-bottom:40px}
     .form-header h1{font-size:clamp(32px,5vw,52px);margin-bottom:15px;text-shadow:0 4px 20px rgba(0,0,0,0.3)}
@@ -36,9 +34,8 @@
     .progress-step .num{width:48px;height:48px;background:#eee;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:800;font-size:18px;color:#999;transition:all 0.3s}
     .progress-step.active .num{background:var(--red);color:white;box-shadow:0 5px 20px rgba(255,0,0,0.4)}
     .progress-step.done .num{background:#00b894;color:white}
-    .progress-step span{font-size:13px;color:#888;font-weight:600}
-    .progress-step.active span{color:var(--black)}
-    @media(max-width:500px){.progress-step span{font-size:11px}}
+    .progress-step .label{font-size:13px;font-weight:600;color:#999}
+    .progress-step.active .label,.progress-step.done .label{color:var(--black)}
 
     .form-step{display:none}
     .form-step.active{display:block;animation:fadeIn 0.4s}
@@ -56,58 +53,66 @@
 
     .step-title{font-size:22px;margin-bottom:8px;display:flex;align-items:center;gap:12px}
     .step-title i{color:var(--red)}
-    .step-subtitle{color:#888;margin-bottom:30px;font-size:15px}
+    .step-subtitle{color:#888;margin-bottom:25px;font-size:15px}
 
-    .form-group{margin-bottom:22px}
-    .form-group label{display:block;font-weight:700;margin-bottom:10px;font-size:15px}
-    .form-group input,.form-group textarea,.form-group select{width:100%;padding:16px 20px;border:2px solid #e8e8e8;border-radius:14px;font-size:16px;font-family:inherit;transition:all 0.3s;background:#f8fafc}
-    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--red);background:white;box-shadow:0 5px 20px rgba(255,0,0,0.1)}
-    .form-group textarea{min-height:130px;resize:vertical}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .form-group{margin-bottom:20px}
+    .form-group label{display:block;font-weight:600;margin-bottom:8px;font-size:14px;color:#333}
+    .form-group input,.form-group textarea,.form-group select{width:100%;padding:16px 20px;border:2px solid #eee;border-radius:12px;font-size:15px;font-family:inherit;transition:all 0.3s}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(255,0,0,0.1)}
+    .form-group textarea{min-height:120px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
     @media(max-width:600px){.form-row{grid-template-columns:1fr}}
 
-    .btn-row{display:flex;gap:15px;margin-top:35px}
+    .btn-row{display:flex;gap:15px;margin-top:30px}
     .btn{flex:1;padding:18px 30px;border:none;border-radius:50px;font-size:16px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all 0.3s}
     .btn-back{background:#eee;color:#666}
     .btn-back:hover{background:#ddd}
     .btn-next,.btn-submit{background:var(--red);color:white;box-shadow:0 10px 30px rgba(255,0,0,0.3)}
     .btn-next:hover,.btn-submit:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(255,0,0,0.4)}
-    .btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
 
-    .success-msg{display:none;text-align:center;padding:60px 30px}
+    .success-msg{display:none;text-align:center;padding:60px 20px}
     .success-msg.show{display:block}
-    .success-icon{width:100px;height:100px;background:#00b894;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 30px}
-    .success-icon i{font-size:50px;color:white}
-    .success-msg h2{font-size:32px;margin-bottom:15px;color:#00b894}
-    .success-msg p{color:#666;font-size:17px;max-width:400px;margin:0 auto 30px;line-height:1.7}
+    .success-msg i{font-size:80px;color:#00b894;margin-bottom:25px}
+    .success-msg h2{font-size:32px;margin-bottom:15px}
+    .success-msg p{color:#666;font-size:16px;margin-bottom:30px}
     .success-msg .btn{max-width:250px;margin:0 auto;background:var(--red);color:white}
 
-    footer{background:var(--dark-gray);color:#aaa;padding:40px 20px;text-align:center}
-    footer .footer-links{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-bottom:20px}
-    footer a{color:#aaa;text-decoration:none;transition:color 0.3s;display:flex;align-items:center;gap:8px}
-    footer a:hover{color:white}
-    footer p{font-size:13px;margin-top:20px;color:#666}
+    .contact-info{max-width:900px;margin:40px auto 0;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+    .contact-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.9);font-size:14px}
+    .contact-item i{font-size:18px}
+    .contact-item a{color:white;text-decoration:none}
+
+    footer{background:rgba(0,0,0,0.2);color:rgba(255,255,255,0.7);padding:25px;text-align:center;font-size:13px}
   </style>
 </head>
 <body>
-  <header class="nav"><div class="nav-inner"><a href="index.html" class="logo"><img src="logo.png" alt="TechSpec" class="desktop-logo"><img src="head only.svg" alt="TechSpec" class="mobile-logo"></a><button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button><nav><a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="order.html" class="order-btn active"><i class="fas fa-shopping-cart"></i> Order</a><a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a></nav></div></header>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" alt="TechSpec" class="desktop-logo"><img src="head only.svg" alt="TechSpec" class="mobile-logo"></a>
+      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+      <nav><a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="order.html" class="order-btn active"><i class="fas fa-shopping-cart"></i> Order</a><a href="members.html" class="members-btn"><i class="fas fa-user"></i> Members</a></nav>
+    </div>
+  </header>
   <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
   <div class="side-menu" id="sideMenu"><a href="index.html">Home</a><a href="marketing.html">Marketing</a><a href="print.html">Print</a><a href="design.html">Design</a><a href="web.html">Web</a><a href="order.html" class="order-link"><i class="fas fa-shopping-cart"></i> Order Now</a><a href="members.html">Members Area</a></div>
 
-  <section class="hero">
+  <div class="page-container">
     <div class="form-wrapper">
-      <div class="form-header"><h1>Let's Work Together</h1><p>Tell us what you need and we'll get back to you within 24 hours</p></div>
+      <div class="form-header">
+        <h1>Let's Work Together</h1>
+        <p>Tell us what you need and we'll get back to you within 24 hours</p>
+      </div>
+
       <div class="order-form">
-        <div class="progress-bar step-1" id="progressBar">
-          <div class="progress-step active"><div class="num">1</div><span>Service</span></div>
-          <div class="progress-step"><div class="num">2</div><span>Details</span></div>
-          <div class="progress-step"><div class="num">3</div><span>Info</span></div>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-step active"><div class="num">1</div><div class="label">Service</div></div>
+          <div class="progress-step"><div class="num">2</div><div class="label">Details</div></div>
+          <div class="progress-step"><div class="num">3</div><div class="label">Info</div></div>
         </div>
 
         <form id="contactForm">
           <input type="hidden" name="subject" value="New Order Request from TechSpec Website">
           <input type="hidden" name="from_name" value="TechSpec Order Form">
-          <input type="checkbox" name="botcheck" style="display:none">
 
           <div class="form-step active" id="step1">
             <h3 class="step-title"><i class="fas fa-concierge-bell"></i> What do you need?</h3>
@@ -132,84 +137,123 @@
           <div class="form-step" id="step3">
             <h3 class="step-title"><i class="fas fa-user"></i> Your information</h3>
             <p class="step-subtitle">How can we reach you?</p>
-            <div class="form-row"><div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" name="first_name" required></div><div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" name="last_name" required></div></div>
-            <div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required></div>
-            <div class="form-row"><div class="form-group"><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone"></div><div class="form-group"><label for="business">Business Name (optional)</label><input type="text" id="business" name="business"></div></div>
+            <div class="form-row">
+              <div class="form-group"><label>First Name *</label><input type="text" id="firstName" name="first_name" required></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" id="lastName" name="last_name" required></div>
+            </div>
+            <div class="form-group"><label>Email Address *</label><input type="email" id="email" name="email" required></div>
+            <div class="form-row">
+              <div class="form-group"><label>Phone (optional)</label><input type="tel" id="phone" name="phone"></div>
+              <div class="form-group"><label>Business Name (optional)</label><input type="text" id="business" name="business"></div>
+            </div>
             <div class="btn-row"><button type="button" class="btn btn-back" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Back</button><button type="submit" class="btn btn-submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Send Request</button></div>
           </div>
         </form>
 
         <div class="success-msg" id="successMsg">
-          <div class="success-icon"><i class="fas fa-check"></i></div>
+          <i class="fas fa-check-circle"></i>
           <h2>Request Sent!</h2>
           <p>Thanks for reaching out! We'll review your request and get back to you within 24 hours.</p>
           <a href="index.html" class="btn"><i class="fas fa-home"></i> Back to Home</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <footer>
-    <div class="footer-links">
-      <a href="mailto:brandon@techspec.biz"><i class="fas fa-envelope"></i> brandon@techspec.biz</a>
-      <a href="#"><i class="fas fa-map-marker-alt"></i> Eastern North Carolina</a>
-      <a href="https://facebook.com/techspecb2b"><i class="fab fa-facebook"></i> TechSpecB2B</a>
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Eastern North Carolina</span></div>
+        <div class="contact-item"><i class="fab fa-facebook"></i><a href="https://facebook.com/techspecb2b" target="_blank">TechSpecB2B</a></div>
+      </div>
     </div>
-    <p>© 2025 TechSpec. All rights reserved.</p>
-  </footer>
+  </div>
+
+  <footer>© 2025 TechSpec. All rights reserved.</footer>
 
   <script>
     function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('menuOverlay').classList.toggle('active')}
-    const progressBar=document.getElementById('progressBar');const steps=document.querySelectorAll('.progress-step');let currentStep=1;
-    const urlParams=new URLSearchParams(window.location.search);const service=urlParams.get('service');
-    if(service){const map={print:'s-print',design:'s-design',marketing:'s-marketing',web:'s-web'};const el=document.getElementById(map[service]);if(el)el.checked=true}
-    function updateProgress(){progressBar.className='progress-bar step-'+currentStep;steps.forEach((s,i)=>{s.classList.remove('active','done');if(i+1<currentStep)s.classList.add('done');if(i+1===currentStep)s.classList.add('active')})}
-    function showStep(n){document.querySelectorAll('.form-step').forEach(s=>s.classList.remove('active'));document.getElementById('step'+n).classList.add('active');currentStep=n;updateProgress()}
-    function nextStep(n){if(currentStep===1){if(!document.querySelector('input[name="service"]:checked')){alert('Please select a service');return}}if(currentStep===2){if(!document.getElementById('projectType').value.trim()){alert('Please tell us what you need');return}}showStep(n)}
+    
+    var progressBar=document.getElementById('progressBar');
+    var steps=document.querySelectorAll('.progress-step');
+    var currentStep=1;
+    
+    var urlParams=new URLSearchParams(window.location.search);
+    var urlService=urlParams.get('service');
+    if(urlService){
+      var map={print:'s-print',design:'s-design',marketing:'s-marketing',web:'s-web'};
+      var el=document.getElementById(map[urlService]);
+      if(el)el.checked=true;
+    }
+    
+    function updateProgress(){
+      progressBar.className='progress-bar step-'+currentStep;
+      for(var i=0;i<steps.length;i++){
+        steps[i].classList.remove('active','done');
+        if(i+1<currentStep)steps[i].classList.add('done');
+        if(i+1===currentStep)steps[i].classList.add('active');
+      }
+    }
+    
+    function showStep(n){
+      var allSteps=document.querySelectorAll('.form-step');
+      for(var i=0;i<allSteps.length;i++){allSteps[i].classList.remove('active')}
+      document.getElementById('step'+n).classList.add('active');
+      currentStep=n;
+      updateProgress();
+    }
+    
+    function nextStep(n){
+      if(currentStep===1){
+        if(!document.querySelector('input[name="service"]:checked')){alert('Please select a service');return}
+      }
+      if(currentStep===2){
+        if(!document.getElementById('projectType').value.trim()){alert('Please tell us what you need');return}
+      }
+      showStep(n);
+    }
+    
     function prevStep(n){showStep(n)}
-    const form=document.getElementById('contactForm');
-    form.addEventListener('submit',async function(e){
+    
+    var form=document.getElementById('contactForm');
+    form.addEventListener('submit',function(e){
       e.preventDefault();
-      const btn=document.getElementById('submitBtn');
+      var btn=document.getElementById('submitBtn');
       btn.disabled=true;
       btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
       
-      const selectedService=document.querySelector('input[name="service"]:checked')?.value||'Not specified';
-      const projectType=document.getElementById('projectType').value;
-      const projectDetails=document.getElementById('projectDetails').value;
-      const firstName=document.getElementById('firstName').value;
-      const lastName=document.getElementById('lastName').value;
-      const email=document.getElementById('email').value;
-      const phone=document.getElementById('phone').value;
-      const business=document.getElementById('business').value;
+      var serviceEl=document.querySelector('input[name="service"]:checked');
+      var selectedService=serviceEl?serviceEl.value:'Not specified';
+      var projectType=document.getElementById('projectType').value;
+      var projectDetails=document.getElementById('projectDetails').value;
+      var firstName=document.getElementById('firstName').value;
+      var lastName=document.getElementById('lastName').value;
+      var email=document.getElementById('email').value;
+      var phone=document.getElementById('phone').value;
+      var business=document.getElementById('business').value;
       
-      const cardName=selectedService+': '+firstName+' '+lastName+(business?' ('+business+')':'');
-      const cardDesc='**Service:** '+selectedService+'\n**Project Type:** '+projectType+'\n\n**Details:**\n'+(projectDetails||'None provided')+'\n\n---\n**Contact Info:**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+(phone||'Not provided')+'\n- Business: '+(business||'Not provided');
+      var cardName=selectedService+': '+firstName+' '+lastName+(business?' ('+business+')':'');
+      var cardDesc='**Service:** '+selectedService+'\n**Project Type:** '+projectType+'\n\n**Details:**\n'+(projectDetails||'None provided')+'\n\n---\n**Contact Info:**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+(phone||'Not provided')+'\n- Business: '+(business||'Not provided');
       
-      const trelloKey='3ea0ef2b85773186d7ae30322ae1782d';
-      const trelloToken='ATTAde902321af1ec6600e16a0587516fb0b68cff7d5ce58997aa165fc08ba35568217827FB6';
-      const listId='6961e2ac1fb32d0d4c9172a7';
+      var trelloKey='3ea0ef2b85773186d7ae30322ae1782d';
+      var trelloToken='ATTAde902321af1ec6600e16a0587516fb0b68cff7d5ce58997aa165fc08ba35568217827FB6';
+      var listId='6961e2ac1fb32d0d4c9172a7';
       
-      try{
-        const url='https://api.trello.com/1/cards?idList='+listId+'&key='+trelloKey+'&token='+trelloToken+'&name='+encodeURIComponent(cardName)+'&desc='+encodeURIComponent(cardDesc)+'&pos=top';
-        const response=await fetch(url,{
-          method:'POST'
+      var url='https://api.trello.com/1/cards?idList='+listId+'&key='+trelloKey+'&token='+trelloToken+'&name='+encodeURIComponent(cardName)+'&desc='+encodeURIComponent(cardDesc)+'&pos=top';
+      
+      fetch(url,{method:'POST'})
+        .then(function(response){
+          if(response.ok){
+            document.getElementById('progressBar').style.display='none';
+            var formSteps=document.querySelectorAll('.form-step');
+            for(var i=0;i<formSteps.length;i++){formSteps[i].style.display='none'}
+            document.getElementById('successMsg').classList.add('show');
+          }else{
+            throw new Error('Failed');
+          }
+        })
+        .catch(function(err){
+          btn.disabled=false;
+          btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Request';
+          alert('Something went wrong. Please email us directly at brandon@techspec.biz');
         });
-        if(response.ok){
-          document.getElementById('progressBar').style.display='none';
-          document.querySelectorAll('.form-step').forEach(s=>s.style.display='none');
-          document.getElementById('successMsg').classList.add('show');
-        }else{
-          const err=await response.text();
-          console.error('Trello error:',err);
-          throw new Error('Failed');
-        }
-      }catch(err){
-        console.error('Submit error:',err);
-        btn.disabled=false;
-        btn.innerHTML='<i class="fas fa-paper-plane"></i> Send Request';
-        alert('Something went wrong. Please email us directly at brandon@techspec.biz');
-      }
     });
   </script>
 </body>
