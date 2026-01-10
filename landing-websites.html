@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Websites Starting at $399 | TechSpec</title>
+  <meta name="description" content="Custom website design starting at $399. Mobile responsive, SEO included, full setup.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--red:#FF0000;--purple:#6c5ce7;--pink:#fd79a8;--teal:#00cec9;--black:#111;--dark:#1a1a1a;--light:#f5f5f5}
+    body{font-family:'Inter',sans-serif;color:var(--black);overflow-x:hidden}
+    h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+    
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 40%,var(--red) 100%);position:relative;display:flex;align-items:center;padding:40px 20px;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.03'%3E%3Ccircle cx='50' cy='50' r='40'/%3E%3C/g%3E%3C/svg%3E")}
+    
+    .shape{position:absolute;border-radius:50%;background:rgba(255,255,255,0.1);animation:float 20s infinite ease-in-out}
+    .shape-1{width:400px;height:400px;top:-100px;right:-100px;animation-delay:0s}
+    .shape-2{width:300px;height:300px;bottom:-50px;left:-50px;animation-delay:-5s}
+    .shape-3{width:200px;height:200px;top:40%;left:10%;animation-delay:-10s}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(180deg)}}
+    
+    .hero-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:10}
+    
+    .hero-content{color:white}
+    
+    /* NEW SERVICE Banner - styled like "COMING SOON" */
+    .new-service-banner{display:inline-block;margin-bottom:25px;animation:slideDown 0.8s ease}
+    .new-service-banner .text{font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:900;color:white;text-shadow:3px 3px 0 rgba(0,0,0,0.2)}
+    .new-service-banner .highlight{display:inline-block;background:white;color:var(--purple);padding:8px 25px;transform:rotate(-2deg);font-family:'Poppins',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:900;box-shadow:5px 5px 0 rgba(0,0,0,0.2);margin-left:10px}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+    
+    .hero h1{font-size:clamp(36px,6vw,58px);line-height:1.05;margin-bottom:20px;text-shadow:0 4px 30px rgba(0,0,0,0.3);animation:slideUp 0.8s ease 0.2s both}
+    @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    
+    .price-box{display:inline-block;background:white;padding:20px 40px;border-radius:20px;margin-bottom:25px;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:scaleIn 0.6s ease 0.4s both;position:relative;overflow:hidden}
+    .price-box::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--purple),var(--pink),var(--teal))}
+    .price-box .price{font-size:clamp(48px,8vw,72px);font-weight:900;color:var(--purple);line-height:1}
+    .price-box .price span{font-size:0.5em;vertical-align:top}
+    .price-box .label{font-size:14px;color:#888;margin-top:5px}
+    @keyframes scaleIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+    
+    .hero p{font-size:18px;line-height:1.7;opacity:0.95;margin-bottom:30px;animation:slideUp 0.8s ease 0.5s both}
+    
+    .features-list{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:35px;animation:slideUp 0.8s ease 0.6s both}
+    .feature-tag{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);padding:12px 20px;border-radius:50px;font-weight:600;font-size:14px;transition:all 0.3s}
+    .feature-tag:hover{background:rgba(255,255,255,0.25);transform:translateY(-2px)}
+    .feature-tag i{color:#FFD700}
+    
+    /* Browser mockup */
+    .browser-mockup{background:white;border-radius:16px;box-shadow:0 40px 80px rgba(0,0,0,0.4);overflow:hidden;animation:floatIn 1s ease 0.3s both;transform-style:preserve-3d;transition:transform 0.5s}
+    @keyframes floatIn{from{opacity:0;transform:translateY(50px) perspective(1000px) rotateX(10deg)}to{opacity:1;transform:translateY(0) perspective(1000px) rotateX(0)}}
+    .browser-bar{background:linear-gradient(180deg,#f5f5f5,#e8e8e8);padding:12px 20px;display:flex;align-items:center;gap:8px}
+    .browser-dot{width:12px;height:12px;border-radius:50%}
+    .browser-dot.red{background:#ff5f56}
+    .browser-dot.yellow{background:#ffbd2e}
+    .browser-dot.green{background:#27ca40}
+    .browser-url{background:white;border-radius:6px;padding:6px 12px;margin-left:15px;flex:1;font-size:12px;color:#888}
+    
+    /* Interactive mini website */
+    .mini-website{height:320px;background:#f8f9fa;overflow:hidden}
+    .mini-nav{background:var(--purple);padding:10px 15px;display:flex;justify-content:space-between;align-items:center}
+    .mini-logo{color:white;font-weight:800;font-size:14px}
+    .mini-nav-links{display:flex;gap:12px}
+    .mini-nav-links span{color:rgba(255,255,255,0.8);font-size:10px;cursor:pointer;transition:color 0.2s}
+    .mini-nav-links span:hover{color:white}
+    .mini-hero{background:linear-gradient(135deg,var(--purple),var(--pink));padding:20px 15px;text-align:center;color:white}
+    .mini-hero h2{font-size:16px;margin-bottom:8px}
+    .mini-hero p{font-size:10px;opacity:0.9;margin-bottom:12px}
+    .mini-form{background:white;margin:15px;border-radius:10px;padding:15px;box-shadow:0 5px 20px rgba(0,0,0,0.1)}
+    .mini-form-title{font-size:12px;font-weight:700;margin-bottom:12px;color:var(--black)}
+    .mini-input{width:100%;padding:8px 10px;border:1px solid #ddd;border-radius:6px;font-size:10px;margin-bottom:8px;transition:border-color 0.2s}
+    .mini-input:focus{outline:none;border-color:var(--purple)}
+    .mini-input::placeholder{color:#aaa}
+    .mini-row{display:flex;gap:8px}
+    .mini-row .mini-input{flex:1}
+    .mini-btn{width:100%;padding:10px;background:linear-gradient(135deg,var(--purple),var(--pink));color:white;border:none;border-radius:6px;font-size:10px;font-weight:700;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
+    .mini-btn:hover{transform:translateY(-1px);box-shadow:0 5px 15px rgba(108,92,231,0.4)}
+    .mini-success{display:none;text-align:center;padding:20px}
+    .mini-success.show{display:block}
+    .mini-success i{color:var(--teal);font-size:24px;margin-bottom:8px}
+    .mini-success p{font-size:11px;color:#666}
+    
+    /* Floating elements */
+    .float-card{position:absolute;background:white;border-radius:12px;padding:15px 20px;box-shadow:0 10px 30px rgba(0,0,0,0.2);animation:floatCard 4s ease-in-out infinite;z-index:20}
+    .float-card.card-1{top:10%;right:-30px;animation-delay:0s}
+    .float-card.card-2{bottom:15%;right:-20px;animation-delay:-2s}
+    .float-card .stat{font-size:24px;font-weight:800;color:var(--purple)}
+    .float-card .stat-label{font-size:11px;color:#888;text-transform:uppercase}
+    @keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
+    
+    /* FORM SECTION */
+    .form-section{padding:100px 20px;background:var(--light);position:relative}
+    .form-section::before{content:'';position:absolute;top:0;left:0;right:0;height:200px;background:linear-gradient(180deg,rgba(108,92,231,0.1),transparent)}
+    .form-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start}
+    
+    .form-info h2{font-size:clamp(32px,4vw,48px);margin-bottom:20px;background:linear-gradient(135deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .form-info p{color:#666;font-size:16px;line-height:1.8;margin-bottom:40px}
+    
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .feature-item{background:white;border-radius:16px;padding:25px;box-shadow:0 5px 20px rgba(0,0,0,0.05);transition:all 0.3s}
+    .feature-item:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(0,0,0,0.1)}
+    .feature-item .icon{width:50px;height:50px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+    .feature-item .icon i{color:white;font-size:20px}
+    .feature-item h4{font-size:16px;margin-bottom:8px}
+    .feature-item p{font-size:13px;color:#888;line-height:1.5}
+    
+    .form-card{background:white;border-radius:24px;padding:45px;box-shadow:0 20px 60px rgba(0,0,0,0.1);position:relative;overflow:hidden}
+    .form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--purple),var(--pink),var(--teal))}
+    .form-card h3{font-size:26px;margin-bottom:8px}
+    .form-card>p{color:#888;margin-bottom:30px}
+    
+    .form-group{margin-bottom:20px}
+    .form-group label{display:block;font-weight:600;margin-bottom:8px;font-size:14px;color:#333}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 20px;border:2px solid #eee;border-radius:12px;font-size:15px;font-family:inherit;transition:all 0.3s}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(108,92,231,0.1)}
+    .form-group textarea{min-height:100px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    @media(max-width:600px){.form-row{grid-template-columns:1fr}}
+    
+    .btn-submit{width:100%;padding:18px;background:linear-gradient(135deg,var(--purple),var(--pink));color:white;border:none;border-radius:50px;font-size:17px;font-weight:800;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+    .btn-submit::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s}
+    .btn-submit:hover::before{left:100%}
+    .btn-submit:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(108,92,231,0.4)}
+    .btn-submit:disabled{background:#ccc;transform:none;box-shadow:none;cursor:not-allowed}
+    
+    .form-note{text-align:center;margin-top:20px;font-size:13px;color:#888}
+    .form-note i{color:var(--teal)}
+    
+    .success-msg{display:none;text-align:center;padding:50px 20px}
+    .success-msg.show{display:block}
+    .success-msg i{font-size:70px;color:#00b894;margin-bottom:20px;animation:successPop 0.5s ease}
+    @keyframes successPop{0%{transform:scale(0)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+    .success-msg h3{font-size:28px;margin-bottom:10px;color:var(--black)}
+    .success-msg p{color:#666;font-size:16px}
+    
+    @media(max-width:1024px){
+      .hero-container,.form-container{grid-template-columns:1fr}
+      .hero{text-align:center;padding:80px 20px}
+      .features-list{justify-content:center}
+      .browser-mockup{max-width:500px;margin:0 auto}
+      .float-card{display:none}
+      .feature-grid{grid-template-columns:1fr}
+      .new-service-banner{display:block}
+      .new-service-banner .highlight{margin-left:0;margin-top:5px;display:inline-block}
+    }
+    
+    footer{background:var(--dark);padding:50px 20px;text-align:center}
+    footer img{height:45px;margin-bottom:20px}
+    footer p{color:#888;font-size:14px;margin:8px 0}
+    footer a{color:var(--purple);text-decoration:none}
+    footer a:hover{color:var(--pink)}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="new-service-banner">
+          <span class="text">Web Design</span>
+          <span class="highlight">NEW SERVICE</span>
+        </div>
+        <h1>A Website That Works As Hard As You Do</h1>
+        <div class="price-box">
+          <div class="price"><span>$</span>399</div>
+          <div class="label">Starting price • Full setup included</div>
+        </div>
+        <p>Stop losing customers to competitors with better websites. Get a professional, mobile-friendly site that actually brings in business.</p>
+        <div class="features-list">
+          <div class="feature-tag"><i class="fas fa-check"></i> Custom design</div>
+          <div class="feature-tag"><i class="fas fa-check"></i> Mobile ready</div>
+          <div class="feature-tag"><i class="fas fa-check"></i> SEO included</div>
+          <div class="feature-tag"><i class="fas fa-check"></i> Fast turnaround</div>
+        </div>
+      </div>
+      
+      <div style="position:relative">
+        <div class="browser-mockup">
+          <div class="browser-bar">
+            <div class="browser-dot red"></div>
+            <div class="browser-dot yellow"></div>
+            <div class="browser-dot green"></div>
+            <div class="browser-url">yourbusiness.com</div>
+          </div>
+          <div class="mini-website">
+            <div class="mini-nav">
+              <div class="mini-logo">YourBiz</div>
+              <div class="mini-nav-links">
+                <span>Home</span>
+                <span>Services</span>
+                <span>Contact</span>
+              </div>
+            </div>
+            <div class="mini-hero">
+              <h2>Welcome to YourBiz</h2>
+              <p>Professional services you can trust</p>
+            </div>
+            <div class="mini-form">
+              <div id="miniFormContent">
+                <div class="mini-form-title">Get a Free Quote</div>
+                <div class="mini-row">
+                  <input type="text" class="mini-input" placeholder="First Name" id="miniFirst">
+                  <input type="text" class="mini-input" placeholder="Last Name" id="miniLast">
+                </div>
+                <input type="email" class="mini-input" placeholder="Email Address" id="miniEmail">
+                <input type="tel" class="mini-input" placeholder="Phone Number" id="miniPhone">
+                <button class="mini-btn" onclick="submitMiniForm()">Request Quote</button>
+              </div>
+              <div class="mini-success" id="miniSuccess">
+                <i class="fas fa-check-circle"></i>
+                <p>Thanks! We'll be in touch soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card card-1">
+          <div class="stat">24hr</div>
+          <div class="stat-label">Response Time</div>
+        </div>
+        <div class="float-card card-2">
+          <div class="stat">100%</div>
+          <div class="stat-label">Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-section" id="form">
+    <div class="form-container">
+      <div class="form-info">
+        <h2>Everything You Need to Get Online</h2>
+        <p>No hidden fees, no surprises. Just a professional website that represents your business and helps you grow. We handle everything from design to launch.</p>
+        
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-paint-brush"></i></div>
+            <h4>Custom Design</h4>
+            <p>Unique design tailored to your brand, not a generic template</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+            <h4>Mobile Responsive</h4>
+            <p>Looks great on phones, tablets, and desktops</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-search"></i></div>
+            <h4>SEO Setup</h4>
+            <p>Optimized to help you show up on Google</p>
+          </div>
+          <div class="feature-item">
+            <div class="icon"><i class="fas fa-rocket"></i></div>
+            <h4>Fast & Secure</h4>
+            <p>Modern code that loads quickly and keeps you safe</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-card">
+        <div id="formContent">
+          <h3>Let's Build Your Website</h3>
+          <p>Tell us about your project and we'll get back to you within 24 hours</p>
+          <form id="websiteForm">
+            <div class="form-row">
+              <div class="form-group"><label>First Name *</label><input type="text" id="firstName" required></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" id="lastName" required></div>
+            </div>
+            <div class="form-group"><label>Email *</label><input type="email" id="email" required></div>
+            <div class="form-group"><label>Phone</label><input type="tel" id="phone"></div>
+            <div class="form-group"><label>Business Name</label><input type="text" id="business"></div>
+            <div class="form-group">
+              <label>What type of website do you need? *</label>
+              <select id="websiteType" required>
+                <option value="">Select one</option>
+                <option value="New website from scratch">New website from scratch</option>
+                <option value="Redesign existing site">Redesign existing site</option>
+                <option value="Updates to current site">Updates to current site</option>
+                <option value="Landing page">Landing page</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Do you have a domain name?</label>
+              <select id="hasDomain">
+                <option value="">Select one</option>
+                <option value="Yes, I have one">Yes, I have one</option>
+                <option value="No, I need one">No, I need one (+$15/yr)</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Tell us about your project (optional)</label><textarea id="details" placeholder="What features do you need? Any design ideas?"></textarea></div>
+            <button type="submit" class="btn-submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Get Started</button>
+            <p class="form-note"><i class="fas fa-shield-alt"></i> No spam, no obligation. We'll respond within 24 hours.</p>
+          </form>
+        </div>
+        <div class="success-msg" id="successMsg">
+          <i class="fas fa-check-circle"></i>
+          <h3>You're on the list!</h3>
+          <p>We'll reach out within 24 hours to discuss your project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <img src="logo.png" alt="TechSpec">
+    <p><a href="https://techspec.biz">techspec.biz</a> | <a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></p>
+    <p>© 2025 TechSpec. Eastern North Carolina.</p>
+  </footer>
+
+  <script>
+    // Mini form demo
+    function submitMiniForm(){
+      document.getElementById('miniFormContent').style.display='none';
+      document.getElementById('miniSuccess').classList.add('show');
+      setTimeout(function(){
+        document.getElementById('miniFormContent').style.display='block';
+        document.getElementById('miniSuccess').classList.remove('show');
+        document.getElementById('miniFirst').value='';
+        document.getElementById('miniLast').value='';
+        document.getElementById('miniEmail').value='';
+        document.getElementById('miniPhone').value='';
+      },3000);
+    }
+    
+    // Main form
+    var form=document.getElementById('websiteForm');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var btn=document.getElementById('submitBtn');
+      btn.disabled=true;
+      btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      var firstName=document.getElementById('firstName').value;
+      var lastName=document.getElementById('lastName').value;
+      var email=document.getElementById('email').value;
+      var phone=document.getElementById('phone').value;
+      var business=document.getElementById('business').value;
+      var websiteType=document.getElementById('websiteType').value;
+      var hasDomain=document.getElementById('hasDomain').value;
+      var details=document.getElementById('details').value;
+      
+      var cardName='WEBSITE $399: '+firstName+' '+lastName+(business?' ('+business+')':'');
+      var cardDesc='**PROMO: Website Starting at $399**\n\n**Type:** '+websiteType+'\n**Has Domain:** '+(hasDomain||'Not specified')+'\n\n**Details:**\n'+(details||'None provided')+'\n\n---\n**Contact Info:**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+(phone||'Not provided')+'\n- Business: '+(business||'Not provided');
+      
+      var trelloKey='3ea0ef2b85773186d7ae30322ae1782d';
+      var trelloToken='ATTAde902321af1ec6600e16a0587516fb0b68cff7d5ce58997aa165fc08ba35568217827FB6';
+      var listId='6961e2ac1fb32d0d4c9172a7';
+      
+      var url='https://api.trello.com/1/cards?idList='+listId+'&key='+trelloKey+'&token='+trelloToken+'&name='+encodeURIComponent(cardName)+'&desc='+encodeURIComponent(cardDesc)+'&pos=top';
+      
+      fetch(url,{method:'POST'})
+        .then(function(response){
+          if(response.ok){
+            document.getElementById('formContent').style.display='none';
+            document.getElementById('successMsg').classList.add('show');
+          }else{throw new Error('Failed')}
+        })
+        .catch(function(err){
+          btn.disabled=false;
+          btn.innerHTML='<i class="fas fa-paper-plane"></i> Get Started';
+          alert('Something went wrong. Please email us directly at brandon@techspec.biz');
+        });
+    });
+  </script>
+</body>
+</html>
