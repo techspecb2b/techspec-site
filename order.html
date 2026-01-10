@@ -191,16 +191,9 @@
       const listId='6961e2ac1fb32d0d4c9172a7';
       
       try{
-        const url='https://api.trello.com/1/cards?key='+trelloKey+'&token='+trelloToken;
+        const url='https://api.trello.com/1/cards?idList='+listId+'&key='+trelloKey+'&token='+trelloToken+'&name='+encodeURIComponent(cardName)+'&desc='+encodeURIComponent(cardDesc)+'&pos=top';
         const response=await fetch(url,{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({
-            idList:listId,
-            name:cardName,
-            desc:cardDesc,
-            pos:'top'
-          })
+          method:'POST'
         });
         if(response.ok){
           document.getElementById('progressBar').style.display='none';
