@@ -174,7 +174,7 @@
       btn.disabled=true;
       btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';
       
-      const service=document.querySelector('input[name="service"]:checked')?.value||'Not specified';
+      const selectedService=document.querySelector('input[name="service"]:checked')?.value||'Not specified';
       const projectType=document.getElementById('projectType').value;
       const projectDetails=document.getElementById('projectDetails').value;
       const firstName=document.getElementById('firstName').value;
@@ -183,8 +183,8 @@
       const phone=document.getElementById('phone').value;
       const business=document.getElementById('business').value;
       
-      const cardName=service+': '+firstName+' '+lastName+(business?' ('+business+')':'');
-      const cardDesc='**Service:** '+service+'\n**Project Type:** '+projectType+'\n\n**Details:**\n'+(projectDetails||'None provided')+'\n\n---\n**Contact Info:**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+(phone||'Not provided')+'\n- Business: '+(business||'Not provided');
+      const cardName=selectedService+': '+firstName+' '+lastName+(business?' ('+business+')':'');
+      const cardDesc='**Service:** '+selectedService+'\n**Project Type:** '+projectType+'\n\n**Details:**\n'+(projectDetails||'None provided')+'\n\n---\n**Contact Info:**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+(phone||'Not provided')+'\n- Business: '+(business||'Not provided');
       
       const trelloKey='3ea0ef2b85773186d7ae30322ae1782d';
       const trelloToken='ATTAde902321af1ec6600e16a0587516fb0b68cff7d5ce58997aa165fc08ba35568217827FB6';
