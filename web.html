@@ -76,29 +76,79 @@
     .browser-dot.green { background: #27ca40; }
     .browser-url { background: white; border-radius: 6px; padding: 6px 12px; margin-left: 15px; flex: 1; font-size: 12px; color: #888; }
 
+    /* Demo label */
+    .demo-label { text-align: center; margin-bottom: 15px; animation: pulse 2s ease-in-out infinite; }
+    .demo-label span { background: rgba(0,0,0,0.3); color: white; padding: 8px 20px; border-radius: 50px; font-size: 14px; font-weight: 700; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
     /* Interactive mini website */
-    .mini-website { height: 320px; background: #f8f9fa; overflow: hidden; }
+    .mini-website { height: 380px; background: #f8f9fa; overflow: hidden; }
     .mini-nav { background: var(--purple); padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; }
     .mini-logo { color: white; font-weight: 800; font-size: 14px; }
     .mini-nav-links { display: flex; gap: 12px; }
     .mini-nav-links span { color: rgba(255,255,255,0.8); font-size: 10px; cursor: pointer; transition: color 0.2s; }
     .mini-nav-links span:hover { color: white; }
-    .mini-hero { background: linear-gradient(135deg, var(--purple), var(--pink)); padding: 20px 15px; text-align: center; color: white; }
-    .mini-hero h2 { font-size: 16px; margin-bottom: 8px; }
-    .mini-hero p { font-size: 10px; opacity: 0.9; margin-bottom: 12px; }
-    .mini-form { background: white; margin: 15px; border-radius: 10px; padding: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-    .mini-form-title { font-size: 12px; font-weight: 700; margin-bottom: 12px; color: var(--black); }
-    .mini-input { width: 100%; padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 10px; margin-bottom: 8px; transition: border-color 0.2s; }
-    .mini-input:focus { outline: none; border-color: var(--purple); }
-    .mini-input::placeholder { color: #aaa; }
-    .mini-row { display: flex; gap: 8px; }
-    .mini-row .mini-input { flex: 1; }
-    .mini-btn { width: 100%; padding: 10px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; border: none; border-radius: 6px; font-size: 10px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
-    .mini-btn:hover { transform: translateY(-1px); box-shadow: 0 5px 15px rgba(108,92,231,0.4); }
-    .mini-success { display: none; text-align: center; padding: 20px; }
-    .mini-success.show { display: block; }
-    .mini-success i { color: var(--teal); font-size: 24px; margin-bottom: 8px; }
-    .mini-success p { font-size: 11px; color: #666; }
+    .mini-hero { background: linear-gradient(135deg, var(--purple), var(--pink)); padding: 15px; text-align: center; color: white; }
+    .mini-hero h2 { font-size: 14px; margin-bottom: 5px; }
+    .mini-hero p { font-size: 9px; opacity: 0.9; }
+    
+    /* Cool button-based form */
+    .mini-form { background: white; margin: 12px; border-radius: 12px; padding: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
+    .mini-form-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .mini-form-title { font-size: 11px; font-weight: 700; color: var(--black); margin: 0; }
+    .mini-step-indicator { font-size: 9px; color: #888; background: #f0f0f0; padding: 3px 8px; border-radius: 10px; }
+    
+    /* Progress bar */
+    .mini-progress-bar { height: 4px; background: #eee; border-radius: 2px; margin-bottom: 15px; overflow: hidden; }
+    .mini-progress-fill { height: 100%; background: linear-gradient(90deg, var(--purple), var(--pink), var(--teal)); border-radius: 2px; transition: width 0.4s ease; width: 0%; }
+    
+    /* Steps */
+    .mini-step { display: none; animation: fadeStep 0.3s ease; }
+    .mini-step.active { display: block; }
+    @keyframes fadeStep { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .mini-question { font-size: 12px; font-weight: 600; color: #333; margin-bottom: 10px; text-align: center; }
+    
+    /* Option buttons */
+    .mini-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .mini-options.single-col { grid-template-columns: 1fr; }
+    .mini-opt { background: #f8f9fa; border: 2px solid #eee; border-radius: 10px; padding: 12px 10px; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .mini-opt:hover { border-color: var(--purple); background: #f0f0ff; transform: translateY(-2px); }
+    .mini-opt.selected { border-color: var(--purple); background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(253,121,168,0.1)); }
+    .mini-opt i { font-size: 18px; color: var(--purple); }
+    .mini-opt span { font-size: 9px; font-weight: 600; color: #333; text-align: center; }
+    
+    /* Icon row options */
+    .mini-options.icon-row { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .mini-options.icon-row .mini-opt { padding: 10px 5px; }
+    .mini-options.icon-row .mini-opt i { font-size: 16px; }
+    .mini-options.icon-row .mini-opt span { font-size: 7px; }
+    
+    /* Budget slider look */
+    .mini-budget-display { text-align: center; margin-bottom: 10px; }
+    .mini-budget-display .amount { font-size: 24px; font-weight: 800; color: var(--purple); }
+    .mini-budget-display .label { font-size: 8px; color: #888; text-transform: uppercase; }
+    .mini-budget-options { display: flex; gap: 6px; }
+    .mini-budget-options .mini-opt { flex: 1; padding: 8px 5px; }
+    .mini-budget-options .mini-opt span { font-size: 8px; }
+    
+    /* Navigation */
+    .mini-nav-buttons { display: flex; gap: 8px; margin-top: 12px; }
+    .mini-btn { flex: 1; padding: 10px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; border: none; border-radius: 8px; font-size: 10px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 5px; }
+    .mini-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(108,92,231,0.4); }
+    .mini-btn.back { background: #eee; color: #666; flex: 0.4; }
+    .mini-btn.back:hover { background: #ddd; box-shadow: none; }
+    
+    /* Success state */
+    .mini-success { display: none; text-align: center; padding: 20px 10px; }
+    .mini-success.show { display: block; animation: successPop 0.5s ease; }
+    @keyframes successPop { 0% { opacity: 0; transform: scale(0.5); } 50% { transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
+    .mini-success .check-circle { width: 50px; height: 50px; background: linear-gradient(135deg, var(--teal), #00b894); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; }
+    .mini-success .check-circle i { color: white; font-size: 24px; }
+    .mini-success .thanks { font-size: 14px; font-weight: 800; color: var(--black); margin-bottom: 3px; }
+    .mini-success .subtext { font-size: 9px; color: #888; }
+    .mini-confetti { position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; overflow: hidden; }
+    .confetti-piece { position: absolute; width: 8px; height: 8px; opacity: 0; }
 
     /* Floating stat cards */
     .float-card { position: absolute; background: white; border-radius: 12px; padding: 15px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); animation: floatCard 4s ease-in-out infinite; z-index: 20; }
@@ -245,6 +295,7 @@
       </div>
 
       <div class="hero-visual">
+        <div class="demo-label"><span>Your site could look like this!</span></div>
         <div class="browser-mockup">
           <div class="browser-bar">
             <div class="browser-dot red"></div>
@@ -265,20 +316,74 @@
               <h2>Welcome to YourBiz</h2>
               <p>Professional services you can trust</p>
             </div>
-            <div class="mini-form">
-              <div id="miniFormContent">
-                <div class="mini-form-title">Get a Free Quote</div>
-                <div class="mini-row">
-                  <input type="text" class="mini-input" placeholder="First Name" id="miniFirst">
-                  <input type="text" class="mini-input" placeholder="Last Name" id="miniLast">
-                </div>
-                <input type="email" class="mini-input" placeholder="Email Address" id="miniEmail">
-                <input type="tel" class="mini-input" placeholder="Phone Number" id="miniPhone">
-                <button class="mini-btn" onclick="submitMiniForm()">Request Quote</button>
+            <div class="mini-form" id="miniForm">
+              <div class="mini-form-header">
+                <div class="mini-form-title">Get Your Free Quote</div>
+                <div class="mini-step-indicator" id="stepIndicator">Step 1 of 4</div>
               </div>
+              <div class="mini-progress-bar"><div class="mini-progress-fill" id="progressFill"></div></div>
+              
+              <!-- Step 1: Service Type -->
+              <div class="mini-step active" id="step1">
+                <div class="mini-question">What do you need?</div>
+                <div class="mini-options">
+                  <div class="mini-opt" onclick="selectOpt(this, 1)"><i class="fas fa-mobile-alt"></i><span>Phone Repair</span></div>
+                  <div class="mini-opt" onclick="selectOpt(this, 1)"><i class="fas fa-laptop"></i><span>Computer</span></div>
+                  <div class="mini-opt" onclick="selectOpt(this, 1)"><i class="fas fa-tablet-alt"></i><span>Tablet</span></div>
+                  <div class="mini-opt" onclick="selectOpt(this, 1)"><i class="fas fa-gamepad"></i><span>Console</span></div>
+                </div>
+              </div>
+              
+              <!-- Step 2: Urgency -->
+              <div class="mini-step" id="step2">
+                <div class="mini-question">How soon do you need it?</div>
+                <div class="mini-options single-col">
+                  <div class="mini-opt" onclick="selectOpt(this, 2)" style="flex-direction:row;justify-content:flex-start;padding:10px 15px;"><i class="fas fa-bolt" style="color:#ff6b35;"></i><span style="margin-left:10px;">ASAP - Same Day</span></div>
+                  <div class="mini-opt" onclick="selectOpt(this, 2)" style="flex-direction:row;justify-content:flex-start;padding:10px 15px;"><i class="fas fa-clock"></i><span style="margin-left:10px;">Within a Week</span></div>
+                  <div class="mini-opt" onclick="selectOpt(this, 2)" style="flex-direction:row;justify-content:flex-start;padding:10px 15px;"><i class="fas fa-calendar"></i><span style="margin-left:10px;">No Rush</span></div>
+                </div>
+                <div class="mini-nav-buttons">
+                  <button class="mini-btn back" onclick="goBack(1)"><i class="fas fa-arrow-left"></i></button>
+                </div>
+              </div>
+              
+              <!-- Step 3: Budget -->
+              <div class="mini-step" id="step3">
+                <div class="mini-question">Your budget range?</div>
+                <div class="mini-budget-display">
+                  <div class="amount" id="budgetAmount">$50-100</div>
+                  <div class="label">estimated budget</div>
+                </div>
+                <div class="mini-budget-options">
+                  <div class="mini-opt" onclick="selectBudget(this, '$50-100')"><span>$50-100</span></div>
+                  <div class="mini-opt" onclick="selectBudget(this, '$100-200')"><span>$100-200</span></div>
+                  <div class="mini-opt" onclick="selectBudget(this, '$200-500')"><span>$200-500</span></div>
+                  <div class="mini-opt" onclick="selectBudget(this, '$500+')"><span>$500+</span></div>
+                </div>
+                <div class="mini-nav-buttons">
+                  <button class="mini-btn back" onclick="goBack(2)"><i class="fas fa-arrow-left"></i></button>
+                </div>
+              </div>
+              
+              <!-- Step 4: Contact preference -->
+              <div class="mini-step" id="step4">
+                <div class="mini-question">How should we reach you?</div>
+                <div class="mini-options">
+                  <div class="mini-opt" onclick="selectFinal(this)"><i class="fas fa-phone"></i><span>Call Me</span></div>
+                  <div class="mini-opt" onclick="selectFinal(this)"><i class="fas fa-envelope"></i><span>Email</span></div>
+                  <div class="mini-opt" onclick="selectFinal(this)"><i class="fas fa-comment"></i><span>Text</span></div>
+                  <div class="mini-opt" onclick="selectFinal(this)"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></div>
+                </div>
+                <div class="mini-nav-buttons">
+                  <button class="mini-btn back" onclick="goBack(3)"><i class="fas fa-arrow-left"></i></button>
+                </div>
+              </div>
+              
+              <!-- Success -->
               <div class="mini-success" id="miniSuccess">
-                <i class="fas fa-check-circle"></i>
-                <p>Thanks! We'll be in touch soon.</p>
+                <div class="check-circle"><i class="fas fa-check"></i></div>
+                <div class="thanks">You're All Set!</div>
+                <div class="subtext">We'll contact you within 24 hours</div>
               </div>
             </div>
           </div>
@@ -426,19 +531,84 @@
   <script>
     function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('menuOverlay').classList.toggle('active')}
 
-    // Mini form demo
-    function submitMiniForm() {
-      document.getElementById('miniFormContent').style.display = 'none';
-      document.getElementById('miniSuccess').classList.add('show');
-      setTimeout(function() {
-        document.getElementById('miniFormContent').style.display = 'block';
-        document.getElementById('miniSuccess').classList.remove('show');
-        document.getElementById('miniFirst').value = '';
-        document.getElementById('miniLast').value = '';
-        document.getElementById('miniEmail').value = '';
-        document.getElementById('miniPhone').value = '';
-      }, 3000);
+    // Interactive form demo
+    var currentStep = 1;
+    var totalSteps = 4;
+    
+    function updateProgress() {
+      var pct = ((currentStep - 1) / totalSteps) * 100;
+      document.getElementById('progressFill').style.width = pct + '%';
+      document.getElementById('stepIndicator').textContent = 'Step ' + currentStep + ' of ' + totalSteps;
     }
+    
+    function goToStep(step) {
+      document.querySelectorAll('.mini-step').forEach(function(s) { s.classList.remove('active'); });
+      document.getElementById('step' + step).classList.add('active');
+      currentStep = step;
+      updateProgress();
+    }
+    
+    function goBack(step) {
+      goToStep(step);
+    }
+    
+    function selectOpt(el, step) {
+      // Remove selected from siblings
+      el.parentElement.querySelectorAll('.mini-opt').forEach(function(o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      
+      // Auto advance after short delay
+      setTimeout(function() {
+        goToStep(step + 1);
+      }, 300);
+    }
+    
+    function selectBudget(el, amount) {
+      el.parentElement.querySelectorAll('.mini-opt').forEach(function(o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      document.getElementById('budgetAmount').textContent = amount;
+      
+      setTimeout(function() {
+        goToStep(4);
+      }, 300);
+    }
+    
+    function selectFinal(el) {
+      el.parentElement.querySelectorAll('.mini-opt').forEach(function(o) { o.classList.remove('selected'); });
+      el.classList.add('selected');
+      
+      setTimeout(function() {
+        showSuccess();
+      }, 300);
+    }
+    
+    function showSuccess() {
+      document.querySelectorAll('.mini-step').forEach(function(s) { s.classList.remove('active'); });
+      document.querySelector('.mini-form-header').style.display = 'none';
+      document.querySelector('.mini-progress-bar').style.display = 'none';
+      document.getElementById('miniSuccess').classList.add('show');
+      
+      // Reset after delay
+      setTimeout(function() {
+        resetForm();
+      }, 3500);
+    }
+    
+    function resetForm() {
+      document.getElementById('miniSuccess').classList.remove('show');
+      document.querySelector('.mini-form-header').style.display = 'flex';
+      document.querySelector('.mini-progress-bar').style.display = 'block';
+      
+      // Clear all selections
+      document.querySelectorAll('.mini-opt').forEach(function(o) { o.classList.remove('selected'); });
+      document.getElementById('budgetAmount').textContent = '$50-100';
+      
+      currentStep = 1;
+      goToStep(1);
+    }
+    
+    // Initialize
+    updateProgress();
   </script>
 </body>
 </html>
