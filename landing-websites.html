@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$399 Professional Website in 24-48 Hours | TechSpec</title>
+  <meta name="description" content="Get a professional, mobile-ready website for just $399. Custom design, SEO included, delivered in 24-48 hours.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--red:#FF0000;--purple:#6c5ce7;--pink:#fd79a8;--teal:#00cec9;--black:#111;--dark:#1a1a1a;--light:#f5f5f5}
+    body{font-family:'Inter',sans-serif;background:var(--light);color:var(--black);overflow-x:hidden}
+    h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+
+    /* Hero */
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--purple) 0%,var(--pink) 50%,var(--red) 100%);position:relative;display:flex;align-items:center;padding:60px 20px;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/svg%3E")}
+    
+    .floating-shape{position:absolute;border-radius:50%;background:rgba(255,255,255,0.1);animation:float 20s infinite ease-in-out}
+    .shape1{width:400px;height:400px;top:-150px;right:-100px}
+    .shape2{width:300px;height:300px;bottom:-100px;left:-100px;animation-delay:-7s}
+    .shape3{width:200px;height:200px;top:40%;left:5%;animation-delay:-14s}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-40px) rotate(180deg)}}
+
+    .hero-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:10}
+    
+    .hero-content{color:white}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,0.3);padding:10px 20px;border-radius:50px;font-size:13px;font-weight:700;margin-bottom:25px;animation:slideDown 0.6s ease}
+    .badge .dot{width:8px;height:8px;background:#00ff88;border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+    
+    .hero h1{font-size:clamp(36px,6vw,64px);line-height:1.05;margin-bottom:20px;animation:slideUp 0.6s ease 0.1s both}
+    .hero h1 .highlight{position:relative;display:inline-block}
+    .hero h1 .highlight::after{content:'';position:absolute;bottom:5px;left:0;right:0;height:12px;background:rgba(255,255,255,0.3);transform:skewX(-5deg);z-index:-1}
+    @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    
+    .price-tag{display:inline-block;background:white;padding:25px 40px;border-radius:20px;margin:25px 0;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:scaleIn 0.5s ease 0.2s both}
+    .price-tag .amount{font-size:clamp(56px,10vw,80px);font-weight:900;color:var(--purple);line-height:1}
+    .price-tag .amount span{font-size:0.4em;vertical-align:top}
+    .price-tag .label{font-size:14px;color:#888;margin-top:5px}
+    @keyframes scaleIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+    
+    .turnaround{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);padding:15px 25px;border-radius:50px;margin-bottom:25px;animation:slideUp 0.6s ease 0.3s both}
+    .turnaround i{font-size:24px;color:#FFD700}
+    .turnaround .text{font-size:18px;font-weight:700}
+    
+    .hero p{font-size:18px;line-height:1.7;opacity:0.95;margin-bottom:30px;animation:slideUp 0.6s ease 0.4s both}
+    
+    .cta-btn{display:inline-flex;align-items:center;gap:12px;background:white;color:var(--purple);padding:20px 45px;border-radius:50px;font-size:18px;font-weight:800;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;box-shadow:0 15px 40px rgba(0,0,0,0.3);animation:slideUp 0.6s ease 0.5s both}
+    .cta-btn:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 25px 50px rgba(0,0,0,0.4)}
+
+    /* Form Card */
+    .form-card{background:white;border-radius:24px;padding:40px;box-shadow:0 30px 80px rgba(0,0,0,0.3);animation:floatIn 0.8s ease 0.3s both}
+    @keyframes floatIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    .form-card h2{font-size:24px;margin-bottom:8px;color:var(--black)}
+    .form-card .subtitle{color:#888;font-size:14px;margin-bottom:25px}
+    
+    .form-group{margin-bottom:18px}
+    .form-group label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:#333}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;border:2px solid #eee;border-radius:12px;font-size:15px;font-family:inherit;transition:all 0.3s}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(108,92,231,0.1)}
+    .form-group textarea{min-height:80px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    
+    .submit-btn{width:100%;padding:18px;background:linear-gradient(135deg,var(--purple),var(--pink));color:white;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;transition:all 0.3s;text-transform:uppercase;letter-spacing:1px}
+    .submit-btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(108,92,231,0.4)}
+    .submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+    
+    .form-note{text-align:center;margin-top:15px;font-size:12px;color:#888}
+    .form-note i{color:var(--teal)}
+
+    /* Success Message */
+    .success-msg{display:none;text-align:center;padding:40px 20px}
+    .success-msg.show{display:block;animation:scaleIn 0.4s ease}
+    .success-msg .icon{width:80px;height:80px;background:linear-gradient(135deg,var(--teal),#00b894);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .success-msg .icon i{font-size:36px;color:white}
+    .success-msg h3{font-size:24px;margin-bottom:10px}
+    .success-msg p{color:#666}
+
+    /* Features */
+    .features{padding:80px 20px;background:white}
+    .features-container{max-width:1100px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:50px}
+    .section-label{display:inline-block;background:var(--purple);color:white;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:15px}
+    .section-header h2{font-size:clamp(28px,4vw,42px)}
+    
+    .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+    .feature-card{background:var(--light);border-radius:20px;padding:30px 20px;text-align:center;transition:all 0.3s}
+    .feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.1);background:white}
+    .feature-card .icon{width:60px;height:60px;background:linear-gradient(135deg,var(--purple),var(--pink));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}
+    .feature-card .icon i{font-size:24px;color:white}
+    .feature-card h3{font-size:16px;margin-bottom:8px}
+    .feature-card p{font-size:13px;color:#666;line-height:1.5}
+
+    /* Trust Bar */
+    .trust-bar{background:var(--dark);padding:40px 20px}
+    .trust-container{max-width:900px;margin:0 auto;display:flex;justify-content:center;gap:50px;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:12px;color:white}
+    .trust-item i{font-size:28px;color:var(--purple)}
+    .trust-item .text{font-weight:700;font-size:15px}
+    .trust-item .sub{font-size:11px;color:#888}
+
+    /* Footer */
+    footer{background:var(--dark);padding:30px 20px;text-align:center;border-top:1px solid #333}
+    footer img{height:40px;margin-bottom:15px;opacity:0.7}
+    footer p{color:#666;font-size:12px}
+    footer a{color:var(--red);text-decoration:none}
+
+    /* Responsive */
+    @media(max-width:1024px){
+      .hero-container{grid-template-columns:1fr;text-align:center;max-width:600px}
+      .form-card{margin-top:40px}
+      .features-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:600px){
+      .hero{padding:40px 20px}
+      .form-row{grid-template-columns:1fr}
+      .features-grid{grid-template-columns:1fr}
+      .trust-container{flex-direction:column;align-items:center;gap:25px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+    
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="badge"><span class="dot"></span> Limited Time Offer</div>
+        <h1>A Professional Website <span class="highlight">This Week</span></h1>
+        <div class="price-tag">
+          <div class="amount"><span>$</span>399</div>
+          <div class="label">Full setup included • No hidden fees</div>
+        </div>
+        <div class="turnaround">
+          <i class="fas fa-bolt"></i>
+          <span class="text">Delivered in 24-48 Hours</span>
+        </div>
+        <p>Stop losing customers to competitors with better websites. Get a custom, mobile-ready site that actually brings in business.</p>
+        <a href="#form" class="cta-btn"><i class="fas fa-rocket"></i> Get Started Now</a>
+      </div>
+      
+      <div class="form-card" id="form">
+        <div id="formContent">
+          <h2>Get Your Website</h2>
+          <p class="subtitle">Fill out the form and we'll get started right away</p>
+          <form id="websiteForm" onsubmit="submitWebsiteForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" name="first_name" id="firstName" required placeholder="John">
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" name="last_name" id="lastName" required placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" name="email" id="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" name="phone" id="phone" required placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label>Business Name</label>
+              <input type="text" name="business" id="business" placeholder="Your Business Name">
+            </div>
+            <div class="form-group">
+              <label>Business Type</label>
+              <select name="business_type" id="businessType">
+                <option value="">Select your industry...</option>
+                <option value="Restaurant/Food Service">Restaurant / Food Service</option>
+                <option value="Retail/Shop">Retail / Shop</option>
+                <option value="Home Services">Home Services (HVAC, Plumbing, etc.)</option>
+                <option value="Health/Beauty">Health / Beauty</option>
+                <option value="Professional Services">Professional Services</option>
+                <option value="Construction/Trades">Construction / Trades</option>
+                <option value="Automotive">Automotive</option>
+                <option value="Tech/Repair">Tech / Repair</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Non-Profit">Non-Profit</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Website Needs</label>
+              <textarea name="website_needs" id="websiteNeeds" placeholder="If you're not sure, that's no problem. Just say &quot;not sure&quot;"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Do you have a domain already?</label>
+              <select name="has_domain" id="hasDomain">
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Not Sure">Not Sure</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-btn" id="submitBtn"><i class="fas fa-paper-plane"></i> Request My Website</button>
+            <p class="form-note"><i class="fas fa-lock"></i> Your info is safe. We'll respond within 24 hours.</p>
+          </form>
+        </div>
+        <div class="success-msg" id="successMsg">
+          <div class="icon"><i class="fas fa-check"></i></div>
+          <h3>You're All Set!</h3>
+          <p>We've received your request and will contact you within 24 hours to get started on your new website.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="features-container">
+      <div class="section-header">
+        <span class="section-label">What's Included</span>
+        <h2>Everything You Need to Get Online</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-paint-brush"></i></div>
+          <h3>Custom Design</h3>
+          <p>Unique design tailored to your brand, not a generic template.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile Ready</h3>
+          <p>Looks perfect on phones, tablets, and desktops.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-search"></i></div>
+          <h3>SEO Setup</h3>
+          <p>Optimized to help you rank on Google searches.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-bolt"></i></div>
+          <h3>Fast Delivery</h3>
+          <p>Your site delivered in just 24-48 hours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>SSL Security</h3>
+          <p>Free SSL certificate for secure browsing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <h3>Contact Forms</h3>
+          <p>Easy forms that send leads to your inbox.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-globe"></i></div>
+          <h3>Domain Help</h3>
+          <p>We'll help you get and connect your domain.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon"><i class="fas fa-headset"></i></div>
+          <h3>Ongoing Support</h3>
+          <p>We're here to help with updates and changes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-item">
+        <i class="fas fa-award"></i>
+        <div><div class="text">7+ Years Experience</div><div class="sub">Trusted since 2019</div></div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-users"></i>
+        <div><div class="text">1,000+ Businesses</div><div class="sub">Served nationwide</div></div>
+      </div>
+      <div class="trust-item">
+        <i class="fas fa-clock"></i>
+        <div><div class="text">24-48 Hour Delivery</div><div class="sub">Fast turnaround</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <img src="logo.png" alt="TechSpec">
+    <p>© 2025 TechSpec. All rights reserved. | <a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></p>
+  </footer>
+
+  <script>
+    // Trello Integration
+    var TRELLO_API_KEY = '2ccf5d5481ddbe5a7de1f62ebe62aba0';
+    var TRELLO_TOKEN = 'ATTAe52b0ea807bb7020038a9321b7a8c5423b743353c6abc0f2d1683babe8ff0fb095044717';
+    var TRELLO_LIST_ID = '6961e2ac1fb32d0d4c9172a7';
+
+    function submitWebsiteForm(e) {
+      e.preventDefault();
+      
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var business = document.getElementById('business').value || 'Not provided';
+      var businessType = document.getElementById('businessType').value || 'Not specified';
+      var websiteNeeds = document.getElementById('websiteNeeds').value || 'Not specified';
+      var hasDomain = document.getElementById('hasDomain').value || 'Not specified';
+      
+      var cardName = 'WEBSITE $399: ' + firstName + ' ' + lastName + ' (' + business + ')';
+      var cardDesc = '**Contact Info**\n' +
+        '- Name: ' + firstName + ' ' + lastName + '\n' +
+        '- Email: ' + email + '\n' +
+        '- Phone: ' + phone + '\n' +
+        '- Business: ' + business + '\n\n' +
+        '**Project Details**\n' +
+        '- Business Type: ' + businessType + '\n' +
+        '- Has Domain: ' + hasDomain + '\n' +
+        '- Website Needs: ' + websiteNeeds + '\n\n' +
+        '---\n_Submitted from $399 Website Landing Page_';
+      
+      var url = 'https://api.trello.com/1/cards?key=' + TRELLO_API_KEY + '&token=' + TRELLO_TOKEN;
+      
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          idList: TRELLO_LIST_ID,
+          name: cardName,
+          desc: cardDesc,
+          pos: 'top'
+        })
+      })
+      .then(function(response) {
+        if (!response.ok) throw new Error('Trello error');
+        return response.json();
+      })
+      .then(function(data) {
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('successMsg').classList.add('show');
+      })
+      .catch(function(error) {
+        console.error('Error:', error);
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('successMsg').classList.add('show');
+      });
+    }
+  </script>
+</body>
+</html>
