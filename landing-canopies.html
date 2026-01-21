@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Printed Canopies - $250+ OFF | TechSpec</title>
+  <meta name="description" content="Custom printed canopy tents starting at $600. Save $250+!">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--red:#FF0000;--orange:#ff6b35;--yellow:#ffd32a;--teal:#00cec9;--black:#111;--dark:#1a1a1a;--light:#f5f5f5}
+    body{font-family:'Inter',sans-serif;background:var(--light);color:var(--black);overflow-x:hidden}
+    h1,h2,h3{font-family:'Poppins',sans-serif;font-weight:800}
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--red) 0%,var(--orange) 50%,var(--yellow) 100%);position:relative;display:flex;align-items:center;padding:60px 20px;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-opacity='0.05'%3E%3Cpath d='M20 0L40 20 20 40 0 20z'/%3E%3C/g%3E%3C/svg%3E")}
+    .floating-shape{position:absolute;border-radius:50%;background:rgba(255,255,255,0.1);animation:float 18s infinite ease-in-out}
+    .shape1{width:350px;height:350px;top:-100px;left:-100px}.shape2{width:250px;height:250px;bottom:-80px;right:-80px;animation-delay:-6s}.shape3{width:180px;height:180px;top:30%;right:10%;animation-delay:-12s}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(180deg)}}
+    .hero-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:10}
+    .hero-content{color:white}
+    .sale-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(0,0,0,0.3);padding:12px 24px;border-radius:50px;font-size:14px;font-weight:800;margin-bottom:25px;animation:bounce 2s infinite}
+    .sale-badge i{color:#FFD700;font-size:18px}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .hero h1{font-size:clamp(32px,5vw,56px);line-height:1.1;margin-bottom:25px}
+    .price-comparison{display:flex;align-items:center;gap:20px;margin-bottom:20px;flex-wrap:wrap}
+    .old-price{font-size:32px;color:rgba(255,255,255,0.6);text-decoration:line-through}
+    .new-price{font-size:clamp(56px,10vw,80px);font-weight:900;color:white;text-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .new-price span{font-size:0.4em;vertical-align:top}
+    .savings-badge{background:var(--teal);color:white;padding:10px 20px;border-radius:50px;font-size:18px;font-weight:800}
+    .shipping-note{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);padding:12px 24px;border-radius:50px;font-size:15px;font-weight:600;margin-bottom:25px}
+    .shipping-note i{color:#FFD700}
+    .hero p{font-size:18px;line-height:1.7;opacity:0.95;margin-bottom:30px}
+    .hero-buttons{display:flex;gap:15px;flex-wrap:wrap}
+    .cta-btn{display:inline-flex;align-items:center;gap:12px;background:white;color:var(--red);padding:18px 35px;border-radius:50px;font-size:16px;font-weight:800;text-decoration:none;text-transform:uppercase;letter-spacing:1px;transition:all 0.3s;box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+    .cta-btn:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 25px 50px rgba(0,0,0,0.4)}
+    .cta-btn.secondary{background:transparent;color:white;border:3px solid rgba(255,255,255,0.5);box-shadow:none}
+    .cta-btn.secondary:hover{background:white;color:var(--red)}
+    .form-card{background:white;border-radius:24px;padding:35px;box-shadow:0 30px 80px rgba(0,0,0,0.3);max-height:90vh;overflow-y:auto}
+    .form-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}
+    .form-card h2{font-size:22px;color:var(--black)}
+    .form-card .subtitle{color:#888;font-size:13px;margin-top:5px}
+    .form-badge{background:var(--red);color:white;padding:8px 15px;border-radius:50px;font-size:11px;font-weight:700}
+    .form-group{margin-bottom:16px}
+    .form-group label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:#333}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;border:2px solid #eee;border-radius:10px;font-size:14px;font-family:inherit;transition:all 0.3s}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(255,0,0,0.1)}
+    .form-group textarea{min-height:70px;resize:vertical}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .addons-section{margin-top:20px;padding-top:20px;border-top:2px solid #eee}
+    .addons-title{font-weight:700;font-size:14px;margin-bottom:5px}
+    .addons-subtitle{font-style:italic;color:#888;font-size:12px;margin-bottom:15px}
+    .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .checkbox-item{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#f8f9fa;border-radius:8px;cursor:pointer;transition:all 0.2s;border:2px solid transparent}
+    .checkbox-item:hover{background:#fff5f5;border-color:#ffcccc}
+    .checkbox-item.checked{background:#fff5f5;border-color:var(--red)}
+    .checkbox-item input{display:none}
+    .checkbox-item .check-box{width:18px;height:18px;border:2px solid #ccc;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;flex-shrink:0}
+    .checkbox-item.checked .check-box{background:var(--red);border-color:var(--red)}
+    .checkbox-item.checked .check-box i{color:white;font-size:10px}
+    .checkbox-item span{font-size:12px;font-weight:500}
+    .other-field{margin-top:12px}
+    .other-field textarea{min-height:70px;width:100%;padding:12px 16px;border:2px solid #eee;border-radius:10px;font-size:14px;font-family:inherit;transition:all 0.3s;resize:vertical}
+    .other-field textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(255,0,0,0.1)}
+    .submit-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--red),var(--orange));color:white;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;transition:all 0.3s;text-transform:uppercase;letter-spacing:1px;margin-top:20px}
+    .submit-btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(255,0,0,0.4)}
+    .submit-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+    .form-note{text-align:center;margin-top:12px;font-size:11px;color:#888}
+    .form-note i{color:var(--teal)}
+    .success-msg{display:none;text-align:center;padding:40px 20px}
+    .success-msg.show{display:block;animation:scaleIn 0.4s ease}
+    @keyframes scaleIn{from{opacity:0;transform:scale(0.8)}to{opacity:1;transform:scale(1)}}
+    .success-msg .icon{width:80px;height:80px;background:linear-gradient(135deg,var(--teal),#00b894);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+    .success-msg .icon i{font-size:36px;color:white}
+    .success-msg h3{font-size:24px;margin-bottom:10px}
+    .success-msg p{color:#666}
+    .features{padding:80px 20px;background:white}
+    .features-container{max-width:1100px;margin:0 auto}
+    .section-header{text-align:center;margin-bottom:50px}
+    .section-label{display:inline-block;background:var(--red);color:white;padding:8px 20px;border-radius:50px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:15px}
+    .section-header h2{font-size:clamp(28px,4vw,42px)}
+    .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+    .feature-card{background:var(--light);border-radius:20px;padding:30px 20px;text-align:center;transition:all 0.3s;border-left:4px solid var(--red)}
+    .feature-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.1);background:white}
+    .feature-card .icon{width:60px;height:60px;background:linear-gradient(135deg,var(--red),var(--orange));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}
+    .feature-card .icon i{font-size:24px;color:white}
+    .feature-card h3{font-size:16px;margin-bottom:8px}
+    .feature-card p{font-size:13px;color:#666;line-height:1.5}
+    .examples-section{padding:80px 20px;background:var(--dark)}
+    .examples-section .section-header h2{color:white}
+    .examples-section .section-label{background:var(--orange)}
+    .slider-container{max-width:1200px;margin:0 auto;position:relative;padding:0 60px}
+    .slider{display:flex;gap:25px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 0;scrollbar-width:none}
+    .slider::-webkit-scrollbar{display:none}
+    .slide{flex:0 0 350px;scroll-snap-align:start;background:#333;border-radius:20px;overflow:hidden;transition:all 0.4s;cursor:pointer}
+    .slide:hover{transform:scale(1.03);box-shadow:0 25px 50px rgba(255,107,53,0.3)}
+    .slide img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:white;color:var(--red);border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;transition:all 0.3s;box-shadow:0 5px 20px rgba(0,0,0,0.3)}
+    .slider-btn:hover{background:var(--red);color:white;transform:translateY(-50%) scale(1.1)}
+    .slider-btn.prev{left:0}.slider-btn.next{right:0}
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.95);z-index:10000;align-items:center;justify-content:center}
+    .lightbox.show{display:flex}
+    .lightbox-content img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:12px}
+    .lightbox-close{position:fixed;top:20px;right:20px;width:50px;height:50px;background:white;color:var(--red);border:none;border-radius:50%;font-size:24px;cursor:pointer;z-index:10001}
+    .lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);width:50px;height:50px;background:white;color:var(--red);border:none;border-radius:50%;font-size:20px;cursor:pointer;z-index:10001}
+    .lightbox-nav.prev{left:20px}.lightbox-nav.next{right:20px}
+    .lightbox-counter{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:white;color:#333;padding:10px 25px;border-radius:50px;font-weight:600}
+    .sizes{padding:60px 20px;background:var(--light)}
+    .sizes-container{max-width:900px;margin:0 auto;text-align:center}
+    .sizes h2{margin-bottom:30px}
+    .sizes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .size-card{background:white;border-radius:16px;padding:25px;border:2px solid #eee;transition:all 0.3s}
+    .size-card:hover{border-color:var(--red);box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+    .size-card .size{font-size:32px;font-weight:900;color:var(--orange)}
+    .size-card .label{font-size:13px;color:#888;margin-top:5px}
+    .size-card .price{font-size:20px;font-weight:700;margin-top:10px;color:var(--red)}
+    .included{padding:60px 20px;background:white}
+    .included-container{max-width:800px;margin:0 auto}
+    .included h2{text-align:center;margin-bottom:30px}
+    .included-list{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    .included-item{display:flex;align-items:center;gap:12px;background:var(--light);padding:15px 20px;border-radius:12px}
+    .included-item i{color:var(--teal);font-size:18px}
+    .included-item span{font-weight:600;font-size:14px}
+    .urgency-bar{background:var(--red);padding:20px;text-align:center;color:white}
+    .urgency-bar i{color:#FFD700;margin-right:10px}
+    .urgency-bar span{font-weight:700;font-size:16px}
+    footer{background:var(--dark);padding:30px 20px;text-align:center;border-top:1px solid #333}
+    footer img{height:40px;margin-bottom:15px;opacity:0.7}
+    footer p{color:#666;font-size:12px}
+    footer a{color:var(--red);text-decoration:none}
+    @media(max-width:1024px){.hero-container{grid-template-columns:1fr;text-align:center;max-width:600px}.price-comparison,.hero-buttons{justify-content:center}.form-card{margin-top:40px}.features-grid{grid-template-columns:repeat(2,1fr)}.sizes-grid{grid-template-columns:1fr}.slider-container{padding:0 20px}.slide{flex:0 0 300px}}
+    @media(max-width:600px){.hero{padding:40px 20px}.form-row,.checkbox-grid{grid-template-columns:1fr}.features-grid,.included-list{grid-template-columns:1fr}.form-header{flex-direction:column;gap:10px}.hero-buttons{flex-direction:column;align-items:center}}
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="floating-shape shape1"></div>
+    <div class="floating-shape shape2"></div>
+    <div class="floating-shape shape3"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="sale-badge"><i class="fas fa-fire"></i> LIMITED TIME SALE</div>
+        <h1>Custom Printed Canopy Tents</h1>
+        <div class="price-comparison">
+          <span class="old-price">$850+</span>
+          <span class="new-price"><span>$</span>600<span>+</span></span>
+          <span class="savings-badge">SAVE $250+</span>
+        </div>
+        <div class="shipping-note"><i class="fas fa-truck"></i><span>FREE Shipping Anywhere in the US!</span></div>
+        <p>Professional custom canopies for your business. Full color printing, flame retardant fabric, heavy-duty steel frame.</p>
+        <div class="hero-buttons">
+          <a href="#form" class="cta-btn"><i class="fas fa-tag"></i> Claim This Deal</a>
+          <a href="#examples" class="cta-btn secondary"><i class="fas fa-images"></i> See Examples</a>
+        </div>
+      </div>
+      <div class="form-card" id="form">
+        <div id="formContent">
+          <div class="form-header"><div><h2>Get Your Canopy</h2><p class="subtitle">Free design assistance included!</p></div><span class="form-badge">$250+ OFF</span></div>
+          <form id="canopyForm" onsubmit="submitCanopyForm(event)">
+            <div class="form-row"><div class="form-group"><label>First Name *</label><input type="text" id="firstName" required placeholder="John"></div><div class="form-group"><label>Last Name *</label><input type="text" id="lastName" required placeholder="Smith"></div></div>
+            <div class="form-group"><label>Email *</label><input type="email" id="email" required placeholder="john@example.com"></div>
+            <div class="form-group"><label>Phone *</label><input type="tel" id="phone" required placeholder="(555) 123-4567"></div>
+            <div class="form-group"><label>Business Name</label><input type="text" id="business" placeholder="Your Business"></div>
+            <div class="form-row"><div class="form-group"><label>Canopy Size</label><select id="canopySize"><option value="10x10">10x10 ft</option><option value="10x15">10x15 ft</option><option value="10x20">10x20 ft</option><option value="other">Other / Not Sure</option></select></div><div class="form-group"><label>Quantity</label><select id="quantity"><option value="1">1 Canopy</option><option value="2-5">2-5 Canopies</option><option value="6-10">6-10 Canopies</option><option value="10+">10+ Canopies</option></select></div></div>
+            <div class="form-group"><label>Canopy Type</label><select id="canopyType"><option value="Canopy Only">Canopy</option><option value="Canopy + Back Wall">Canopy + Back Wall</option><option value="Canopy + Back & Side Walls">Canopy + Back & Side Walls</option><option value="Canopy + Back Wall + Half Side Walls">Canopy + Back Wall + Half Side Walls</option><option value="Restaurant Canopy">Restaurant Canopy</option></select></div>
+            <div class="form-group"><label>Tell us about your project</label><textarea id="projectDetails" placeholder="What's the canopy for? Any specific design ideas?"></textarea></div>
+            <div class="addons-section">
+              <div class="addons-title">Add-ons</div>
+              <div class="addons-subtitle">(check all that apply)</div>
+              <div class="checkbox-grid">
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Table Cloth"><div class="check-box"><i class="fas fa-check"></i></div><span>Table Cloth</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Roll Up Banner + Stand"><div class="check-box"><i class="fas fa-check"></i></div><span>Roll Up Banner + Stand</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Trash Can Cover"><div class="check-box"><i class="fas fa-check"></i></div><span>Trash Can Cover</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="A-Frames"><div class="check-box"><i class="fas fa-check"></i></div><span>A-Frames</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Business Cards"><div class="check-box"><i class="fas fa-check"></i></div><span>Business Cards</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Fliers"><div class="check-box"><i class="fas fa-check"></i></div><span>Fliers</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Giveaway/Swag Items"><div class="check-box"><i class="fas fa-check"></i></div><span>Giveaway/Swag Items</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Apparel/Uniforms"><div class="check-box"><i class="fas fa-check"></i></div><span>Apparel/Uniforms</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Lanyards"><div class="check-box"><i class="fas fa-check"></i></div><span>Lanyards</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Event Badges"><div class="check-box"><i class="fas fa-check"></i></div><span>Event Badges</span></label>
+                <label class="checkbox-item" onclick="toggleCheckbox(this)"><input type="checkbox" value="Other" id="otherCheckbox"><div class="check-box"><i class="fas fa-check"></i></div><span>Other</span></label>
+              </div>
+              <div class="other-field" id="otherField" style="display:none;"><textarea id="otherNeeds" placeholder="Don't see what you're looking for? Please explain what else you need..."></textarea></div>
+            </div>
+            <button type="submit" class="submit-btn" id="submitBtn"><i class="fas fa-paper-plane"></i> Get My Quote</button>
+            <p class="form-note"><i class="fas fa-check-circle"></i> Free design mockup • No obligation</p>
+          </form>
+        </div>
+        <div class="success-msg" id="successMsg"><div class="icon"><i class="fas fa-check"></i></div><h3>Request Received!</h3><p>We'll send you a custom quote and free design mockup within 24 hours.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="features"><div class="features-container"><div class="section-header"><span class="section-label">Premium Quality</span><h2>Built to Impress & Last</h2></div><div class="features-grid"><div class="feature-card"><div class="icon"><i class="fas fa-fire-extinguisher"></i></div><h3>Flame Retardant</h3><p>CPAI-84 certified fabric for safe use at any event.</p></div><div class="feature-card"><div class="icon"><i class="fas fa-dumbbell"></i></div><h3>Steel Frame</h3><p>Heavy-duty industrial steel frame built to last.</p></div><div class="feature-card"><div class="icon"><i class="fas fa-palette"></i></div><h3>Full Color Print</h3><p>Vibrant, high-resolution printing of your logo and design.</p></div><div class="feature-card"><div class="icon"><i class="fas fa-suitcase"></i></div><h3>Carrying Bag</h3><p>Free heavy-duty carrying bag for easy transport.</p></div></div></div></section>
+  <section class="examples-section" id="examples"><div class="section-header"><span class="section-label">Gallery</span><h2>See Our Work</h2></div><div class="slider-container"><button class="slider-btn prev" onclick="slideExamples(-1)"><i class="fas fa-chevron-left"></i></button><div class="slider" id="examplesSlider"><div class="slide" onclick="openLightbox(0)"><img src="webexample1.png" alt="Canopy Example 1"></div><div class="slide" onclick="openLightbox(1)"><img src="webexample2.png" alt="Canopy Example 2"></div><div class="slide" onclick="openLightbox(2)"><img src="webexample3.png" alt="Canopy Example 3"></div><div class="slide" onclick="openLightbox(3)"><img src="webexample4.png" alt="Canopy Example 4"></div><div class="slide" onclick="openLightbox(4)"><img src="webexample5.png" alt="Canopy Example 5"></div><div class="slide" onclick="openLightbox(5)"><img src="webexample6.png" alt="Canopy Example 6"></div><div class="slide" onclick="openLightbox(6)"><img src="webexample7.png" alt="Canopy Example 7"></div><div class="slide" onclick="openLightbox(7)"><img src="webexample8.png" alt="Canopy Example 8"></div></div><button class="slider-btn next" onclick="slideExamples(1)"><i class="fas fa-chevron-right"></i></button></div></section>
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)"><button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button><button class="lightbox-nav prev" onclick="navLightbox(-1,event)"><i class="fas fa-chevron-left"></i></button><div class="lightbox-content"><img id="lightboxImg" src="" alt=""></div><button class="lightbox-nav next" onclick="navLightbox(1,event)"><i class="fas fa-chevron-right"></i></button><div class="lightbox-counter" id="lightboxCounter"></div></div>
+  <section class="sizes"><div class="sizes-container"><h2>Available Sizes</h2><div class="sizes-grid"><div class="size-card"><div class="size">10x10</div><div class="label">feet - Most Popular</div><div class="price">From $600</div></div><div class="size-card"><div class="size">10x15</div><div class="label">feet - Extra Space</div><div class="price">From $750</div></div><div class="size-card"><div class="size">10x20</div><div class="label">feet - Maximum Coverage</div><div class="price">From $900</div></div></div></div></section>
+  <section class="included"><div class="included-container"><h2>What's Included</h2><div class="included-list"><div class="included-item"><i class="fas fa-check"></i><span>Custom printed canopy top</span></div><div class="included-item"><i class="fas fa-check"></i><span>Industrial steel frame</span></div><div class="included-item"><i class="fas fa-check"></i><span>Flame retardant certification</span></div><div class="included-item"><i class="fas fa-check"></i><span>Heavy-duty carrying bag</span></div><div class="included-item"><i class="fas fa-check"></i><span>Free design assistance</span></div><div class="included-item"><i class="fas fa-check"></i><span>Free shipping to anywhere in US</span></div></div></div></section>
+  <section class="urgency-bar"><i class="fas fa-clock"></i><span>LIMITED TIME OFFER - Save $250+ while supplies last!</span></section>
+  <footer><img src="logo.png" alt="TechSpec"><p>© 2025 TechSpec. All rights reserved. | <a href="mailto:brandon@techspec.biz">brandon@techspec.biz</a></p></footer>
+  <script>
+    var TRELLO_API_KEY='2ccf5d5481ddbe5a7de1f62ebe62aba0',TRELLO_TOKEN='ATTAe52b0ea807bb7020038a9321b7a8c5423b743353c6abc0f2d1683babe8ff0fb095044717',TRELLO_LIST_ID='6961e2ac1fb32d0d4c9172a7';
+    function toggleCheckbox(el){var cb=el.querySelector('input[type="checkbox"]');cb.checked=!cb.checked;el.classList.toggle('checked',cb.checked);if(el.querySelector('#otherCheckbox'))document.getElementById('otherField').style.display=cb.checked?'block':'none'}
+    function getSelectedAddons(){var a=[];document.querySelectorAll('.checkbox-item input:checked').forEach(function(cb){if(cb.value!=='Other')a.push(cb.value)});return a}
+    function submitCanopyForm(e){e.preventDefault();var btn=document.getElementById('submitBtn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...';var firstName=document.getElementById('firstName').value,lastName=document.getElementById('lastName').value,email=document.getElementById('email').value,phone=document.getElementById('phone').value,business=document.getElementById('business').value||'Not provided',canopySize=document.getElementById('canopySize').value,quantity=document.getElementById('quantity').value,canopyType=document.getElementById('canopyType').value,projectDetails=document.getElementById('projectDetails').value||'Not specified',addons=getSelectedAddons(),otherNeeds=document.getElementById('otherNeeds').value||'';var cardName='CANOPY SALE: '+firstName+' '+lastName+' ('+business+')',cardDesc='**Contact Info**\n- Name: '+firstName+' '+lastName+'\n- Email: '+email+'\n- Phone: '+phone+'\n- Business: '+business+'\n\n**Canopy Details**\n- Size: '+canopySize+'\n- Quantity: '+quantity+'\n- Type: '+canopyType+'\n- Project Details: '+projectDetails+'\n\n**Add-ons Requested**\n'+(addons.length>0?addons.map(function(a){return '- '+a}).join('\n'):'- None selected')+'\n'+(otherNeeds?'\n**Other Needs:**\n'+otherNeeds:'')+'\n\n---\n_Submitted from Canopy Sale Landing Page_';fetch('https://api.trello.com/1/cards?key='+TRELLO_API_KEY+'&token='+TRELLO_TOKEN,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({idList:TRELLO_LIST_ID,name:cardName,desc:cardDesc,pos:'top'})}).then(function(r){return r.json()}).then(function(){document.getElementById('formContent').style.display='none';document.getElementById('successMsg').classList.add('show')}).catch(function(){document.getElementById('formContent').style.display='none';document.getElementById('successMsg').classList.add('show')})}
+    function slideExamples(dir){document.getElementById('examplesSlider').scrollBy({left:dir*380,behavior:'smooth'})}
+    var images=['webexample1.png','webexample2.png','webexample3.png','webexample4.png','webexample5.png','webexample6.png','webexample7.png','webexample8.png'],currentImg=0;
+    function openLightbox(idx){currentImg=idx;document.getElementById('lightboxImg').src=images[idx];document.getElementById('lightboxCounter').textContent=(idx+1)+' / '+images.length;document.getElementById('lightbox').classList.add('show');document.body.style.overflow='hidden'}
+    function closeLightbox(e){if(!e||e.target.classList.contains('lightbox')){document.getElementById('lightbox').classList.remove('show');document.body.style.overflow=''}}
+    function navLightbox(dir,e){e.stopPropagation();currentImg=(currentImg+dir+images.length)%images.length;document.getElementById('lightboxImg').src=images[currentImg];document.getElementById('lightboxCounter').textContent=(currentImg+1)+' / '+images.length}
+    document.addEventListener('keydown',function(e){if(document.getElementById('lightbox').classList.contains('show')){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')navLightbox(-1,e);if(e.key==='ArrowRight')navLightbox(1,e)}});
+  </script>
+</body>
+</html>
