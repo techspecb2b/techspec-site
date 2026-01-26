@@ -39,10 +39,10 @@
 
     /* Logo Showcase */
     .logo-showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-bottom:60px}
-    .logo-card{background:linear-gradient(145deg,#1a1a1a,#222);border-radius:20px;padding:30px;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;transition:all 0.4s;border:2px solid transparent;overflow:hidden}
+    .logo-card{background:#ffffff;border-radius:20px;padding:30px;display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;transition:all 0.4s;border:2px solid #ddd;overflow:hidden}
     .logo-card:hover{transform:translateY(-10px);border-color:var(--red);box-shadow:0 25px 50px rgba(255,0,0,0.2)}
-    .logo-card img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5))}
-    .logo-card.featured{grid-column:span 1;background:linear-gradient(145deg,#1a1a1a,#2a1a1a);border-color:rgba(255,0,0,0.3)}
+    .logo-card img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 5px 15px rgba(0,0,0,0.1))}
+    .logo-card.featured{grid-column:span 1;background:#ffffff;border-color:var(--red)}
 
     /* Main Content Grid */
     .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
@@ -176,8 +176,8 @@
 
       <!-- Logo Showcase -->
       <div class="logo-showcase">
-        <div class="logo-card"><img src="logo3.png" alt="Logo Design Example"></div>
-        <div class="logo-card featured"><img src="logo6.png" alt="Logo Design Example"></div>
+        <div class="logo-card"><img src="logo6.png" alt="Logo Design Example"></div>
+        <div class="logo-card featured"><img src="logo3.png" alt="Logo Design Example"></div>
         <div class="logo-card"><img src="logo8.png" alt="Logo Design Example"></div>
       </div>
 
